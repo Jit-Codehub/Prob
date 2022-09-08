@@ -1,0 +1,226 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Z-Score Probability Calculator | Z-Score Probability Formulas</title>
+    <meta name="description" content="Z-Score probability Calculator is a free handy tool that computes the probability of z score. Check the steps to calculate the z-score. "/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Z-Score Probability Calculator | Z-Score Probability Formulas"/>
+        <meta property="og:description" content="Z-Score probability Calculator is a free handy tool that computes the probability of z score. Check the steps to calculate the z-score probability manually."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="http://probabilitycalculator.guru/static/images/Probability/Z-Score-Probability-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Z-Score Probability Calculator | Z-Score Probability Formulas"/>
+        <meta name="twitter:description" content="Z-Score probability Calculator is a free handy tool that computes the probability of z score. Check the steps to calculate the z-score probability manually."/>
+        <meta name="twitter:image:src" content="http://probabilitycalculator.guru/static/images/Probability/Z-Score-Probability-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Z-Score Probability Calculator | Z-Score Probability Formulas"/>
+        <meta property='og:image' content="http://probabilitycalculator.guru/static/images/Probability/Z-Score-Probability-Calculator.jpeg"/>
+        <meta property='og:description' content="Z-Score probability Calculator is a free handy tool that computes the probability of z score. Check the steps to calculate the z-score probability manually."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1 
+        What is Z-Score Probability?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        z-score estimates the distance between the mean and observation. Z-Score value may be negative or positive."}	}, {"@type": "Question","name":"2
+        How do you find probability of Z-Score?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        Probability of Z- score for right tailed and left tailied is found by using the formula. Right-tailed z-test: p-value = P(x > x1) = 1 - P(x < x1), Left-tailed z-test: p-value = P(x < x1)."}	}, {"@type": "Question","name":"3
+        What is the best website for z-score probability calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        probabilitycalculator.guru is the best website for z-score probability calculator."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Z-Score Probability Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>We can guarantee you that you can easily find the probability of z-score by taking the help of the z-score probability calculator. The thing is you need to provide the input values of mean and standard deviation and then you need to press the calculate button to get the best results in less time.</p>
+               <p><strong>Z-Score Probability Calculator: </strong>Are you thinking that computing z-score probability is quite tough? Then you are wrong. Use this z-score probability calculator tool to give you instant results. And as we have given a step-by-step process and solved examples that give you aclear idea of how to calculate z-score probability. </p>
+        
+            <form method="POST">{% csrf_token %}
+                        <div class="row mx-auto my-auto">
+                            <div class="cell">
+                                <label for="input1">Enter the raw data point (x): </label>
+                            </div>
+                          </div>
+                        <div class="row mx-auto my-auto">
+                            <div class="cell">
+                                {%if input1%}
+                                    <input name="input1" type="text" required width="48"  value="{{input1}}">
+                                {%else%}
+                                    <input name="input1" type="text" required width="48"  value="396">
+                                {%endif%}
+                            </div>
+                        </div>
+                        <div class="row mx-auto my-auto">
+                            <div class="cell">
+                                <label for="input2">Enter the Population Mean (μ): </label>
+                            </div>
+                          </div>
+                        <div class="row mx-auto my-auto">
+                            <div class="cell">
+                                {%if input2%}
+                                    <input name="input2" type="text" required width="48"  value="{{input2}}">
+                                {%else%}
+                                    <input name="input2" type="text" required width="48"  value="400">
+                                {%endif%}
+                            </div>
+                        </div>
+                        <div class="row mx-auto my-auto">
+                            <div class="cell">
+                                <label for="input3">Enter the Population Standard Deviation (σ): </label>
+                            </div>
+                          </div>
+                        <div class="row mx-auto my-auto">
+                            <div class="cell">
+                                {%if input3%}
+                                    <input name="input3" type="text" required width="48"  value="{{input3}}">
+                                {%else%}
+                                    <input name="input3" type="text" required width="48"  value="20">
+                                {%endif%}
+                            </div>
+                        </div>
+                    <div class="col-auto mt-2 ml-3">
+                      <button type="submit" class="btn btn-primary mb-2">Calculate</button>
+                      <a href="" class="btn btn-warning" onclick="this.form.reset()" role="button" style="margin-top:5px;">Reset</a>
+                    </div>
+        
+                    </form>
+            </div>
+                    {%if detailStep%}
+                      <hr>
+                      <p><strong>Answer:</strong></p>
+                      <div style="text-align: center;">
+                      {% autoescape off %}
+                      {{detailStep}}
+                      {%endautoescape%}
+                    
+                      </div>
+                      <hr>
+                  {%endif%}
+                      </div>
+                  {% autoescape off %}
+                      {% if messages %}
+                          {% for message in messages %}
+                              <div class="row">
+                                  <div class="col-md-6">
+                                      <p class="alert alert-danger">{{message}}</p>
+                                  </div>
+                              </div>
+                          {% endfor %}
+                      {% endif %}
+                  {%endautoescape%}
+
+        
+        <div class="card">
+            <div class="card-header">
+                <h3 class="h3">Z-Score Probability Formulas</h3>
+            </div>
+            <div class="card-body">
+                <p>To determine the z-score, we need to use some formula by using standard deviation and mean. Let us see the formula below.</p>
+                <p><b>z = (x - &mu;) / &sigma;</b></p>
+                <p>probability values.</p>
+                <ul> <li>  Right-tailed z-test: p-value = P(x > x1) = 1 - P(x < x1)</li>
+                    <li>   Left-tailed z-test: p-value = P(x < x1)</li></ul>
+                <p>Where,</p>
+                <p>x is the random number (or) raw data point.</p>
+                <p>z is the z-score value.</p>
+                <p>&mu; is the mean.</p>
+                <p>&sigma; is the standard deviation.</p>
+                
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="h3">Steps to Calculate the Z-Score Probability.</h3>
+                </div>
+                <div class="card-body">
+                    <p>Here are some basic steps to calculate the z-score easily and manually.</p>
+                    <ol>
+                        <li>Let us consider the data which is given in the problem.</li>
+                        <li>Then you need to calculate the mean and standard deviation.</li>
+                        <li>Then you need to apply the formula to find a z-score.</li>
+                        <li>Finally, by simplifying it you will get the result, and then from the z - table calculate the probability of z-score.</li>
+                    </ol>
+                    </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="h3">How to Find Z-Score Probability Manually?</h3>
+                        </div>
+                        <div class="card-body">      
+<p><strong>Example: In a class 3 students scored 63,87,47. Find the z-score probability of 63?</strong></p>
+<p><strong>Solution:</strong></p>
+<p>Given scores, 63, 87,47.</p>
+<p> Find the mean and standard deviation of the scores.</p>
+<p> &mu; = (67+87+47)/3 = 67.</p>
+<p>&sigma; = √((67-67)^2 + (87-67)^2 + (47-67)^2)/3= 28.284</p>
+<p>Here, x = 63.</p>
+<p>Now, apply the formula, <b>z = (x - &mu;) / &sigma;</b></p>
+<p>z = (63 - 67)/28.284 = -4/28.28 = -0.14.</p>
+<p>By using Z-score table, P(x < x1) = 0.4443, P(x > x1) = 1- P(x < x1) = 1- 0.443 = 0.9557</p>
+<p>Utilize our probability calculators to complete your assignments easily that are available at <a href="http://probabilitycalculator.guru/">probabilitycalculator.guru</a>.</p>
+<img src="{% static 'images/Probability/Z-Score-Probability-Calculator.jpeg' %}" alt="Z-Score Probability Calculator">
+</div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+    <h3 class="h3">FAQs on Z-Score Probability Calculator</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. What is Z-Score Probability?</strong></p>
+     	<p class="answer">z-score estimates the distance between the mean and observation. The z-score value may be negative or positive.</p><hr>
+     	<p class="question"><strong>2. How do you find the probability of Z-Score?</strong></p>
+     	<p class="answer">Probability of Z- score for right tailed and left tailied is found by using the formula. Right-tailed z-test: p-value = P(x > x1) = 1 - P(x < x1), Left-tailed z-test: p-value = P(x < x1).</p><hr>
+        <p class="question"><strong>3. What is the best website for the z-score probability calculator?</strong></p>
+        <p class="answer"><a href="http://probabilitycalculator.guru/">Probabilitycalculator.guru</a> is the best website for z-score probability calculator.</p><hr>
+        
+    	</div>
+    </div>
+    </div>
+
+{% if  flag %}
+<script>
+        $(document).ready(function () {
+            $("#hassle").click();
+        });
+</script>
+<button type="button" hidden id="hassle" onclick="location.href='#combinations'">ans1</button>
+{% endif %}
+{%endblock%}

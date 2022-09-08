@@ -1,0 +1,272 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Online Bayes Theorem Calculator | How is Bayes Theorem Calculated?</title>
+    <meta name="description" content="Make the most out of Bayes Theorem Calculator to find out the Conditional Probability of an Event in seconds given all other related probabilities."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Online Bayes Theorem Calculator | How is Bayes Theorem Calculated?"/>
+        <meta property="og:description" content="Make the most out of Bayes Theorem Calculator to find out the Conditional Probability of an Event in seconds given all other related probabilities."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/Bayes-Theorem-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Online Bayes Theorem Calculator | How is Bayes Theorem Calculated?"/>
+        <meta name="twitter:description" content="Make the most out of Bayes Theorem Calculator to find out the Conditional Probability of an Event in seconds given all other related probabilities."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/Bayes-Theorem-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Online Bayes Theorem Calculator | How is Bayes Theorem Calculated?"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/Bayes-Theorem-Calculator.jpeg"/>
+        <meta property='og:description' content="Make the most out of Bayes Theorem Calculator to find out the Conditional Probability of an Event in seconds given all other related probabilities."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        What is Bayes Theorem in Simple Terms?
+        ","acceptedAnswer": {"@type": "Answer","text":" Bayes Theorem is a mathematical equation used in statistics and probability to find out the conditional probability of an event."}	}, {"@type": "Question","name":"2.
+        What is Bayes Theorem explain its application with an example?
+        ","acceptedAnswer": {"@type": "Answer","text":" Bayes Theorem is used for determining the Conditional Probability. Its applications in real life include cancer screening, taking decisions in monetary policies, global warming, etc."}	}, {"@type": "Question","name":"3.
+        What is the Bayes Theorem Formula?
+        ","acceptedAnswer": {"@type": "Answer","text":" Bayes Theorem Formula is given by the equation P(A|B) = [P(B|A) * P(A)] / P(B)."}	}, {"@type": "Question","name":"4.
+        Where do I get Bayes Theorem Calculator for free?
+        ","acceptedAnswer": {"@type": "Answer","text":" You can get Bayes Theorem Calculator for free on probabilitycalculator.guru a trusted and reliable portal."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Bayes Theorem Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Bayes Theorem Calculator is a simple tool used for finding the probability of an event using the Baye's Theorem. This online tool will provide the conditional probability of an event provided the related known probabilities. All you need to do is simple enter the input data values in the allotted input provisons and then click on the calculate button highlighted in the tool to obtain the conditional probability of an event. </p>
+                <p><strong>Bayes Theorem Calculator: </strong> If you are looking for an article that helps you understand the Baye's Rule or Baye's Law then this article is for you. We have come up with a tool named Baye's Theorem Calculator that simplifies your job of finding conditional probability of an event in no time. In fact, we have listed the definition of baye's rule, baye's formula, real life applications of baye's theorem, worked out examples on finding baye's theorem.</p>
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <p {% if message.tags %} id="message_container" class="alert alert-danger text-center" {% endif %}
+                       style="color:red">{{ message }}</p>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+                <form action="{% url 'bayes-theorem' %}" id="myForm" onsubmit="return validate()" method="post">
+                    {% csrf_token %}
+                    <div class="input-group mb-2 mt-3">
+                          <div class="input-group-prepend">
+                        <div class="input-group-text"><strong>P(A)</strong></div>
+                             <input type="number" pattern="-?\d*\.?\d*" id="inlineFormInputGroup" step="any" name="a" value="{{ a }}" oninput="validateNumber1(this);" placeholder="Enter the Number" class="form-control" required=""></div>
+                            <b id="inlineFormInputGroup" class="form-control">%</b>
+                    </div>
+                        <div class="input-group mb-2 mt-3">
+                          <div class="input-group-prepend">
+                        <div class="input-group-text in"><strong>P(B)</strong></div>
+                             <input type="number" id="inlineFormInputGroup"  step="any" placeholder="Enter the Number" value="{{ b }}" name="b" oninput="validateNumber(this);" class="form-control" required=""></div>
+                            <b id="inlineFormInputGroup" class="form-control">%</b>
+                         </div>
+                         <div class="input-group mb-2 mt-3">
+                          <div class="input-group-prepend">
+                        <div class="input-group-text in"><strong>P(A/B)</strong></div>
+                             <input type="number"id="inlineFormInputGroup"  step="any"  placeholder="Enter the Number" value="{{ c }}" name="c" oninput="validateNumber(this);" class="form-control" required=""></div>
+                            <b id="inlineFormInputGroup" class="form-control">%</b>
+                         </div>
+        
+        
+        
+                        <div class=" center col mt-2 ">
+                        <center><button type="submit" class="btn btn-primary"  class="form-control" >Calculate</button>
+                        <button type="button" onclick="this.form.reset()" style="margin-top:5px;" class="btn btn-danger" class="form-control">Reset</button>
+                        </center>
+                    </div>
+                  <div class="input-group mb-2 mt-3">
+                          <div class="input-group-prepend">
+                              <div class="input-group-text"><strong>P(B/A)</strong></div>
+                             <input type="text" disabled id="inlineFormInputGroup" value="{{ d }}" oninput="validateNumber(this);" class="form-control" required></div>
+                        <b id="inlineFormInputGroup" class="form-control">%</b>
+                         </div>
+        
+                </form>
+                </div>
+                </div>
+
+            
+        
+
+
+
+
+
+
+        <script>
+            $(document).ready(function(){
+             {% if answer %}
+            $("#hassle").click();
+            {% endif %}
+            $(".btn-danger").on("click",function(){
+              $(".form-control").attr("value","");
+                $("#solve-bayes-theorem").empty();
+             });
+            });
+        </script>
+        {% if answer %}
+        <script>
+            $(document).ready(function () {
+        
+                $("#hassle").click();
+                });
+        </script>
+        
+        <button type="button" hidden id="hassle" onclick="location.href='#bayes-theorem'">ans1</button>
+        {% endif %}
+    
+        {% if answer %}
+       
+
+        <div class="card" id="bayes-theorem">
+            <div class="card-header"><center class="h1">Detailed Answer</center></div>
+            <div class="card-body container">
+            {% for i,z in answer.items %}
+            {% if 'bold' in i %}
+            <p><b>{{ z }}</b></p>
+            {% else %}
+            <p>{{ z }}</p>
+            {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    
+    
+    
+    <script>
+        var validNumber = new RegExp(/^\d*\.?\d*$/);
+        var fist_input = document.getElementById("inlineFormInputGroup").value;
+        function validateNumber(elem) {
+          if (validNumber.test(elem.value)) {
+            fist_input = elem.value;
+          } else {
+            elem.value = fist_input;
+          }
+        }
+    </script>
+
+
+
+
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">What is Baye's Theorem?</h2>
+        </div>
+	    <div class="card-body">
+            <p>Bayes Theorem is given after the name of Reverend Thomas Bayes who worked on conditional probability. Baye's Rule determines the posterior probability of an event considering all other related events prior probabilities. Importance of Baye's Law in statistics is that it can be compared to importance of Pythagorean Theorem in Math. </p>
+</div>
+</div>
+<div class="card">
+    <div class="card-header">
+        <h3 class="h3">Baye's Theorem Formula</h3>
+    </div>
+    <div class="card-body">
+<p>In simple terms we are determining the conditional probability of events i.e. P(A|B) - nothing but the likelihood of event A occuring if B is true. We can denote the Baye's Rule using the following formula <strong>P(A|B) = [P(B|A) * P(A)] / P(B)</strong></p>
+<ul><li>where: A and B are certain events.</li>
+    <li>P(A) is the probability of event A occurring.</li>
+    <li>P(B) is the probability of event B occurring.</li>
+    <li>P(A|B) is the conditional probability of event A occurring when B has happened.</li>
+    <li>Similarly P(B|A) is the conditional probability of event B occurring when A has happened.</li></ul>
+<p>Similarly we can reverse the above equation to obtain the likelihood of event B given that A has happened <strong>P(B|A) = [P(A|B) * P(B)] / P(A)</strong> </p>
+    <p>Understand the difficult concepts too easily taking the help of the online tools available at <a href="https://probabilitycalculator.guru/">Probabilitycalculator.guru</a> and clarify your doubts during homework or assignments.</p>
+</div>
+</div>
+    <div class="card">
+	    <div class="card-header">
+            <h3 class="h3">Baye's Law Formula Tests</h3>
+        </div>
+	    <div class="card-body">
+            <p>We can extend Bayes Theorem to two or more cases of Event A. This can be used to test false positives or false negatives. Event B's Probability is defined as P(B) = P(A) * P(B|A) + P(not A) * P(B|not A) in which P(not A) is the probability of the event A not occurring. This equation holds true P(not A) + P(A) = 1 as event A may or may not occur. </p>
+    <p>Baye's Rule Formula can be extended using the equation P(A|B) = [P(B|A) * P(A)] / [P(A) * P(B|A) + P(not A)* P(B|not A)]</p>
+     <p>Bayes Theorem can help us determine the chances when a test is wrong. Have you ever thought of what is the likelihood of someone having an energy. False positive is something when results show a person not having an allergy. On the other hand, false negative is something when a person having an allergy is not shown. In this case, we can use the Baye's Formula to determine the probabilities of such cases happening around.   </p>       
+    <img src="{% static 'images/Discrete_Mathematics/Bayes-Theorem-Calculator.jpeg' %}" alt="Bayes Theorem Calculator">
+</div>
+    </div>
+    <div class="card">
+	    <div class="card-header">
+            <h3 class="h3">How to use the Bayes Law Calculator?</h3>
+        </div>
+	    <div class="card-body">
+            <p>Go through the simple procedure listed below to know the functionality of Bayes Theorem Calculator and they are as beneath</p>
+           <ul><li>Firstly, enter the probabilities in the input fields allotted.</li>
+        <li>Now, tap on the calculate button to obtain the unknown value as result.</li>
+    <li>The conditional probability of an event using baye's formula will be displayed on the new window.</li></ul>
+        </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="h3">Bayes Theorem Applications</h3>
+                </div>
+                <div class="card-body">
+                    <p>Bayes Theorem is applicable to many streams and subjects such as philosophy, sports, pharmaceuticals, science and engineering, etc.</p>
+                    <ul><li>You can determine the probability of a person having disease or not using bayesian inference given medical history and other data. One of the common example in medicine is Cancer Screening. </li>
+                    <li>Bayesian Inference plays a prominant role in statistical inferences. </li>
+                <li>In Banking and Finance Sector, we can use the Bayes Rule to find out the risk of lending money to potential customers who can have chances of not repaying them.</li>
+            <li>Insurance Companies use this to estimate the risk and calculate insurance premiums accordingly. </li>
+        <li>It is also used in genetics, taking decisions about monetary policies, global warming risk as well.</li>
+    <li>Enigma code during the world war II was decoded using this Bayes Theorem Approach.</li></ul>
+                </div>
+                </div>
+    <div class="card">
+        <div class="card-header">
+    <h3 class="h3">FAQs on Bayes Theorem Calculator</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. What is Bayes Theorem in Simple Terms?</strong></p>
+     	<p class="answer">Bayes Theorem is a mathematical equation used in statistics and probability to find out the conditional probability of an event.</p><hr>
+     	<p class="question"><strong>2. What is Bayes Theorem explain its application with an example?</strong></p>
+     	<p class="answer">Bayes Theorem is used for determining the Conditional Probability. Its applications in real life include cancer screening, taking decisions in monetary policies, global warming, etc.</p><hr>  
+        <p class="question"><strong>3. What is the Bayes Theorem Formula?</strong></p>
+        <p class="answer">Bayes Theorem Formula is given by the equation P(A|B) = [P(B|A) * P(A)] / P(B).</p><hr>
+        <p class="question"><strong>4. Where do I get Bayes Theorem Calculator for free?</strong></p>
+     	<p class="answer">You can get Bayes Theorem Calculator for free on <a href =https://probabilitycalculator.guru/>probabilitycalculator.guru</a> a trusted and reliable portal.</p>
+    	</div>
+    </div>
+    </div>
+    <script>
+        function myFunction() {
+          document.getElementById("input1").value="";
+          document.getElementById("detail").innerHTML="";
+          
+        }
+        </script>
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('ddd').click();
+            });
+        </script>
+{%endblock%}

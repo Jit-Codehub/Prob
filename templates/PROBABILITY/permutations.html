@@ -1,0 +1,240 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Permutation calculator with steps | How do you calculate permutations nPr?</title>
+    <meta name="description" content="Check out the definition, formula & detailed steps to find the possible permutations when selecting r items from a set of n elements using Permutation calculator."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Permutation calculator with steps | How do you calculate permutations nPr?"/>
+        <meta property="og:description" content="Check out the definition, formula & detailed steps to find the possible permutations when selecting r items from a set of n elements using Permutation calculator."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/Permutations-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Permutation calculator with steps | How do you calculate permutations nPr?"/>
+        <meta name="twitter:description" content="Check out the definition, formula & detailed steps to find the possible permutations when selecting r items from a set of n elements using Permutation calculator."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/Permutations-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Permutation calculator with steps | How do you calculate permutations nPr?"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/Permutations-Calculator.jpeg"/>
+        <meta property='og:description' content="Check out the definition, formula & detailed steps to find the possible permutations when selecting r items from a set of n elements using Permutation calculator."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        How do you calculate Permutations?
+        ","acceptedAnswer": {"@type": "Answer","text":"In order to calculate the permutations, identify the number of possibilities for every event and then multiply that number by itself X times. Later on, you can verify the answer using our free online permutation calculator."}	}, {"@type": "Question","name":"2.
+        What is a permutation in maths?
+        ","acceptedAnswer": {"@type": "Answer","text":"A permutation is a set of objects arranged in a definite order. In permutation, the most essential thing is ordering as it is also considered as an ordered combination."}	}, {"@type": "Question","name":"3.
+        What are the types of permutations?
+        ","acceptedAnswer": {"@type": "Answer","text":"A permutation is classified into three different categories:
+
+        When repetition is allowed,
+        When repetition is not allowed, and
+        When the objects are not distinct."}	}, {"@type": "Question","name":"4.
+        What is the formula of permutation when repetition is not allowed?
+        ","acceptedAnswer": {"@type": "Answer","text":" When the permutation is without repetition, the number of available choices will get decreased each time. If n is a positive integer and r is a whole number, such that r<n, then P(n,r) = n!/(n-r)!"}	}, {"@type": "Question","name":"5.
+        How can I find the permutation calculator online?
+        ","acceptedAnswer": {"@type": "Answer","text":"Visit the probabilitycalculator.guru web portal and tap on the permutation calculator link to find the permutations in split seconds with steps."}	}]}
+    </script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Permutations Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Want to determine the number of permutations in a set (nPr)? Then, make use of this free online permutation calculator tool and enter the input value of n and r in the allotted fields then hit the calculate button to get an accurate results in no time.</p>
+
+<!---------------      Error messages ---------->
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <p {% if message.tags %} id="message_container" class="alert alert-danger text-center" {% endif %}
+                       style="color:red">{{ message }}</p>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+<!---------------    Form ------->
+<form action="{% url 'permutations' %}" id="myForm" onsubmit="return validate()" method="post">
+    {% csrf_token %}
+    <div class="input-group mb-2 mt-3">
+          <div class="input-group-prepend">
+        <div class="input-group-text"><strong>Total Number of Objects(n) </strong></div>
+             <input type="text" pattern="-?\d*\.?\d*" id="inlineFormInputGroup" name="a" value="{{ a }}" oninput="validateNumber1(this);" placeholder="Enter the Number" class="form-control" required></div>
+
+    </div>
+        <div class="input-group mb-2 mt-3">
+          <div class="input-group-prepend">
+        <div class="input-group-text in"><strong>Sample Size(r)</strong></div>
+             <input type="text" id="inlineFormInputGroup" placeholder="Enter the Number" value="{{ b }}" name="b" oninput="validateNumber(this);" class="form-control" required></div>
+
+         </div>
+        <div class=" center col mt-2 ">
+        <center><button type="submit" class="btn btn-primary"  class="form-control" >Calculate</button>
+        <button type="button" onclick="this.form.reset()" style="margin-top:5px;" class="btn btn-danger" class="form-control">Reset</button>
+        </center>
+    </div>
+  <div class="input-group mb-2 mt-3">
+          <div class="input-group-prepend">
+        <div class="input-group-text in"><strong>Permutations Without Repetitions</strong></div>
+             <input type="text"id="inlineFormInputGroup"  disabled value="{{ c }}" name="c" oninput="validateNumber(this);" class="form-control" required></div>
+
+
+         </div>
+  <div class="input-group mb-2 mt-3">
+          <div class="input-group-prepend">
+              <div class="input-group-text"><strong>Permutations With Repetitions</strong></div>
+             <input type="text" disabled id="inlineFormInputGroup" value="{{ d }}" oninput="validateNumber(this);" class="form-control" required></div>
+
+         </div>
+
+</form>
+
+            </div>
+         
+
+{% if answer %}
+    <div class="card" id="solve-permutation">
+        <div class="card-header"><center class="h1">Detailed Answer</center></div>
+        <div class="card-body container">
+        {% for i,z in answer.items %}
+        {% if 'bold' in i %}
+        <p><b>{{ z }}</b></p>
+        {% else %}
+        <p>{{ z }}</p>
+        {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+<!---------------- End Form-->
+
+        
+
+
+
+
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">What is meant by Permutation in Probability?</h2>
+        </div>
+	    <div class="card-body">
+            <p>The definition of permutation is an arrangement of set of objects, in the matter of the order of the arrangement. In short, the objects or elements of sets are positioned in a sequence or linear order.</p>
+<p>For instance, let's see how many ways we can arrange 2 letters from the set of three letters ie., A, B, C. Each possible arrangement would be an instance of a permutation. So, the entire list of possible permutations would be: AB, AC, BA, BC, CA, and CB.</p>
+<h3>Representation of Permutation</h3>
+<p>We can symbolize permutation in various ways. They are as follows:</p>
+<ul>
+<li>P(n,r)</li>
+<li>P<sup>n</sup><sub>r</sub></li>
+<li><sup>n</sup>P<sub>r</sub></li>
+<li><sub>n</sub>P<sub>r</sub></li>
+<li>P<sub>n</sub><sub>,</sub><sub>r</sub></li>
+</ul>
+<h3>Permutation Formula</h3>
+<p>The formula for permutation of n objects for r selection of objects is determined by:</p>
+<p>For no repetitions, the formula is <strong>P(n,r) = n!/(n-r)!</strong><br />For repetitions, the formula is<strong> P(n,r) = n<sup>r</sup></strong></p>
+<p>Where,</p>
+<ul>
+<li>p is the number of permutations</li>
+<li>n is the number of objects</li>
+<li>r is the number of chosen objects</li>
+<li>! is a factorial of a number</li>
+</ul>
+</div>
+    </div>
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">Detailed Process on Finding Permutations Manually</h2>
+        </div>
+	    <div class="card-body">
+            <p>Following are the simple steps to calculate the permutations which are required to follow while solving the problems manually:</p>
+<ul>
+<li>Firstly, we have to identify the n and r values from the given problem.</li>
+<li>Next, apply the permutation formula with or without repetition as per the requirement.</li>
+<li>Substutite the n and r values in the formula of permutation and solve the permutation of a given set of numbers easily and effortlessly.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Six people are playing a game. One will be chosen first, followed by other four positions. How many various ways can the position be filled?</p>
+<p><strong>Solution:</strong></p>
+<p>Identify the n and r values from the above scenario. There are six people and only five positions are available. Hence, n=6 and r=5:</p>
+<p>Put the values in the permutation formula:</p>
+<p>nPr or P(n,r) = n!/(n-r)!</p>
+<p>= 6! / (6-5)!</p>
+<p>= 6! / 1!</p>
+<p>= 6!</p>
+<p>= 6x5x4x3x2x1</p>
+<p>= 720</p>
+<p>Therefore, the position can be filled in 720 ways.</p>
+<p>Get instant help while assignments or homework by using the free online probability concepts calculators from probabilitycalculator.guru and clear all your doubts.</p>
+<img src="{% static 'images/Discrete_Mathematics/Permutations-Calculator.jpeg' %}" alt="Permutations Calculator">
+</div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+    <h3 class="h3">FAQs on Permutation nPr Calculator with Steps</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. How do you calculate Permutations?</strong></p>
+     	<p class="answer">In order to calculate the permutations, identify the number of possibilities for every event and then multiply that number by itself X times. Later on, you can verify the answer using our free online permutation calculator.</p><hr>
+     	<p class="question"><strong>2. What is a permutation in maths?</strong></p>
+     	<p class="answer">A permutation is a set of objects arranged in a definite order. In permutation, the most essential thing is ordering as it is also considered as an ordered combination.</p><hr>
+        <p class="question"><strong>3. What are the types of permutations?</strong></p>
+        <p class="answer">A permutation is classified into three different categories:</p>
+        <ul>
+        <li>When repetition is allowed,</li>
+        <li>When repetition is not allowed, and</li>
+        <li>When the objects are not distinct.</li>
+        </ul></p><hr>
+        <p class="question"><strong>4. What is the formula of permutation when repetition is not allowed?</strong></p>
+     	<p class="answer">When the permutation is without repetition, the number of available choices will get decreased each time. If n is a positive integer and r is a whole number, such that r&lt;n, then <strong>P(n,r) = n!/(n-r)!</strong></p><hr>
+        <p class="question"><strong>5. How can I find the permutation calculator online?</strong></p>
+     	<p class="answer">Visit the <a href="https://probabilitycalculator.guru/">probabilitycalculator.guru</a> web portal and tap on the permutation calculator link to find the permutations in split seconds with steps.</p><hr>
+    </div>
+    </div>
+    </div>
+
+{% if  flag %}
+<script>
+        $(document).ready(function () {
+            $("#hassle").click();
+        });
+</script>
+<button type="button" hidden id="hassle" onclick="location.href='#permutations'">ans1</button>
+{% endif %}
+
+{%endblock%}

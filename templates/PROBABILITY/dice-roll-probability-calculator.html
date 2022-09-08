@@ -1,0 +1,334 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+   <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Dice Roll Probability Calculator | How to Calculate Dice Probability?</title>
+    <meta name="description" content="Free Dice Roll Probability Calculator determines the dice roll probability values. Give required details in the calculator to get the dice probability answer."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Dice Roll Probability Calculator | How to Calculate Dice Probability?"/>
+        <meta property="og:description" content="Free Dice Roll Probability Calculator determines the dice roll probability values. Give required details in the calculator to get the dice probability answer."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Chemistry/Dice-Roll-Probability-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Dice Roll Probability Calculator | How to Calculate Dice Probability?"/>
+        <meta name="twitter:description" content="Free Dice Roll Probability Calculator determines the dice roll probability values. Give required details in the calculator to get the dice probability answer."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Chemistry/Dice-Roll-Probability-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Dice Roll Probability Calculator | How to Calculate Dice Probability?"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Chemistry/Dice-Roll-Probability-Calculator.jpeg"/>
+        <meta property='og:description' content="Free Dice Roll Probability Calculator determines the dice roll probability values. Give required details in the calculator to get the dice probability answer."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        How do you find the probability of a dice roll?
+        ","acceptedAnswer": {"@type": "Answer","text":" Mathematically, the probability is the ratio of the number of desired outcomes to the total number of possible outcomes. When a dice is rolled once, then the possible outcomes are 6. So, the probability of a dice roll is a number of the desired outcomes/6."}	}, {"@type": "Question","name":"2.
+        What is the probability of rolling 3 dice and getting the sum of 9?
+        ","acceptedAnswer": {"@type": "Answer","text":" If a dice is rolled 3 times, then the number of possible outcomes are 63 = 216
+        The possibilities of getting sum of 9 are {(3,3,3), (2,4,3), (3,4,2), (2,3,4), (4,2,3), (1,4,4), (4,1,4), (4,4,1), (2,5,3), (2,3,5), (5,2,3), (5,3,2), (3,2,5), . . }
+        Probability of getting the sum of 9 for 3 dice = 25/216."}	}, {"@type": "Question","name":"3.
+        What are the total outcomes when a dice is rolled 4 times?
+        ","acceptedAnswer": {"@type": "Answer","text":" The total number of possible outcomes when a dice is rolled 4 times is 64 = 1296."}	}, {"@type": "Question","name":"4.
+        What is the probability of getting a number that is multiple of 4 when a dice is rolled 2 times?
+        ","acceptedAnswer": {"@type": "Answer","text":" The total number of possibilities are 6² = 36
+        Favorable cases 3 + 5 + 1 = 9
+        So, the probability of getting a number that is multiple of 4 when a dice is rolled 2 times = 9/36."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+
+{% if n and k %}
+<script>
+    $(document).ready(function () {
+
+        $("#hassle").click();
+
+
+    });
+
+
+</script>
+
+<button type="button" hidden id="hassle" onclick="location.href='#Coin_Flip_Probability_answer'">ans1</button>
+{% endif %}
+<div class="container" style="height: auto !important;">
+  
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Dice Roll Probability Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>This Dice Roll Probability Calculator is a tool that helps you not only find the dice probability, but also gives every single step included in solving the dice probability. You just have to provide the number of dice rolling, conditions in the input boxes and press the calculate button to get displayed with the accurate answer quickly.</p>
+                <p><strong>Dice Roll Probability Calculator: </strong>Solve the dice probability problems by using this handy Probability Dice Roller Calculator. You can check the below-mentioned sections of this page to get the complete useful information about the dice probability concept. Learn about the different types of dice, steps to calculate probability of dice and solved example questions.</p>
+                <form action="" method="POST" id="my_form" >
+                    {% csrf_token %}
+                    <div class="col-auto">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><strong>No Of Faces</strong></div>
+                            </div>
+                            <select name="selectdice" id="inlineFormInputGroup"  class="form-control" onchange="this.form.submit();"
+                                 autofocus=""  value="{{selectdice}}">
+            
+                                {% if selectdice == "4" %}
+                                <option value="4" selected="selected"> 4  </option>
+                                {% else %}
+                                <option value="4"> 4</option>
+                                {% endif %}
+                                {% if selectdice == "6" %}
+                                <option value="6" selected="selected"> 6  </option>
+                                {% else %}
+                                <option value="6"> 6</option>
+                                {% endif %}
+            
+                                {% if selectdice == "8" %}
+                                <option value="8" selected="selected"> 8  </option>
+                                {% else %}
+                                <option value="8"> 8</option>
+                                {% endif %}
+            
+                                {% if selectdice == "10" %}
+                                <option value="10" selected="selected"> 10  </option>
+                                {% else %}
+                                <option value="10"> 10</option>
+                                {% endif %}
+            
+            
+            
+                                {% if selectdice == "12" %}
+                                <option value="12" selected="selected"> 12  </option>
+                                {% else %}
+                                <option value="12"> 12</option>
+                                {% endif %}
+            
+                                {% if selectdice == "20" %}
+                                <option value="20" selected="selected"> 20  </option>
+                                {% else %}
+                                <option value="20"> 20</option>
+                                {% endif %}
+            
+                            </select>
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><strong>No Of Dice</strong></div>
+                            </div>
+                            <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup"  required=""
+                                placeholder="Enter No Of Dice" min="1" step="any" class="form-control" name="noofdice"  value="{{noofdice}}" >
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><strong>Game Rule</strong></div>
+                            </div>
+                            <input list="gamerulelist" id="inlineFormInputGroup"  required=""
+                                placeholder="Choose Game Rule" class="form-control" onchange="this.form.submit();" name="gamerule"  value="{{gamerule}}" >
+                            <datalist id="gamerulelist">
+                                <option value="1.All dice with the same value...">
+                                <option value="2.All dice value equal to or higher than..">
+                                <option value="3.All dice value equal to or less than..">
+                                <option value="4.The Sum of all dice is equal to...">
+                                <option value="5.The Sum of all dice is atleast equal to...">
+                                <option value="6.The Sum of all dice is atmost equal to...">
+                                {% comment %} <option value="7.Exactly X equal to...">
+                                <option value="8.Atleast X equal to..."> {% endcomment %}
+            
+                            </datalist>
+                            {% if id1 == 7 %}
+                            <input type="number" min="1" oninput="validateNumber(this);" id="X" required=""
+                                placeholder="Enter number"  class="form-control" name="X" value="{{X }}"}>
+                            {% endif %}
+            
+            
+                        </div>
+                    </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><strong>Value</strong></div>
+                            </div>
+                            <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup"  required=""
+                                placeholder="Value" min="1" max="{{ selectdice }}" step="any" class="form-control" name="valueondice"  value="{{valueondice}}" >
+                        </div>
+            
+            
+            
+            
+            
+            
+            
+                        <div class=" center col mt-2 ">
+                            <center><button type="submit" class="btn btn-primary" name="f1">Calculate</button>
+                                <button type="button" onclick="myFunction()" style="margin-top:5px;"
+                                    class="btn btn-danger">Reset</button>
+                            </center>
+                        </div>
+            
+                </form>
+            </div>
+</div>
+{% if id == 1 %}
+    <div class="card" id="dice-calculator">
+        <div class="card-header">
+            <h2 class="h2">Steps to Calculate Probability</h2>
+        </div>
+        <div class="card-body">
+            <strong>Probability Formula</strong>
+            <p>  Probability = No_of_outcomes/total_no
+            <p>  Probability= {{no_of_outcome}} / {{k}} </p>
+            <p><b> Probability= {{probability}} </b></p>
+        </div>
+    </div>
+        
+        {% endif %}
+
+<div class="card">
+    <div class="card-header">
+        <h2 class="h2">What are the different Types of Dice?</h2>
+    </div>
+    <div class="card-body">
+        <p>A dice is a 6 sided object which has all sides of equal length and which is used to play games. Every dice has numbers from 1 to 6 on each face. The different types of dice are listed here:</p>
+    <ul>
+        <li>A dice that has <b>4 sides</b> is the <b>tetrahedron</b>. Each face is an equilateral triangle.</li>
+        <li>   A dice which has <b>6 sides</b> is the <b>classic cube</b>. Each face is a square.</li>
+        <li>   <b>8 sided</b> dice is called an <b>octahedron</b>. Each face is an equilateral triangle.</li>
+        <li>  <b>10 sided</b> dice is called a <b>pentagonal trapezohedron</b>. Each face is a kite.</li>
+        <li>  <b>12 sided</b> dice is called a <b>dodecahedron</b>. Each face is a regular pentagon.</li>
+        <li> <b>20 sided</b> dice is called a <b>icosahedron</b>. Each face is an equilateral triangle.</li>
+    </ul>
+                </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="h3">Steps to Calculate Probability of Dice</h3>
+                    </div>
+                    <div class="card-body">
+                     <p> The simple steps to find the probability of a rolling dice are given here. Follow these guidelines to get the answer in a matter of seconds</p>
+                     <ul>
+                         <li>Initially, identify how many dice are rolling which is n.</li>
+                         <li>From that the total number of possible outcomes be 6<sup>n</sup>.</li>
+                            <li>Based on the condition provided at the question, make a note of the favorable outcomes.</li>
+                            <li>The ratio of the number of favorable outcomes to the number of possibilities is the probability.</li>
+                     </ul>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="h3">Example Questions on Dice Rolling Probability</h3>
+                            </div>
+                            <div class="card-body"> 
+                                <p><b>Question 1:</b> A dice is rolled 2 times. What is the probability of getting same numbers?</p>          
+                                <p>Solution:</p>
+                                <p>A dice is rolled 2 times.</p>
+                                <p>So, number of possible outcomes are 6² = 36</p>
+                                <p>Favorable outcomes for getting 2 numbers same is {(1,1),(2,2),(3,3),(4,4),(5,5),(6,6)} </p>
+                                
+                                <p>The formula to find probability is No. of favorable outcomes/Total No. of possible outcomes</p>
+                       <p>The probability of geting same numbers when a dice is rolled 2 times = 6/36 = 1/6.</p>
+                       <p><b>Question 1:</b> A dice is rolled. What is the probability of getting a number lying between 3 and 6?</p>          
+                                <p>Solution:</p>
+                                <p>A dice is rolled once.</p>
+                                <p>So, the number of possible outcomes are 6</p>
+                                <p>Favorable outcomes for getting a number lying between 3 and 6 is {4, 5}</p>
+                                <p>The formula to find probability is No. of favorable outcomes/Total No. of possible outcomes</p>
+<p>The probability of getting a number lying between 3 and 6 when a dice is rolled is 2/6 = 1/3. </p>
+                                <p>Stay tuned our website <a href="https://probabilitycalculator.guru/">Probabilitycalculatorguru</a> to get the quick results on more calculators related to the concept of probability.</p>
+                    </div>
+                </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="h3">FAQ's on Rolling Dice Probability Calculator</h3>
+            </div>
+            <div class="card-body">
+                <!-- Question & Answer Starts --->
+                <p class="question"><strong>      1. How do you find the probability of a dice roll?</strong></p>
+                    <p class="answer">Mathematically, the probability is the ratio of the number of desired outcomes to the total number of possible outcomes. When a dice is rolled once, then the possible outcomes are 6. So, the probability of a dice roll is a number of the desired outcomes/6.</p><hr>
+<p class="question"><strong> 2. What is the probability of rolling 3 dice and getting the sum of 9?</strong></p>
+    <p class="answer">If a dice is rolled 3 times, then the number of possible outcomes are 6<sup>3</sup> = 216</p>
+    <p>The possibilities of getting sum of 9 are {(3,3,3), (2,4,3), (3,4,2), (2,3,4), (4,2,3), (1,4,4), (4,1,4), (4,4,1), (2,5,3), (2,3,5), (5,2,3), (5,3,2), (3,2,5), . . }</p>
+    <p>Probability of getting the sum of 9 for 3 dice = 25/216. </p><hr>
+<p class="question"><strong> 3. What are the total outcomes when a dice is rolled 4 times?</strong></p>
+    <p class="answer">The total number of possible outcomes when a dice is rolled 4 times is 6<sup>4</sup> = 1296.</p><hr>
+<p class="question"><strong> 4. What is the probability of getting a number that is multiple of 4 when a dice is rolled 2 times?</strong></p>
+    <p class="answer">The total number of possibilities are 6² = 36</p>
+    <p>Favorable cases 3 + 5 + 1 = 9</p>
+    <p>So, the probability of getting a number that is multiple of 4 when a dice is rolled 2 times = 9/36.</p>
+            </div>
+         </div>
+      </div>
+      <script>
+          
+        {% if id == 1 %}
+        
+        var scrollDiv = document.getElementById("clear").offsetTop;
+        window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
+        
+        {%endif%} 
+        
+        
+        
+        
+            var validNumber = new RegExp(/^\d*\.?-?\d*$/);
+            var fist_input = document.getElementById("inlineFormInputGroup").value;
+            function validateNumber(elem) {
+                console.log(elem)
+                if (validNumber.test(elem.value)) {
+                    fist_input = elem.value;
+                } else {
+                    elem.value = fist_input;
+                }
+            }
+        </script>
+        <script>
+            function myFunction() {
+                var x=document.getElementsByName("gamerule")[0].value;
+                console.log(x);
+        
+                
+        
+                document.getElementsByName("selectdice")[0].value = "4";
+                document.getElementsByName("noofdice")[0].value = "";
+                document.getElementsByName("gamerule")[0].value = "1.All dice with the same value...";
+                document.getElementsByName("valueondice")[0].value = "";
+                document.getElementById("clear").innerHTML = "";
+        
+        
+        
+        
+        
+        
+            }
+            document.addEventListener('DOMContentLoaded', function () {
+                document.getElementById('ddd').click();
+              });
+        </script>
+    
+{%endblock%}

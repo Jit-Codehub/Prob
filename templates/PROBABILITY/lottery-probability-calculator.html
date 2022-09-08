@@ -1,0 +1,239 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+   <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Lottery Probability Calculator | Calculate Chance of Winning Lottery</title>
+    <meta name="description" content="Utilise Lottery Probability Calculator to predict the winning chances of the lottery. Give balls to be drawn, number of matches, number of balls in the pool details to get the lottery."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Lottery Probability Calculator | Calculate Chance of Winning Lottery"/>
+        <meta property="og:description" content="Utilise Lottery Probability Calculator to predict the winning chances of the lottery. Give balls to be drawn, number of matches, number of balls in the pool details to get the lottery."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Chemistry/Lottery-Probability-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Lottery Probability Calculator | Calculate Chance of Winning Lottery"/>
+        <meta name="twitter:description" content="Utilise Lottery Probability Calculator to predict the winning chances of the lottery. Give balls to be drawn, number of matches, number of balls in the pool details to get the lottery."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Chemistry/Lottery-Probability-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Lottery Probability Calculator | Calculate Chance of Winning Lottery"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Chemistry/Lottery-Probability-Calculator.jpeg"/>
+        <meta property='og:description' content="Utilise Lottery Probability Calculator to predict the winning chances of the lottery. Give balls to be drawn, number of matches, number of balls in the pool details to get the lottery."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        Is it possible to calculate lottery numbers?
+        ","acceptedAnswer": {"@type": "Answer","text":" The only assumption to calculate lottery probability is each number in the lottery has an equal probability of being chosen as the winning number. Actually, there is no tool that predicts the exact winning lottery number."}	}, {"@type": "Question","name":"2.
+        How to calculate the probability of winning the lottery?
+        ","acceptedAnswer": {"@type": "Answer","text":" To find the odds of winning any lottery, divide the number of winning lottery numbers by the total number of possible lottery numbers. You can also use the lottery formula to calculate the probability of winning a lottery."}	}, {"@type": "Question","name":"3.
+        How to find probability?
+        ","acceptedAnswer": {"@type": "Answer","text":" To find the probability of an event, you have to know the total number of possible outcomes that can occur. Divide the number of events by the total number of possible outcomes to get the probability value."}	}, {"@type": "Question","name":"4.
+        What is the lottery formula?
+        ","acceptedAnswer": {"@type": "Answer","text":" The formula to calculate lottery odds is x = C(n,r) / [C(r,m) * C(n-r, r-m)]. Where n is the number of balls in the pool, r is the number of balls to be drawn and m is the expected number of matches."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+
+{% if n and k %}
+<script>
+    $(document).ready(function () {
+
+        $("#hassle").click();
+
+
+    });
+
+
+</script>
+
+<button type="button" hidden id="hassle" onclick="location.href='#Coin_Flip_Probability_answer'">ans1</button>
+{% endif %}
+<div class="container" style="height: auto !important;">
+  
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Lottery Probability Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Take the advantage of Lottery Probability Calculator to find the chances of winning the lottery. To know the winning probability of the lottery number, just give the required input details and hit the calculate button.</p>
+                <p><strong>Lottery Probability Calculator Online: </strong>Are you getting depressed because you never get the right lottery numbers, this lottery odds calculator will give the actual truth of winning chances. The only thing you need to do is enter how many numbers you have chosen from the pool to generate the result automatically. Check out the formula that is helpful to find lottery probability and steps to calculate the winning of the lottery using the formula.</p>
+                <form action="" method="POST" id="my_form" ">
+                    {% csrf_token %}
+                    <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><strong>Enter balls to be drawn</strong></div>
+                            </div>
+                            <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                                placeholder="Enter balls to be drawn"  step="any" class="form-control" name="m"  value="{{m1}}" >
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><strong>Enter number of matches</strong></div>
+                            </div>
+                            <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                                placeholder="Enter number of matches"  step="any" class="form-control" name="n"   value="{{n1}}"  >
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><strong>Enter number of balls in pool</strong></div>
+                            </div>
+                            <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                                placeholder="Enter number of balls in pool"   class="form-control" name="t"    value="{{t1}}" >
+                        </div>
+                        <div class=" center col mt-2 ">
+                            <center><button type="submit" class="btn btn-primary" name="f1">Calculate</button>
+                                <button type="button" onclick="myFunction()" style="margin-top:5px;"
+                                class="btn btn-danger">Reset</button>
+                            </center>
+                        </div>
+                    </div>
+                </form>
+            </div>
+</div>
+</div>
+{% if  id == 1 %}
+<script>
+        $(document).ready(function () {
+            $("#hassle").click();
+        });
+</script>
+<button type="button" hidden id="hassle" onclick="location.href='#lottery-calculator'">ans1</button>
+{% endif %}
+{% if id == 1 %}
+<div id="clear">
+<div class="card" id="lottery-calculator">
+    <div class="card-header">
+        <h2 class="h2">Steps to Calculate Lottery</h2>
+    </div>
+    <div class="card-body">
+        <strong>Lottery Formula-</strong>
+        <br>
+        <p class="btn btn-outline-secondary active">Lottery = C(n,r) / [C(r,m) * C(n-r, r-m)] </p>
+        <br>
+        <strong>where:</strong>
+                <ul>
+                    <li>m - Enter balls to be drawn</li>
+                    <li>n - Enter number of matches</li>
+                    <li>t - Enter number of balls in pool</li>
+                </ul>
+        <strong>Input values are:-</strong>
+        <p>Enter balls to be drawn = {{m1}}  </p>
+        <p>Enter number of matches= {{n1}} </p>
+        <p>Enter number of balls in pool = {{t1}}</p>
+        <br>
+        
+        <strong>Put values into formula</strong>
+        <p>  Lottery = C(n,r) / [C(r,m) * C(n-r, r-m)] </p>
+        <p>  Lottery = C({{t1}},{{m1}}) /[ C({{m1}},{{n1}})*C ({{t1}}-{{m1}},{{m1}}-{{n1}})]  </p>
+        <p><b> Lottery= {{f}} </b></p>
+    </div>
+</div>
+</div>
+{% endif %}
+
+<script>
+    function myFunction()
+    {
+        document.getElementById("clear").innerHTML="";
+    }
+
+    {% if id == 1 %}
+ 
+    var scrollDiv = document.getElementById("clear").offsetTop;
+    console.log(scrollDiv)
+    window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
+    
+    {%endif%}
+ 
+    </script>
+
+<div class="card">
+    <div class="card-header">
+        <h2 class="h2">How to Calculate the Probability of Winning the Lottery?</h2>
+    </div>
+    <div class="card-body">
+        <p>Have a look at the detailed explanation to calculate the lottery probability for any given number.</p>
+    <ul>
+        <li>Firstly, get the number of balls to be drawn, number of matches and number of balls in pool.</li>
+        <li>    Apply, the lottery formula.</li>
+        <li>   Substitute the values in the formula and perform math operations.</li>
+        <li>  Finally, you will get the answer.</li>
+    </ul>
+                </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="h3">Lottery Formula</h3>
+                    </div>
+                    <div class="card-body">
+                     <p>   Here we are giving the lottery formula that helps to find the winning chances of the lottery.</p>
+                        <p><b>Lottery = C(n,r) / [C(r,m) * C(n-r, r-m)]</b></p>
+                                <p>Where,</p>
+                                <p>m is the number of balls to be drawn</p>
+                                <p>n is the number of matches</p>
+                                <p>r is the number of balls in pool</p>     
+                                <p><b>Question:</b></p>          
+                                <p>If we have 28 balls in a pool and from that 20 balls are drawn from 15 matches. Find the chances of winning the lottery?</p>
+                                <p>Solution:</p>
+                                <p>Given that,</p>
+                                    <p>  r = 28</p>
+                                        <p>  n = 30</p>
+                                            <p>  m = 20</p>
+                                                <p>  Use the Lottery formula</p>
+                                    <p><b>Lottery = C(n,r) / [C(r,m) * C(n-r, r-m)]</b></p>
+                                    <p> Lottery = C(30,28) / [C(28,20) * C(30-28,28-20)]</p>
+                                        <p>Lottery = 3108105</p>
+                        <p>Stay tuned our website <a href="https://probabilitycalculator.guru/">Probabilitycalculatorguru</a> to get the quick results on more calculators related to the concept of probability.</p>
+                    </div>
+                </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="h3">FAQ's on Lottery Odds Calculator</h3>
+            </div>
+            <div class="card-body">
+                <!-- Question & Answer Starts --->
+                <p class="question"><strong>        1. Is it possible to calculate lottery numbers?</strong></p>
+                <p class="answer">The only assumption to calculate lottery probability is each number in the lottery has an equal probability of being chosen as the winning number. Actually, there is no tool that predicts the exact winning lottery number. 
+<p class="question"><strong> 2. How to calculate the probability of winning the lottery?</strong></p>
+<p class="answer">To find the odds of winning any lottery, divide the number of winning lottery numbers by the total number of possible lottery numbers. You can also use the lottery formula to calculate the probability of winning a lottery.
+<p class="question"><strong> 3. How to find probability?</strong></p>
+<p class="answer">To find the probability of an event, you have to know the total number of possible outcomes that can occur. Divide the number of events by the total number of possible outcomes to get the probability value.
+<p class="question"><strong> 4. What is the lottery formula?</strong></p>
+<p class="answer">The formula to calculate lottery odds is x = C(n,r) / [C(r,m) * C(n-r, r-m)]. Where n is the number of balls in the pool, r is the number of balls to be drawn and m is the expected number of matches.
+</p>
+            </div>
+         </div>
+      </div>
+    
+{%endblock%}

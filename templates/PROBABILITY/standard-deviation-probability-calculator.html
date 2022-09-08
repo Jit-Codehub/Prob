@@ -1,0 +1,214 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Standard Deviation Probability Calculator Online | Steps to Find Standard Probability?</title>
+    <meta name="description" content="Standard probability calculator is the best online and handy tool to calculate the probability of standard deviation."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Standard Deviation Probability Calculator Online | Steps to Find Standard Probability?"/>
+        <meta property="og:description" content="Standard probability calculator is the best online and handy tool to calculate the probability of standard deviation."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="http://probabilitycalculator.guru/static/images/probability/Standard-Deviation-Probability-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Standard Deviation Probability Calculator Online | Steps to Find Standard Probability?"/>
+        <meta name="twitter:description" content="Standard probability calculator is the best online and handy tool to calculate the probability of standard deviation."/>
+        <meta name="twitter:image:src" content="http://probabilitycalculator.guru/static/images/probability/Standard-Deviation-Probability-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Standard Deviation Probability Calculator Online | Steps to Find Standard Probability?"/>
+        <meta property='og:image' content="http://probabilitycalculator.guru/static/images/probability/Standard-Deviation-Probability-Calculator.jpeg"/>
+        <meta property='og:description' content="Standard probability calculator is the best online and handy tool to calculate the probability of standard deviation."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1
+        How to find the Standard deviation probability?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        We can find the probability of standard deviation using σ = √Σ(xi-μ)2 * P(xi)"}	}, {"@type": "Question","name":"2
+        How to use Standard deviation probability calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        Just you need to enetr the input values in the input fields and click on the calculate button to get the answers in a blink of an eye."}	}, {"@type": "Question","name":"3 
+        What is standard deviation in simple words?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        Standard deviation is the average distance of the random variable which is taken from the mean."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Standard Deviation Probability Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Get this super handy free online standard deviation probability calculator tool to determine the probability of standard deviation. Enter the values in the input fields and press the calculate button and get the answers instantly.</p>
+<!---------------      Error messages ---------->
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <p {% if message.tags %} id="message_container" class="alert alert-danger text-center" {% endif %}
+                       style="color:red">{{ message }}</p>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+<!---------------    Form ------->
+            <form action="" method="POST" id="my_form">
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <p class="input-group-text" id="basic-addon1">n (objects)</p>
+                    </div>
+                    <input style="margin-top: 5px;width:100%" id="n" name="n" value="{{n}}" required=""
+                           oninput="validateNumber(this);" class="form-control" type="text" min="0" required width="48">
+
+                </div>
+                
+                <div>
+                    <div class=" center col mt-2 ">
+                        <center>
+                            <button type="submit" class="btn btn-primary">Calculate</button>
+                            <a href="" class="btn btn-warning" style="margin-top:5px;">Reset</a>
+                        </center>
+                    </div><br>
+                </div>
+            </form>
+
+                <p><strong>Standard Deviation Probability Calculator:</strong> Searching for the best tool to calculate the probability of standard deviation easily? Then don't worry, you are on the right page. This standard deviation(SD) probability calculator help you a lot to calculate the probability of SD in blink of an eye. Not only this we have also given you a lot of information along with steps and examples that help you to calculate the probability of SD easily.</p>
+            </div>
+        </div>
+
+        <div id="clear">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="h1">Standard Deviation Calculator Probability</h1>
+            </div>
+            <div class="card-body">
+               <p>Standard Deviation of {{n}} is  </p>
+               <p>{{result}}</p>
+               </div>
+        </div>
+        </div>
+               
+
+
+
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">Standard Deviation Probability Formula</h2>
+        </div>
+	    <div class="card-body">
+           <p> Standard deviation in probability is nothing but the average distance of a random variable which is taken from the mean. Standard deviation is denoted by 'σ'. To find the probability of standard deviation we use a certain formula, let us look into it: </p>
+           <p><b>σ = √Σ(x<sub>i</sub>-μ)2 * P(x<sub>i</sub>)</b></p>
+           <p>Where,</p>
+           <p>μ is the mean.</p>
+           <p>P is the pobability.</p>
+           <p>x<sub>i</sub> is the i<sup>th</sup> value.</p>
+           <p>P(x<sub>i</sub>) is the probability of i<sup>th</sup> value.</p>
+        </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="h3">Steps to Calculate Standard Deviation Probability</h3>
+            </div>
+            <div class="card-body">   
+                <p>Following are the steps to calculate the probability of standard deviation.</p>
+                <ul>
+                    <li>Takedown all the values in the problem.</li>
+                    <li> Apply the formula to find the probability of standard deviation.</li>
+                    <li> Then, after simplifying it you will get the value you need.</li>
+                </ul>
+                </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="h3">Standard Deviation Probability Solved Example</h3>
+                    </div>
+                    <div class="card-body">   
+<p><strong>Example: Find the probability of standard deviation for the following data.</strong></p>
+    <table border="1">
+        <thead>
+            <tr>
+              <th class="tg-0lax" rowspan="2">Goals(x)</th>
+              <th class="tg-0lax" colspan="1">Probability P(x)</th>
+            </tr>
+           </thead>
+          <tbody>
+            <tr>
+            <td class="tg-0lax">1</td>
+            <td class="tg-0lax">0.56</td>
+          </tr>
+          <tr>
+            <td class="tg-0lax">2</td>
+            <td class="tg-0lax">0.16</td>
+          </tr>
+    </tbody>
+</table>
+<p><b>Solution:</b></p>
+<p>Given values are x =1, 2 and P(x) = 0.56, 0.16</p>
+<p>First, we need to calculate the mean for the above table values.</p>
+<p>Mean (μ ) = 1 * (0.56) + 2 * (0.16) = 0.88.</p>
+<p> Now, calculating (x<sub>i</sub>-μ)2 * P(x<sub>i</sub>)</p>
+<p> P(0.56) = (1-0.88)<sup>2</sup> * 0.56 = 0.008064.</p>
+<p> P(0.16) = (1-0.88)<sup>2</sup> * 0.16 = 0.002304</p>
+<p>Formula, σ = √Σ(x<sub>i</sub>-μ)2 * P(x<sub>i</sub>)</p>
+<p>Standard deviation probability = √(0.008064 + 0.002304) = 0.101</p>
+<p>Therefore, the standard deviation of probability is 0.101</p>
+<p><a href="http://probabilitycalculator.guru/">probabilitycalculator.guru</a> is the best website that has all probability calculators. Use them and get the fastest results.</p>
+<img src="{% static 'images/probabilitycalculator/Standard-Deviation-Probability-Calculator.jpeg' %}" alt="Standard Deviation Probability Calculator">
+</div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+    <h3 class="h3">FAQs on Standard Deviation Probability Calculator</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. How to find the standard deviation probability?</strong></p>
+     	<p class="answer">We can find the probability of standard deviation using σ = √Σ(x<sub>i</sub>-μ)2 * P(x<sub>i</sub>)</p><hr>
+     	<p class="question"><strong>2. How to use the standard deviation probability calculator?</strong></p>
+     	<p class="answer">Just you need to enter the input values in the input fields and click on the calculate button to get the answers in a blink of an eye.</p><hr>
+        <p class="question"><strong>3. What is standard deviation in simple words?</strong></p>
+        <p class="answer">Standard deviation is the average distance of the random variable which is taken from the mean.</p><hr>
+        
+    	</div>
+    </div>
+    </div>
+
+{% if  flag %}
+<script>
+        $(document).ready(function () {
+            $("#hassle").click();
+        });
+</script>
+<button type="button" hidden id="hassle" onclick="location.href='#combinations'">ans1</button>
+{% endif %}
+{%endblock%}

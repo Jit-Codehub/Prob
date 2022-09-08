@@ -1,0 +1,609 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+   <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Probability Distribution Calculator | Steps to Solve Probbaility Distribution</title>
+    <meta name="description" content="Probability Distribution Calculator is useful to find the mean, standard deviation, variance of a probability distribution by giving value & its probability."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Probability Distribution Calculator | Steps to Solve Probbaility Distribution"/>
+        <meta property="og:description" content="Probability Distribution Calculator is useful to find the mean, standard deviation, variance of a probability distribution by giving value & its probability."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Chemistry/Probability-Distribution-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Probability Distribution Calculator | Steps to Solve Probbaility Distribution"/>
+        <meta name="twitter:description" content="Probability Distribution Calculator is useful to find the mean, standard deviation, variance of a probability distribution by giving value & its probability."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Chemistry/Probability-Distribution-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Probability Distribution Calculator | Steps to Solve Probbaility Distribution"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Chemistry/Probability-Distribution-Calculator.jpeg"/>
+        <meta property='og:description' content="Probability Distribution Calculator is useful to find the mean, standard deviation, variance of a probability distribution by giving value & its probability."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        What does mean by probability? 
+        ","acceptedAnswer": {"@type": "Answer","text":" Probability is defined as the occurrence of an event. It is the ratio of the number of favorable outcomes to the total number of outcomes in an event."}	}, {"@type": "Question","name":"2.
+        How do you calculate probability distribution?
+        ","acceptedAnswer": {"@type": "Answer","text":" Give each value and its probability in the mentioned input boxes of the calculator and press the calculate button to find the probability distribution mean, standard deviation and variance easily."}	}, {"@type": "Question","name":"3.
+        What are the rules for probability distributions?
+        ","acceptedAnswer": {"@type": "Answer","text":" The two conditions of the probability for a discrete random variable is function f(x) must be nonnegative for each value of the random variable and second is the sum of probabilities for each value of the random variable must be equal to 1."}	}, {"@type": "Question","name":"4.
+        What are the steps in constructing a probability distribution?
+        ","acceptedAnswer": {"@type": "Answer","text":" At first, write the number of widgets in one line.
+        Beside each value, write its probability.
+        Make a note that, the sum of probabilities should be equal to 1."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+
+{% if n and k %}
+<script>
+    $(document).ready(function () {
+
+        $("#hassle").click();
+
+
+    });
+
+
+</script>
+
+<button type="button" hidden id="hassle" onclick="location.href='#Coin_Flip_Probability_answer'">ans1</button>
+{% endif %}
+<div class="container" style="height: auto !important;">
+  
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Probability Distribution Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Make use of the Probability Distribution Calculator to find the mean, variance, standard deviation of the given data easily. Simply enter random variable value and probability and hit the calculate button to avail the mean, variance and standard deviation for the distribution in the blink of an eye with a detailed explanation.</p>
+                <p><strong>Probability Distribution Calculator: </strong>Using this Probability Distribution Parameters Calculator, you can get the mean, standard deviation and variance of a distribution. In addition to the quick result, our tool also produces the step by step explanation and formulas used to calculate the probability distribution. Observe the further sections to know what is a probability distribution, what are the formulas to compute distribution parameters and how to solve probability distribution problems.</p>
+                <form action="" method="POST" id="my_form" >
+                  {% csrf_token %}
+                  <div class="col-auto">
+                      <div class="input-group mb-2">
+                          <div class="input-group-prepend">
+                              <div class="input-group-text"><strong>Types Of Probability</strong></div>
+                          </div>
+                          <select name="given_data" id="inlineFormInputGroup" class="form-control"
+                               autofocus="">
+  
+                              {% if given_data == 'form1' %}
+                              <option value="form1" selected="selected"> Mean Probability Distribution </option>
+                              {% else %}
+                              <option value="form1"> Mean Probability Distribution </option>
+                              {% endif %}
+  
+                              {% if given_data == 'form2' %}
+                              <option value="form2" selected="selected"> Standard Deviation Probability Distribution</option>
+                              {% else %}
+                              <option value="form2"> Standard Deviation Probability Distribution</option>
+                              {% endif %}
+  
+  
+                              {% if given_data == 'form3' %}
+                              <option value="form3" selected="selected"> Variance Probability Distribution </option>
+                              {% else %}
+                              <option value="form3"> Variance Probability Distribution </option>
+                              {% endif %}
+  
+                          </select>
+                      </div>
+  
+  
+                      {% if given_data != "form4" %}
+                      <div class="form-row align-items-center">
+                          <div class="col-auto">
+                              <div class="input-group mb-2">
+                                  <div class="input-group-prepend">
+                                      <div class="input-group-text"><strong>Number of Entries</strong></div>
+                                  </div>
+                                  <input type="number" oninput="addInputs(this)" oninput="validateNumber(this);" id="inlineFormInputGroup" placeholder="Type a number" 
+                                      class="form-control" required="" min=1 name="nu" value={{nu}}>
+                                  <input type="hidden" name="entries">
+                                  
+                                  
+                              </div>
+                              <div>
+                                  <table  >
+                                      <thead>
+                                          <tr><th>Data value</th><th>Probability of data</th></tr>
+          
+                                      </thead>
+                                      <tbody>
+                                          <tr><td><div id="result"></div></td><td><div id="result2"></div></td></tr>
+          
+                                      </tbody>
+                                      
+                                  </table>   
+          
+                              </div>
+                      
+                      {% endif %}
+  
+  
+                      <div class=" center col mt-2 ">
+                          <center><button type="submit" class="btn btn-primary" name="f1">Calculate</button>
+                              <button type="button" onclick="myFunction()"  style="margin-top:5px;" onclick="addInputs(0)"
+                              class="btn btn-danger">Reset</button>
+                          </center>
+                          <br><br>
+                      </div>
+  
+              </form>
+              </div>
+</div>
+</div>
+</div>
+</div>
+<div id="clear">
+  {% if given_data == "form1" and nu  %}
+  <div class="card" id="magnetic-force">
+      <div class="card-header">
+          <h2 class="h2">Steps to Calculate Risk</h2>
+      </div>
+      <div class="card-body">
+          <strong>Risk Formula-</strong>
+          <br>
+          <p class="btn btn-outline-secondary active">Mean(X)=&#8721(XiPi)</p>
+          <br>
+          <strong>where:</strong>
+                  <ul>
+                      <li>Xi - Data value at position i</li>
+                      <li>Pi - Probability of data value at position i</li>
+                      
+                  </ul>
+          <strong>Input values are:-</strong>
+          <table>
+              <tr><th>Data</th><th>Probability of Data</th></tr>
+              {% for key,value in l.items %}
+                  {% if "d" in key %}  
+                  <tr>
+                      <td> {{ value }} </td>
+                  
+                  {% endif %}
+                  {% if "p" in key %}
+                      <td> {{ value }} </td>
+                  </tr>
+                  {% endif%}
+              {% endfor %}
+              </table>
+          <strong>Put values into formula</strong>
+          <p>Mean(X)=&#8721(Xi.Pi)</p>
+          
+          
+          
+          <p>Mean(X)=
+              {% for key,value in l.items %}
+                  {% if "d" in key %}
+                  {{ value }}
+                  *
+                  {% endif %}
+                  {% if "p" in key %}
+                      
+                      {% if forloop.last %}
+                      {{value}}
+
+                      {% else %}
+                      {{value}}
+                      +
+                  {% endif %}
+
+                  {% endif %}
+
+              {% endfor %}
+              
+                  
+                  
+          </p>
+          <p>Mean of Probability = {{sum}}  </p>
+          
+      </div>
+  </div>
+  {% endif %}
+
+  {% if given_data == "form2" and nu  %}
+  <div class="card" id="magnetic-force">
+      <div class="card-header">
+          <h2 class="h2">Steps to Calculate Risk</h2>
+      </div>
+      <div class="card-body">
+          <strong>Risk Formula-</strong>
+          <br>
+          <p class="btn btn-outline-secondary active">S.D(X)= &#8730 &#8721(Xi^2*Pi) - (M)^2</p>
+          <br>
+          <strong>where:</strong>
+                  <ul>
+                      <li>Xi - Data value at position i</li>
+                      <li>M - Mean </li>
+                      <li>Pi - Probability of data value at position i</li>
+                      
+                  </ul>
+          <strong>Input values are:-</strong>
+          <table>
+              <tr><th>Data</th><th>Probability of Data</th></tr>
+              {% for key,value in l.items %}
+                  {% if "d" in key %}  
+                  <tr>
+                      <td> {{ value }} </td>
+                  
+                  {% endif %}
+                  {% if "p" in key %}
+                      <td> {{ value }} </td>
+                  </tr>
+                  {% endif%}
+              {% endfor %}
+              </table>
+          <strong>Put values into formula</strong>
+          <p>Mean(X)= &#8721(Xi.Pi)</p>
+          
+          <p>Mean(X)=
+              {% for key,value in l.items %}
+                  {% if "d" in key %}
+                  {{ value }}
+                  *
+                  {% endif %}
+                  {% if "p" in key %}
+                      
+                      {% if forloop.last %}
+                      {{value}}
+
+                      {% else %}
+                      {{value}}
+                      +
+                  {% endif %}
+
+                  {% endif %}
+
+              {% endfor %}
+                
+          </p>
+          <p>Mean of Probability = {{sum2}}  </p>
+          <p>Process for Standard Deviation =
+              {% for key,value in l.items %}
+                  {% if "d" in key %}
+                  {{ value }}
+                  <sup>2</sup>
+                  {% endif %}
+                  {% if "p" in key %}
+                      
+                      {% if forloop.last %}
+                      {{value}}
+
+                      {% else %}
+                      {{value}}
+                      +
+                  {% endif %}
+
+                  {% endif %}
+
+              {% endfor %}
+              =
+              {{sum1}}
+                
+          </p>
+          <p> Putting all the values together =<strong>&#8730</strong>({{sum1}}-{{sum2}}*{{sum2}})=<strong>&#8730</strong>({{sub}})</p>
+
+          <h5><strong>The standard deviation of the given distribution is  :  {{fin}}</strong> </h5>
+          
+          
+      </div>
+  </div>
+  {% endif %}
+
+  {% if given_data == "form3" and nu  %}
+  <div class="card" id="magnetic-force">
+      <div class="card-header">
+          <h2 class="h2">Steps to Calculate Risk</h2>
+      </div>
+      <div class="card-body">
+          <strong>Risk Formula-</strong>
+          <br>
+          <p class="btn btn-outline-secondary active">V.D(X)=  &#8721(Xi^2*Pi) - (M)^2</p>
+          <br>
+          <strong>where:</strong>
+                  <ul>
+                      <li>Xi - Data value at position i</li>
+                      <li>M - Mean </li>
+                      <li>Pi - Probability of data value at position i</li>
+                      
+                  </ul>
+          <strong>Input values are:-</strong>
+          <table>
+              <tr><th>Data</th><th>Probability of Data</th></tr>
+              {% for key,value in l.items %}
+                  {% if "d" in key %}  
+                  <tr>
+                      <td> {{ value }} </td>
+                  
+                  {% endif %}
+                  {% if "p" in key %}
+                      <td> {{ value }} </td>
+                  </tr>
+                  {% endif%}
+              {% endfor %}
+              </table>
+          <strong>Put values into formula</strong>
+          <p>Mean(X)= &#8721(Xi.Pi)</p>
+          
+          <p>Mean(X)=
+              {% for key,value in l.items %}
+                  {% if "d" in key %}
+                  {{ value }}
+                  *
+                  {% endif %}
+                  {% if "p" in key %}
+                      
+                      {% if forloop.last %}
+                      {{value}}
+
+                      {% else %}
+                      {{value}}
+                      +
+                  {% endif %}
+
+                  {% endif %}
+
+              {% endfor %}
+                
+          </p>
+          <p>Mean of Probability = {{sum2}}  </p>
+          <p>Process for Variance Probability Distribution =
+              {% for key,value in l.items %}
+                  {% if "d" in key %}
+                  {{ value }}
+                  <sup>2</sup>
+                  {% endif %}
+                  {% if "p" in key %}
+                      
+                      {% if forloop.last %}
+                      {{value}}
+
+                      {% else %}
+                      {{value}}
+                      +
+                  {% endif %}
+
+                  {% endif %}
+
+              {% endfor %}
+              =
+              {{sum1}}
+                
+          </p>
+          <p> Putting all the values together =({{sum1}}-{{sum2}}*{{sum2}})=({{sub}})</p>
+
+          <h5><strong>The Variance Probability Distribution of the given distribution is  :  {{sub}}  </strong> </h5>
+          
+          
+      </div>
+  </div>
+  {% endif %}
+
+</div>
+
+{% if id == 1 %}
+{% endif %}
+
+<script>
+
+
+function addInputs(elm) {
+var result = document.querySelector('#result');
+
+result.innerHTML = '';
+if (elm==0)
+{
+  for (var i = 0; i < parseInt(0); i++) {
+  var wrapper = document.createElement('div');
+  
+  wrapper.innerHTML = '<input type="number" style="width:100%" required="" min=1 placeholder="textfield ' + i + '" name="r'+i+'" value={{"d'+i+'"}}>';
+  result.appendChild(wrapper);
+}
+
+var result2 = document.querySelector('#result2');
+result2.innerHTML = '';
+for (var i = 0; i < parseInt(0); i++) {
+  var wrapper = document.createElement('div');
+  
+  wrapper.innerHTML = '<input type="number" style="width:100%"  required="" step="any" placeholder="textfield ' + i + '" name="s'+i+'" value={{"p'+i+'"}}>';
+  result2.appendChild(wrapper);
+}
+
+}
+
+for (var i = 0; i < parseInt(elm.value); i++) {
+  var wrapper = document.createElement('div');
+  
+  wrapper.innerHTML = '<input type="number" style="width:100%" required="" min=1 placeholder="textfield ' + i + '" name="r'+i+'" value={{"d'+i+'"}}>';
+  result.appendChild(wrapper);
+}
+
+var result2 = document.querySelector('#result2');
+result2.innerHTML = '';
+for (var i = 0; i < parseInt(elm.value); i++) {
+  var wrapper = document.createElement('div');
+  
+  wrapper.innerHTML = '<input type="number" style="width:100%"  required="" step="any" placeholder="textfield ' + i + '" name="s'+i+'" value={{"p'+i+'"}}>';
+  result2.appendChild(wrapper);
+}
+document.getElementsByName("entries")[0].value=elm.value;
+}
+  
+if(id==1)
+{
+  var scrollDiv = document.getElementById("clear").offsetTop;
+   window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
+   
+}
+  
+   function myFunction() {
+       var a=document.getElementsByName("entries")[0].value;
+       document.getElementsByName("nu")[0].value = 0;
+       addInputs(0);
+       var i=0;
+       for (var i=0;i<a;i++)
+       {
+          
+          document.getElementsByName("r"+i.toString())[0].value = "";
+          document.getElementsByName("s"+i.toString())[0].value = "";
+       }
+       
+       
+       
+
+       document.getElementById("clear").innerHTML = "";
+
+   } 
+
+   
+   
+  
+
+</script>
+
+
+<div class="card">
+    <div class="card-header">
+        <h2 class="h2">What is the Probability Distribution?</h2>
+    </div>
+    <div class="card-body">
+      <p> The probability distribution is defined as the possible outcomes for any random event. It is based on the underlying sample space as a set of possible outcomes for any random experiment. And the probability is the measure of uncertainty of phenomena. The random experiment is the result of an experiment, where the outcome can't be predicted.
+    </p><p>    The two types of probability distribution are listed here.</p>
+      <ol><li>  Normal or Cumulative Probability Distribution</li>
+        <li>  Binomial or Discrete Probability Distribution</li></ol>
+                </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="h3">Mean, Standard Deviation, variance of Distribution Formulas</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>The formulas to find the mean, variance and standard deviation for a distribution are along the lines:
+                        </p><ul><li><strong>      Mean μ = ∑x · p(x)</strong></li>
+                            <li><strong> Variance σ² = ∑x² · p(x) - μ²</strong></li>
+                                <li><strong>  Standard Deviation σ = √[∑x² · p(x) - μ²]</strong></li></ul>
+                                <p>Where,</p>
+                                <p>x is the random variable number</p>
+                                <p>p(x) is the probability of the experiment.</p>
+                            
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="h3">Steps to Solve Parameters Of Probability Distribution</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Following are the simple steps to calculate the probability distribution mean, variance, and standard deviation.</p>
+                        <ul>
+                            <li>Get the number and its probability. </li>
+                            <li>Make the values in the form of a table to read the data easily.</li>
+                            <li>Multiply the each value with its probability. </li>
+                            <li>The sum of resultant products is the mean. </li>
+                            <li>The sum of each value squared times the probability of the value occurring, minus the mean squared is variance.
+                            </li><li>    The square root of the variance is the standard deviation.</li>
+                        </ul>
+                    <p><strong>Example:</strong></p> 
+                    <p>Find the mean, standard deviation and variance of the probability distribution?</p>
+                    <table border="2">
+                    <thead>
+                        <tr>
+                          <th class="tg-0lax">x</th>
+                          <th class="tg-0lax">p(x)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="tg-0lax">1</td>
+                          <td class="tg-0lax">0.2</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-0lax">2</td>
+                          <td class="tg-0lax">0.1</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-0lax">3</td>
+                          <td class="tg-0lax">0.3</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-0lax">4</td>
+                          <td class="tg-0lax">0.05</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-0lax">5</td>
+                          <td class="tg-0lax">0.3</td>
+                        </tr>
+                        <tr>
+                          <td class="tg-0lax">6</td>
+                          <td class="tg-0lax">0.05</td>
+                        </tr>
+                      </tbody>
+                      </table>   
+                      <p>Solution:</p>
+                      <p>The formula to calculate mean is μ = ∑x · p(x)</p>
+                      <p>= 1(0.2) + 2(0.1) + 3(0.3) + 4(0.05) + 5(0.3) + 6(0.05)</p>
+                      <p> = 0.2 + 0.2 + 0.9 + 0.2 + 1.5 + 0.3</p>
+                      <p> = 3.3</p>
+                      <p>The formul ato find variance of probability distribution is σ² = ∑x² · p(x) - μ²</p>
+                      <p>   ∑x² · p(x) = (1² . 0.2) + (2² . 0.1) + (3² . 0.3) + (4² . 0.05) + (5² . 0.3) + (6² . 0.0.5)
+                    </p>    <p> = 0.2 + 0.4 + 2.7 + 0.8 + 7.5 + 1.8</p>
+                    <p>  = 13.4</p>
+                    <p>  σ² = 13.4 - 3.3²</p>
+                    <p>  = 2.51</p>
+                    <p>  Standard deviation σ = √2.51</p>
+                    <p>  = 1.584</p>
+                    <p>Check <a href="https://probabilitycalculator.guru/">Probabilitycalculatorguru</a> to find the parameters of probability distribution of any data easily & quickly.</p>
+                    </div>
+                          </div>
+                        
+        <div class="card">
+            <div class="card-header">
+                <h3 class="h3">FAQ’s on Probability Distribution Calculator</h3>
+            </div>
+            <div class="card-body">
+                <!-- Question & Answer Starts --->
+                <p class="question"><strong>   1. What does mean by probability? </strong></p>
+                <p class="answer">Probability is defined as the occurrence of an event. It is the ratio of the number of favorable outcomes to the total number of outcomes in an event.</p><hr>
+<p class="question"><strong>2. How do you calculate probability distribution?</strong></p>
+<p class="answer">Give each value and its probability in the mentioned input boxes of the calculator and press the calculate button to find the probability distribution mean, standard deviation and variance easily.</p><hr>
+<p class="question"><strong>3. What are the rules for probability distributions?</strong></p>
+<p class="answer">The two conditions of the probability for a discrete random variable is function f(x) must be nonnegative for each value of the random variable and second is the sum of probabilities for each value of the random variable must be equal to 1.</p><hr>
+<p class="question"><strong>4. What are the steps in constructing a probability distribution?</strong></p>
+<p class="answer"><ul><li>At first, write the number of widgets in one line.</li>
+    <li>Beside each value, write its probability.</li>
+        <li>Make a note that, the sum of probabilities should be equal to 1.</li></ul></p>
+            </div>
+         </div>
+      </div>
+    
+{%endblock%}

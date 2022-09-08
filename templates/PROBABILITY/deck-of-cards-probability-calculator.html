@@ -1,0 +1,276 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Deck of Cards Probability Calculator | How to Calculate the Probability of Deck of Cards?</title>
+    <meta name="description" content="Deck of Cards Probability Calculator is the best tool to calculate the probability of a dice with detailed steps and examples."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Deck of Cards Probability Calculator | How to Calculate the Probability of Deck of Cards?"/>
+        <meta property="og:description" content="Deck of Cards Probability Calculator is the best tool to calculate the probability of a dice with detailed steps and examples."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="http://probabilitycalculator.guru/static/images/Probability/Deck-of-Cards-Probability-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Deck of Cards Probability Calculator | How to Calculate the Probability of Deck of Cards?"/>
+        <meta name="twitter:description" content="Deck of Cards Probability Calculator is the best tool to calculate the probability of a dice with detailed steps and examples."/>
+        <meta name="twitter:image:src" content="http://probabilitycalculator.guru/static/images/Probability/Deck-of-Cards-Probability-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Deck of Cards Probability Calculator | How to Calculate the Probability of Deck of Cards?"/>
+        <meta property='og:image' content="http://probabilitycalculator.guru/static/images/Probability/Deck-of-Cards-Probability-Calculator.jpeg"/>
+        <meta property='og:description' content="Deck of Cards Probability Calculator is the best tool to calculate the probability of a dice with detailed steps and examples."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1
+        How to use the deck of cards probability calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        All you need to do is give the inputs in the input fields and click on the calculate button and get the answers instantaneously."}	}, {"@type": "Question","name":"2
+        How do you calculate the probability of cards in a deck?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        Probability of cards can be calculated by the formula, H (n) = C (X, n) * C (Y – X, Z – n) / C (Y, Z)"}	}, {"@type": "Question","name":"3
+        What is the best tool to find the probability of cards in a deck(s)?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        Deck of Cards Probability calculator is the best tool to find the probability of cards , which is available at probabilitycalculator.guru"}	}]}</script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Deck of Cards Probability Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Go through the deck of cards probability calculator tool to compute the probability of cards. For that simply give the input values in the input field and click the calculate button and get the instant outcomes.</p>
+
+<!---------------      Error messages ---------->
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <p {% if message.tags %} id="message_container" class="alert alert-danger text-center" {% endif %}
+                       style="color:red">{{ message }}</p>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+<!---------------    Form ------->
+<form action="" method="POST" id="my_form" ">
+    {% csrf_token %}
+    <div class="form-row align-items-center">
+    <div class="col-auto">
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><strong>card to be drawn</strong></div>
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <!-- <label for="cars"><b>Add Group</b></label> -->
+            <select name="drop">
+                <option selected="selected" disabled>card to be drawn:</option>
+                <option name='black' value="black">black</option>
+                <option name='club' value="club">club</option>
+                <option name= 'spade' value="spade">spade</option>
+                <option name= 'heart' value="heart">heart</option>
+                <option name= 'diamond' value="diamond">diamond</option>
+                <option name= 'red' value="red">red</option>
+                <option name= 'ace' value="ace">ace</option>
+                <option name= 'facecard' value="facecard">facecard</option>
+                <option name='jack' value="jack">jack</option>
+                <option name='queen' value="Editor">queen</option>
+                <option name='king' value="Editor">king</option>
+               
+            </select>
+
+            <!-- <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                placeholder="Enter number of flips" min="0.00001" step="any" class="form-control" name="flips"  value="{{min}}" > -->
+        </div>
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><strong>No. of card to be drawn</strong></div>
+            </div>
+            <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                placeholder="No. of card" min="1" step="any" class="form-control" name="cards_drawn"   value="{{cards_drawn}}"  >
+        </div>
+        <!-- <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><strong>Number of classes</strong></div>
+            </div>
+            <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                placeholder="Enter no of classes" min="1"  class="form-control" name="classes"    value="{{classes}}" >
+        </div> -->
+        <div class=" center col mt-2 ">
+            <center><button type="submit" class="btn btn-primary" name="f1">Calculate</button>
+                <button type="button" onclick="myFunction()" style="margin-top:5px;"
+                class="btn btn-danger">Reset</button>
+            </center>
+        </div>
+    </div>
+</form>
+
+            </div>
+        </div>
+        </div>
+        
+        {% if id == 1 %}
+<div id="clear">
+    <div class="card" id="magnetic-force">
+        <div class="card-header">
+            <h2 class="h2">Steps to calcualate deck of card probability</h2>
+        </div>
+        <div class="card-body">
+            <strong>{{cards_drawn}} card is drawn, the probability that, {{cards_drawn}} card is {{card_name}}</strong>
+            <br>
+            <p class="btn btn-outline-secondary active"> Total number of ways of drawing {{cards_drawn}} cards from 52 cards </p>
+            <br>
+            <strong>{{probability}}</strong>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <ul>
+                        <li>Cards drawn - Number of cards that can drawn from a deck of 52 cards</li>
+                        <li>Card name - Type of chosen card</li>
+                        <!-- <li>n - Number of classes within the distribution</li> -->
+                    </ul>
+            <strong>Input values are:-</strong>
+            <br>
+            <br>
+            <p>Number of Cards drawn = {{cards_drawn}}</p>
+            <p>Card name = {{card_name}}</p> 
+            <br>
+            
+            <p>Total number of {{card_name}} cards = {{total_cards}}</p>
+           
+            <strong>nE = {{nE}}</strong>
+            <p>    </p>
+            <p>Total number of ways of drawing {{cards_drawn}} cards from 52 cards</p>
+            
+            <strong>nS = {{nS}}</strong>
+            <p> probability = nE / nS </p>
+            <!-- <p>  class width = ({{max}} - {{min}}) / {{probability}}  </p> -->
+            <p><b> probability = {{probability}} </b></p>
+        </div>
+    </div>
+</div>
+{% endif %}
+<script>
+    
+    
+
+    function myFunction() {
+        document.getElementsByName("flips")[0].value = "";
+        document.getElementsByName("heads")[0].value = "";
+        document.getElementById("clear").innerHTML = "";
+
+    }
+
+</script>   
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">How to Calculate the Probability of Cards?</h2>
+        </div>
+	    <div class="card-body">
+            <p>Usually, when you are drawing cards, you want to know your odds you need to use something called hypergeometric distribution, i.e. finding probability of cards. Let us use the formula to find the probability of cards.</p>
+            <p><strong>H (n) = C (X, n) * C (Y – X, Z – n) / C (Y, Z)</strong></p>
+            <p>Where,</p>
+            <p>X is the no. of a certain card in the deck.</p>
+            <p>Y is the total no. of cards in the deck. </p>
+            <p>Z is the no. of cards drawn</p>
+            <p>N is the number that you are checking for</p>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="h3">Deck of Cards Probability with Steps</h3>
+                </div>
+                <div class="card-body">
+                    <p>By adhering to the steps which are shown below, you can calculate the probability of cards very easily.</p>
+                    <ul><li>Step 1: Note down all the cards which are possible and mark the ones that you would drag out.</li>
+                     <li>Step 2: Count the total number of cards in the deck(s).</li>
+                     <li>Step 3: Write the answer as a fraction. That's all you will get the answer.</li></ul>
+                     </div>
+                     </div>
+                     <div class="card">
+                        <div class="card-header">
+                            <h3 class="h3">Deck of Cards Probability Example Question</h3>
+                        </div>
+                        <div class="card-body">
+<p><strong>Example Question 1: If you have a standard 52 card deck and draw 4 cards, what will be your chances of drawing an ace? As, X is 4,
+    Y is 52,
+    Z is 4,
+    N is 1 .</strong></p>
+<p><strong>Solution:</strong></p>
+<p>From the given input data X = 4, Y = 52, Z = 4, N = 1</p>
+<p>As, we know the formula, H (n) = C (X, n) * C (Y – X, Z – n) / C (Y, Z)</p>
+<p>Substitute the values in the formula and the equation becomes</p>
+<p>H (n) = C (4, 1) * C (52 – 4, 4 – 1) / C (52, 4)</p>
+<p>H (n) = 4 * 1712304 /270725 </p>
+<p>H (n) = 6849216 /270725. </p>
+<p><b>Example Question 2: Find the probability of a club in a deck of cards?</b></p>
+<p><b>Solution:</b></p>
+<p>Normally, we all know the deck of cards is</p>
+<p><ul><li>Hearts: 2, 3, 4, 5, 6, 7, 8, 9, 10, j, q, k, A</li>
+   <li>Clubs: 2, 3, 4, 5, 6, 7, 8, 9, 10, j, q, k, A</li>
+    <li>Spades: 2, 3, 4, 5, 6, 7, 8, 9, 10, j, q, k, A</li>
+    <li>Diamonds: 2, 3, 4, 5, 6, 7, 8, 9, 10, j, q, k, A</li></ul></p>
+    <p> Here, we need to find club</p>
+    <p>Clubs: 2, 3, 4, 5, 6, 7, 8, 9, 10, j, q, k, A = total = 13</p>
+    <p>The total number of cards in a deck is 52</p>
+    <p> Probability = No. of favorable outcomes / Total no. of outcomes.</p>
+    <p>Now, the probability of cards in a  deck is 13/52.</p>
+<p>Understand different concepts and get good grip on them by using online tools available at <a href="http://probabilitycalculator.guru/">probabilitycalculator.guru</a> and clarify your concerns.</p>
+<img src="{% static 'images/Probability/Deck-Of-Cards-Probability-Calculator.jpeg' %}" alt="Deck of Cards Probability Calculator">
+</div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+    <h3 class="h3">FAQs on Deck of Cards Probability Calculator</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. How to use the deck of cards probability calculator?</strong></p>
+     	<p class="answer">All you need to do is give the inputs in the input fields and click on the calculate button and get the answers instantaneously.</p><hr>
+     	<p class="question"><strong>2. How do you calculate the probability of cards in a deck?</strong></p>
+     	<p class="answer">Probability of cards can be calculated by the formula, H (n) = C (X, n) * C (Y – X, Z – n) / C (Y, Z)</p><hr>
+        <p class="question"><strong>3. What is the best tool to find the probability of cards in a deck(s)? </strong></p>
+        <p class="answer">Deck of Cards Probability calculator is the best tool to find the probability of cards , which is available at <a href="http://probabilitycalculator.guru/">probabilitycalculator.guru</a></p>
+        
+    	</div>
+    </div>
+    </div>
+
+{% if  flag %}
+<script>
+        $(document).ready(function () {
+            $("#hassle").click();
+        });
+</script>
+
+<button type="button" hidden id="hassle" onclick="location.href='#combinations'">ans1</button>
+{% endif %}
+{%endblock%}

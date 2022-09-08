@@ -1,0 +1,140 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+   <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Options Probability Calculator | Steps to Calculate Options Probability</title>
+    <meta name="description" content="Find the probability of future stock prices using the Options Probability Calculator tool. Give lower, upper bounds to know the future price probability."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Options Probability Calculator | Steps to Calculate Options Probability"/>
+        <meta property="og:description" content="Find the probability of future stock prices using the Options Probability Calculator tool. Give lower, upper bounds to know the future price probability."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Chemistry/Options-Probability-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Options Probability Calculator | Steps to Calculate Options Probability"/>
+        <meta name="twitter:description" content="Find the probability of future stock prices using the Options Probability Calculator tool. Give lower, upper bounds to know the future price probability."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Chemistry/Options-Probability-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Options Probability Calculator | Steps to Calculate Options Probability"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Chemistry/Options-Probability-Calculator.jpeg"/>
+        <meta property='og:description' content="Find the probability of future stock prices using the Options Probability Calculator tool. Give lower, upper bounds to know the future price probability."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        How are option probabilities calculated?
+        ","acceptedAnswer": {"@type": "Answer","text":" It is the cost of exposure to the outcome divided by its payoff. Give required inputs and tap on the calculate button to find the probability of the option as an answer."}	}, {"@type": "Question","name":"2.
+        How is probability used in options trading?
+        ","acceptedAnswer": {"@type": "Answer","text":" The probability can also be used as a tool when investing in financial markets. In general, probability is the likelihood of the occurrence of an event in a certain time. Options probability is the event may be the likelihood of an option being in money (ITM) or out of the money (OTM), and time frame is the expiration of the option."}	}, {"@type": "Question","name":"3.
+        Where can I get the best calculator to find the option probability of trading?
+        ","acceptedAnswer": {"@type": "Answer","text":" Check Probabilitycalculatorguru website and go through Options Probability Calculator that calculates any trading options probabilities in a fraction of seconds."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+
+{% if n and k %}
+<script>
+    $(document).ready(function () {
+
+        $("#hassle").click();
+
+
+    });
+
+
+</script>
+
+<button type="button" hidden id="hassle" onclick="location.href='#Coin_Flip_Probability_answer'">ans1</button>
+{% endif %}
+<div class="container" style="height: auto !important;">
+  
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Options Probability Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Options Probability Calculator is a handy & user-friendly tool that helps in calculating the odds probability of the trading data. Enter price targets, target date, HV volatility, standard deviation values and click the calculate button and get options probability plot with complete details.</p>
+                <p><strong>Options Probability Calculator: </strong>This calculator allows you to find the probability of an underlying index or equity trading above, between or below preselected price targets on a specified expiration time. Get to know how to use a probability options calculator, what is the use of probability plot and parameters of options probability from this page.</p>
+</div>
+</div>
+<div class="card">
+    <div class="card-header">
+        <h2 class="h2">How to Use Options Probability Calculator?</h2>
+    </div>
+    <div class="card-body">
+        <p>You need to follow these guidelines to make use of the probability calculator on options that gives quick results.</p>
+<ul>
+    <li>Make a note of the price target, target date, standard deviation and volatility details.</li>
+    <li> Give all these details in the input boxes.</li>
+        <li> Hit the calculate button.</li>
+        <li>  Probability plot will get appeared at the output section with percent probability above, below and between details.</li>
+</ul>
+                </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="h3">What is the Probability Plot?</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>The probability plot is the output of the options probability of trading. It is a horizontally oriented distribution curve that displays given price targets along with probabilities for a selected time frame.</p>
+                       <p>     You have to adjust target date, price targets and historical volatility details to match your forecast, then the calculator gives the probability of the price closing below, above, between price targets on the specified date.</p>
+                       </div></div>
+                       <div class="card">
+                        <div class="card-header">
+                            <h3 class="h3">Options Probabilities Parameters</h3>
+                        </div>
+                        <div class="card-body">
+                        <p>    The various parameters included in the probability calculator are price target, target date, historical volatility, and standard deviation. Here we will discuss each of them in detail.</p>
+<ol><li><b>Price Target: </b>Price targets for underlying security determines the probabilities of security hitting those targets. You are allowed to provide one or two price targets to know the probabilities of underlying security closing below, above or between the target date. It can also be adjusted using the chart.</li>
+    <li><b>Historical Volatility: </b>It is a measurement of how much previous prices are derived from their average over a period of time.</li>
+        <li><b>Target Date: </b>It is used to find the probability that security will close above, below and between the price targets at the specified time.</li>
+            <li><b>Standard Deviation: </b>It will plot a single probability cone that shows the price range the underlying is expected to close at on a given date.</li></ol>
+
+                    </div>
+                </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="h3">FAQ's on Options Probability Calculator</h3>
+            </div>
+            <div class="card-body">
+                <!-- Question & Answer Starts --->
+                <p class="question"><strong>         1. How are option probabilities calculated?</strong></p>
+                    <p class="answer">It is the cost of exposure to the outcome divided by its payoff. Give required inputs and tap on the calculate button to find the probability of the option as an answer.</p><hr>
+<p class="question"><strong>2. How is probability used in options trading?</strong></p>
+    <p class="answer">The probability can also be used as a tool when investing in financial markets. In general, probability is the likelihood of the occurrence of an event in a certain time. Options probability is the event may be the likelihood of an option being in money (ITM) or out of the money (OTM), and time frame is the expiration of the option.</p><hr>
+<p class="question"><strong>3. Where can I get the best calculator to find the option probability of trading?</strong></p>
+    <p class="answer">Check <a href="https://probabilitycalculator.guru/">Probabilitycalculatorguru</a> website and go through Options Probability Calculator that calculates any trading options probabilities in a fraction of seconds.</p>
+            </div>
+         </div>
+      </div>
+    
+{%endblock%}

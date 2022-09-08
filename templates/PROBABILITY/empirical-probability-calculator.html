@@ -1,0 +1,245 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Empirical Probability Calculator | How to Calculate Empirical Probability?</title>
+    <meta name="description" content="Empirical Probability Calculator is the best tool to calculate the probability of an event that occurs during emperical experiment. "/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Empirical Probability Calculator | How to Calculate Empirical Probability?"/>
+        <meta property="og:description" content="Empirical Probability Calculator is the best tool to calculate the probability of an event that occurs during emperical experiment. "/>
+        <meta content="" property="og:site_name" />
+        <meta  content="http://probabilitycalculator.guru/static/images/Probability/Empirical-Probability-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Empirical Probability Calculator | How to Calculate Empirical Probability?"/>
+        <meta name="twitter:description" content="Empirical Probability Calculator is the best tool to calculate the probability of an event that occurs during emperical experiment. "/>
+        <meta name="twitter:image:src" content="http://probabilitycalculator.guru/static/images/Probability/Empirical-Probability-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Empirical Probability Calculator | How to Calculate Empirical Probability?"/>
+        <meta property='og:image' content="http://probabilitycalculator.guru/static/images/Probability/Empirical-Probability-Calculator.jpeg"/>
+        <meta property='og:description' content="Empirical Probability Calculator is the best tool to calculate the probability of an event that occurs during emperical experiment."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1
+        What is Empirical Probability?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        Empirical probability is a probability that is based on historical data. The main use of this empirical probability is backed by experimental data and studies."}	}, {"@type": "Question","name":"2
+        How to find Empirical Probability?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        Empirical Probability = No. of times event occurs / Total number of times experiment performed."}	}, {"@type": "Question","name":"3
+        What do f and n stand for in the empirical probability formula?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        In the formula, f = Number of times event occurs, n = Total number of times experiment performed."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Empirical Probability Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Make use of our free tool that computes the probability of an event that occurs during the empirical experiments. All you need to do is simply give the input in the input fields and click on the calculate button and get answers straight away.</p>
+
+<!---------------      Error messages ---------->
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <p {% if message.tags %} id="message_container" class="alert alert-danger text-center" {% endif %}
+                       style="color:red">{{ message }}</p>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <p><strong>Empirical Probability Calculator: </strong>Feeling that calculating the empirical probability is very difficult? Then you are wrong because this empirical calculator tool makes it quite easy. Then this page is designed for those who are looking for the manual procedure to solve the empirical probability. Here also we have given important information like definition, formula, and procedure along with solved examples.</p>
+
+<!---------------    Form ------->
+<form action="" method="POST" id="my_form" ">
+    {% csrf_token %}
+    <div class="form-row align-items-center">
+    <div class="col-auto">
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><strong>Number of times event occurs</strong></div>
+            </div>
+            <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                placeholder="Enter f" min="0.00001" step="any" class="form-control" name="number_of_times_event_occurs"  value="{{number_of_times_event_occurs}}" >
+        </div>
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><strong>Number of times experiment performed</strong></div>
+            </div>
+            <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                placeholder="Enter n" min="0.00001" step="any" class="form-control" name="number_of_times_experiment_performed"   value="{{number_of_times_experiment_performed}}"  >
+        </div>
+        <!-- <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><strong>Number of classes</strong></div>
+            </div>
+            <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                placeholder="Enter no of classes" min="1"  class="form-control" name="classes"    value="{{classes}}" >
+        </div> -->
+        <div class=" center col mt-2 ">
+            <center><button type="submit" class="btn btn-primary" name="f1">Calculate</button>
+                <button type="button" onclick="myFunction()" style="margin-top:5px;"
+                class="btn btn-danger">Reset</button>
+            </center>
+        </div>
+    </div>
+</form>
+    </div>
+        </div>
+        </div>
+        {% if id == 1 %}
+        <div id="clear">
+            <div class="card" id="Empirical-Probability-Calculator">
+                <div class="card-header">
+                    <h2 class="h2">Steps to calcualate Empirical Probability</h2>
+                </div>
+                <div class="card-body">
+                    <strong>Empirical Probability Formula-</strong>
+                    <br>
+                    <p class="btn btn-outline-secondary active"> Empirical Probability = Number of times event occurs / Total number of times experiment performed </p>
+                    <br>
+                    
+                    <p class="btn btn-outline-secondary active"> P(E) = f/n</p>
+                    <br>
+        
+                    <strong>where:</strong>
+                            <ul>
+                                <li>Number of times event occurs - The number of times event occurs gives you the total number of times an event occurs</li>
+                                <li>Total number of times experiment performed - The total number of times an experiment performed gives you the total number of times an experiment is performed.</li>
+                                <!-- <li>n - Number of classes within the distribution</li> -->
+                            </ul>
+                    <strong>Input values are:-</strong>
+                    <p>Number of times event occurs = {{number_of_times_event_occurs}}</p>
+                    <p>Total number of times experiment performed = {{number_of_times_experiment_performed}}</p> 
+                    <br>
+                    
+                    <strong>Put values into formula</strong>
+                    <p>empirical probability =  Number of times event occurs / Total number of times experiment performed </p>
+                    <!-- <p>  class width = ({{max}} - {{min}}) / {{probability}}  </p> -->
+                    <p><b> empirical_probab  = {{empirical_probab}} </b></p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">What is Empirical probability?</h2>
+        </div>
+	    <div class="card-body">
+            <p>The empirical probability uses the number of events of an outcome within a sample set as a basis for describing the probability of that outcome. Another name for empirical probability is experimental probability. An empirical probability is intently related to the relative frequency of an event.</p>
+        </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="h3">Empirical Probability Formula</h3>
+            </div>
+            <div class="card-body">
+                <p>Look at the below formula to calculate the empirical probability. </p>
+                <p><b>Empirical Probability = No. of times event occurs / Total number of times experiment performed</b></p>
+                <p><b>P(E) = f/n</b></p>
+                </div>
+                </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="h3">How to Calculate Empirical Probability?</h3>
+            </div>
+            <div class="card-body">
+                <p>Go through the guidelines which are given below to find the empirical probability.</p>
+                <ul>
+                    <li>Just, note down the values that are given in the problem.</li>
+                    <li>Then, apply the formula of empirical probability. P(E) = f/n.</li>
+                    <li>That's simple! we will get the answer.</li>
+                </ul>
+                </div>
+                </div>
+                <div class="card">
+                <div class="card-header">
+                    <h3 class="h3">Solved Questions of Empirical Probability</h3>
+                </div>
+                <div class="card-body">
+<p><strong>Example:  In a group of 30 people, 10 people choose to order veg pizzas over non-veg. What is the empirical probability of someone ordering non-veg pizzas?</strong></p>
+<p><strong>Solution:</strong></p>
+<p>From the given input, total number of people (n)= 30.</p>
+<p>No. of people who choose veg pizzas = 10</p>
+<p>No. of people who choose non-veg pizzas (f) = 30-10 = 20.</p>
+<p>Empirical Probability Formula: P(E) = f/n</p>
+<p>Substitute the values in the formula and the equation becomes</p>
+<p>P(E) =  20/30 = 0.66</p>
+<p>Therefore, the empirical probability is 0.66</p>
+<p>Recognize many other calculators that are available at <a href="http://probabilitycalculator.guru/">probabilitycalculator.guru</a> which will be useful to complete your work very easily.</p>
+<img src="{% static 'images/probability/Empirical-Probability-Calculator.jpeg' %}" alt="Empirical Probability Calculator">
+</div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+    <h3 class="h3">FAQs on Empirical Probability Calculator</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. What is Empirical Probability?</strong></p>
+     	<p class="answer">Empirical probability is a probability that is based on objective data. The main use of this empirical probability is backed by experimental data and studies.</p><hr>
+     	<p class="question"><strong>2. How to find Empirical Probability?</strong></p>
+     	<p class="answer">Empirical Probability = No. of times event occurs / Total number of times experiment performed.</p><hr>
+        <p class="question"><strong>3. What do f and n stand for in the empirical probability formula?</strong></p>
+        <p class="answer">In the formula, f = Number of times event occurs, n = Total number of times experiment performed.</p>
+    	</div>
+    </div>
+    </div>
+
+    {% if id == 1 %}
+<script>
+        $(document).ready(function () {
+            $("#hassle").click();
+        });
+</script>
+<button type="button" hidden id="hassle" onclick="location.href='#Empirical-Probability-Calculator'">ans1</button>
+{% endif %}
+<script>
+            
+            
+        
+    function myFunction() {
+      
+       
+        
+
+        document.getElementById("clear").innerHTML = "";
+
+    }
+
+</script>
+
+{%endblock%}

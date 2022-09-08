@@ -1,0 +1,203 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Combination Calculator Online | How to Calculate the Combination?</title>
+    <meta name="description" content="Combination Calculator is a free tool that computes the number of possible combinations when selecting r elements from a set of n elements."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Combination Calculator Online | How to Calculate the Combination?"/>
+        <meta property="og:description" content="Combination Calculator is a free tool that computes the number of possible combinations when selecting r elements from a set of n elements."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="http://probabilitycalculator.guru//static/images/Probability/Combinations-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Combination Calculator Online | How to Calculate the Combination?"/>
+        <meta name="twitter:description" content="Combination Calculator is a free tool that computes the number of possible combinations when selecting r elements from a set of n elements."/>
+        <meta name="twitter:image:src" content="http://probabilitycalculator.guru//static/images/Probability/Combinations-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Combination Calculator Online | How to Calculate the Combination?"/>
+        <meta property='og:image' content="http://probabilitycalculator.guru//static/images/Probability/Combinations-Calculator.jpeg"/>
+        <meta property='og:description' content="Combination Calculator is a free tool that computes the number of possible combinations when selecting r elements from a set of n elements."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1
+        How do I calculate the combinations?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        Combinations can be calculated using the formula C(n,r) = n!/(r!(n-r)!)"}	}, {"@type": "Question","name":"2
+        What do you mean by Combinations?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        Combinations can be defined as the number of combinations in which you can choose r elements out of a set containing n number of objects."}	}, {"@type": "Question","name":"3
+        How to use the Combination Calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        Just enter the no. of objects and no. of samples as inputs and tap the calculate button and get the answer in split seconds."}	}, {"@type": "Question","name":"4
+        Define n and r in combinations?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        In combinations, n represents the total number of objects, r is the number of items chosen at a time."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Combinations Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>With the help of our simple Combination Calculator tool, you can display the number of possible combinations in a fraction of seconds. To get instant outcomes you need to give the n, r as inputs in the input fields and click on the calculate button provided below input fields. </p>
+
+<!---------------      Error messages ---------->
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <p {% if message.tags %} id="message_container" class="alert alert-danger text-center" {% endif %}
+                       style="color:red">{{ message }}</p>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+<!---------------    Form ------->
+<form action="{% url 'combinations' %}" id="myForm" onsubmit="return validate()" method="post">
+    {% csrf_token %}
+    <div class="input-group mb-2 mt-3">
+          <div class="input-group-prepend">
+        <div class="input-group-text"><strong>Total Number of Objects(n) </strong></div>
+             <input type="text" pattern="-?\d*\.?\d*" id="inlineFormInputGroup" name="a" value="{{ a }}" oninput="validateNumber1(this);" placeholder="Enter the Number" class="form-control" required></div>
+
+    </div>
+        <div class="input-group mb-2 mt-3">
+          <div class="input-group-prepend">
+        <div class="input-group-text in"><strong>Sample Size(r)</strong></div>
+             <input type="text" id="inlineFormInputGroup" placeholder="Enter the Number" value="{{ b }}" name="b" oninput="validateNumber(this);" class="form-control" required></div>
+
+         </div>
+        <div class=" center col mt-2 ">
+        <center><button type="submit" class="btn btn-primary"  class="form-control" >Calculate</button>
+        <button type="button" onclick="this.form.reset()" style="margin-top:5px;" class="btn btn-danger" class="form-control">Reset</button>
+        </center>
+    </div>
+  <div class="input-group mb-2 mt-3">
+          <div class="input-group-prepend">
+        <div class="input-group-text in"><strong>Combinations Without Repetitions</strong></div>
+             <input type="text"id="inlineFormInputGroup"  disabled value="{{ c }}" name="c" oninput="validateNumber(this);" class="form-control" required></div>
+
+
+         </div>
+  <div class="input-group mb-2 mt-3">
+          <div class="input-group-prepend">
+              <div class="input-group-text"><strong>Combinations With Repetitions</strong></div>
+             <input type="text" disabled id="inlineFormInputGroup" value="{{ d }}" oninput="validateNumber(this);" class="form-control" required></div>
+
+         </div>
+
+</form>
+</div>
+        </div>
+        {% if id == 1 %}
+        <script>
+            $(document).ready(function () {
+        
+                $("#hassle").click();
+                });
+        </script>
+        
+        <button type="button" hidden id="hassle" onclick="location.href='#Combination'">ans1</button>
+        {% endif %}
+{% if id == 1 %}
+            <div class="card" id="Combination">
+                <div class="card-header"><center class="h1">Detailed Answer</center></div>
+                <div class="card-body container">
+                {% for i,z in answer.items %}
+                {% if 'bold' in i %}
+                <p><b>{{ z }}</b></p>
+                {% else %}
+                <p>{{ z }}</p>
+                {% endif %}
+                {% endfor %}
+                </div>
+                </div>
+                {% endif %}
+
+            
+        
+       
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">How to Calculate the Combinations?</h2>
+        </div>
+	    <div class="card-body">
+            <p>Normally, Combination is described as the number of possible combinations in which you can select r elements from the set of n elements. In combinations, the order is not a factor, and repetitions are also not allowed. Here we can use the formula to complete the combinations in less time.</p>
+            <p><strong><sup>n</sup>C<sub>r</sub> = C(n,r) = n!/(r!(n-r)!)</strong> for n ≥ r ≥ 0</p>
+<p>Combination using Permutation Formula is <strong>C(n, r) = P(n,r)/ r!</strong></p>
+<p>Where,</p><p>C(n,r) is the number of Combinations</p>
+<p>n = total number of elements in the set</p>
+<p>r = number of elements chosen from the set</p> <p>'!' represents the factorial.</p>
+
+<p><strong>Example: If you are asked to choose 3 balls from the box of 10 balls how many different combinations you can choose?</strong></p>
+<p><strong>Solution:</strong></p>
+<p>Given input data r = 3, n = 10</p>
+<p>Use Combination Formula </p><p><sup>n</sup>C<sub>r</sub> = n!/(r!(n-r)!) for n ≥ r ≥ 0</p>
+<p>Substitute the n, r values in the formula</p>
+<p><sup>10</sup>C<sub>3</sub> = 10!/(3!(10-3)!)</p>
+<p>= 10!/(3!*7!)</p>
+<p>= 120</p>
+<p>Therefore, you have 120 different combinations to choose 3 balls from the box of 10 balls.</p>
+<p>We have different concepts similiar to combinations. Use our online calculators available at <a href="http://probabilitycalculator.guru/">probabilitycalculator.guru</a> and clarify your concerns.</p>
+<img src="{% static 'images/probability/Combinations-Calculator.jpeg' %}" alt="Combinations Calculator">
+</div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+    <h3 class="h3">FAQs on Combinations Calculator</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. How do I calculate the combinations?</strong></p>
+     	<p class="answer">Combinations can be calculated using the formula C(n,r) = n!/(r!(n-r)!)</p><hr>
+     	<p class="question"><strong>2. What do you mean by Combinations?</strong></p>
+     	<p class="answer">Combinations can be defined as the number of combinations in which you can choose r elements out of a set containing n number of objects.</p><hr>
+        <p class="question"><strong>3. How to use the Combination Calculator?</strong></p>
+        <p class="answer">Just enter the no. of objects and no. of samples as inputs and tap the calculate button and get the answer in split seconds.</p><hr>
+        <p class="question"><strong>4. Define n and r in combinations?</strong></p>
+     	<p class="answer">In combinations, n represents the total number of objects, r is the number of items chosen at a time.</p><hr>
+    	</div>
+    </div>
+    </div>
+
+{% if  flag %}
+<script>
+        $(document).ready(function () {
+            $("#hassle").click();
+        });
+</script>
+<button type="button" hidden id="hassle" onclick="location.href='#combinations'">ans1</button>
+{% endif %}
+{%endblock%}

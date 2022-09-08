@@ -1,0 +1,395 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="https://onlinecalculator.guru/static/style2.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Mean of Probability Distribution calculator | Free tool to find expected value</title>
+    <meta name="description" content="Utilize this handy Mean of Probability Distribution Calculator to solve the expected value of a random variables & learn how to calculate it manually."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Mean of Probability Distribution calculator | Free tool to find expected value"/>
+        <meta property="og:description" content="Utilize this handy Mean of Probability Distribution Calculator to solve the expected value of a random variables & learn how to calculate it manually."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Statistics/Mean-of-Probability-DistributionCalculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Mean of Probability Distribution calculator | Free tool to find expected value"/>
+        <meta name="twitter:description" content="Utilize this handy Mean of Probability Distribution Calculator to solve the expected value of a random variables & learn how to calculate it manually."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Statistics/Mean-of-Probability-DistributionCalculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Mean of Probability Distribution calculator | Free tool to find expected value"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Statistics/Mean-of-Probability-DistributionCalculator.jpeg"/>
+        <meta property='og:description' content="Utilize this handy Mean of Probability Distribution Calculator to solve the expected value of a random variables & learn how to calculate it manually."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        1. What does P(X=x) mean?
+        ","acceptedAnswer": {"@type": "Answer","text":"P(X=x) means the probability that the random variable X is equal to a specific value, indicated by x. For instance, P(X=1) refers to the probability that the random variable X is equal to 1."}	}, {"@type": "Question","name":"2.
+        How do you find the mean of a probability distribution?
+        ","acceptedAnswer": {"@type": "Answer","text":"https://www.youtube.com/watch?v=TXLL73ZcK1E"} }, {"@type": "Question","name":"3.
+        How do you find the probability distribution on a calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":"https://www.youtube.com/watch?v=semdQgVYfU8"} }, {"@type": "Question","name":"3.
+        What is meant by Mean of probability distribution?
+        ","acceptedAnswer": {"@type": "Answer","text":"The mean in probability is a measure of central tendency of a probability distribution. It is also named as an expected value. The distribution of expected value is defined by taking various set of random samples and calculating the mean from each sample."}	}]}
+    </script>  
+    {%endblock%}
+    {%block content%}
+
+
+        <div class="container" style="height: auto !important;">
+            <div class="card c1">
+              <div class="card-header">
+                <h1 class="h1">Mean for Probability Distribution</h1>
+              </div>
+                <div class="card-body">
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <p {% if message.tags %} id="message_container" class="alert alert-danger text-center" {% endif %}
+                            style="color:red">{{ message }}</p>
+                        {% endfor %}
+                    </ul>
+                    <p>Simple step-by-step calculator to find the mean of the discrete probability distribution is here. This handy Mean of probability distribution calculator takes the x values, p(x) values as inputs and gives output within split seconds with detailed explanation.</p> 
+
+                    <form action="" method="POST" ">
+                        {% csrf_token %}
+                        <div class="form-row align-items-center">
+                        <div class="col-auto">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><strong>Number of Entries</strong></div>
+                                </div>
+                                <input type="number" oninput="addInputs(this)" oninput="validateNumber(this);" id="inlineFormInputGroup" placeholder="Type a number" 
+                                    class="form-control" required="" min=1 name="nu" value={{nu}}>
+                                <input type="hidden" name="entries">
+                                
+                                
+                            </div>
+                            <div>
+                                <table  >
+                                    <thead>
+                                        <tr><th>Data value</th><th>Probability of data</th></tr>
+        
+                                    </thead>
+                                    <tbody>
+                                        <tr><td><div id="result"></div></td><td><div id="result2"></div></td></tr>
+        
+                                    </tbody>
+                                    
+                                </table>   
+        
+                            </div>
+                            
+                            
+                              
+                            
+                            
+                          
+                            <div class=" center col mt-2 ">
+                                <center><button type="submit" class="btn btn-primary" name="f1">Calculate</button>
+                                    <button type="button" onclick="myFunction()"  style="margin-top:5px;" onclick="addInputs(0)"
+                                    class="btn btn-danger">Reset</button>
+                                </center>
+                            </div>
+        
+                            
+                                    
+                                  
+        
+                        
+                           
+                           
+                            
+                            
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% if id == 1 %}
+        <div id="clear">
+            <div class="card" id="magnetic-force">
+                <div class="card-header">
+                    <h2 class="h2">Steps to Calculate Risk</h2>
+                </div>
+                <div class="card-body">
+                    <strong>Risk Formula-</strong>
+                    <br>
+                    <p class="btn btn-outline-secondary active">Mean(X)=summation(XiPi)</p>
+                    <br>
+                    <strong>where:</strong>
+                            <ul>
+                                <li>Xi - Data value at position i</li>
+                                <li>Pi - Probability of data value at position i</li>
+                                
+                            </ul>
+                    <strong>Input values are:-</strong>
+                    <table>
+                        <tr><th>Data</th><th>Probability of Data</th></tr>
+                        {% for key,value in l.items %}
+                            {% if "d" in key %}  
+                            <tr>
+                                <td> {{ value }} </td>
+                            
+                            {% endif %}
+                            {% if "p" in key %}
+                                <td> {{ value }} </td>
+                            </tr>
+                            {% endif%}
+                        {% endfor %}
+                        </table>
+                    <strong>Put values into formula</strong>
+                    <p>Mean(X)=summation(XiPi)</p>
+                    
+                    
+                    
+                    <p>Mean(X)=
+                        {% for key,value in l.items %}
+                            {% if "d" in key %}
+                            {{ value }}
+                            *
+                            {% endif %}
+                            {% if "p" in key %}
+                                
+                                {% if forloop.last %}
+                                {{value}}
+        
+                                {% else %}
+                                {{value}}
+                                +
+                            {% endif %}
+        
+                            {% endif %}
+          
+                        {% endfor %}
+                        
+                            
+                            
+                    </p>
+                    <p>Mean of Probability = {{sum}}  </p>
+                    
+                </div>
+            </div>
+        </div>
+        {% endif %}
+          
+        <script>
+        
+        
+        function addInputs(elm) {
+          var result = document.querySelector('#result');
+          
+          result.innerHTML = '';
+         if (elm==0)
+         {
+            for (var i = 0; i < parseInt(0); i++) {
+            var wrapper = document.createElement('div');
+            
+            wrapper.innerHTML = '<input type="number" style="width:100%" required="" min=1 placeholder="textfield ' + i + '" name="r'+i+'" value={{"d'+i+'"}}>';
+            result.appendChild(wrapper);
+          }
+         
+          var result2 = document.querySelector('#result2');
+          result2.innerHTML = '';
+          for (var i = 0; i < parseInt(0); i++) {
+            var wrapper = document.createElement('div');
+            
+            wrapper.innerHTML = '<input type="number" style="width:100%"  required="" step="any" placeholder="textfield ' + i + '" name="s'+i+'" value={{"p'+i+'"}}>';
+            result2.appendChild(wrapper);
+          }
+        
+         }
+        
+          for (var i = 0; i < parseInt(elm.value); i++) {
+            var wrapper = document.createElement('div');
+            
+            wrapper.innerHTML = '<input type="number" style="width:100%" required="" min=1 placeholder="textfield ' + i + '" name="r'+i+'" value={{"d'+i+'"}}>';
+            result.appendChild(wrapper);
+          }
+         
+          var result2 = document.querySelector('#result2');
+          result2.innerHTML = '';
+          for (var i = 0; i < parseInt(elm.value); i++) {
+            var wrapper = document.createElement('div');
+            
+            wrapper.innerHTML = '<input type="number" style="width:100%"  required="" step="any" placeholder="textfield ' + i + '" name="s'+i+'" value={{"p'+i+'"}}>';
+            result2.appendChild(wrapper);
+          }
+          document.getElementsByName("entries")[0].value=elm.value;
+        }
+            
+        if(id==1)
+        {
+            var scrollDiv = document.getElementById("clear").offsetTop;
+             window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
+             
+        }
+            
+             function myFunction() {
+                 var a=document.getElementsByName("entries")[0].value;
+                 document.getElementsByName("nu")[0].value = 0;
+                 addInputs(0);
+                 var i=0;
+                 for (var i=0;i<a;i++)
+                 {
+                    
+                    document.getElementsByName("r"+i.toString())[0].value = "";
+                    document.getElementsByName("s"+i.toString())[0].value = "";
+                 }
+                 
+                 
+                 
+         
+                 document.getElementById("clear").innerHTML = "";
+         
+             } 
+        
+             
+             
+            
+        
+        </script>   
+        
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">How to Find the Mean of Probability Distribution?</h2>
+        </div>
+	    <div class="card-body">
+            <p>To calculate the mean of any probability distribution, we have to use the following formula:</p>
+            <p>The formula for Mean or Expected Value of a probability distribution is as follows:</p>
+            <p>&mu; = &Sigma;x * P(x)</p>
+            <p>Where,</p>
+            <ul>
+            <li>x = Data value</li>
+            <li>P(x) = Probability of value</li>
+            </ul>
+            <p>The following are the simple steps to find the expected value or mean for the discrete probability distribution manually with ease.</p>
+            <ul>
+            <li>Firstly, observe the x values given in the problem and then the probability values for each random variable occured.</li>
+            <li>Multiply the random value with its probability</li>
+            <li>Finally, add up all the product values and get the mean of the probability distribution.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+        <h3 class="h3">Binomial Distribution Mean Calculator Solved Example</h3>
+        </div>
+        <div class="card-body">
+            <p><strong>Example:</strong></p>
+            <p>Let's consider the probability distribution for the snookers team:</p>
+            <table border="1" cellspacing="0">
+            <tbody>
+            <tr>
+            <td width="100">X</td>
+            <td width="100">P(X)</td>
+            </tr>
+            <tr>
+            <td width="100">2</td>
+            <td width="100">0.1</td>
+            </tr>
+            <tr>
+            <td width="100">5</td>
+            <td width="100">0.2</td>
+            </tr>
+            <tr>
+            <td width="100">6</td>
+            <td width="100">0.3</td>
+            </tr>
+            <tr>
+            <td width="100">8</td>
+            <td width="100">0.4</td>
+            </tr>
+            </tbody>
+            </table>
+            <p><strong>Solution:</strong></p>
+            <p>First, we have to multiply the corresponding X results with the related probabilities to compute the population mean &mu;:</p>
+            <table class="table-generic" border="1" cellspacing="0">
+            <tbody>
+            <tr>
+            <td width="100">X</td>
+            <td width="100">p(X)</td>
+            <td width="100">X * p(X)</td>
+            </tr>
+            <tr>
+            <td width="100">2</td>
+            <td width="100">0.1</td>
+            <td width="100">2*0.1=0.2</td>
+            </tr>
+            <tr>
+            <td width="100">5</td>
+            <td width="100">0.2</td>
+            <td width="100">5 *0.2=1</td>
+            </tr>
+            <tr>
+            <td width="100">6</td>
+            <td width="100">0.3</td>
+            <td width="100">6*0.3=1.8</td>
+            </tr>
+            <tr>
+            <td width="100">8</td>
+            <td width="100">0.4</td>
+            <td width="100">8 * 0.4 = 3.2</td>
+            </tr>
+            </tbody>
+            </table>
+            <p>Hence the mean of the probability distribution is calculated as:</p>
+            <p>&mu; = &sum; Xi * P(Xi)</p>
+            <p>= 2&sdot;0.1+5&sdot;0.2+6&sdot;0.3+8&sdot;0.4</p>
+            <p>= 6.2</p>
+            <p> Get instant help with mathematical concepts that you feel difficult and never seemed to understand with crystal clear explanation all under one roof at <a href="https://probabilitycalculator.guru/">ProbabilityCalculator.Guru</a></p>
+            <img src="{% static 'images/Statistics/Mean-of-Probability-DistributionCalculator.jpeg' %}" alt='Mean of Probability Distribution Calculator'>
+        </div>
+    </div>
+    <div class="card">
+  	    <div class="card-header">
+      	<h3 class="h3">FAQs on Handy Mean of a Binomial Probability Distribution Calculator</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. What does P(X=x) mean?</strong></p>
+     	<p class="answer">P(X=x) means the probability that the random variable X is equal to a specific value, indicated by x. For instance, P(X=1) refers to the probability that the random variable X is equal to 1.</p><hr>
+     	<p class="question"><strong>2. How do you find the mean of a probability distribution?</strong></p>
+     	<p class="answer">https://www.youtube.com/watch?v=TXLL73ZcK1E</p><hr>  
+        <p class="question"><strong>3. How do you find the probability distribution on a calculator?</strong></p>
+        <p class="answer">https://www.youtube.com/watch?v=semdQgVYfU8</p><hr>
+        <p class="question"><strong>4. What is meant by Mean of probability distribution?</strong></p>
+        <p class="answer">The mean in probability is a measure of central tendency of a probability distribution. It is also named as an expected value. The distribution of expected value is defined by taking various set of random samples and calculating the mean from each sample.</p><hr>
+    	</div>
+    </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('ddd').click();
+          });
+    </script>
+{%endblock%}

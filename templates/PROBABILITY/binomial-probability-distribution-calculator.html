@@ -1,0 +1,296 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+   <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Online Binomial Probability Distribution Calculator Tool</title>
+    <meta name="description" content="Binomial Probability Distribution Calculator finds the binomial distribution for given data in a split of seconds. Get binomial probability definition, formula."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Online Binomial Probability Distribution Calculator Tool"/>
+        <meta property="og:description" content="Binomial Probability Distribution Calculator finds the binomial distribution for given data in a split of seconds. Get binomial probability definition, formula."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Chemistry/Binomial-Probability-Distribution-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Online Binomial Probability Distribution Calculator Tool"/>
+        <meta name="twitter:description" content="Binomial Probability Distribution Calculator finds the binomial distribution for given data in a split of seconds. Get binomial probability definition, formula."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Chemistry/Binomial-Probability-Distribution-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Online Binomial Probability Distribution Calculator Tool"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Chemistry/Binomial-Probability-Distribution-Calculator.jpeg"/>
+        <meta property='og:description' content="Binomial Probability Distribution Calculator finds the binomial distribution for given data in a split of seconds. Get binomial probability definition, formula."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        How do you find the probability of a binomial distribution calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" Students have to give required input details such as the total number of trials n, probability of success per trial p and number of success x. Press the calculate button to get the binomial probability distribution value as output."}	}, {"@type": "Question","name":"2.
+        What is the formula for the mean and variance of the binomial distribution?
+        ","acceptedAnswer": {"@type": "Answer","text":" The formulas to calculate the mean and variance of the binomial distribution are here. IN the following sections, n is the number of trials, p is the probability of success and q is the probability of failure.
+        Mean = np
+        Variance = npq"}	}, {"@type": "Question","name":"3.
+        How many parameters does a binomial distribution have?
+        ","acceptedAnswer": {"@type": "Answer","text":" A binomial probability distribution is a discrete probability distribution having two parameters represented as n and p."}	}, {"@type": "Question","name":"4.
+        What is the purpose of the binomial distribution?
+        ","acceptedAnswer": {"@type": "Answer","text":" The binomial probability distribution allows finding the probability of observing a specified number of "success" when the process is repeated a countable number of terms and outcome should be either a success or a failure."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+
+{% if n and k %}
+<script>
+    $(document).ready(function () {
+
+        $("#hassle").click();
+
+
+    });
+
+
+</script>
+
+<button type="button" hidden id="hassle" onclick="location.href='#Coin_Flip_Probability_answer'">ans1</button>
+{% endif %}
+<div class="container" style="height: auto !important;">
+  
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Binomial Probability Distribution Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Welcome to our Binomial Probability Distribution Calculator! This tool helps to compute the binomial distribution probability of a certain number of success in a sequence of events fastly & easily. All you need to do is enter the number of trials n, probability of success per each trial, number of success details in the mentioned input fields and tap on the calculate button to get displayed with the result in a short span of time.</p>
+                <p><strong>Binomial Distribution Probability Calculator: </strong>Are you worrying to solve binomial distribution problems? If yes, then stick to this page. You can see how to find the binomial probability distribution of an event, what is binomial distribution, and learn the binomial probability formula. You can also use our handy calculator to find the binomial distribution answer. And check the parameters used in the binomial experiment, solved questions on binomial probability.</p>
+
+            </div>
+{% if messages %}
+            <ul class="messages">
+            {% for message in messages %}
+                <p {% if message.tags %} id="message_container" class="alert alert-danger text-center" {% endif %}
+                    style="color:red">{{ message }}</p>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <form action="{% url 'binomial_distribution' %}" method="POST" id="my_form">
+                {% csrf_token %}
+                 
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Number of trails (n)</span>
+            </div>
+            
+           <input style="margin-top: 5px;width:100%" id="n" name="n" value="{{n}}"   required="" class="form-control" type="number" step="any" required width="48"> 
+       </div>
+       <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Number of success (r)</span>
+            </div>
+            
+           <input style="margin-top: 5px;width:100%" id="r" name="r" value="{{r}}"   required="" class="form-control" type="number" step="any" required width="48"> 
+       </div>
+
+       <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">probability of single trail(p)</span>
+            </div>
+            
+           <input style="margin-top: 5px;width:100%" id="p" name="p" value="{{p}}"   required="" class="form-control" type="number" step="any" required width="48"> 
+       </div>
+      
+        <div class=" center col mt-2 ">
+            <center><button type="submit" class="btn btn-primary">Calculate</button>
+              <a href="{% url 'binomial_distribution' %}" class="btn btn-warning" role="button" style="margin-top:5px;">Reset</a>      
+            </center>
+          </div>
+          
+
+
+</form>
+        
+        </div>
+
+
+        {% if ot and r and p and n %}
+        <script>
+            $(document).ready(function () {
+        
+                $("#hassle").click();
+                });
+        </script>
+        
+        <button type="button" hidden id="hassle" onclick="location.href='#binomial_distribution'">ans1</button>
+        {% endif %}
+
+
+
+
+
+{% if ot and r and p and n  %}
+
+<div class="card" id="binomial_distribution">
+        <div class="card-header">
+            <h2 class="h2">Steps to Find Binomial Distribution:</h2>
+        </div>
+
+        <div class="card-body">
+
+            <strong>Binomial Distribution:-</strong>
+            <br>
+            <p class="btn btn-outline-secondary active text-justify">Binomial Distribution = <sup>n</sup>C<sub>r</sub> * pr * (1−p)<sup>n−r</sup></p>
+            <br>
+            <strong>where:</strong>
+                    <ul>
+                        <li>n is the Number of trails,</li>
+                        <li>r is Number of success ,</li>
+                        <li>p is probability of single trail.</li>
+                    </ul>
+
+
+            <strong>Input values are:-</strong>
+            <p>n = {{n}} </p>
+            <p>r = {{r}} </p>
+            <p>p = {{p}} </p>
+
+            
+            <p><b>Put values into formula</b></p>
+            <p><sup>n</sup>C<sub>r</sub> = {{n}}! / ({{r}}! * ({{n}} - {{r}})!<p>
+            <p><sup>n</sup>C<sub>r</sub> = {{nf}} / ({{rf}} * {{nrf}})<p>
+            <p><sup>n</sup>C<sub>r</sub> = {{ncr}}<p>
+
+            <p>pr = {{p}}<sup>{{r}}</sup></p>
+            <p>pr = {{pr}}</p>
+
+            <p>1 - p = {{p1}}</p> 
+            <p>n -r  = {{nr}}</p>
+
+            <p>px =  {{ncr}} * {{pr}} * {{p1}}<sup>{{nr}}</sup></p>
+
+            
+            <b>px = {{result}}</b>
+                         
+   </div>
+   </div>
+  
+
+
+    {% endif %}                  
+
+
+
+
+
+
+
+
+
+
+<div class="card">
+    <div class="card-header">
+        <h2 class="h2">What is Binomial Distribution?</h2>
+    </div>
+    <div class="card-body">
+      <p>  The binomial distribution is defined as the probability distribution of a binomial random variable. In binomial probability distribution, the number of success in a sequence of experiments, and each time a question asked for yes/no, and the boolean value outcome is represented as either true/yes/success/one (probability p) or false/no/failure/zero (probability q = 1 - p).
+</p><p>The applications of the binomial distribution are in YES/NO survey, the number of votes collected in an election, the number of male and female candidates at a work station.
+</p><p>The properties of the binomial distribution are listed here.</p>
+<ul><li>In every binomial distribution, there are only two possible outcomes: yes or no.</li>
+    <li>There is n number of independent trials or a fixed number of repeated trials.</li>
+        <li>The probability of success or failure is different for every trial.</li>
+            <li>Every trial is independent that says that the outcome of one trial does not affect another trial outcome.</li>
+                <li>Only the number of success is calculated for n independent trials.</li></ul>
+                </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="h3">Binomial Probability Distribution Formula</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>The binomial distrobution formula for any random variable x is given as</p>
+                        <p><strong>    P(x:n,p) = <sup>n</sup>C<sub>x</sub> p<sup>x</sup> (1-p)<sup>n-x</sup></strong></p>
+                        <p>    or</p>
+                          <p><strong>  P(x:n,p) = <sup>n</sup>C<sub>x</sub> p<sup>x</sup> q<sup>n-x</sup></strong></p>
+                          <p>For a binomial distribution, the mean, variance, standard deviation formulas are here:
+                        </p> <p><strong>   Mean, μ = np</strong></p>
+                            <p><strong>  Variance, σ² = npq</strong></p>
+                                <p><strong>  Standard Deviation σ= √(npq)</strong></p>
+                                <p>   Where,</p>
+                                    <p>p is the probability of success</p>
+                            <p>   q is the probability of failure</p>
+                                <p>   n is the number of experiments</p>
+                                    <p>  x is the random variable</p>
+                           <p> The binomial distribution formula can also be written as<strong> P(x:n,p) = n!/[x!(n-x)!].p<sup>x</sup>.(q)<sup>n-x</sup></strong></p>
+                          </div>
+                          </div>
+                          <div class="card">
+                            <div class="card-header">
+                                <h3 class="h3">How to Calculate Binomial Probability Distribution?</h3>
+                            </div>
+                            <div class="card-body">    
+                                <p></p>
+                                <ul>
+                                    <li>Make a note of the number of experiments, probability of success in each experiment and number of success details.</li>
+                                    <li>  Subtract probability of success from 1 to get probability of failure.</li>
+                                    <li>  Place the known values in the binomial distribution formula.</li>
+                                        <li>  Perform the required calculations to get the binomial probability value.</li>
+                                </ul>
+                                <p><strong>Example:</strong></p>
+                                <p>A coin is tossed 5 times, find the probability of getting at least 2 tails.</p>
+                                <p>Solution:</p>
+                                <p>Number of trials n = 5</p>
+                                <p>  Probability of tail p = ½</p>
+                                <p>  Probability of tail q = 1 - p = 1 - ½ = ½</p>
+                                <p>  For exactly 2 tails</p>
+                                <p>   P(X = 2) = <sup>5</sup>C<sub>2</sub> p<sup>2</sup> q<sup>5-2</sup></p>
+                                <p>   = 5! / 2! 3! × (½)<sup>2</sup> × (½)<sup>3</sup></p>
+                                <p>   = 5/16</p>
+                                <p>   Therefore, probability of getting at least 2 tails is 5/16.</p>
+                                <p>Study more probability concepts from our site <a href="https://probabilitycalculator.guru/">probabilitycalculator.guru</a> to make your calculations easier.  </p>
+                                </div>
+                                </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="h3">FAQ’s on Binomial Distribution Probability Calculator</h3>
+            </div>
+            <div class="card-body">
+                <!-- Question & Answer Starts --->
+                <p class="question"><strong> 	  1. How do you find the probability of a binomial distribution calculator?</strong></p>
+                <p class="answer">Students have to give required input details such as the total number of trials n, probability of success per trial p and number of success x. Press the calculate button to get the binomial probability distribution value as output.</p><hr>
+                  <p class="question"><strong> 2. What is the formula for the mean and variance of the binomial distribution?</strong></p>
+      <p class="answer">The formulas to calculate the mean and variance of the binomial distribution are here. IN the following sections, n is the number of trials, p is the probability of success and q is the probability of failure.</p>
+      <p>Mean = np</p>
+      <p>Variance = npq</p><hr>
+      <p class="question"><strong> 3. How many parameters does a binomial distribution have?</strong></p>
+      <p class="answer">A binomial probability distribution is a discrete probability distribution having two parameters represented as n and p. </p><hr>
+          <p class="question"><strong> 4. What is the purpose of the binomial distribution?</strong></p>
+      <p class="answer">The binomial probability distribution allows finding the probability of observing a specified number of "success" when the process is repeated a countable number of terms and outcome should be either a success or a failure.</p>
+            </div>
+         </div>
+      </div>
+    
+{%endblock%}

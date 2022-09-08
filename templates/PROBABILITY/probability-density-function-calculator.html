@@ -1,0 +1,248 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Probability Density Function Calculator with Steps | Free & Handy Tool To Calculate the PDF</title>
+    <meta name="description" content="Free Online Probability Density Function Calculator determines the probability density for the given function within split seconds and displays the output with a detailed solution."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Probability Density Function Calculator with Steps | Free & Handy Tool To Calculate the PDF"/>
+        <meta property="og:description" content="Free Online Probability Density Function Calculator determines the probability density for the given function within split seconds and displays the output with a detailed solution."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/Probability-Density-Function-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Probability Density Function Calculator with Steps | Free & Handy Tool To Calculate the PDF"/>
+        <meta name="twitter:description" content="Free Online Probability Density Function Calculator determines the probability density for the given function within split seconds and displays the output with a detailed solution."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/Probability-Density-Function-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Probability Density Function Calculator with Steps | Free & Handy Tool To Calculate the PDF"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/Probability-Density-Function-Calculator.jpeg"/>
+        <meta property='og:description' content="Free Online Probability Density Function Calculator determines the probability density for the given function within split seconds and displays the output with a detailed solution."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        What does the probability density function (PDF) calculate?
+        ","acceptedAnswer": {"@type": "Answer","text":"The probability density function (PDF) allows you to find the probability of an event, like this:
+
+        For discrete distributions, the probability that X has values in an interval (a, b) is precisely the sum of the PDF of the possible discrete values of X in (a, b).
+        For continuous distributions, the probability that X has values in an interval (a, b) is exactly the area under its PDF in the interval (a, b)."}	}, {"@type": "Question","name":"2.
+        What is the formula of probability density function?
+        ","acceptedAnswer": {"@type": "Answer","text":"The probability density function (pdf) f(x) of a continuous random variable X is defined as the derivative of the cdf F(x). Thus, the formula of PDF is f(x) = d/dx * F(x)."}	}, {"@type": "Question","name":"3.
+        Where can I get the probability density function calculator for free?
+        ","acceptedAnswer": {"@type": "Answer","text":"You can get the probability density function calculator for free on probabilitycalculator.guru, which is a trusted and reliable website."}	}]}
+    </script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Probability Density Function Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Using the free online tool of probability density function calculator, you can easily calculate the required distribution function probabilities. It takes mean value, standard deviation value, and random variable x as inputs and displays the results at a faster pace with just one click.</p>           
+<p>Related Calculators:</p>
+<ul>
+<li>Normal Distribution Probability Calculator</li>
+<li>Dice Probability Calculator</li>
+</ul>
+<p><strong>Probability Density Function Calculator:</strong> Need to define the random variable's probability in quick steps? Then, make use of this handy online tool called probability density calculator. This tool explains the probability density function of normal distribution by taking the mean and standard deviation values. Find more conceptual information about Probability Distribution Function like definition, formula, graph, how to calculate on a calculator, etc. from the further modules.</p>
+<form action="" method="POST" action="" >
+    {% csrf_token %}
+      <div class="col-auto">
+          <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                  <div class="input-group-text"><strong>Normal random variable(x)</strong></div>
+              </div>
+              <input type="text" name="normalrandomvariable"  class="form-control" id="inlineFormInputGroup" placeholder="Enter the value" value="{{ normalrandomvariable }}" autofocus required>
+     
+          </div>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+            <div class="input-group-text"><strong>Mean(m)</strong></div>
+        </div>
+        <input type="text" name="mean"  class="form-control" id="inlineFormInputGroup" placeholder="Enter the value" value="{{ mean }}" autofocus required>
+     
+    </div>
+
+    <div class="input-group mb-2">
+      <div class="input-group-prepend">
+          <div class="input-group-text"><strong>Standard deviation (σ)</strong></div>
+      </div>
+      <input type="text" name="standarddeviation"  class="form-control" id="inlineFormInputGroup" placeholder="Enter the value" value="{{ standarddeviation }}" autofocus required>
+     
+  </div>
+
+  <div class="center col mt-2">
+    <center><button type="submit" class="btn btn-primary" name="f1">Calculate</button>
+        <button type="button" onclick="myFunction()" style="margin-top:5px;"
+            class="btn btn-danger">Reset</button>
+    </center>
+  </div>
+
+</form>   
+</div>
+</div>
+    </div>
+<div id="clear" >
+    {% if id == 1 %}
+    <div class="card" id="Expected-calculator">
+        <div class="card-header">
+            <h2 class="h2">Steps to Calculate Probability Density function</h2>
+        </div>
+        {% if errors %}
+
+        <div class="card-body">
+            {% for error in errors %}
+            <h4>{{ error }}</h4>
+             {% endfor %}
+            
+        </div>
+
+        {% endif %}
+        <div class="card-body">
+
+
+            <h3>Formula for Probability Density</h3>
+
+            <p>Probability Density Function = (1.0 / (sd * math.sqrt(2*math.pi))) * math.exp(-0.5*((nd - m) / sd) ** 2)</p>
+
+            <ul>
+                <li>sd=standarddeviation</li>
+                <li>nd=normalrandomvariable</li>
+                <li>m=mean</li>
+            </ul>
+            
+            <p><strong>The probability density function value is {{ result }} </strong> </p>
+        </div>
+       
+    </div>
+        
+    {% endif %}
+</div>
+<script>
+  {% comment %} document.getElementsByName("data1")[0].value = "1 1 1 1 1";
+  document.getElementsByName("data2")[0].value = "0.2 0.2 0.2 0.2 0.2"; {% endcomment %}
+
+  
+  {% if id == 1 %}
+   
+  var scrollDiv = document.getElementById("clear").offsetTop;
+  window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
+  
+  {%endif%} 
+  
+      
+  
+  
+      var validNumber = new RegExp(/^\d*\.?-?\d*$/);
+      var fist_input = document.getElementById("inlineFormInputGroup").value;
+      function validateNumber(elem) {
+          console.log(elem)
+          if (validNumber.test(elem.value)) {
+              fist_input = elem.value;
+          } else {
+              elem.value = fist_input;
+          }
+      }
+  </script>
+  
+  <script>
+      function myFunction() {
+  
+          document.getElementsByName("normalrandomvariable")[0].value = "";
+          document.getElementsByName("mean")[0].value = "";
+          document.getElementsByName("standarddeviation")[0].value = "";
+          
+          document.getElementById("clear").innerHTML = "";
+  
+  
+          
+  
+  
+  
+      }
+  </script>
+  <br>
+
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">What is Meant by Probability Density Function (P.D.F)?</h2>
+        </div>
+	    <div class="card-body">
+            <p>The probability function that illustrates the density of the continuous random variable which lies between a certain range of values is called the probability density function (pdf) in probability and statistics. Also, sometimes the probability distribution function or probability function is used to denote the probability density function(pdf).</p>
+<p>However, the PDF is used to define the probability of the random variable falling within a certain range of values. Basically, this function is determined for continuous random variables, whereas the Probability mass function (PMF) is defined for discrete random variables.</p>
+<h3>Probability Density Function Formula</h3>
+<p>If the probability of X is lying in an interval (a,b) then we can figure it for P(a&lt;X&lt;b), and find the probability with the formula of pdf. The PDF Formula is given as,</p>
+<img src="https://drive.google.com/file/d/1hSl7dAwB0R0VR80agE9RsjWGYsWXOVcI/view?usp=sharing" alt="Probability Density Function PDF Formula">
+<h3>Probability Density Function Graph</h3>
+<p>The graph of PDF typically resembles a bell curve, with the probability of the results under the curve. Here, we have given the probability density function graph for a continuous random variable x with function f(x).</p>
+<img src="https://drive.google.com/file/d/1ykrdNqN__uETyhTi_pV7LJhO9rlete4l/view?usp=sharing" alt="Probability Density Function Graph">
+</div>
+    </div>
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h3">How to use the probability density function calculator?</h3>
+        </div>
+	    <div class="card-body">
+            <p>Here are the instructions that need to be followed while using the PDF calculator. They are as fashioned:</p>
+            <ul>
+            <li>Initially, you have to provide the required inputs such as mean, standard deviation, and random variable x to compute the probability distribution.</li>
+            <li>Now, hit the calculate button.</li>
+            <li>Instantly, it displays the result of probability density for the given function along with the detailed steps.</li>
+            </ul>                       
+<img src="{% static 'images/Discrete_Mathematics/Probability-Density-Function-Calculator.jpeg' %}" alt="Probability Density Function Calculator">
+</div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+    <h3 class="h3">FAQs on Free Online Mean of Probability density function calculator with steps</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. What does the probability density function (PDF) calculate?</strong></p>
+     	<p class="answer">The probability density function (PDF) allows you to find the probability of an event, like this:</p>
+         <ul>
+         <li>For discrete distributions, the probability that X has values in an interval (a, b) is precisely the sum of the PDF of the possible discrete values of X in (a, b).</li>
+         <li>For continuous distributions, the probability that X has values in an interval (a, b) is exactly the area under its PDF in the interval (a, b).</li>
+         </ul></p><hr>
+     	<p class="question"><strong>2. What is the formula of probability density function?</strong></p>
+     	<p class="answer">The probability density function (pdf) f(x) of a continuous random variable X is defined as the derivative of the cdf F(x). Thus, the formula of PDF is<strong> f(x) = d/dx * F(x)</strong>.</p><hr>
+        <p class="question"><strong>3. Where can I get the probability density function calculator for free?</strong></p>
+        <p class="answer">You can get the probability density function calculator for free on <a href="https://probabilitycalculator.guru/">probabilitycalculator.guru</a>, which is a trusted and reliable website.</p><hr>
+    </div>
+    </div>
+    </div>
+
+{%endblock%}

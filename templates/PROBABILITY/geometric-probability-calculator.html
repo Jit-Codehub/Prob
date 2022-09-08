@@ -1,0 +1,246 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Geometric Probability Calculator | How to Calculate the Geometric Probability?</title>
+    <meta name="description" content="Geometric probability calculator is a free tool that gives the instant results of probability with detailed procedure."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Geometric Probability Calculator | How to Calculate the Geometric Probability?"/>
+        <meta property="og:description" content="Geometric probability calculator is a free tool that gives the instant results of probability with detailed procedure."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="http://probabilitycalculator.guru/static/images/probability/Geometric-Probability-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Geometric Probability Calculator | How to Calculate the Geometric Probability?"/>
+        <meta name="twitter:description" content="Geometric probability calculator is a free tool that gives the instant results of probability with detailed procedure."/>
+        <meta name="twitter:image:src" content="http://probabilitycalculator.guru/static/images/probability/Geometric-Probability-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Geometric Probability Calculator | How to Calculate the Geometric Probability?"/>
+        <meta property='og:image' content="http://probabilitycalculator.guru/static/images/probability/Geometric-Probability-Calculator.jpeg"/>
+        <meta property='og:description' content="Geometric probability calculator is a free tool that gives the instant results of probability with detailed procedure.."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1
+        What is Geometric Probability?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        Geometric probability is used to determine the probability of specified failures before getting the first success."}	}, {"@type": "Question","name":"2
+        How do you find the geometric probability?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        Finding the geometric probability is very easy, just use the formula to calculate it, i.e. P(X=x) = (1-p)x-1* p"}	}, {"@type": "Question","name":"3
+        What does x and p means in the geometric probability formula?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        In geometric probability formula, x is the integer (or) whole number and p is the probability of success."}	}, {"@type": "Question","name":"4
+        How to use geometric probability calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        All you need to do is enter the input values in the input fields and hit the calculate button to get the resultant value in seconds."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Geometric Probability Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>You can make use of this geometric probability calculator to check the probability of a specified number of trails. For that you need to do is just enter the input values and tap the calculate button to get the answer instantaneously. </p>
+
+<!---------------      Error messages ---------->
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <p {% if message.tags %} id="message_container" class="alert alert-danger text-center" {% endif %}
+                       style="color:red">{{ message }}</p>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <p><strong>Geometric Probability Calculator:</strong> Look at this wonderful tool to calculate the geometric probability that helps you to calculate the probability of the given number of failures occurs before the first success occurs. Just give the input and hit the calculate button to get the resultant value. Get more detailed information about the concept of geometric probability and study the detailed procedure to make the calculation easily.</p>
+
+
+<!---------------    Form ------->
+<form action="" method="POST" id="my_form" ">
+    {% csrf_token %}
+    <div class="form-row align-items-center">
+    <div class="col-auto">
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><strong>The success probability</strong></div>
+            </div>
+            <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                placeholder="Enter of p" min="0.00001" step="any" class="form-control" name="success_prob"  value="{{success_prob}}" >
+        </div>
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><strong>Number of trials</strong></div>
+            </div>
+            <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                placeholder="Enter of k" min="1" step="any" class="form-control" name="k_trails"   value="{{k_trails}}"  >
+        </div>
+        <!-- <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><strong>Number of classes</strong></div>
+            </div>
+            <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                placeholder="Enter no of classes" min="1"  class="form-control" name="classes"    value="{{classes}}" >
+        </div> -->
+        <div class=" center col mt-2 ">
+            <center><button type="submit" class="btn btn-primary" name="f1">Calculate</button>
+                <button type="button" onclick="myFunction()" style="margin-top:5px;"
+                class="btn btn-danger">Reset</button>
+            </center>
+        </div>
+    </div>
+</form>
+
+            </div>
+        </div>
+    </div>
+
+
+        {% if id == 1 %}
+        <div id="clear">
+            <div class="card" id="Geometric-Probability-Calculator">
+                <div class="card-header">
+                    <h2 class="h2">Steps to calcualate geomatric probability</h2>
+                </div>
+                <div class="card-body">
+                    <strong>Geomatric Probability Formula-</strong>
+                    <br>
+                    <p class="btn btn-outline-secondary active"> Geomatric probability = [ P(X=k) = p * (1 – p)^(k – 1) ] </p>
+                    <br>
+                    <strong>where:</strong>
+                            <ul>
+                                <li>p - The success probability</li>
+                                <li>k -  first occurrence of success after ‘k’ trials </li>
+                                <!-- <li>n - Number of classes within the distribution</li> -->
+                            </ul>
+                    <strong>Input values are:-</strong>
+                    <p>The success probability = {{success_prob}}</p>
+                    <p>k number of trials = {{k_trails}}</p> 
+                    <br>
+                    
+                    <strong>Put values into formula</strong>
+                    <p> Geomatric probability = [ p * (1 – p)^(k – 1) ] </p>
+                    <p> [{{success_prob}} * ( 1- {{success_prob}} ^ ( {{k_trails}} -1 ) ) ] </p>
+                    <!-- <p>  class width = ({{max}} - {{min}}) / {{probability}}  </p> -->
+                    <p><b> probability = {{probability}} </b></p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <script>
+            
+            
+        
+            function myFunction() {
+                document.getElementsByName("success_prob")[0].value = "";
+                document.getElementsByName("k_trails")[0].value = "";
+               
+                
+        
+                document.getElementById("clear").innerHTML = "";
+        
+            }
+        
+        </script>   
+        <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">What is Geometric probability?</h2>
+        </div>
+	    <div class="card-body">
+            <p>Geometric probability is used to describe the probability for a specified number of trails that takes place before the first success occurs. This probability is mainly built on the series of independent trails with two events. We will look into the formula that takes place to determine the geometric probability. </p>
+            <p><b>P(X=x) = (1-p)<sup>x-1</sup>* p</b></p>
+            <p>Where, x=1,2,3....</p>
+            <p>x = integer and there is no max values for x.</p>
+            <p>p = probability of success for single trail.</p>
+            <p>X = Random Variable.</p>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="h2">How to Calculate the Geometric Probability?</h2>
+                </div>
+                <div class="card-body">
+                    <p>Have a look at these guidelines  that are shown below to determine the probability of failures before the first success.</p>    
+                    <ul>
+                        <li>First and foremost thing we need to do is write all the needed values in the problem.</li>
+                        <li>Apply, the formula. P(X=x) = (1-p)<sup>x-1</sup>* p</li>
+                        <li>Finally, see the desired answer.</li>
+                    </ul>
+                    </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="h3">Example Question for Geometric Probability</h3>
+                        </div>
+                        <div class="card-body">
+
+<p><strong>Example Question: If you flip a coin until it turns up the first tail. Find the geometric probability where it takes three flips to get the first tail?</strong></p>
+<p><strong>Solution:</strong></p>
+<p>Given data is x=3, p=0.5</p>
+<p>As we know the formula, P(X=x) = (1-p)<sup>x-1</sup>* p</p>
+<p>Substitute the values in the given formula and the equation becomes,</p>
+<p>P(X=3) = (1-0.5)<sup>2</sup> *(0.5)</p>
+<p>P(X=3) = (0.25)(0.5) = 0.125</p>
+
+<p>Thus, the probability of three flips to get the first tail is 0.125.</p>
+<p>Similiar to geometric probability we have many other probability calculators that are available on <a href="https://probabilitycalculator.guru/">probabilitycalculator.guru</a> to complete your work very easily.</p>
+<img src="{% static 'images/Probability/Geometric-Probability-Calculator.jpeg' %}" alt="Geometric Probability Calculator">
+</div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+    <h3 class="h3">FAQs on Geometric Probability Calculator</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. What is Geometric Probability?</strong></p>
+     	<p class="answer">Geometric probability is used to determine the probability of specified failures before getting the first success.</p><hr>
+     	<p class="question"><strong>2. How do you find the geometric probability?</strong></p>
+     	<p class="answer">Finding the geometric probability is very easy, just use the formula to calculate it, i.e. P(X=x) = (1-p)<sup>x-1</sup>* p </p><hr>
+        <p class="question"><strong>3. What does x and p means in the geometric probability formula?</strong></p>
+        <p class="answer">In geometric probability formula, x is the integer (or) whole number and p is the probability of success.</p><hr>
+        <p class="question"><strong>4. How to use geometric probability calculator?</strong></p>
+     	<p class="answer">All you need to do is enter the input values in the input fields and hit the calculate button to get the resultant value in seconds.</p>
+    	</div>
+    </div>
+    </div>
+
+{% if  flag %}
+<script>
+        $(document).ready(function () {
+            $("#hassle").click();
+        });
+</script>
+<button type="button" hidden id="hassle" onclick="location.href='#Geometric-Probability-Calculator'">ans1</button>
+{% endif %}
+{%endblock%}

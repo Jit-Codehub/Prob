@@ -1,0 +1,195 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="https://onlinecalculator.guru/static/style2.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Chi Square Probability Calculator | How to find Chi Square Probability?</title>
+    <meta name="description" content="Utilize the Chi Square Probability Calculator to quickly determine the Chi Square Distribution Probabilities given the observed, expected value. "/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Chi Square Probability Calculator | How to find Chi Square Probability?"/>
+        <meta property="og:description" content="Utilize the Chi Square Probability Calculator to quickly determine the Chi Square Distribution Probabilities given the observed, expected value. "/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/chi-square-probability-calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Chi Square Probability Calculator | How to find Chi Square Probability?"/>
+        <meta name="twitter:description" content="Utilize the Chi Square Probability Calculator to quickly determine the Chi Square Distribution Probabilities given the observed, expected value. "/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/chi-square-probability-calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Chi Square Probability Calculator | How to find Chi Square Probability?"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/chi-square-probability-calculator.jpeg"/>
+        <meta property='og:description' content="Utilize the Chi Square Probability Calculator to quickly determine the Chi Square Distribution Probabilities given the observed, expected value. "/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    ","acceptedAnswer": {"@type": "Answer","text":" All you have to do is provide the inputs as specified and then tap on the calculate button to avail the Chi Square Value in seconds."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Chi Square Probability Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Determine the goodness of a fit test using the Chi Square Test Calculator. Simply enter the inputs observed value, expected value and click on the calculate button to avail the resultant Chi Square Value in no time.</p>
+                <p><strong>Chi Square Probability Calculator: </strong> Do you want to determine whether your data is consistent or not with the expected distribution? If so, this is the place where you will find answers to all your questions. Continue reading to learn about what is chi-square value, how to calculate chi-square value, usage of chi square tables to determine the quality of data, etc.  </p>
+                {% for message in messages %}
+                <p {% if message.tags %} id="message_container" class="alert alert-danger text-center" {% endif %}
+                    style="color:red">{{ message }}</p>
+                {% endfor %}
+            </ul>
+           
+            <form action="{% url 'chi_square' %}" method="POST" id="my_form">
+                {% csrf_token %}
+                 </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Observed value</span>
+            </div>
+            
+           <input style="margin-top: 5px;width:100%" id="ov" name="ov" value="{{ov}}"   required="" class="form-control" type="number" step="any" required width="48"> 
+       </div>
+       <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Expected value</span>
+            </div>
+            
+           <input style="margin-top: 5px;width:100%" id="ev" name="ev" value="{{ev}}"   required="" class="form-control" type="number" step="any" required width="48"> 
+       </div>
+
+       
+        <div class=" center col mt-2 ">
+            <center><button type="submit" class="btn btn-primary">Calculate</button>
+              <a href="{% url 'chi_square' %}" class="btn btn-warning" role="button" style="margin-top:5px;">Reset</a>      
+            </center>
+          </div>
+</div>
+</form>
+           
+{% if ot and ov and ev %}
+<script>
+    $(document).ready(function () {
+
+        $("#hassle").click();
+        });
+</script>
+
+<button type="button" hidden id="hassle" onclick="location.href='#chi_square'">ans1</button>
+{% endif %}      
+        
+{% if ot and ov and ev  %}
+
+<div class="card" id="chi_square">
+        <div class="card-header">
+            <h2 class="h2">Steps to Find Chi Square:</h2>
+        </div>
+
+        <div class="card-body">
+
+            <strong>Chi Square:-</strong>
+            <br>
+            <p class="btn btn-outline-secondary active text-justify">Chi Square X<sup>2</sup> = (ov - ev) / ev </p>
+            <br>
+            <strong>where:</strong>
+                    <ul>
+                        <li>ov is the Observed value,</li>
+                        <li>ev is the Expected value,</li>
+                    </ul>
+
+
+            <strong>Input values are:-</strong>
+            <p>ov = {{ov}} </p>
+            <p>ev = {{ev}} </p>
+            
+            
+            <p><b>Put values into formula</b></p>
+            
+            <p>X<sup>2</sup> =  ({{ov}} - {{ev}})<sup>2</sup> / {{ev}}</p>
+            
+            <b>X<sup>2</sup> = {{result}}</b>
+                         
+   </div>
+    </div>
+    <img src="{% static 'images/Statistics/chi-square-calculator.jpeg' %}" alt='chi-square-calculator'>
+
+{% endif %}
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">What is Chi Square Test?</h2>
+        </div>
+	    <div class="card-body">
+            <p>Chi Square Test is a simple test that measures how observed values differ from the expected ones. You can use this to test how grades differ from intended distribution.   </p>
+</div>
+</div>
+
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="h3">How to Calculate Chi Square?</h3>
+    </div>
+    <div class="card-body">
+<p>You can find the Chi Square Value by using the formula χ2 = (observed value - expected value)² / expected value</p>
+<p>You can use the chi square tables to compare one value with other values. There are two different factors in the table</p>
+<ul><li><strong>Degrees of Freedom:</strong> We can get the Degree of Freedom by simply subtracting number of levels of analyzed variable minus one. For example, if you are given a grading example in which you have 5 grades the degree of freedom would become 4. </li>
+<li><strong>Significance Level:</strong> It id denoted using the symbol  χ2. It is nothing but the probability of rejecting your hypothesis when it is actually true. The greater the risk is more extreme data is accepted as still valid.</li>
+</ul>
+<p>Understand the difficult concepts too easily taking the help of the online tools available at <a href="https://probabilitycalculator.guru/">Probabilitycalculator.guru</a> and clarify your doubts during homework or assignments.</p>
+</div>
+</div>
+    <div class="card">
+        <div class="card-header">
+    <h3 class="h3">FAQs on Chi Square Calculator</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. What is the formula for calculating the Chi Square?</strong></p>
+     	<p class="answer">Chi Square Formula is given by the expression χ2 = (observed value - expected value)² / expected value.</p><hr>
+     	<p class="question"><strong>2. What is meant by Chi Square Test?</strong></p>
+     	<p class="answer">Chi Square Test is nothing but a test that measures how observed values differed from expected ones.</p><hr>  
+        <p class="question"><strong>3. How to use Chi Square Calculator?</strong></p>
+        <p class="answer">All you have to do is provide the inputs as specified and then tap on the calculate button to avail the Chi Square Value in seconds.</p><hr>
+    	</div>
+    </div>
+    </div>
+    <script>
+        function myFunction() {
+          document.getElementById("input1").value="";
+          document.getElementById("detail").innerHTML="";
+          
+        }
+        </script>
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('ddd').click();
+            });
+        </script>
+{%endblock%}

@@ -1,0 +1,247 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Probability Calculator | Free Online Tool to calculate Probability of an Event</title>
+    <meta name="description" content="Make use of our handy probability calculator and compute the dependent and independent events of the probability effortlessly in split seconds. "/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Probability Calculator | Free Online Tool to calculate Probability of an Event"/>
+        <meta property="og:description" content="Make use of our handy probability calculator and compute the dependent and independent events of the probability effortlessly in split seconds. "/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/probability-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Probability Calculator | Free Online Tool to calculate Probability of an Event"/>
+        <meta name="twitter:description" content="Make use of our handy probability calculator and compute the dependent and independent events of the probability effortlessly in split seconds. "/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/probability-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Probability Calculator | Free Online Tool to calculate Probability of an Event"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/probability-Calculator.jpeg"/>
+        <meta property='og:description' content="Make use of our handy probability calculator and compute the dependent and independent events of the probability effortlessly in split seconds. "/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        How do you calculate the probability?
+        ","acceptedAnswer": {"@type": "Answer","text":"By dividing the number of events that occurred by the number of possible outcomes gives us the probability of a single event happening."}	}, {"@type": "Question","name":"2.
+        What are the formulas of single event probability?
+        ","acceptedAnswer": {"@type": "Answer","text":"The single event probability formulas are as follows:
+
+        Probability of event A that occurs P(A) = n(A) / n(S).
+        Probability of event A that does not occur P(A') = 1 - P(A)."}	}, {"@type": "Question","name":"3.
+        What are the formulas of multiple event probability?
+        ","acceptedAnswer": {"@type": "Answer","text":"The following list will help you learn the multiple event probability formulas:
+
+       1. P(A) = n(A) / n(S),
+       2. P(A') = 1 - P(A),
+       3. P(B) = n(B) / n(S),
+       4. P(B') = 1 - P(B),
+       5. The probability that both the events occur P(A ∩ B) = P(A) x P(B).
+       6. Probability that either of event occurs P(A ∪ B) = P(A) + P(B) - P(A ∩ B).
+       7. Conditional Probability P(A | B) = P(A ∩ B) / P(B)."}	}, {"@type": "Question","name":"4.
+        How to find the probability of two events?
+        ","acceptedAnswer": {"@type": "Answer","text":"Simply by multiplying the probability first event with the second event, you can calculate the probability of two events. For instance, if the probability of event A is 8/2 and the probability of event B is 4/2 then the probability of two events occurring at the same time is (8/2)*(4/2) = 4 * 2 = 8."}	}]}
+    </script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Probability Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p><strong>Probability Calculator</strong> helps you to compute the probability of one event occurring on the basis of probabilities of other events occurring. It takes favorable outcomes and total outcomes as inputs and displays the required output in seconds by clicking on the calculate button.</p>
+<!---------------      Error messages ---------->
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <p {% if message.tags %} id="message_container" class="alert alert-danger text-center" {% endif %}
+                       style="color:red">{{ message }}</p>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+<!---------------    Form ------->
+<form action="" method="POST" id="my_form">
+    {% csrf_token %}
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <p class="input-group-text" id="basic-addon1">Total number of possible outcomes </p>
+        </div>
+        <input style="margin-top: 5px;width:100%" id="n" name="n" value="{{n}}" required=""
+               oninput="validateNumber(this);" class="form-control" type="number" min="0" required width="48">
+
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <p class="input-group-text" id="basic-addon1">Given favorable outcomes :</p>
+        </div>
+        <input style="margin-top: 5px;width:100%" id="r" name="r" value="{{r}}" required=""
+               oninput="validateNumber(this);" class="form-control" type="number" min="0" required width="48">
+    </div>
+    <div>
+        <div class=" center col mt-2 ">
+            <center>
+                <button type="submit" class="btn btn-primary">Calculate</button>
+                <a href="" onclick="this.forn.reset()" class="btn btn-warning" style="margin-top:5px;">Reset</a>
+            </center>
+        </div><br>
+    </div>
+</form>
+<!---------------- End Form-->
+
+  
+</div>
+</div>
+{% if id == 1 %}
+<div id="clear">
+    <div class="card" id="magnetic-force">
+        <div class="card-header">
+            <h2 class="h2">Steps to Calculate Risk</h2>
+        </div>
+        <div class="card-body">
+            <strong>Probability Formula-</strong>
+            <br>
+            <p class="btn btn-outline-secondary active">(P(A))=fav outcomes/total outcomes</p>
+            <p>fav outcomes={{r}}</p>
+            <p>total outcomes={{n}}</p>
+            <p>P(A)={{r}}/{{n}}
+            
+            </p>
+            <p>
+                P(A)={{prob}}
+            </p>
+            <br>
+            </div>
+            </div>
+            </div>
+{% endif %}
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">What is Meant by Probability in Maths?</h2>
+        </div>
+	    <div class="card-body">
+            <p>In mathematics, the probability is a field of statistics that is utilized to explain the likelihood of an event that is going to occur. A number that always lies between 0 and 1 is probability. When the probability value is equivalent to 1, then something will occur. If not, then something will never occur.</p>
+<p>For instance, the probability of flipping a coin and its being tail is &frac12;, because there is 1 way of getting a tail and the total number of possible outcomes is 2 (head or tail).</p>
+<h4>Types of Events That Influence Probability</h4>
+<p>There are three types of events that impact the probability outcome. They are:</p>
+<ul>
+<li>Independent</li>
+<li>Dependent</li>
+<li>Mutually exclusive</li>
+</ul>
+<h4>Basic Probability Formulas</h4>
+<p>The probability formula is the ratio of the number of ways an event can appear across the total number of possible outcomes. Thus, the formula can be written as</p>
+<p><strong><em>Probability of an event occurring = Number of ways an event can occur / Total number of possible outcomes.</em></strong></p>
+<p>A standard formula for the probability of an event to occur:<strong> P(A) = n(A) / n(S)</strong></p>
+<p>where,</p>
+<ul>
+<li>P(A) is the probability of an event happening</li>
+<li>n(A) is the number of ways an event can happen</li>
+<li>n(S) is the total number of possible outcomes</li>
+</ul>
+<p>A standard formula for the probability of an event that will not occur: <strong>P(A') = 1 - P(A)</strong></p>
+<p>where,</p>
+<ul>
+<li>P(A') is the probability of an event cannot occur</li>
+<li>P(A) is the probability of an event occurring</li>
+</ul>
+<img src="https://drive.google.com/file/d/1YCob4zfiE6ShrrehnQVhcckRUa1qJjWk/view?usp=sharing" alt="Probability Formula Sheet">
+</div>
+    </div>
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">How Do You Find The Probability Of An Event Manually?</h2>
+        </div>
+	    <div class="card-body">
+            <p>Here is the simple procedure that helps you find the probability of an event manually with ease. Take a look at the below steps:</p>
+            <ul>
+            <li>Firstly, we have to identify the number of favorable outcomes.</li>
+            <li>Next, find the total number of outcomes.</li>
+            <li>Now, utilize the basic formula of the probability of an event (ie., the number of favorable outcomes divided by the total number of outcomes.)</li>
+            <li>Substitute the values in the probability formula and get the result effortlessly.</li>
+            </ul>
+            <p>Get a good grip on all the concepts of probability by using <a href="https://probabilitycalculator.guru/">Probabilitycalculator.guru</a> provided online calculator tools.</p>
+            <h4>Solved Example on Probability</h4>
+            <p><strong>Question: </strong></p>
+            <p>If we toss a coin once, what is the probability of getting tails? Prove it using the probability calculator.</p>
+            <p><strong>Solution: </strong></p>
+            <p>Given favorable outcomes = 1</p>
+            <p>Total number of possible outcomes = 2</p>
+            <p>Probability of getting tails = 1/2 or 0.5</p>
+            <p>Therefore, the probability of getting tails is <strong>0.5.</strong></p>            
+<img src="{% static 'images/Discrete_Mathematics/Probability-Calculator.jpeg' %}" alt="Probability Calculator">
+</div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+    <h3 class="h3">FAQs on Handy Tool of Probability Calculator with Steps</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. How do you calculate the probability?</strong></p>
+     	<p class="answer">By dividing the number of events that occurred by the number of possible outcomes gives us the probability of a single event happening.</p><hr>
+     	<p class="question"><strong>2. What are the formulas of single event probability?</strong></p>
+     	<p class="answer">The single event probability formulas are as follows:</p>
+         <ul>
+         <li>Probability of event A that occurs P(A) = n(A) / n(S).</li>
+         <li>Probability of event A that does not occur P(A') = 1 - P(A).</li>
+         </ul></p><hr>
+        <p class="question"><strong>3. What are the formulas of multiple event probability?</strong></p>
+        <p class="answer">The following list will help you learn the multiple event probability formulas:</p>
+        <ul>
+        <li>P(A) = n(A) / n(S).</li>
+        <li>P(A') = 1 - P(A).</li>
+        <li>P(B) = n(B) / n(S).</li>
+        <li>P(B') = 1 - P(B).</li>
+        <li>The probability that both the events occur P(A &cap; B) = P(A) x P(B).</li>
+        <li>Probability that either of event occurs P(A &cup; B) = P(A) + P(B) - P(A &cap; B).</li>
+        <li>Conditional Probability P(A | B) = P(A &cap; B) / P(B).</li>
+        </ul></p><hr>
+        <p class="question"><strong>4. How to find the probability of two events?</strong></p>
+     	<p class="answer">Simply by multiplying the probability first event with the second event, you can calculate the probability of two events. For instance, if the probability of event A is 8/2 and the probability of event B is 4/2 then the probability of two events occurring at the same time is (8/2)*(4/2) = 4 * 2 = 8.</p><hr>
+    </div>
+    </div>
+    </div>
+
+{% if  flag %}
+<script>
+        $(document).ready(function () {
+            $("#hassle").click();
+        });
+</script>
+<button type="button" hidden id="hassle" onclick="location.href='#permutations'">ans1</button>
+{% endif %}
+
+{%endblock%}

@@ -1,0 +1,87 @@
+{%extends 'base/full_form_base.html'%}
+{%load static%}
+{%block meta%}
+{% load tags %}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- Online Calculator Guru Site Fevicon -->
+<link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png"
+    type="icon">
+<!-- Online Calculator Guru Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="https://onlinecalculator.guru/static/style.css">
+{%endblock css%}
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>{{ li.full_form_abbr|upper }} Full Form | what is {{ li.full_form|split }}</title>
+<meta name="description" content="Find {{ li }} Full Form is the best tool to calculate the accuracy with error free results. And we have also explained many things in detail about accuracy." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="{{ li.full_form_abbr|upper }} Full Form | what is {{ li.full_form|split }}" />
+<meta property="og:description" content="Find {{ li }} Full Form is the best tool to calculate the accuracy with error free results. And we have also explained many things in detail about accuracy." />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Statistics/accuracy-calculator.jpeg"
+    property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="{{ li.full_form_abbr|upper }} Full Form | what is {{ li.full_form|split }}" />
+<meta name="twitter:description"
+    content="Find {{ li }} Full Form is the best tool to calculate the accuracy with error free results. And we have also explained many things in detail about accuracy." />
+<meta name="twitter:image:src"
+    content="https://onlinecalculator.guru/static/images/Statistics/accuracy-calculator.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="{{ li.full_form_abbr|upper }} Full Form | what is {{ li.full_form|split }}" />
+<meta property='og:image'content="https://onlinecalculator.guru/static/images/Statistics/accuracy-calculator.jpeg" />
+<meta property='og:description' content="Find {{ li }} Full Form is the best tool to calculate the accuracy with error free results. And we have also explained many things in detail about accuracy." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+    {%endblock%}
+    {%block content%}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-9">
+                <div class="card c1">
+                    <div class="card-header">
+                        <h1 class="h1">{{ li.full_form_abbr|upper }} Full Form | What is {{ li.full_form|split }}</h1>
+                    </div>
+                    <div class="card-body">
+
+                        {% autoescape off %}
+                        {{ li.content }}
+                        {% endautoescape %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3" style="margin-top:80px;">
+                Related Full Forms
+                {% for k in reli %}
+                <div>
+                    <a href="{% url 'specific_full_form' name=k.full_form_abbr|replace_slash|add:'-full-form' %}">{{ k.full_form_abbr|upper }} Full Form</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>          
+{% endblock content %}

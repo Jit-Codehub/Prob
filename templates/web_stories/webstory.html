@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html amp lang="en">
+  <head>
+    {% load tags %}
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script
+      async
+      custom-element="amp-story"
+      src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+    ></script>
+
+    <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
+
+    <title>{{titles.title}}</title>
+    <link rel="canonical" href="{{request.build_absolute_uri}}" />
+    <meta
+      name="viewport"
+      content="width=device-width,minimum-scale=1,initial-scale=1"
+    />
+    <style amp-boilerplate>
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript
+      ><style amp-boilerplate>
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style></noscript
+    >
+
+    <style amp-custom>
+
+      .pa {
+            position: absolute;
+            word-break: break-word
+      }
+
+      .img-fill{
+            margin: 3.2%;
+            top: 0;
+            left: 0;
+            /* width: 34.08px;
+            height: 34.08px */
+            width: 50px;
+            height: 50px
+  
+      }
+
+      .container {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        margin: 20px;
+      }
+      .box {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.8; /* for demo purpose  */
+      }
+      .stack-top {
+        z-index: 9;
+        margin: 2px; /* for demo purpose  */
+        margin-top: 300px;
+        padding: 10px 10px 10px 10px;
+      }
+  </style>
+
+
+  </head>
+  <body>
+    <amp-story
+      standalone
+      title="{{titles.title}}"
+      publisher="Probability webstories"
+      publisher-logo-src="/static/images/base/Probability.png"
+      poster-portrait-src="/media/web-stories/webstory-{{webno}}/webstory-{{webno}}-portrait.jpg"
+      poster-landscape-src="/media/web-stories/webstory-{{webno}}/webstory-{{webno}}-landscape.jpg"
+      poster-square-src="/media/web-stories/webstory-{{webno}}/webstory-{{webno}}-square.jpg"
+    >
+
+    {% for d in data %}
+
+      <amp-story-page id="id-{{forloop.counter}}">
+
+
+        <amp-story-grid-layer template="fill">
+          
+
+          {% if d.video %}
+          <amp-video
+            autoplay
+            layout="responsive"
+            width="720"
+            height="1280"
+            
+            {% if d.poster %}
+            poster="/media/web-stories/webstory-{{webno}}/{{d.poster}}"
+            {% else %}
+            poster="/media/web-stories/webstory-{{webno}}/webstory-{{webno}}-portrait.jpg"
+            {% endif %}
+
+            loop
+          >
+            <source
+              src="/media/web-stories/webstory-{{webno}}/{{d.video}}"
+              type="video/mp4"
+            />
+          </amp-video>
+
+          {% elif d.image %}
+          
+          <amp-img
+            
+            width="720"
+            height="1280"
+            alt="Background Image"
+            layout="responsive" 
+            animate-in="zoom-in"
+            animate-in-duration="10s"
+            scale-end="1.27"
+            src="/media/web-stories/webstory-{{webno}}/{{d.image}}"
+          >
+          </amp-img>
+       
+        
+
+          {% endif %}
+        
+        </amp-story-grid-layer>
+
+
+        <amp-story-grid-layer template="vertical">
+
+          
+          <amp-img width="200" height="200" layout="responsive" class="img-fill pa"
+            src="/static/images/base/Probability.png">
+          </amp-img>
+        
+
+        {% if forloop.counter == 1 %}
+        <div class="container">
+          <h1 style="
+          font-family: 'Futura-pt Bold';
+          font-size: 2.25em;
+          color: rgba(255, 255, 255, 1);
+        ">{{titles.title}}</h1>
+        </div>
+        
+          <h4 style="
+          font-family: 'Futura-pt Bold';
+          font-size: 1.5em;
+          text-align: center;
+          background-color: #1a237e;
+          color: rgba(255, 255, 255, 1);
+          margin-top: 80%;
+        ">Probability webstories</h4>
+        
+        {% elif forloop.counter != 1 %}
+        <div class="box stack-top">
+          {% if d.heading %}
+            {% for i in d.heading %}
+              <h4 style="
+              font-family: 'Futura-pt Bold';
+              font-size: 1.5em;
+              text-align: center;
+              background-color: rgb(0, 0, 0, 0.53);
+              color: rgba(255, 255, 255, 1);
+            ">{{i}}</h4>
+            {% endfor %}
+          {% endif %}
+
+          {% if d.subheading %}
+            {% for i in d.subheading %}
+              <h4 style="
+              font-family: 'Futura-pt Bold';
+              font-size: 1.5em;
+              text-align: center;
+              background-color: rgb(7, 154, 252);
+              color: rgba(255, 255, 255, 1);
+            ">{{i}}</h4>
+            {% endfor %}
+          {% endif %}
+
+          {% if d.para %}
+            {% for i in d.para %}
+              <h4 style="
+              font-family: 'Gilroy Semi Bold';
+              font-size: 1.3em;
+              background-color: rgba(0, 0, 0, 0.53);
+              color: rgba(255, 255, 255, 1);
+            ">{{i}}</h4>
+            {% endfor %}
+          {% endif %}
+        </div>
+        {% endif %}
+
+        </amp-story-grid-layer>
+
+
+      </amp-story-page>
+      
+    {% endfor %}
+    </amp-story>
+  </body>
+</html>

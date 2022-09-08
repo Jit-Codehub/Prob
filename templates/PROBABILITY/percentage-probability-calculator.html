@@ -1,0 +1,176 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Percentage Probability Calculator | How to Calculate Probability with Percentages?</title>
+    <meta name="description" content="Utilize this handy tool percentage probability calculator and easily find the probability with percentages within a fraction of seconds."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Percentage Probability Calculator | How to Calculate Probability with Percentages?"/>
+        <meta property="og:description" content="Utilize this handy tool percentage probability calculator and easily find the probability with percentages within a fraction of seconds."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/Percentage-Probability-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Percentage Probability Calculator | How to Calculate Probability with Percentages?"/>
+        <meta name="twitter:description" content="Utilize this handy tool percentage probability calculator and easily find the probability with percentages within a fraction of seconds."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/Percentage-Probability-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Percentage Probability Calculator | How to Calculate Probability with Percentages?"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/Percentage-Probability-Calculator.jpeg"/>
+        <meta property='og:description' content="Utilize this handy tool percentage probability calculator and easily find the probability with percentages within a fraction of seconds."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        How do you find percent probability?
+        ","acceptedAnswer": {"@type": "Answer","text":"To find the percent probability of an event, you need to calculate the probability first and then convert the result into a percentage. Thus, you can get the final answer in percent probability."}	}, {"@type": "Question","name":"2.
+        How do you calculate probability on a calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":"https://www.youtube.com/watch?v=_YZ4VDL9kh4"}	}, {"@type": "Question","name":"3.
+        Is there any free online calculator that calculates percentage probability in seconds?
+        ","acceptedAnswer": {"@type": "Answer","text":"Yes, there is a reliable and best website called probabilitycalculator.guru that provides various free online calculator tools. So, you can easily find the percentage probability calculator from the site and make your calculations easier & faster."}	}]}
+    </script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Percentage Probability Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Do you want an answer to how do you do probability problems with percentages? Then, go for this handy percentage probability calculator. Just drop the required input values in the boxes and click on the calculate button to display the result in split seconds with detailed steps.</p><!---------------      Error messages ---------->
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <p {% if message.tags %} id="message_container" class="alert alert-danger text-center" {% endif %}
+                       style="color:red">{{ message }}</p>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+<!---------------    Form ------->
+            <form action="{% url 'permutations' %}" method="POST" id="my_form">
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <p class="input-group-text" id="basic-addon1">n (objects)</p>
+                    </div>
+                    <input style="margin-top: 5px;width:100%" id="n" name="n" value="{{n}}" required=""
+                           oninput="validateNumber(this);" class="form-control" type="number" min="0" required width="48">
+
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <p class="input-group-text" id="basic-addon1">r (sample) :</p>
+                    </div>
+                    <input style="margin-top: 5px;width:100%" id="r" name="r" value="{{r}}" required=""
+                           oninput="validateNumber(this);" class="form-control" type="number" min="0" required width="48">
+                </div>
+                <div>
+                    <div class=" center col mt-2 ">
+                        <center>
+                            <button type="submit" class="btn btn-primary">Calculate</button>
+                            <a href="{% url 'permutations' %}" class="btn btn-warning" style="margin-top:5px;">Reset</a>
+                        </center>
+                    </div><br>
+                </div>
+            </form>
+<!---------------- End Form-->
+<p>Related Calculators:</p>
+<ul>
+<li>Normal Distribution Probability Calculator</li>
+<li>Dice Probability Calculator</li>
+</ul>
+<p><strong>Percentage Probability Calculator:</strong> Are you wondering How can be possible for finding the probability using a percent? Don't get worried anymore as we have come up with the best solution ie., the percent probability calculator. With this free online probability percentage calculator tool, you can easily find the percentage probabilities within no time and understand how to compute these percent probability questions manually.</p>
+</div>
+</div>
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">How to Find the Percentage Probability?</h2>
+        </div>
+	    <div class="card-body">
+            <p>The steps that everyone should follow while calculating the percentage probabilities of an event are fashioned:</p>
+<ul>
+<li>First and foremost, compute the number of favorable outcomes in a common situation.</li>
+<li>Understand the number of chances of the desired event happening. </li>
+<li>Now, determine the total number of possible events or else the total number of choices for the outcome of the event. </li>
+<li>In this step, we have to divide the number of outcomes desired by the number of possible events. </li>
+<li>At last, work on the result by moving the decimal point to the right two places or product the decimal by 100. Then, you will get the percent probability outcome for an event.</li>
+</ul>
+<p>Let's understand this concept completely from the below percentage probability example and gain more knowledge on it.</p>
+</div>
+    </div>
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h3">Percentage Probability Questions / Examples</h3>
+        </div>
+	    <div class="card-body">
+            <p><strong>Question:</strong></p>
+<p>Neil has a standard deck of 52 cards. What is the probability that he will select a heart when she draws a card at random?</p>
+<p><strong>Solution:</strong></p>
+<p>Given deck has 52 cards</p>
+<p>In the deck, there are 12 hearts</p>
+<p>Hence, 13 chances for Neil to draw out a heart</p>
+<p>There are 52 cards in the deck so Neil has 52 possible outcomes</p>
+<p>At this point, divide 13 by 52 i.e., 13/52 = 0.25</p>
+<p>To calculate the percentage probability, we have to multiply the decimal by 100 ie., 0.25 x 100 = 25</p>
+<p>Therefore, Neil has a 25 percent chance of selecting a heart at random.</p>                        
+<img src="{% static 'images/Discrete_Mathematics/Percentage-Probability-Calculator.jpeg' %}" alt="Percentage Probability Calculator">
+</div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+    <h3 class="h3">FAQs on Percent Probability Calculator with Steps</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. How do you find percent probability?</strong></p>
+     	<p class="answer">To find the percent probability of an event, you need to calculate the probability first and then convert the result into a percentage. Thus, you can get the final answer in percent probability.</p><hr>
+     	<p class="question"><strong>2. How do you calculate probability on a calculator?</strong></p>
+     	<p class="answer">https://www.youtube.com/watch?v=_YZ4VDL9kh4</p><hr>
+        <p class="question"><strong>3. Is there any free online calculator that calculates percentage probability in seconds?</strong></p>
+        <p class="answer">Yes, there is a reliable and best website called <a href="https://probabilitycalculator.guru/">probabilitycalculator.guru</a> that provides various free online calculator tools. So, you can easily find the percentage probability calculator from the site and make your calculations easier &amp; faster.</p><hr>
+    </div>
+    </div>
+    </div>
+
+{% if  flag %}
+<script>
+        $(document).ready(function () {
+            $("#hassle").click();
+        });
+</script>
+<button type="button" hidden id="hassle" onclick="location.href='#permutations'">ans1</button>
+{% endif %}
+
+{%endblock%}

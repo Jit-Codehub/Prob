@@ -1,0 +1,1124 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="shortcut icon" href="{% static 'images/logo/Online-Calculator-Guru-Fevicon.png' %}" type="icon">
+  {%block css%}
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  {%endblock%}
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<!-- META DATA STARTS --->
+    <title>Binomial Probability Calculator | Steps to Find Binomial Probability</title>
+	<meta name="description" content="Free Binomial Probability Calculator finds the binomial probability for an event in a short span of time. Just enter inputs for binomial probability to get the result."/>
+	<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- META DATA ENDS --->
+ 
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+	<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+	<meta property="og:title" content="Binomial Probability Calculator | Steps to Find Binomial Probability"/>
+	<meta property="og:description" content="Free Binomial Probability Calculator finds the binomial probability for an event in a short span of time. Just enter inputs for binomial probability to get the result."/>
+	<meta content="" property="og:site_name" />
+	<meta  content="https://onlinecalculator.guru/static/images/Statistics/Binomial-Probability-Calculator.jpeg" property="og:image" />
+	<meta property="og:image:type" content="image/png" />
+	<meta property="og:image:height" content="435" />
+	<meta property="og:image:width" content="354" />
+	<!--  FACEBOOK CONFIGURATION ENDS  -->
+	<!-- TWITTER CARD CONFIGURATION STARTS  -->
+	<meta name="twitter:card" content="summary"/>
+	<meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+	<meta name="twitter:title" content="Binomial Probability Calculator | Steps to Find Binomial Probability"/>
+	<meta name="twitter:description" content="Free Binomial Probability Calculator finds the binomial probability for an event in a short span of time. Just enter inputs for binomial probability to get the result."/>
+	<meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Statistics/Binomial-Probability-Calculator.jpeg"/>
+	<meta property="twitter:image:height" content="435"/>
+	<meta property="twitter:image:width" content="354"/>
+	<!-- TWITTER CARD CONFIGURATION ENDS  -->
+	<!--  LINKEDIN CONFIGURATION STARTS-->
+	<meta property='og:title' content="Binomial Probability Calculator | Steps to Find Binomial Probability"/>
+	<meta property='og:image' content="https://onlinecalculator.guru/static/images/Statistics/Binomial-Probability-Calculator.jpeg"/>
+	<meta property='og:description' content="Free Binomial Probability Calculator finds the binomial probability for an event in a short span of time. Just enter inputs for binomial probability to get the result."/>
+	<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+	<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+    How to solve binomial probability on a calculator?
+    ","acceptedAnswer": {"@type": "Answer","text":" Give probability of success, number of trials, number of success details in the input fields and tap on the calculate button to get the binomial probability as result."}	}, {"@type": "Question","name":"2.
+    What are the 4 requirements for a binomial probability distribution?
+    The important four requirements for a binomial probability are here.
+    ","acceptedAnswer": {"@type": "Answer","text":" All the observations are independent.
+    There should be a fixed number of observations.
+    The probability of success for each observation is same.
+    Each observation falls into either success or failure."}	}, {"@type": "Question","name":"3.
+    What is binomial probability formula?
+    ","acceptedAnswer": {"@type": "Answer","text":" The binomial probability distribution of exactly x success from n number of trials formula is P(x) = nCx Px qn – x"}	}, {"@type": "Question","name":"4.
+    A coin is tossed 12 times. What is the probability of getting exactly 3 heads?
+    ","acceptedAnswer": {"@type": "Answer","text":" The number of trials n = 12
+    The number of successful trials x = 3
+    Probability of success in one trial p = 1/2
+    Probability of failure in one trial q = 1 - 1/2 = 1/2
+    P(x) = nCx Px qn – x
+    = 12C3 P3 q12 – 3
+    = 12!/(3!*(12-3)! 0.53 0.59
+    = 220 x 0.125 x 0.59
+    = 0.05371."}	}]}</script>
+{%endblock%}
+{%block content%}
+<div class="container">
+	<div class="card c1">
+  	<div class="card-header">
+  <h1 class="h1">Binomial Probability Calculator</h1>
+  </div>
+  <div class="card-body">
+	{%if go_tag%}
+	<a href="{{go_tag}}" id="ddd"></a>
+	{%endif%}
+	<p>This Binomial Probability Calculator is a user-friendly probability tool which provides the binomial probability of an event as result by just entering probability of success, number of success, and number of trials in the input field & click the calculate button provided next to the box.</p>
+	<form action="" method="POST" id="my_form" >
+        {% csrf_token %}
+        <div class="col-auto">
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><strong>Type of probability
+                    </strong></div>
+                </div>
+                <select name="given_data" id="inlineFormInputGroup" class="form-control"
+                    onchange="this.form.submit();" autofocus="">
+
+                    {% if given_data == 'form1' %}
+                    <option value="form1" selected="selected"> Exactly X Successes </option>
+                    {% else %}
+                    <option value="form1"> Exactly X Successes </option>
+                    {% endif %}
+
+                    {% if given_data == 'form2' %}
+                    <option value="form2" selected="selected"> Less than X Successes</option>
+                    {% else %}
+                    <option value="form2"> Less than X Successes</option>
+                    {% endif %}
+
+
+                    {% if given_data == 'form3' %}
+                    <option value="form3" selected="selected"> At most X Successes  </option>
+                    {% else %}
+                    <option value="form3"> At most X Successes </option>
+                    {% endif %}
+
+                    {% if given_data == 'form4' %}
+                    <option value="form4" selected="selected"> More than X Successes </option>
+                    {% else %}
+                    <option value="form4"> More than X Successes </option>
+                    {% endif %}
+
+
+                    {% if given_data == 'form5' %}
+                    <option value="form5" selected="selected"> At Least X Successes  </option>
+                    {% else %}
+                    <option value="form5"> At Least X Successes  </option>
+                    {% endif %}
+
+                </select>
+            </div>
+
+
+            {% if given_data != "form6" %}
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><strong>Trials(n)</strong></div>
+                </div>
+                <input type="number" min="0" oninput="validateNumber(this);" id="Ia" required=""
+                    placeholder="Enter number"  class="form-control mt-1" name="tr" {% if tr %} value="{{tr1}}" {% else %} value="6" {% endif %}>
+    
+    </div>
+    <div class="input-group mb-2">
+        <div class="input-group-prepend">
+            <div class="input-group-text"><strong>Probability(p)</strong></div>
+        </div>
+        <input type="number" min="0" max="1" step="0.001" oninput="validateNumber(this);" id="Ia" required=""
+            placeholder="Enter number"  class="form-control mt-1" name="pr" {% if pr %} value="{{pr1}}" {% else %} value="0.7" {% endif %}>
+    
+    </div>
+    <div class="input-group mb-2">
+        <div class="input-group-prepend">
+            <div class="input-group-text"><strong>Successes(X)</strong></div>
+        </div>
+        <input type="number" min="0.001" step="0.001" oninput="validateNumber(this);" id="Ia" required=""
+            placeholder="Enter number"  class="form-control mt-1" name="sc" {% if sc %} value="{{sc1}}" {% else %} value="3" {% endif %}>
+    
+    </div>
+    
+    
+            
+            {% endif %}
+    <div class=" center col mt-2 ">
+                <center><button type="submit" class="btn btn-primary" name="f1">Calculate</button>
+                    <button type="button" onclick="this.form.reset()" style="margin-top:5px;"
+                        class="btn btn-danger">Reset</button>
+                </center>
+            </div>
+
+    </form>
+</div>
+</div>
+</div>
+{% if given_data == "form1" and tr and pr and sc %}
+<script>
+    $(document).ready(function () {
+
+        $("#hassle").click();
+        });
+</script>
+
+<button type="button" hidden id="hassle" onclick="location.href='#Binomial-Probability-Calculator'">ans1</button>
+{% endif %}
+<div id="clear">
+
+    {% if given_data == "form1" and tr and pr and sc %}
+    <div class="card" id="Binomial-Probability-Calculator">
+        <div class="card-header">
+            <h2 class="h2">Steps to Binomial Probability Calculator</h2>
+        </div>
+
+        <div class="card-body">
+            <h5><strong>Answer:</strong></h5>
+             <h5> <b>P( {{sc}} )</b> Probability of exactly {{sc}} successes : <b> {{ans}}</b></h5>
+           <hr>
+             <h5><strong>Solution:</strong></h5>
+             <h5> <b>P( {{sc}} )</b> Probability of exactly {{sc}} successes </h5>
+             <h5>If using a calculator, you can enter trials(n) = {{tr}}, p = {{pr}} and X = {{sc}}  into a binomial probability distribution function (PDF). If doing this by hand, apply the binomial probability formula:</h5>
+             <br>
+        
+               <h3 style="text-align: center ;"><strong>
+                P
+                (
+                X
+                )
+                =
+                n
+                !
+                /
+                X
+                !
+                (
+                n
+                −
+                X
+                )
+                !
+                *
+                p
+                ^
+                X
+                *
+                (
+                1
+                −
+                p
+                )
+                ^
+                n
+                −
+                X</strong></h3> <br>
+                <h5>where <b>n</b>  is the number of trials, 
+                <b>p</b>  is the probability of success on a single trial, and 
+                <b>X</b> is the number of successes.</h5>
+
+                <h5>Substituting in values for this problem,  <b>
+                    n = {{tr}}, p = {{pr}} and X = {{sc}}
+                </b></h5>
+                
+                <br>
+                <h3 style="text-align: center;"><strong>
+                P
+                (
+                {{sc}}
+                )
+                =
+                {{tr}}
+                !
+                /
+                {{sc}}
+                !
+                (
+                {{tr}}
+                −
+                {{sc}}
+                )
+                !
+                *
+                {{pr}}
+                ^
+                {{sc}}
+                *
+                (
+                1
+                −
+                {{pr}}
+                )
+                ^
+                {{tr}}
+                −
+                {{sc}}
+                </strong></h3>
+
+                <h5>Evaluating the expression, we have</h5>
+                <h3>P( {{sc}} ) = {{ans}}</h3>
+
+                <hr>
+                <h3> <strong> Complete Binomial Distribution Table
+                </h3></strong>
+                <h5>If we apply the binomial probability formula, or a calculator's binomial
+                     probability <br> distribution (PDF) function, to all possible values of X for {{tr}}
+                      trials, we can construct <br> a complete binomial distribution table.
+                       The sum of the probabilities in this table will <br> always be 1. The complete
+                        binomial distribution table for this problem, <br> with p = {{pr}} and {{tr}} trials 
+                        is:</h5> <br>
+                {% for key, value in ans2.items %}
+                     <h5> <b>  P({{ key }}) = </b> {{ value }} </h5>
+                     {% endfor %}
+            
+
+        </div>
+        </div>
+
+    {% endif %}
+
+    {% if given_data == "form2" and tr and pr and sc %}
+    <script>
+        $(document).ready(function () {
+    
+            $("#hassle").click();
+            });
+    </script>
+    
+    <button type="button" hidden id="hassle" onclick="location.href='#Binomial-Probability-Calculator'">ans1</button>
+    {% endif %}
+
+    {% if given_data == "form2" and tr and pr and sc %}
+    <div class="card" id="Binomial-Probability-Calculator">
+        <div class="card-header">
+            <h2 class="h2">Steps to Binomial Probability Calculator</h2>
+        </div>
+
+        <div class="card-body">
+            <h5><strong>Answer:</strong></h5>
+             <h5> <b>P(X  < {{sc}} )</b> Probability of less than {{sc}} successes : <b> {{total}}</b></h5>
+           <hr>
+             <h5><strong>Solution:</strong></h5>
+             <h5> <b>P(X<{{sc}} )</b> Probability of less than {{sc}} successes </h5>
+             <h5>Less than {{sc}} successes includes X-values of  X =  
+                {% for key, value in an.items %}
+                  {{ key }},
+                {% endfor %}
+                To solve this problem, find the sum of the binomial probabilities for each of the values of X, or if there is only one value of X, find the probability of P(X). <br> In this problem,
+             </h5>
+             <h3 style="text-align: center;">
+                {% for key, value in an.items %}
+                        {% if forloop.last %}
+                    P({{ key }}) 
+                    
+                    {%else%}
+                    P({{ key }}) +
+                    {%endif%}
+                      {% endfor %}
+             </h3> <br>
+             <h5>To find the individual probabilities for each success, X, you can either use a caluclator's binomial probability distribution function (PDF), or you can use the binomial probability formula for each success, X. Then, find the sum of each of the individual probabilities.</h5>
+             <hr> <br>
+             <h3><b>Find the First Probability</b> <br><br>
+            P(0)</h3>
+            <h5>For the probability P(0) , you can enter trials = {{tr}}, P = {{pr}}
+                and X = 0 into a binomial probability distribution function (PDF). The answer is 
+                P(0) = {% for key, value in ans2.items %}
+                {% if key == '0' %}
+                {{ value }}
+                {%endif%}
+                  {% endfor %}. If you're not using a calculator, apply the binomial probability formula:
+            </h5>
+               <h3 style="text-align: center ;"><strong>
+                P
+                (
+                X
+                )
+                =
+                n
+                !
+                /
+                X
+                !
+                (
+                n
+                −
+                X
+                )
+                !
+                *
+                p
+                ^
+                X
+                *
+                (
+                1
+                −
+                p
+                )
+                ^
+                n
+                −
+                X</strong></h3> <br>
+                <h5>where <b>n</b>  is the number of trials, 
+                <b>p</b>  is the probability of success on a single trial, and 
+                <b>X</b> is the number of successes.</h5>
+
+                <h5>Substituting in values for this problem,  <b>
+                    n = {{tr}}, p = {{pr}} and X = {{0}}
+                </b></h5>
+                
+                <br>
+                <h3 style="text-align: center;"><strong>
+                P
+                (
+               0
+                )
+                =
+                {{tr}}
+                !
+                /
+                {{0}}
+                !
+                (
+                {{tr}}
+                −
+                {{0}}
+                )
+                !
+                *
+                {{pr}}
+                ^
+                {{0}}
+                *
+                (
+                1
+                −
+                {{pr}}
+                )
+                ^
+                {{tr}}
+                −
+                {{0}}
+                </strong></h3> <br>
+                <h5>Remember, 0! is 1.Evaluating the expression, we have</h5>
+                <h3>P( {{0}} ) = 
+                    {% for key, value in ans2.items %}
+                    {% if key == '0' %}
+                    {{ value }}
+                    {%endif%}
+                      {% endfor %}</h3>
+
+                <hr><br>
+                <h3><b>Find the Remaining Probabilities</b></h3>
+                <h5>To calculate any remaining probabilities, we need to either use the binomial probability distribution function on a calculator or the binomial probability formula. We'll add these remaining probababilities to 
+                    P(0)for our final answer.
+                    </h5>
+                    <h3 style="text-align: center;">{% for key, value in an.items %}
+                        {% if forloop.last %}
+                    P({{ key }}) 
+                    
+                    {%else%}
+                    P({{ key }}) +
+                    {%endif%}
+                      {% endfor %}</h3>
+                          <h3 style="text-align: center;">
+                            {% for key, value in an.items %}
+                        {% if forloop.last %}
+                    {{ value }}
+                    
+                    {%else%}
+                    {{ value }} +
+                    {%endif%}
+                      {% endfor %}</h3>
+                              <h3 style="text-align: center;">= {{total}}</h3>
+
+                              <hr>
+                              <h3> <strong> Complete Binomial Distribution Table
+                              </h3></strong>
+                              <h5>If we apply the binomial probability formula, or a calculator's binomial
+                                   probability <br> distribution (PDF) function, to all possible values of X for {{tr}}
+                                    trials, we can construct <br> a complete binomial distribution table.
+                                     The sum of the probabilities in this table will <br> always be 1. The complete
+                                      binomial distribution table for this problem, <br> with p = {{pr}} and {{tr}} trials 
+                                      is:</h5> <br>
+                              {% for key, value in ans2.items %}
+                                   <h5> <b>  P({{ key }}) = </b> {{ value }} </h5>
+                                   {% endfor %}
+                          
+            
+
+        </div>
+
+    </div>
+    {% endif %}
+
+    {% if given_data == "form3" and tr and pr and sc %}
+    <script>
+        $(document).ready(function () {
+    
+            $("#hassle").click();
+            });
+    </script>
+    
+    <button type="button" hidden id="hassle" onclick="location.href='#Binomial-Probability-Calculator'">ans1</button>
+    {% endif %}
+    {% if given_data == "form3" and tr and pr and sc %}
+    <div class="card" id="Binomial-Probability-Calculator">
+        <div class="card-header">
+            <h2 class="h2">Steps to Binomial Probability Calculator</h2>
+        </div>
+
+        <div class="card-body">
+            <h5><strong>Answer:</strong></h5>
+             <h5> <b>P(X ≤ {{sc}} )</b> Probability of at most  {{sc}} successes : <b> {{total}}</b></h5>
+           <hr>
+             <h5><strong>Solution:</strong></h5>
+             <h5> <b>P(X ≤ {{sc}} )</b> Probability of at most  {{sc}} successes </h5>
+             <h5>At most  {{sc}} successes includes X-values of  X =  
+                {% for key, value in an.items %}
+                  {{ key }},
+                {% endfor %}
+                To solve this problem, find the sum of the binomial probabilities for each of the values of X, or if there is only one value of X, find the probability of P(X). <br> In this problem,
+             </h5>
+             <h3 style="text-align: center;">
+                {% for key, value in an.items %}
+                        {% if forloop.last %}
+                    P({{ key }}) 
+                    
+                    {%else%}
+                    P({{ key }}) +
+                    {%endif%}
+                      {% endfor %}
+             </h3> <br>
+             <h5>To find the individual probabilities for each success, X, you can either use a caluclator's binomial probability distribution function (PDF), or you can use the binomial probability formula for each success, X. Then, find the sum of each of the individual probabilities.</h5>
+             <h5>Some calculators have a cumulative binomial probability function (CDF). For "at most" questions like these, you may use the calculator's cumulative binomial probability function and enter 
+                 trials = {{tr}}, P = {{pr}} and X = {{sc}}. This is a one step process to get the final answer to this question.
+            </h5>
+             <hr> <br>
+             <h3><b>Find the First Probability</b> <br><br>
+            P(0)</h3>
+            <h5>For the probability P(0) , you can enter trials = {{tr}}, P = {{pr}}
+                and X = 0 into a binomial probability distribution function (PDF). The answer is 
+                P(0) = {% for key, value in ans2.items %}
+                {% if key == '0' %}
+                {{ value }}
+                {%endif%}
+                  {% endfor %}. If you're not using a calculator, apply the binomial probability formula:
+            </h5>
+               <h3 style="text-align: center ;"><strong>
+                P
+                (
+                X
+                )
+                =
+                n
+                !
+                /
+                X
+                !
+                (
+                n
+                −
+                X
+                )
+                !
+                *
+                p
+                ^
+                X
+                *
+                (
+                1
+                −
+                p
+                )
+                ^
+                n
+                −
+                X</strong></h3> <br>
+                <h5>where <b>n</b>  is the number of trials, 
+                <b>p</b>  is the probability of success on a single trial, and 
+                <b>X</b> is the number of successes.</h5>
+
+                <h5>Substituting in values for this problem,  <b>
+                    n = {{tr}}, p = {{pr}} and X = {{0}}
+                </b></h5>
+                
+                <br>
+                <h3 style="text-align: center;"><strong>
+                P
+                (
+               0
+                )
+                =
+                {{tr}}
+                !
+                /
+                {{0}}
+                !
+                (
+                {{tr}}
+                −
+                {{0}}
+                )
+                !
+                *
+                {{pr}}
+                ^
+                {{0}}
+                *
+                (
+                1
+                −
+                {{pr}}
+                )
+                ^
+                {{tr}}
+                −
+                {{0}}
+                </strong></h3> <br>
+                <h5>Remember, 0! is 1.Evaluating the expression, we have</h5>
+                <h3>P( {{0}} ) = {% for key, value in ans2.items %}
+                    {% if key == '0' %}
+                    {{ value }}
+                    {%endif%}
+                      {% endfor %}</h3>
+
+                <hr><br>
+                <h3><b>Find the Remaining Probabilities</b></h3>
+                <h5>To calculate any remaining probabilities, we need to either use the binomial probability distribution function on a calculator or the binomial probability formula. We'll add these remaining probababilities to 
+                    P(0)for our final answer.
+                    </h5>
+                    <h3 style="text-align: center;">{% for key, value in an.items %}
+                        {% if forloop.last %}
+                    P({{ key }}) 
+                    
+                    {%else%}
+                    P({{ key }}) +
+                    {%endif%}
+                      {% endfor %}</h3>
+                          <h3 style="text-align: center;">{% for key, value in an.items %}
+                            {% if forloop.last %}
+                        {{ value }}
+                        
+                        {%else%}
+                        {{ value }} +
+                        {%endif%}
+                          {% endfor %}</h3>
+                              <h3 style="text-align: center;">= {{total}}</h3>
+
+                              <hr>
+                              <h3> <strong> Complete Binomial Distribution Table
+                              </h3></strong>
+                              <h5>If we apply the binomial probability formula, or a calculator's binomial
+                                   probability <br> distribution (PDF) function, to all possible values of X for {{tr}}
+                                    trials, we can construct <br> a complete binomial distribution table.
+                                     The sum of the probabilities in this table will <br> always be 1. The complete
+                                      binomial distribution table for this problem, <br> with p = {{pr}} and {{tr}} trials 
+                                      is:</h5> <br>
+                              {% for key, value in ans2.items %}
+                                   <h5> <b>  P({{ key }}) = </b> {{ value }} </h5>
+                                   {% endfor %}
+                          
+            
+
+        </div>
+
+    </div>
+    {% endif %}
+    {% if given_data == "form4" and tr and pr and sc %}
+    <script>
+        $(document).ready(function () {
+    
+            $("#hassle").click();
+            });
+    </script>
+    
+    <button type="button" hidden id="hassle" onclick="location.href='#Binomial-Probability-Calculator'">ans1</button>
+    {% endif %}
+    {% if given_data == "form4" and tr and pr and sc %}
+    <div class="card" id="Binomial-Probability-Calculator">
+        <div class="card-header">
+            <h2 class="h2">Steps to Binomial Probability Calculator</h2>
+        </div>
+
+        <div class="card-body">
+            <h5><strong>Answer:</strong></h5>
+             <h5> <b>P(X  > {{sc}} )</b> Probability of more than  {{sc}} successes : <b> {{total}}</b></h5>
+           <hr>
+             <h5><strong>Solution:</strong></h5>
+             <h5> <b>P(X >{{sc}} )</b> Probability of more than  {{sc}} successes </h5>
+             <h5>More than  {{sc}} successes includes X-values of  X =  
+                {% for key, value in an.items %}
+                  {{ key }},
+                {% endfor %}
+                To solve this problem, find the sum of the binomial probabilities for each of the values of X, or if there is only one value of X, find the probability of P(X). <br> In this problem,
+             </h5>
+             <h3 style="text-align: center;">
+                {% for key, value in an.items %}
+                {% if forloop.last %}
+            P({{ key }}) 
+            
+            {%else%}
+            P({{ key }}) +
+            {%endif%}
+              {% endfor %}
+             </h3> <br>
+             <h5>To find the individual probabilities for each success, X, you can either use a caluclator's binomial probability distribution function (PDF), or you can use the binomial probability formula for each success, X. Then, find the sum of each of the individual probabilities.</h5>
+             <h5>Some calculators have a cumulative binomial probability function (CDF). For "at most" questions like these, you may use the calculator's cumulative binomial probability function and enter 
+                trials = {{tr}}, P = {{pr}} and X = {{sc}}. This is a one step process to get the final answer to this question.
+           </h5>
+             <hr> <br>
+             <h3><b>Find the First Probability</b> <br><br>
+                
+                P({{cc}}) 
+                                 </h3>
+            <h5>For the probability P(0) , you can enter trials = {{tr}}, P = {{pr}}
+                and X = {{cc}} into a binomial probability distribution function (PDF). The answer is 
+                P({{cc}}) = {{ans}}. If you're not using a calculator, apply the binomial probability formula:
+            </h5>
+               <h3 style="text-align: center ;"><strong>
+                P
+                (
+                X
+                )
+                =
+                n
+                !
+                /
+                X
+                !
+                (
+                n
+                −
+                X
+                )
+                !
+                *
+                p
+                ^
+                X
+                *
+                (
+                1
+                −
+                p
+                )
+                ^
+                n
+                −
+                X</strong></h3> <br>
+                <h5>where <b>n</b>  is the number of trials, 
+                <b>p</b>  is the probability of success on a single trial, and 
+                <b>X</b> is the number of successes.</h5>
+
+                <h5>Substituting in values for this problem,  <b>
+                    n = {{tr}}, p = {{pr}} and X = {{cc}}
+                </b></h5>
+                
+                <br>
+                <h3 style="text-align: center;"><strong>
+                P
+                (
+                {{cc}}
+                )
+                =
+                {{tr}}
+                !
+                /
+                {{cc}}
+                !
+                (
+                {{tr}}
+                −
+                {{cc}}
+                )
+                !
+                *
+                {{pr}}
+                ^
+                {{cc}}
+                *
+                (
+                1
+                −
+                {{pr}}
+                )
+                ^
+                {{tr}}
+                −
+                {{cc}}
+                </strong></h3> <br>
+                <h5>Evaluating the expression, we have</h5>
+                <h3>P( {{cc}} ) = 
+                    {{ans}}</h3>
+
+                <hr><br>
+                <h3><b>Find the Remaining Probabilities</b></h3>
+                <h5>To calculate any remaining probabilities, we need to either use the binomial probability distribution function on a calculator or the binomial probability formula. We'll add these remaining probababilities to 
+                    P(0)for our final answer.
+                    </h5>
+                    <h3 style="text-align: center;">{% for key, value in an.items %}
+                        {% if forloop.last %}
+                    P({{ key }}) 
+                    
+                    {%else%}
+                    P({{ key }}) +
+                    {%endif%}
+                      {% endfor %}</h3>
+                          <h3 style="text-align: center;">{% for key, value in an.items %}
+                            {% if forloop.last %}
+                        {{ value }}
+                        
+                        {%else%}
+                        {{ value }} +
+                        {%endif%}
+                          {% endfor %}</h3>
+                              <h3 style="text-align: center;">= {{total}}</h3>
+
+                              <hr>
+                              <h3> <strong> Complete Binomial Distribution Table
+                              </h3></strong>
+                              <h5>If we apply the binomial probability formula, or a calculator's binomial
+                                   probability <br> distribution (PDF) function, to all possible values of X for {{tr}}
+                                    trials, we can construct <br> a complete binomial distribution table.
+                                     The sum of the probabilities in this table will <br> always be 1. The complete
+                                      binomial distribution table for this problem, <br> with p = {{pr}} and {{tr}} trials 
+                                      is:</h5> <br>
+                              {% for key, value in ans2.items %}
+                                   <h5> <b>  P({{ key }}) = </b> {{ value }} </h5>
+                                   {% endfor %}
+                          
+            
+
+        </div>
+
+    </div>
+    {% endif %}
+    {% if given_data == "form5" and tr and pr and sc %}
+    <script>
+        $(document).ready(function () {
+    
+            $("#hassle").click();
+            });
+    </script>
+    
+    <button type="button" hidden id="hassle" onclick="location.href='#Binomial-Probability-Calculator'">ans1</button>
+    {% endif %}
+    {% if given_data == "form5" and tr and pr and sc %}
+    <div class="card" id="Binomial-Probability-Calculator">
+        <div class="card-header">
+            <h2 class="h2">Steps to Binomial Probability Calculator</h2>
+        </div>
+
+        <div class="card-body">
+            <h5><strong>Answer:</strong></h5>
+             <h5> <b>P(X  ≥ {{sc}} )</b> Probability of at least  {{sc}} successes : <b> {{total}}</b></h5>
+           <hr>
+             <h5><strong>Solution:</strong></h5>
+             <h5> <b>P(X ≥ {{sc}} )</b> Probability of at least  {{sc}} successes </h5>
+             <h5>At least  {{sc}} successes includes X-values of  X =  
+                {% for key, value in an.items %}
+                  {{ key }},
+                {% endfor %}
+                To solve this problem, find the sum of the binomial probabilities for each of the values of X, or if there is only one value of X, find the probability of P(X). <br> In this problem,
+             </h5>
+             <h3 style="text-align: center;">
+                {% for key, value in an.items %}
+                {% if forloop.last %}
+            P({{ key }}) 
+            
+            {%else%}
+            P({{ key }}) +
+            {%endif%}
+              {% endfor %}
+             </h3> <br>
+             <h5>To find the individual probabilities for each success, X, you can either use a caluclator's binomial probability distribution function (PDF), or you can use the binomial probability formula for each success, X. Then, find the sum of each of the individual probabilities.</h5>
+             <hr> <br>
+             <h3><b>Find the First Probability</b> <br><br>
+            P( {{sc}} )</h3>
+            <h5>For the probability P({{sc}}) , you can enter trials = {{tr}}, P = {{pr}}
+                and X = {{sc}} into a binomial probability distribution function (PDF). The answer is 
+                P({{sc}}) = {{ans}}. If you're not using a calculator, apply the binomial probability formula:
+            </h5>
+               <h3 style="text-align: center ;"><strong>
+                P
+                (
+                X
+                )
+                =
+                n
+                !
+                /
+                X
+                !
+                (
+                n
+                −
+                X
+                )
+                !
+                *
+                p
+                ^
+                X
+                *
+                (
+                1
+                −
+                p
+                )
+                ^
+                n
+                −
+                X</strong></h3> <br>
+                <h5>where <b>n</b>  is the number of trials, 
+                <b>p</b>  is the probability of success on a single trial, and 
+                <b>X</b> is the number of successes.</h5>
+
+                <h5>Substituting in values for this problem,  <b>
+                    n = {{tr}}, p = {{pr}} and X = {{sc}}
+                </b></h5>
+                
+                <br>
+                <h3 style="text-align: center;"><strong>
+                P
+                (
+               {{sc}}
+                )
+                =
+                {{tr}}
+                !
+                /
+                {{sc}}
+                !
+                (
+                {{tr}}
+                −
+                {{sc}}
+                )
+                !
+                *
+                {{pr}}
+                ^
+                {{sc}}
+                *
+                (
+                1
+                −
+                {{pr}}
+                )
+                ^
+                {{tr}}
+                −
+                {{sc}}
+                </strong></h3> <br>
+                <h5>Evaluating the expression, we have</h5>
+                <h3>P( {{sc}} ) = {{ans}}</h3>
+
+                <hr><br>
+                <h3><b>Find the Remaining Probabilities</b></h3>
+                <h5>To calculate any remaining probabilities, we need to either use the binomial probability distribution function on a calculator or the binomial probability formula. We'll add these remaining probababilities to 
+                    P({{sc}})for our final answer.
+                    </h5>
+                    <h3 style="text-align: center;">{% for key, value in an.items %}
+                        {% if forloop.last %}
+                    P({{ key }}) 
+                    
+                    {%else%}
+                    P({{ key }}) +
+                    {%endif%}
+                      {% endfor %}</h3>
+                          <h3 style="text-align: center;">{% for key, value in an.items %}
+                            {% if forloop.last %}
+                        {{ value }}
+                        
+                        {%else%}
+                        {{ value }} +
+                        {%endif%}
+                          {% endfor %}</h3>
+                              <h3 style="text-align: center;">= {{total}}</h3>
+
+                              <hr>
+                              <h3> <strong> Complete Binomial Distribution Table
+                              </h3></strong>
+                              <h5>If we apply the binomial probability formula, or a calculator's binomial
+                                   probability <br> distribution (PDF) function, to all possible values of X for {{tr}}
+                                    trials, we can construct <br> a complete binomial distribution table.
+                                     The sum of the probabilities in this table will <br> always be 1. The complete
+                                      binomial distribution table for this problem, <br> with p = {{pr}} and {{tr}} trials 
+                                      is:</h5> <br>
+                              {% for key, value in ans2.items %}
+                                   <h5> <b>  P({{ key }}) = </b> {{ value }} </h5>
+                                   {% endfor %}
+                          
+            
+
+        </div>
+
+    </div>
+    {% endif %}
+
+    </div>
+  
+<script>
+
+    {% if id == 1 %}
+ 
+    var scrollDiv = document.getElementById("clear").offsetTop;
+    console.log(scrollDiv)
+    window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
+    
+    {%endif%}
+ 
+    </script>
+    
+    <script>
+        function myFunction() {
+    
+                document.getElementById("clear").innerHTML = "";
+             
+                {% if given_data != 'form2' %}    
+                document.getElementById("Ia").value = "";
+                document.getElementById("Ia_op").value="K";
+                {%endif%}
+                
+                {% if given_data != 'form3' %}
+                document.getElementById("Ib").value = "";
+                document.getElementById("Ib_op").value="kg";
+                {%endif%}
+    
+                {% if given_data != 'form1' %}
+                document.getElementById("F").value=""
+                document.getElementById("F_op").value="J";
+                {% endif %}
+    
+                
+                {% if given_data != 'form4' %}
+                document.getElementById("depth").value=""
+                document.getElementById("depth_op").value="m/s";
+                {% endif %}
+        
+        }
+    </script>
+    <br>
+    
+	
+	<div id="answer1">
+	{%if detailStep%}
+	  <hr>
+	  <p><strong>Answer:</strong></p>
+	  <div style="text-align: center;">
+	  {% autoescape off %}
+	  {{detailStep}}
+	  {%endautoescape%}
+	  </div>
+	  <hr>
+  	{%endif%}
+	</div>
+	<script>
+		function myFunction() {
+			document.getElementById("input1").value="";
+			document.getElementById("input2").value="";
+			$("#answer1").html("");
+		}
+		</script>
+	  
+  {% autoescape off %}
+	  {% if messages %}
+		  {% for message in messages %}
+			  <div class="row">
+				  <div class="col-md-6">
+					  <p class="alert alert-danger">{{message}}</p>
+				  </div>
+			  </div>
+		  {% endfor %}
+	  {% endif %}
+  {%endautoescape%}
+
+  <div class="card">
+	<div class="card-header"><h2 class="h2">How to Find Binomial Probability Distribution?</h2></div>
+	<div class="card-body">
+  <p>Follow the simple procedure and guidelines mentioned here to find the  binomial probability of an event:</p>
+<ul>
+<li>Observe number of trials, number of success, probability of each trial.</li>
+<li>Substitute the values in the binomial probability formula.</li>
+<li>Do the required calculations to get the success binomial probability.</li>
+ </ul>
+</div></div>
+<div class="card">
+  <div class="card-header"><h3 class="h3">Define Binomial Probability? | Binomial Probability Formula</h3></div>
+  <div class="card-body">
+      <p>When you flip a coin once, you will get either head or tail. The event of getting head is 1/2. The binomial probability is defined as the probability of an experiment that results in exactly two possible outcomes. This experiment is called binomial experiment. The binomial probability distribution refers to the probability of exactly x success for n repeated trials.
+    </p><p>   The binomial probability formula is given as:</p>
+        <p><strong>P(x) = <sup>n</sup>C<Sub>x</sub> P<sup>x</sup> q<sup>n – x</sup></strong></p>
+            <p>   Where,</p>
+            <p>   n is the number of trials</p>
+            <p>   P is the probability of success</p>
+            <p>   q is the probability of failure</p>
+            <p>   x is the number of success</p>
+<p><strong>Example</strong></p>
+<p><strong>Question: Find the binomial probability of random variable r = 4 if n = 10 and p = 0.4.</strong></p>
+<p>Answer:</p>
+<p>Given that,</p>
+<p>  n = 10</p>
+<p>  p = 0.4</p>
+    <p>  q = 1 – p = 1 – 0.4 = 0.6</p>
+        <p>  r = 4</p>
+         </div>   <p>  The formula of binomial probability is P(x) = <sup>n</sup>C<Sub>x</sub> P<sup>x</sup> q<sup>n – x</sup>
+                <p>  P(x = 4) = <sup>10</sup>C<Sub>4</sub> 0.4<sup>4</sup> 0.6<sup>10 – 4</sup></p>
+                    <p>= (10!/4! 6!) × 0.0256 × 0.046656</p>
+                        <p>= 210 × 0.0012</p>
+    <p>= 0.25</p>
+    <p>THe binomial probability of the variable is 0.25.</p>
+<p><a href="https://probabilitycalculator.guru/">Probabilitycalculatorguru</a> is absolutely free and includes calculator tools for solving problems. Learning will be much fun with these simple tools.</p>
+<img src="{% static 'images/Statistics/Binomial-Probability-Calculator.jpeg' %}" alt='Coin Toss Probability Calculator'>
+	</div>
+  
+  <div class="card">
+  	<div class="card-header">
+      	<h3 class="h3">FAQ’s on Binomial Probability Calculator</h3>
+  	</div>
+  	<div class="card-body">
+      	<!-- Question & Answer Starts --->
+          <p class="question"><strong> 1. How to solve binomial probability on a calculator?</strong></p>
+          <p class="answer">Give probability of success, number of trials, number of success details in the input fields and tap on the calculate button to get the binomial probability as result.
+</p><hr><p class="question"><strong>2. What are the 4 requirements for a binomial probability distribution?</strong></p>
+<p class="answer">The important four requirements for a binomial probability are here.</p>
+<ul><li>All the observations are independent.</li>
+    <li>There should be a fixed number of observations.</li>
+    <li>The probability of success for each observation is same.</li>
+    <li>Each observation falls into either success or failure.</li></ul><hr>
+<p class="question"><strong>3. What is binomial probability formula?</strong></p>
+<p class="answer">The binomial probability distribution of exactly x success from n number of trials formula is P(x) = <sup>n</sup>C<Sub>x</sub> P<sup>x</sup> q<sup>n – x</sup>
+ </p><hr>   <p class="question"><strong>4. A coin is tossed 12 times. What is the probability of getting exactly 3 heads?</strong></p>
+    <p class="answer">The number of trials n = 12</p>
+<p>The number of successful trials x = 3</p>
+<p>Probability of success in one trial p = 1/2</p>
+<p>Probability of failure in one trial q = 1 - 1/2 = 1/2</p>
+<p>P(x) = <sup>n</sup>C<Sub>x</sub> P<sup>x</sup> q<sup>n – x</sup></p>
+<p>= <sup>12</sup>C<Sub>3</sub> P<sup>3</sup> q<sup>12 – 3</sup></p>
+<p>= 12!/(3!*(12-3)! 0.5<sup>3</sup> 0.5<sup>9</sup></p>
+<p>= 220 x 0.125 x 0.5<sup>9</sup></p>
+<p>= 0.05371.</p><hr>
+  	</div>
+   </div>
+</div>
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		document.getElementById('ddd').click();
+	  });
+</script>
+{%endblock%}

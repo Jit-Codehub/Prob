@@ -1,0 +1,227 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+   <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Risk Calculator | How to Calculate Risk From Probability?</title>
+    <meta name="description" content="The user-friendly Risk Calculator tool computes the risk value by finding the product of the probability of failure and loss. Obtain the steps to calculate risk."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Risk Calculator | How to Calculate Risk From Probability?"/>
+        <meta property="og:description" content="The user-friendly Risk Calculator tool computes the risk value by finding the product of the probability of failure and loss. Obtain the steps to calculate risk."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Chemistry/Risk-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Risk Calculator | How to Calculate Risk From Probability?"/>
+        <meta name="twitter:description" content="The user-friendly Risk Calculator tool computes the risk value by finding the product of the probability of failure and loss. Obtain the steps to calculate risk."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Chemistry/Risk-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Risk Calculator | How to Calculate Risk From Probability?"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Chemistry/Risk-Calculator.jpeg"/>
+        <meta property='og:description' content="The user-friendly Risk Calculator tool computes the risk value by finding the product of the probability of failure and loss. Obtain the steps to calculate risk."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        How do you calculate risk?
+        ","acceptedAnswer": {"@type": "Answer","text":" You have to know the probability of failure and the amount of damage created due to failure values. Multiply that loss and probability of failure to get the risk value."}	}, {"@type": "Question","name":"2.
+        What is meant by risk?
+        ","acceptedAnswer": {"@type": "Answer","text":" Risk is nothing but the prediction of expected loss by connecting with some value like investment etc."}	}, {"@type": "Question","name":"3.
+        What is the formula to calculate the risk?
+        ","acceptedAnswer": {"@type": "Answer","text":" The formula to calculate risk is Risk = Probability of failure * loss."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+
+{% if n and k %}
+<script>
+    $(document).ready(function () {
+
+        $("#hassle").click();
+
+
+    });
+
+
+</script>
+
+<button type="button" hidden id="hassle" onclick="location.href='#Coin_Flip_Probability_answer'">ans1</button>
+{% endif %}
+<div class="container" style="height: auto !important;">
+  
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Risk Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Welcome to our Risk Calculator. This tool is helpful to determine the risk by measuring the loss connected with the occurrence of the disruption. You have to enter the probability of failure and loss details and press the calculate button to check the risk in a split of seconds.</p>
+                <p><strong>Risk Calculator: </strong>Seeking help to find the risk? You come to the correct place as we are giving useful details about the risk concept in probability. With the help of this calculator, you can save time and understand the logic behind it. Learn the simple steps to calculate the risk, definition of risk, its formula with solved questions.</p>
+
+          <ul class="messages">
+              {% for message in messages %}
+              <p {% if message.tags %} id="message_container" class="alert alert-danger text-center" {% endif %}
+                  style="color:red">{{ message }}</p>
+              {% endfor %}
+          </ul>
+          <form action="" method="POST" id="my_form" ">
+              {% csrf_token %}
+              <div class="form-row align-items-center">
+              <div class="col-auto">
+                  <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                          <div class="input-group-text"><strong>Probability of Failure</strong></div>
+                      </div>
+                      <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                          placeholder="Enter probability value" min="0.00001" step="any" class="form-control" name="probability"  value="{{probability}}" >
+                  </div>
+                  <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                          <div class="input-group-text"><strong>Loss(if failure occurs)</strong></div>
+                      </div>
+                      <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                          placeholder="Enter maximum value" min="0.00001" step="any" class="form-control" name="loss"   value="{{loss}}"  >
+                  </div>
+                  
+                  <div class=" center col mt-2 ">
+                      <center><button type="submit" class="btn btn-primary" name="f1">Calculate</button>
+                          <button type="button" onclick="myFunction()" style="margin-top:5px;"
+                          class="btn btn-danger">Reset</button>
+                      </center>
+                  </div>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>
+{% if id == 1 %}
+<div id="clear">
+  <div class="card" id="magnetic-force">
+      <div class="card-header">
+          <h2 class="h2">Steps to Calculate Risk</h2>
+      </div>
+      <div class="card-body">
+          <strong>Risk Formula-</strong>
+          <br>
+          <p class="btn btn-outline-secondary active">risk = probability * loss </p>
+          <br>
+          <strong>where:</strong>
+                  <ul>
+                      <li>Probability - The probability refers to the probability of failure</li>
+                      <li>loss - is the damage you need to bear in the case of failure</li>
+                      
+                  </ul>
+          <strong>Input values are:-</strong>
+          <p>Probability = {{probability}}  </p>
+          <p>Loss = {{loss}} </p>
+          
+          <br>
+          
+          <strong>Put values into formula</strong>
+          <p>  risk = probability * loss </p>
+          <p>  risk = ({{probability}} * {{loss}}) </p>
+          <p><b> risk= {{risk}} </b></p>
+      </div>
+  </div>
+</div>
+{% endif %}
+<script>
+if(id==1)
+{
+  var scrollDiv = document.getElementById("clear").offsetTop;
+   window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
+   
+}
+
+   function myFunction() {
+       document.getElementsByName("probability")[0].value = "";
+       document.getElementsByName("loss")[0].value = "";
+       
+       
+
+       document.getElementById("clear").innerHTML = "";
+
+   } 
+
+   
+   
+  
+
+</script>   
+<div class="card">
+    <div class="card-header">
+        <h2 class="h2">Risk Definition | Formula of Risk</h2>
+    </div>
+    <div class="card-body">
+<p>Relative risk is defined as the ratio of the probability of the disease exposed and the probability of the risk unexposed. It can also be called the risk ratio. Risk can be calculated by measuring the expected loss connected to an object with the occurrence of the considered disruption. The risk formula is along the lines:
+</p><p><b>  Risk = probability * loss</b></p>
+<p> Where,</p>
+    <p>  Probability is the probability of failure</p>
+        <p> Loss is the damage you have to bear in case of failure</p>
+                </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="h3">How to Find Risk?</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Here are the steps to calculate the risk in an easy process.</p>
+                     <ul>
+                         <li>Get the probability of loss and failure in case of loss values.</li>
+                         <li>Multiply the probability with the amount of damage occurred due to failure.</li>
+                         <li>This product is the risk value.</li>
+                     </ul>
+                     <p><b>Example:</b>Let us consider that you have invested in a company that is subjected to a disrupting event of probability of 0.6 with the related loss of $25000. Calculate the amount of risk?</p>
+        <p>Given that,</p>
+        <p>   probability = 0.6</p>
+        <p>   loss = 25000</p>
+        <p>   Risk = probability * loss</p>
+        <p>   = 0.6 * 25000</p>
+        <p>   = 15000</p>
+        <p>Want to master mathematics then use our various calculators prevailing on <a href="https://probabilitycalculator.guru/">Probabilitycalculatorguru</a> and gain more knowledge on all maths concepts.</p>
+                    </div>
+                </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="h3">Frequently ASked Question's on Risk Calculator</h3>
+            </div>
+            <div class="card-body">
+                <!-- Question & Answer Starts --->
+                <p class="question"><strong>     1. How do you calculate risk?</strong></p>
+                <p class="answer">You have to know the probability of failure and the amount of damage created due to failure values. Multiply that loss and probability of failure to get the risk value.</p><hr>
+<p class="question"><strong>2. What is meant by risk?</strong></p>
+<p class="answer">Risk is nothing but the prediction of expected loss by connecting with some value like investment etc.</p><hr>
+<p class="question"><strong>3. What is the formula to calculate the risk?</strong></p>
+<p class="answer">The formula to calculate risk is Risk = Probability of failure * loss.</p><hr>
+            </div>
+         </div>
+      </div>
+    
+{%endblock%}

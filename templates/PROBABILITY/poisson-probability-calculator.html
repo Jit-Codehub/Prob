@@ -1,0 +1,277 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Poisson Probability Calculator | How to Find Poisson Probabilities?</title>
+    <meta name="description" content="Use the Poisson Probability Calculator & easily determine the probability of an event occurring exactly n successes in less time with detailed steps."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Poisson Probability Calculator | How to Find Poisson Probabilities?"/>
+        <meta property="og:description" content="Use the Poisson Probability Calculator & easily determine the probability of an event occurring exactly n successes in less time with detailed steps."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/Poisson-Probability-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Poisson Probability Calculator | How to Find Poisson Probabilities?"/>
+        <meta name="twitter:description" content="Use the Poisson Probability Calculator & easily determine the probability of an event occurring exactly n successes in less time with detailed steps."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/Poisson-Probability-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Poisson Probability Calculator | How to Find Poisson Probabilities?"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/Poisson-Probability-Calculator.jpeg"/>
+        <meta property='og:description' content="Use the Poisson Probability Calculator & easily determine the probability of an event occurring exactly n successes in less time with detailed steps."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        What is the poisson probability distribution formula?
+        ","acceptedAnswer": {"@type": "Answer","text":"The possion probability distribution formula when P(X=x) is as given by P(x; μ) = (e^-μ) (μ^x) / x!."}	}, {"@type": "Question","name":"2.
+        How do you find poisson probability?
+        ","acceptedAnswer": {"@type": "Answer","text":"When the poisson experiment has an average number of successes within a given region is μ, then the poisson probability can be calculated using the poisson formula. Hence, you can easily calculate the poisson probability distribution."} }, {"@type": "Question","name":"3.
+        How do you do poisson probability distribution on a calculator TI-84?
+        ","acceptedAnswer": {"@type": "Answer","text":"https://www.youtube.com/watch?v=iUVrPHSGY8o"} }, {"@type": "Question","name":"4.
+        Where to find the Poisson probability calculator online?
+        ","acceptedAnswer": {"@type": "Answer","text":"You can find the poisson probability calculator online on probabilitycalculator.guru official & trusted portal."} }]}
+    </script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Poisson Probability Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Take the help of <strong>Poisson Probability Calculator</strong> and enter the values of mean and no.of occurences in the input boxes then tap on the calculate button to get the desired output and show work in a blink of an eye.</p><p>Related Calculators:</p>
+<ul>
+<li>Normal Distribution Probability Calculator</li>
+<li>Dice Probability Calculator</li>
+</ul>
+<p><strong>Poisson Probability Calculator:</strong> Want to go for the quick calculations of poisson probability with detailed steps? Just utilize this free online poisson probability distribution calculator tool. It easily determines the probabality of an event when P(X=x) and also make you learn the concept thoroughly with the detailed explanation.</p>
+<p>Here, we have also curated the definition, formula, and steps to calculate the poisson distribution with solved examples. Let's dive into this online tool and make us of it for free of cost.</p>
+<form method="post" id="my_form">
+  {% csrf_token %}
+  
+  <div class="col-auto">
+      <p>
+      <div class="input-group mb-2">
+          <div class="input-group-prepend">
+              <div class="input-group-text"><strong>Enter random variable (number of occurences) : </strong></div>
+          </div>
+          
+
+          <input type="number"  min="0" id="inlineFormInputGroup" required=""
+           placeholder="Enter variable"  class="form-control" name="n" {% if n %} value="{{n}}" {% else %} value="5" {% endif %}>
+
+
+      </div>
+
+     
+      <div class="input-group mb-2">
+          
+          <div class="input-group-prepend">
+              <div class="input-group-text"><strong>Enter mean (number of occurences) : </strong></div>
+          </div>
+          
+
+          <input type="number" min="0"  id="inlineFormInputGroup" required=""
+           placeholder="Enter mean"  class="form-control" name="l" {% if l %} value="{{l}}" {% else %} value="10" {% endif %}>
+
+
+      </div>
+
+      </p>
+
+
+
+      <div class=" center col mt-2 ">
+          <center><button type="submit" class="btn btn-primary">Evaluate</button>&nbsp;&nbsp;&nbsp;&nbsp;
+              <button type="button" onclick="myFunction()" style="margin-top:5px;"
+                  class="btn btn-warning">Reset</button>
+          </center>
+      </div>
+
+
+</form>
+</div>
+</div>
+    </div>
+
+
+            
+ 
+           
+       
+
+        <div id="clear">
+          {% if result %}
+      
+          <div class="card" id="result">
+              <div class="card-header">
+                  <h2 class="h2">Calculation of Poisson Probability:</h2>
+              </div>
+      
+              <div class="card-body">
+                  <p>
+                      <br><strong>Poisson Probability formula:-</strong>
+                      <br>
+                      <p class="btn btn-outline-secondary active"> P(λ,n) = (λ<sup>n</sup> e<sup>-λ</sup>) / n! </p>
+                      <br>
+                  </p>
+                  
+                  <p>
+                      <strong>Input values are:-</strong><br>
+                      
+                          Number of random variables, n  = {{n}}
+                          <br>
+                          Number of occurences (mean), λ = {{l}}
+                          <br>
+                          Value of e (approx.) = 2.718282
+                  </p>
+      
+                  <p>
+                      Now, P({{l}}, {{n}}) = ({{l}}<sup>{{n}}</sup> x (2.718282)<sup>-{{l}}</sup>) / {{n}}! 
+                  </p>
+                  <p>
+                      P({{l}}, {{n}}) = <b>{{res}}</b>.
+                  </p>
+                  <p>
+                      Therefore, 
+                      <ul>
+                          <li>The probability of getting exactly {{n}} occurrences of an event with a mean of {{l}} is {{res}}.</li>
+                          <li>
+                              The probability of getting {{n}} or less than {{n}} occurrences is {{cres}}.
+                          </li>
+                          <li>
+                              The probability of getting more than {{n}} occurrences is {{notres}}.
+                          </li>
+                      </ul>
+                  </p>
+      
+                  
+                  <table border="2" cellpadding = "5" cellspacing = "5" width = "50%">
+                      <caption style="caption-side: top; color: black; text-align: center;" ><b>Poisson Distribution Table</b></caption><br>
+                      
+                      <tr>
+                          <th><p> Variable &nbsp;&nbsp;&nbsp;</p></th>
+                          <th><p>Exact Probability</p></th>
+                          <th> <p> Cummulative Probability </p></th>
+                      </tr>
+                      
+                      {% for x,y,z in res_table %}
+                      <tr >
+                          <td>{{x}}</td>
+                          <td>{{y}}</td>
+                          <td>{{z}}</td>
+                      </tr>
+                      {% endfor %}
+                  </table>
+      
+              </div>
+                  
+              
+          </div>
+      
+          {% endif %}
+      </div>
+      
+      <script>
+          function myFunction() {
+                  {% if result %}
+                  document.getElementById("clear").innerHTML = "";
+                  {% endif %}
+      
+                  document.getElementsByName("n")[0].value = "";
+                  document.getElementsByName("l")[0].value = "";
+               
+                  document.getElementById("error").innerHTML = "";
+      
+              
+          }
+      </script>
+      
+        
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">What is Meant by Possion Probability?</h2>
+        </div>
+	    <div class="card-body">
+            <p>A possion probability refers to the probability of acquiring EXACTLY n successes in a poisson experiment where n would be a poisson random variable.</p>
+            <p>For example, if the receptionist receieved one phone call in an hour. What is the likelihood next hour that she will receive EXACTLY 3 phone calls? The answer of possion probability is getting exactly 3 phone calls in the next hour is 0.061.</p>
+            <h3>Poisson Probability Distribution Formula</h3>
+            <p>In poisson probability, the mean of the distribution is denoted as &lambda; and e is constant where 2.71828 is the approx value. Thus the formula of poisson probability is</p>
+            <p style="text-align: center;"><strong>P(x, &lambda; ) =(e^&ndash; &lambda; * &lambda;^x)/x!</strong></p>
+            <p>The mean formula in poisson probability distribution is <strong>E(X) = &lambda;.</strong></p>
+        </div>
+    </div>
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h3">Step by Step Procedure to Find out the Poission Probability Distribution</h3>
+        </div>
+	    <div class="card-body">
+            <p>Process of calculating the poisson probability is explained here in a step-wise manner so that everyone can easily grasp the concept and calculate the poisson probability problems with ease.</p>
+<ul>
+<li>Firstly, identify or find the mean and no.of exact occurences from the given problem. </li>
+<li>Once, you get the two values available then apply the formula of poisson probability i.e., P(X = x) = (e<sup>-&lambda;</sup> &lambda;<sup>x</sup> )/x!</li>
+<li>Substitute the values in the above formula and simplify the equation to get the desired output.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<p>Doctors check the patients at the rate of 3 per hour. What is the probability of two patients arrivals during the next 30 minutes?</p>
+<p><strong>Solution:</strong></p>
+<p>Given</p>
+<p>mean (&lambda;) = The arrival rate during 30 minutes = (3/60)*30 = 1.5.</p>
+<p>random varaible (n) = 2</p>
+<p>The formula of poisson probability is P(x, &lambda; ) =(e^-&lambda; * &lambda;^x)/x!</p>
+<p>P(2, 1.5) = e^-1.5 1.5^2 / 2! = 0.251</p>
+<p>Therefore, the probability of exactly 2 patients arrivals in the next 30 minutes is 25.1 percent.</p>                      
+<img src="{% static 'images/Discrete_Mathematics/Poisson-Probability-Calculator.jpeg' %}" alt="Poisson Probability Calculator">
+</div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+    <h3 class="h3">FAQs on Free Online Poisson Probability Calculator with Steps</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. What is the poisson probability distribution formula?</strong></p>
+     	<p class="answer">The possion probability distribution formula when P(X=x) is as given by P(x; &mu;) = (e^-&mu;) (&mu;^x) / x!.</p><hr>
+     	<p class="question"><strong>2. How do you find poisson probability?</strong></p>
+     	<p class="answer">When the poisson experiment has an average number of successes within a given region is &mu;, then the poisson probability can be calculated using the poisson formula. Hence, you can easily calculate the poisson probability distribution.</p><hr>
+        <p class="question"><strong>3. How do you do poisson probability distribution on a calculator TI-84?</strong></p>
+        <p class="answer">https://www.youtube.com/watch?v=iUVrPHSGY8o</p><hr>
+        <p class="question"><strong>3. Where to find the Poisson probability calculator online?</strong></p>
+        <p class="answer">You can find the poisson probability calculator online on <a href="https://probabilitycalculator.guru/">probabilitycalculator.guru</a> official &amp; trusted portal.</p><hr>
+    </div>
+    </div>
+    </div>
+
+
+{%endblock%}

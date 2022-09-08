@@ -1,0 +1,340 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="https://onlinecalculator.guru/static/style2.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Roulette Probability Calculator | How to Calculate Roulette Probabilities?</title>
+    <meta name="description" content="Utilize the Roulette Probability Calculator to quickly determine the probability of winning in roulette game in no time."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Roulette Probability Calculator | How to Calculate Roulette Probabilities?"/>
+        <meta property="og:description" content="Utilize the Roulette Probability Calculator to quickly determine the probability of winning in roulette game in no time."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/roulette-probability-calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Roulette Probability Calculator | How to Calculate Roulette Probabilities?"/>
+        <meta name="twitter:description" content="Utilize the Roulette Probability Calculator to quickly determine the probability of winning in roulette game in no time."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/roulette-probability-calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Roulette Probability Calculator | How to Calculate Roulette Probabilities?"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/roulette-probability-calculator.jpeg"/>
+        <meta property='og:description' content="Utilize the Roulette Probability Calculator to quickly determine the probability of winning in roulette game in no time."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        Which Roulette Number hits most?
+        ","acceptedAnswer": {"@type": "Answer","text":" If you ask any player the most popular one that hits the most in roulette game is 17."}	}, {"@type": "Question","name":"2.
+        What is the luckiest number in roulette?
+        ","acceptedAnswer": {"@type": "Answer","text":" The number 7 is the most common number that people like to bet on and consider it to be lucky."}	}, {"@type": "Question","name":"3.
+        How do you predict roulette number probability using a calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" All you have to do is enter the inputs needed and tap on the calculate button to avail resultant roulette probability in a matter of seconds."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Roulette Probability Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Find out the winning probability in online roulette game by using the Roulette Probability Calculator over here. Simply enter the parameters like probability of an event P(e), number of trails or spins n, number of times our bet wins x, P(b) is the probability of our bet B winning in one spin and click on the calculate button to determine unknown parameters. </p>
+                <p><strong>Roulette Probability Calculator: </strong> Trying hundreds of spins to come up with the right number in your roulette game? If it is the case you have landed on the right page where we will describe all about winning probability of a roulette game, rouletter probability formula so that you can have a basic understanding of roulette odds and probabilities so that you can take better informed decisions the next time. If you are new to this game of chance, read on to have a brief introduction about the roulette probability concept. </p>
+                <form action="" method="POST" action="" >
+                    {% csrf_token %}
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                          <div class="input-group-text"><strong>Type of roulette probability calculator</strong></div>
+                      </div>
+                      <select name="type" id="inlineFormInputGroup"  class="form-control" 
+                           autofocus=""  value="{{ type }}">
+                          
+                          {% if type == "American" %}
+                          <option value="American" selected="selected">American </option>
+                          {% else %}
+                          <option value="American"> American</option>
+                          {% endif %}
+                          {% if type == "European" %}
+                          <option value="European" selected="selected"> European  </option>
+                          {% else %}
+                          <option value="European"> European</option>
+                          {% endif %}
+                      </select>
+                  </div>
+                    <div class="input-group mb-2">
+                      <div class="input-group-prepend">
+                          <div class="input-group-text"><strong>Enter Your Bet Amount</strong></div>
+                      </div>
+                      <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup"  required=""
+                          placeholder="Enter Amount" min="1" step="any" class="form-control" name="amount"  value="{{ amount }}" >
+                      </div>
+                      <div class="input-group mb-2">
+                          <div class="input-group-prepend">
+                              <div class="input-group-text"><strong>Pick on where you are betting</strong></div>
+                          </div>
+                          <select name="betting" id="inlineFormInputGroup"  class="form-control" 
+                               autofocus=""  value="{{ betting }}">
+                              
+                              {% if betting == "Red" %}
+                              <option value="Red" selected="selected"> Red  </option>
+                              {% else %}
+                              <option value="Red"> Red</option>
+                              {% endif %}
+                              {% if betting == "Black" %}
+                              <option value="Black" selected="selected"> Black  </option>
+                              {% else %}
+                              <option value="Black"> Black</option>
+                              {% endif %}
+             
+                              {% if betting == "Odds" %}
+                              <option value="Odds" selected="selected"> Odds  </option>
+                              {% else %}
+                              <option value="Odds"> Odds</option>
+                              {% endif %}
+                              
+                              {% if betting == "Evens" %}
+                              <option value="Evens" selected="selected"> Evens  </option>
+                              {% else %}
+                              <option value="Evens"> Evens</option>
+                              {% endif %}
+  
+                              
+                              
+                              {% if betting == "1-12" %}
+                              <option value="1-12" selected="selected"> 1-12  </option>
+                              {% else %}
+                              <option value="1-12"> 1-12</option>
+                              {% endif %}
+                              
+                              {% if betting == "13-24" %}
+                              <option value="13-24" selected="selected"> 13-24  </option>
+                              {% else %}
+                              <option value="13-24"> 13-24</option>
+                              {% endif %}
+  
+                              {% if betting == "25-36" %}
+                              <option value="25-36" selected="selected"> 25-36  </option>
+                              {% else %}
+                              <option value="25-36"> 25-36</option>
+                              {% endif %}
+  
+                              {% if betting == "Straight" %}
+                              <option value="Straight" selected="selected"> Straight  </option>
+                              {% else %}
+                              <option value="Straight"> Straight</option>
+                              {% endif %}
+  
+                              {% if betting == "Split" %}
+                              <option value="Split" selected="selected"> Split  </option>
+                              {% else %}
+                              <option value="Split"> Split</option>
+                              {% endif %}
+  
+                              {% if betting == "Street" %}
+                              <option value="Street" selected="selected"> Street  </option>
+                              {% else %}
+                              <option value="Street"> Street</option>
+                              {% endif %}
+  
+                              {% if betting == "Square" %}
+                              <option value="Square" selected="selected"> Square  </option>
+                              {% else %}
+                              <option value="Square"> Square</option>
+                              {% endif %}
+  
+                              {% if betting == "Sixline" %}
+                              <option value="Sixline" selected="selected"> Sixline  </option>
+                              {% else %}
+                              <option value="Sixline"> Sixline</option>
+                              {% endif %}
+                              
+  
+                          </select>
+                      </div>
+                    
+  
+                    
+  
+                  <div class="center col mt-2">
+                    <center><button type="submit" class="btn btn-primary" name="f1">Calculate</button>
+                        <button type="button" onclick="myFunction()" style="margin-top:5px;"
+                            class="btn btn-danger">Reset</button>
+                    </center>
+                  </div>
+                
+                </form>
+            </div>
+        </div>
+        <div id="clear" >
+            {% if id == 1 %}
+            <div class="card" id="Roulette-calculator">
+                <div class="card-header">
+                    <h2 class="h2">Steps to Calculate Roulette's Probability Calculator</h2>
+                </div>
+                {% if errors %}
+        
+                <div class="card-body">
+                    {% for error in errors %}
+                    <h4>{{ error }}</h4>
+                     {% endfor %}
+                    
+                </div>
+        
+                
+        
+                {% else %}
+                <div class="card-body">
+        
+        
+                    <h3>Formula for Roulette's probability</h3>
+                    <p>Calculate the roulette probability of {{ betting }} Bet along with the expected return on your ${{ amount }} bet</p>
+        
+                    <p>Outcome Probability = Numbers/totalnumber</p>
+                    
+        
+                    <p>Success Persentage = outcomeprobability*100</p>
+                    
+                    
+        
+                    <p><strong>Expected Retun</strong></p>
+                    <p>Success Percentage = {{ successpercentage }}</p>
+                    <p>You Win = ${{ yourwin }}</p>
+                    
+        
+                    
+                    <p> </p>
+                </div>
+                {% endif %}
+               
+            </div>
+                
+            {% endif %}
+        </div>
+        
+        <script>
+          {% comment %} document.getElementsByName("data1")[0].value = "1 1 1 1 1";
+          document.getElementsByName("data2")[0].value = "0.2 0.2 0.2 0.2 0.2"; {% endcomment %}
+        
+          
+          {% if id == 1 %}
+           
+          var scrollDiv = document.getElementById("clear").offsetTop;
+          window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
+          
+          {%endif%} 
+          
+              
+          
+          
+              var validNumber = new RegExp(/^\d*\.?-?\d*$/);
+              var fist_input = document.getElementById("inlineFormInputGroup").value;
+              function validateNumber(elem) {
+                  console.log(elem)
+                  if (validNumber.test(elem.value)) {
+                      fist_input = elem.value;
+                  } else {
+                      elem.value = fist_input;
+                  }
+              }
+          </script>
+          
+          <script>
+              function myFunction() {
+          
+                  document.getElementsByName("type")[0].value = "";
+                  document.getElementsByName("amount")[0].value = "";
+                  document.getElementsByName("betting")[0].value = "";
+                  
+                  
+                  document.getElementById("clear").innerHTML = "";
+          
+          
+                  
+          
+          
+          
+              }
+          </script>
+          <br>
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">Roulette Probability Formula</h2>
+        </div>
+	    <div class="card-body">
+            <p>The Roulette Wheel has 37 equal sized spaces. This is the case in a European Roulette and it differs from other roulettes. Usually we can use a factorial to determine in how many different ways we can arrange the roulette in practical cases. There are trillions of different arrangements for all the 37 roulette numbers. This may sound complex so we will tell you about the Roulette Probability Equation for calculating the rouletter event or outcome.     </p>
+            <p><strong>The probability P(e) of the event E is given by P(e) = [ Bet b appearing x times in n spins ] = (n!/(x!(n-x)!)) P(b)x (1-P(b))n-x </strong>. To better understand this equation you should know about binomial distribution as it is the base of roulette probabilities. </p>
+</div>
+</div>
+<div class="card">
+    <div class="card-header">
+        <h3 class="h3">Roulette Probability Problems</h3>
+    </div>
+    <div class="card-body">
+<p><strong>Question 1:</strong> Calculate the roulette probability of 1 Number along with the expected return on your $400.00 bet?</p>
+<p><strong>Solution:</strong></p>
+<p>Probability of 1 Number  =  	Total Spaces of 1 Number/Total Spaces</p>
+<p>Probability of 1 Number  =  	1 Total Spaces of 1 Number/ 38 Total Spaces</p>
+<p>Probability of 1 Number = 1/38</p>
+<p>Success Percentage of 1 Number = Probability of 1 Number x 100%</p>
+<p>Success Percentage of 1 Number = 1/38 x 100%</p>
+<p>Success Percentage of 1 Number = 2.63%</p>
+<p>Understand the difficult concepts too easily taking the help of the online tools available at <a href="https://probabilitycalculator.guru/">Probabilitycalculator.guru</a> and clarify your doubts during homework or assignments.</p>
+</div>
+</div>            
+    <div class="card">
+        <div class="card-header">
+    <h3 class="h3">FAQs on Roulette Probability Calculator</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. Which Roulette Number hits most?</strong></p>
+     	<p class="answer">If you ask any player the most popular one that hits the most in roulette game is 17.</p><hr>
+     	<p class="question"><strong>2. What is the luckiest number in roulette?</strong></p>
+     	<p class="answer">The number 7 is the most common number that people like to bet on and consider it to be lucky.</p><hr>  
+        <p class="question"><strong>3. How do you predict roulette number probability using a calculator?</strong></p>
+        <p class="answer">All you have to do is enter the inputs needed and tap on the calculate button to avail resultant roulette probability in a matter of seconds.</p>
+         <img src="{% static 'images/Discrete_Mathematics/Roulette-Probability-Calculator.jpeg' %}" alt="Roulette Probability Calculator">
+    </div>
+    </div>
+    </div>
+    <script>
+        function myFunction() {
+          document.getElementById("input1").value="";
+          document.getElementById("detail").innerHTML="";
+          
+        }
+        </script>
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('ddd').click();
+            });
+        </script>
+{%endblock%}

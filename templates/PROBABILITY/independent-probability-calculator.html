@@ -1,0 +1,229 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+   <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Independent Probability Calculator | Find Probability of Independent Events</title>
+    <meta name="description" content="Calculate independent events probability with the help of the handy Independent Probability Calculator. Giverovide all events probabilities to know the independent probability."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Independent Probability Calculator | Find Probability of Independent Events"/>
+        <meta property="og:description" content="Calculate independent events probability with the help of the handy Independent Probability Calculator. Giverovide all events probabilities to know the independent probability."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Chemistry/Independent-Probability-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Independent Probability Calculator | Find Probability of Independent Events"/>
+        <meta name="twitter:description" content="Calculate independent events probability with the help of the handy Independent Probability Calculator. Giverovide all events probabilities to know the independent probability."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Chemistry/Independent-Probability-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Independent Probability Calculator | Find Probability of Independent Events"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Chemistry/Independent-Probability-Calculator.jpeg"/>
+        <meta property='og:description' content="Calculate independent events probability with the help of the handy Independent Probability Calculator. Giverovide all events probabilities to know the independent probability."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        What is an independent event in probability?
+        ","acceptedAnswer": {"@type": "Answer","text":" Two events are called independent events if the outcome of one event does not affect the outcome of another. The real-time example is scoring marks in the exams, taking a cab to market has no effect on finding listening to your favourite song."}	}, {"@type": "Question","name":"2.
+        How do you calculate the probability of 3 independent events?
+        ","acceptedAnswer": {"@type": "Answer","text":" You need to multiply the probabilities of all three independent events to get the final probability of three events occurring."}	}, {"@type": "Question","name":"3.
+        What is an example of an independent event?
+        ","acceptedAnswer": {"@type": "Answer","text":" One example that defines an independent event is if we toss a coin, and observe the outcome as head, again toss a coin, the outcome is tail. In both situations, the occurrence of both events is independent of each other."}	}, {"@type": "Question","name":"4.
+        How to know if an event is an independent event?
+        ","acceptedAnswer": {"@type": "Answer","text":" Events A and B are said to be independent if the equation P(A∩B) = P(A) . P(B) holds true. You can multiply the probabilities of two events if it is equal to the probability of two events, then they are independent."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+
+{% if n and k %}
+<script>
+    $(document).ready(function () {
+
+        $("#hassle").click();
+
+
+    });
+
+
+</script>
+
+<button type="button" hidden id="hassle" onclick="location.href='#Coin_Flip_Probability_answer'">ans1</button>
+{% endif %}
+<div class="container" style="height: auto !important;">
+  
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Independent Probability Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Free Independent Probability Calculator will find the probability of various independent events and displays the outcome within no time. Give the probability of each independent event as input in the calculator and make your calculations easier & quicker.</p>
+                <p><strong>Probability of Independent Events Calculator: </strong>Calculating the multiple independent events probability is not a big deal with the help of our handy tool. It only takes each event probability and gives the final probability as result. Interested students can refer to the following sections to know what is meant by an independent event, for example. Check the steps on how to calculate the probability of independent events along with formulas, examples for a better understanding of the topic.</p>
+                <form action="" method="POST" id="my_form" ">
+                    {% csrf_token %}
+                    <div class="form-row align-items-center">
+                        <div class="col-auto">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><strong>Enter A </strong></div>
+                                </div>
+                                <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                                    placeholder="Enter A value"  step="any" class="form-control" name="a1"   value="{{a1}}" >            
+                                </div>
+                                
+                                    
+                                        <div class="input-group mb-2">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text"><strong>Enter B </strong></div>
+                                            </div>
+                                            <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                                                placeholder="Enter B value"  step="any" class="form-control" name="a22"   value="{{a22}}" >            
+                                            </div>
+                                            <div class="form-row align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="input-group mb-2">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text"><strong>Enter C (optional)</strong></div>
+                                                        </div>
+                                                        <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" 
+                                                            placeholder="Enter C value(optional)"  step="any" class="form-control" name="c1"   value="{{c1}}" >            
+                                                        </div>
+                            <div class=" center col mt-2 ">
+                            <center><button type="submit" class="btn btn-primary" name="f1">Calculate</button>
+                                <button type="button" onclick="myFunction()" style="margin-top:5px;"
+                                class="btn btn-danger">Reset</button>
+                            </center>
+                            
+                        </div>
+                    </div>
+                </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+{% if id == 1 %}
+<div id="clear">
+    <div class="card" id="magnetic-force">
+        <div class="card-header">
+            <h2 class="h2">Probablity of independent event Calculator</h2>
+        </div>
+        <div class="card-body">
+            <p>When two events, A and B are independent, the probability of occurrence of A and B is:</p>
+
+                <p><strong>P(A and B) = P(A) · P(B|A)  [Where P(B|A) = P(B)]</strong></P>
+            <p> The probability of A is :{{a1}}/{{c}}</p>
+            <p> The probability of B is :{{a22}}/{{c}}</p>
+            <p> The probability of C is :{{c1}}/{{c}}</p>
+            <p>The independent probability of A with respect to B is : {{d}}</p>
+            <p>The independent probability of B with respect to A is : {{e}}</p>
+            <p>The independent probability of C with respect to A,B is : {{f}}</p>
+            </div>
+    </div>
+</div>
+{% endif %}
+<script>
+    
+    {% if id == 1 %}
+     
+    var scrollDiv = document.getElementById("clear").offsetTop;
+    window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
+    
+    {%endif%}
+
+    function myFunction() {
+        
+        document.getElementsByName("a1")[0].value = "";
+        document.getElementsByName("a22")[0].value = "";
+        document.getElementsByName("c1")[0].value = "";
+        document.getElementById("clear").innerHTML = "";
+
+    }
+
+</script>   
+<div class="card">
+    <div class="card-header">
+        <h2 class="h2">What are Independent Events?</h2>
+    </div>
+    <div class="card-body">
+<p>A probability event can be defined as the set of outcomes of a random experiment. The two types of events in probability are dependent events and independent events.</p>
+<p>  The two events are said to be independent events when the outcome of the first event does not show an impact on the outcome of the second event. The example is tossing a coin and rolling a die simultaneously or separately are independent. The formulas to calculate the probability of independent events are along the lines:</p>
+<p>  If two events A, B are independent, then the probability of happening A and B is here:</p>
+<p><strong>  P(A ∩ B) = P(A) . P(B)</strong></p>
+<p>  For three independent events A, B, C, the probability of happening A, B, C is:</p>
+<p><b>  P(A ∩ B ∩ C) = P(A) . P(B) . P(C)</b></p>
+<p> So, according to the <b>multiplication rule</b> to calculate the probability of the intersection of independent events, multiply the probabilities of each event together.</p>
+                </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="h3">Steps to Find the Probability of Independent Events</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>The method to find the independent events probability is enclosed here. Make use of these guidelines to get immediate results.</p>
+                    <ul>
+                        <li>Initially, check whether the given events are independent or not.</li>
+                        <li>If independent, then multiply the probability of each event with another.</li>
+                        <li>Finally, obtained produt is the independent probability.</li>
+                    </ul>
+                    <p><b>Example: </b>In a survey, a company found that 8 out of 15 buy pens. If four people are chosen at random with replacement, what is the probability that all 4 people buy pens?</p>
+                <p>Solution:</p> 
+                <p>If four people are chosen at random with a replacement who buy pen, then the probability that all 4 people buy pen is:
+                </p> <p>   P(1st person buys pen) = 8/15</p>
+                <p>  P(2nd person buys pen) = 8/15</p>
+                <p>  P(3rd person buys pen) = 8/15</p>
+                <p>  P(4th person buys pen) = 8/15</p>
+                <p>  P(all 4 persons buy pen) = 8/15 x 8/15 x 8/15 x 8/15</p>
+                <p>   = 4096/50625</p>
+                    <p>  The probability that all 4 people buy pen is 4096/50625.</p>
+                    <p>Do you think probability is confusing? Fear not! take the help of free online probability calculators provided at <a href="https://probabilitycalculator.guru/">Probabilitycalculatorguru</a>.</p>
+                </div></div>
+                      
+        <div class="card">
+            <div class="card-header">
+                <h3 class="h3">FAQ's on Independent Events Probability Calculator</h3>
+            </div>
+            <div class="card-body">
+                <!-- Question & Answer Starts --->
+                <p class="question"><strong>   1. What is an independent event in probability?</strong></p>
+                <p class="answer">Two events are called independent events if the outcome of one event does not affect the outcome of another. The real-time example is scoring marks in the exams, taking a cab to market has no effect on finding listening to your favourite song.</p><hr>
+<p class="question"><strong>2. How do you calculate the probability of 3 independent events?</strong></p>
+<p class="answer">You need to multiply the probabilities of all three independent events to get the final probability of three events occurring.</p><hr>
+<p class="question"><strong>3. What is an example of an independent event?</strong></p>
+<p class="answer">One example that defines an independent event is if we toss a coin, and observe the outcome as head, again toss a coin, the outcome is tail. In both situations, the occurrence of both events is independent of each other.</p><hr>
+<p class="question"><strong>4. How to know if an event is an independent event?</strong></p>
+<p class="answer">Events A and B are said to be independent if the equation P(A∩B) = P(A) . P(B) holds true. You can multiply the probabilities of two events if it is equal to the probability of two events, then they are independent.</p>
+            </div>
+         </div>
+      </div>
+    
+{%endblock%}

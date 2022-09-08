@@ -1,0 +1,248 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Cumulative Probability Calculator | Free Tool with Steps on Cumulative Probability.</title>
+    <meta name="description" content="Cumulative probability is a free online tool to display the probability of two or more events."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Cumulative Probability Calculator | Free Tool with Steps on Cumulative Probability."/>
+        <meta property="og:description" content="Cumulative probability is a free online tool to display the probability of two or more events."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://probabilitycalculator.guru/static/images/Probability/Cumulative-probability-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Cumulative Probability Calculator | Free Tool with Steps on Cumulative Probability."/>
+        <meta name="twitter:description" content="Cumulative probability is a free online tool to display the probability of two or more events."/>
+        <meta name="twitter:image:src" content="http://probabilitycalculator.guru/static/images/Probability/Cumulative-probability-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Cumulative Probability Calculator | Free Tool with Steps on Cumulative Probability."/>
+        <meta property='og:image' content="http://probabilitycalculator.guru/static/images/Probability/Cumulative-probability-Calculator.jpeg"/>
+        <meta property='og:description' content="Cumulative probability is a free online tool to display the probability of two or more events."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1
+        How do you find the cumulative probability?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        Cumulative probability in simple words, just you need to multiply the probability of events together. i.e. f(x) = f(0)+f(1)+...+f(n)."}	}, {"@type": "Question","name":"2
+        How do you find the cumulative probability on calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        1.First, insert the values in the given input boxes.
+        2.Then, press the 'Calculate' button available below the input boxes.
+        3.Finally, you will get the answer in split seconds."}	}, {"@type": "Question","name":"3
+        What is the best tool to calculate the cumulative probability?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        Cumulative probability calculator is the best tool that is available at probabilitycalculator.guru."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Cumulative Probability Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Take advantage of this free Cumulative Probability Calculator tool to compute the chances of occurring two or more events. We can use this calculator by entering the inputs in the below input fields and gently tap the calculate button to get the answers quickly.</p>
+
+<!---------------      Error messages ---------->
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <p {% if message.tags %} id="message_container" class="alert alert-danger text-center" {% endif %}
+                       style="color:red">{{ message }}</p>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+<!---------------    Form ------->
+<form action="{% url 'cumulative' %}" method="POST"  >
+    {% csrf_token %}
+      <div class="col-auto">
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+            <div class="input-group-text"><strong>Class Array</strong></div>
+        </div>
+        <input type="text" name="data1"  class="form-control" id="inlineFormInputGroup" placeholder="Enter Data" value="{{ data1 }}" autofocus required>
+     
+    </div>
+
+    <div class="input-group mb-2">
+      <div class="input-group-prepend">
+          <div class="input-group-text"><strong>Frequency Array</strong></div>
+      </div>
+      <input type="text" name="data2"  class="form-control" id="inlineFormInputGroup" placeholder="Enter Data...." value="{{ data2 }}" autofocus required>
+   
+  </div>
+
+  <div class="center col mt-2">
+    <center><button type="submit" class="btn btn-primary" name="f1">Calculate</button>
+        <button type="button" onclick="myFunction()" style="margin-top:5px;" class="btn btn-danger" class="form-control">Reset</button>
+    </center>
+  </div>
+
+  
+</form>   
+</div>
+</div>
+    </div>
+
+
+{% if id == 1 %}
+<div id="clear">
+    <div class="card" id="Expected-calculator">
+        <div class="card-header">
+            <h2 class="h2">Grouped Frequency Distribution Table</h2>
+        </div>
+        {% if errors %}
+
+        <div class="card-body">
+            {% for error in errors %}
+            <h4>{{ error }}</h4>
+             {% endfor %}
+            
+        </div>
+
+        {% endif %}
+
+        {% if data2  %}
+        <div class="card-body">
+            <table class="table table-striped">
+                <tr>
+                    <th>Class</th>
+                    <th>Frequency</th>
+                    <th>Cumulative Frequency</th>
+                </tr>
+                {% for i,j,k in data %}
+                    <tr>
+                        <td>{{ i }} </td>
+                        <td>{{ j }}</td>
+                        <td>{{ k }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        {% endif %}
+
+
+{% endif %}
+</div>
+</div>
+
+<script>
+    function myFunction()
+    {
+        document.getElementById("clear").innerHTML="";
+    }
+
+    {% if id == 1 %}
+ 
+    var scrollDiv = document.getElementById("clear").offsetTop;
+    console.log(scrollDiv)
+    window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
+    
+    {%endif%}
+ 
+    </script>
+
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">What is Cumulative Probability?</h2>
+        </div>
+	    <div class="card-body">
+            <p>In probability theory, if the value of the random variables is within the range then the chance of the value is called cumulative probability. In simple words, it is a measure of the chance that two or more events. Let us see the formula notation for cumulative probability. </p>
+            <p><b>F(x)= P(X<=x)</b></p>
+            <p>Here, X is the discrete random variable.</p>
+            <p>F(x) is the cumulative probability.</p>
+            <p>And also cumulative probability is determined as F(x) = f(0) +f(1)+....+f(x)</p>
+        </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="h3">Steps to Find the Cumulative Probability</h3>
+            </div>
+            <div class="card-body">
+                <p>Below are the guidelines to follow for calculating the cumulative probability.</p>
+                <ul>
+                    <li>Note the following data that are given in the problem.</li>
+                    <li>And, then apply the cumulative probability formula, F(x) = f(0) +f(1)+....+f(x).</li>
+                    <li>Finally, simplify and find the answer.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="h3">How to Calculate Cumulative Probability?</h3>
+            </div>
+            <div class="card-body">
+                <p>Check out the below-solved example to improve your skills on how to find the cumulative probability manually by hand.</p>
+<p><strong>Example: Calculate the cumulative probability of a coin?</strong></p>
+<p><strong>Solution:</strong></p>
+<p>In a coin we have 1 head and 1 tail.</p>
+<p>Probability of head = 1/2 = 0.25.</p>
+<p>Probability of tail = 1/2 = 0.25.</p>
+<p>Cumulative probability, F(x)= P(X<=x) = f(0)+f(1).</p>
+<p>F(2) = f(1) +f(2) = 0.25+0.25 = 1.</p>
+<p>Therefore, the cumulative probability of a coin is 1.</p>
+<p>Know more about the concepts of probability calculators that are available at <a href="http://probabilitycalculator.guru/">probabilitycalculator.guru</a>.</p>
+<img src="{% static 'images/probability/Cumulative-Probability-Calculator.jpeg' %}" alt="Cumulative Probability Calculator">
+</div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+    <h3 class="h3">FAQs on Cumulative Probability Calculator</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. How do you find the cumulative probability?</strong></p>
+     	<p class="answer">Cumulative probability in simple words, just you need to multiply the probability of events together. i.e. f(x) = f(0)+f(1)+...+f(n).</p><hr>
+     	<p class="question"><strong>2. How do you find the cumulative probability on the calculator?</strong></p>
+     	<p class="answer"><ul>
+             <li>First, insert the values in the given input boxes.</li>
+             <li> Then, press the 'Calculate' button available below the input boxes.</li>
+             <li> Finally, you will get the answer in split second.</li>
+         </ul></p><hr>
+        <p class="question"><strong>3. What is the best tool to calculate the cumulative probability?</strong></p>
+        <p class="answer"> A cumulative probability calculator is the best tool that is available at <a href="http://probabilitycalculator.guru/">probabilitycalculator.guru</a></p><hr>
+        </div>
+    </div>
+    </div>
+
+{% if  flag %}
+<script>
+        $(document).ready(function () {
+            $("#hassle").click();
+        });
+</script>
+<button type="button" hidden id="hassle" onclick="location.href='#combinations'">ans1</button>
+{% endif %}
+
+{% endblock %}

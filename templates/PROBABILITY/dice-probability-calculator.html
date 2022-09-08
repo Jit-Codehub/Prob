@@ -1,0 +1,298 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Online Dice Probability Calculator | How to Calculate Probability of Dice?</title>
+    <meta name="description" content="Use our online dice probability calculator tool that displays the no.of possible outcomes you get when a dice is rolled."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Online Dice Probability Calculator | How to Calculate Probability of Dice?"/>
+        <meta property="og:description" content="Use our online dice probability calculator tool that displays the no.of possible outcomes you get when a dice is rolled."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="http://probabilitycalculator.guru/static/images/Probability/Dice-Probability-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Online Dice Probability Calculator | How to Calculate Probability of Dice?"/>
+        <meta name="twitter:description" content="Use our online dice probability calculator tool that displays the no.of possible outcomes you get when a dice is rolled."/>
+        <meta name="twitter:image:src" content="http://probabilitycalculator.guru/static/images/Probability/Dice-Probability-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Online Dice Probability Calculator | How to Calculate Probability of Dice?"/>
+        <meta property='og:image' content="http://probabilitycalculator.guru/static/images/Probability/Dice-Probability-Calculator.jpeg"/>
+        <meta property='og:description' content="Use our online dice probability calculator tool that displays the no.of possible outcomes you get when a dice is rolled."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Dice Probability Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Dice Probability Calculator is a free online tool to describe the probability of dice roll over numerous variants. Simply, you just need to provide the respective inputs and hit the calculate button and get the answer in a fraction of seconds.</p>
+
+<!---------------      Error messages ---------->
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <p {% if message.tags %} id="message_container" class="alert alert-danger text-center" {% endif %}
+                       style="color:red">{{ message }}</p>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+<!---------------    Form ------->
+<form action="" method="POST" id="my_form" >
+    {% csrf_token %}
+    <div class="col-auto">
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><strong>No Of Faces</strong></div>
+            </div>
+            <select name="selectdice" id="inlineFormInputGroup"  class="form-control" onchange="this.form.submit();"
+                 autofocus=""  value="{{selectdice}}">
+
+                {% if selectdice == "4" %}
+                <option value="4" selected="selected"> 4  </option>
+                {% else %}
+                <option value="4"> 4</option>
+                {% endif %}
+                {% if selectdice == "6" %}
+                <option value="6" selected="selected"> 6  </option>
+                {% else %}
+                <option value="6"> 6</option>
+                {% endif %}
+
+                {% if selectdice == "8" %}
+                <option value="8" selected="selected"> 8  </option>
+                {% else %}
+                <option value="8"> 8</option>
+                {% endif %}
+
+                {% if selectdice == "10" %}
+                <option value="10" selected="selected"> 10  </option>
+                {% else %}
+                <option value="10"> 10</option>
+                {% endif %}
+
+
+
+                {% if selectdice == "12" %}
+                <option value="12" selected="selected"> 12  </option>
+                {% else %}
+                <option value="12"> 12</option>
+                {% endif %}
+
+                {% if selectdice == "20" %}
+                <option value="20" selected="selected"> 20  </option>
+                {% else %}
+                <option value="20"> 20</option>
+                {% endif %}
+
+            </select>
+        </div>
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><strong>No Of Dice</strong></div>
+            </div>
+            <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup"  required=""
+                placeholder="Enter No Of Dice" min="1" step="any" class="form-control" name="noofdice"  value="{{noofdice}}" >
+        </div>
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><strong>Game Rule</strong></div>
+            </div>
+            <input list="gamerulelist" id="inlineFormInputGroup"  required=""
+                placeholder="Choose Game Rule" class="form-control" onchange="this.form.submit();" name="gamerule"  value="{{gamerule}}" >
+            <datalist id="gamerulelist">
+                <option value="1.All dice with the same value...">
+                <option value="2.All dice value equal to or higher than..">
+                <option value="3.All dice value equal to or less than..">
+                <option value="4.The Sum of all dice is equal to...">
+                <option value="5.The Sum of all dice is atleast equal to...">
+                <option value="6.The Sum of all dice is atmost equal to...">
+                {% comment %} <option value="7.Exactly X equal to...">
+                <option value="8.Atleast X equal to..."> {% endcomment %}
+
+            </datalist>
+            {% if id1 == 7 %}
+            <input type="number" min="1" oninput="validateNumber(this);" id="X" required=""
+                placeholder="Enter number"  class="form-control" name="X" value="{{X }}"}>
+            {% endif %}
+
+
+        </div>
+    </div>
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><strong>Value</strong></div>
+            </div>
+            <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup"  required=""
+                placeholder="Value" min="1" max="{{ selectdice }}" step="any" class="form-control" name="valueondice"  value="{{valueondice}}" >
+        </div>
+
+
+
+
+
+
+
+        <div class=" center col mt-2 ">
+            <center><button type="submit" class="btn btn-primary" name="f1">Calculate</button>
+                <button type="button" onclick="myFunction()" style="margin-top:5px;"
+                    class="btn btn-danger">Reset</button>
+            </center>
+        </div>
+
+</form>
+
+
+    
+
+</div>
+</div>
+{% if id == 1 %}
+<div id="clear">
+    <div class="card" id="dice-calculator">
+        <div class="card-header">
+            <h2 class="h2">Steps to Calculate Probability</h2>
+        </div>
+        <div class="card-body">
+            <strong>Probability Formula</strong>
+            <p>  Probability = No_of_outcomes/total_no
+            <p>  Probability= {{no_of_outcome}} / {{k}} </p>
+            <p><b> Probability= {{probability}} </b></p>
+        </div>
+    </div>
+</div>   
+        {% endif %}
+
+       
+        
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">How do you Calculate the Probability of a Dice?</h2>
+        </div>
+	    <div class="card-body">
+            <p>Before finding the probability of a dice we need to make sure that for what kind of dice we are going to find the probability.</p>
+               <p><strong>Probability of Rolling Same Value on each Die</strong>: Chance of obtaining a particular value on a die is p, simply we need to multiply the probability by itself as many times the number of dice. In other words, we can put it as P = p<sup>n</sup></p>
+               <p><strong>Probability of Rolling all Values Equal or Higher than y:</strong> This scenario is near to the above one but the difference is this time p is 1/s multiplied by all the possible conditions fulfilling the first condition. </p>  
+               <p><strong>Probability of Rolling all Values Equal or Lower than y:</strong> This case is also similar to the earlier one but it's just that here we are finding the numbers which are equal or lower than our target. </p>
+               <p><strong>The probability of rolling exactly X same values (equal to y) out of the set:</strong> This case is a bit different from the earlier ones. But Binomial Probability comes in handy here. The formula for describing the binomial probability is <strong>P(X=r) = nCr * pʳ * (1-p)ⁿ⁻ʳ</strong> where r is the number of successes, nCr is the number of combinations.</p>
+               <p><strong>The probability of rolling at least X same values (equal to y) out of the set:</strong> In this particular scenario the probability is the sum of probabilities.</p>
+               <p><strong>The probability of rolling an exact sum 'r' out of the set of 'n' s-sided dice:</strong> The general formula is quite complex. <img src="https://drive.google.com/file/d/12A0cWJNijqRdRdAWAhNQiW_xN0G9vj3O/view?usp=sharing" alt="Dice Probability Exact Sum"></p>
+               <p><strong>The probability of rolling a sum out of the set, not lower than X:</strong> Similar to the earlier cases we need to determine the results that match the initial condition and then divide them with a number of all possibilities.</p>
+               <p><strong>Probability of rolling a sum out of the entire set, not higher than X:</strong> Most of the process is same but in this we need to add only the sums below or equal to the target. To find the sum of all the sums can take up huge time so you can go with the complimentary events as total probability sums to 1 you can simply subtract from 1.</p>
+               <p>Here, in these, we have some variables that are used in these variables.</p>
+               <ul><li>n is the number of dice</li>
+                <li>s is the number of individual die faces</li>
+                <li>p is the probability of rolling any value from a die</li>
+                <li>P is the overall probability </li></ul>
+                <p>There is an easy relationship - p = 1/s</p> 
+              </div>
+              </div>
+              <div class="card">
+                <div class="card-header"><h3 class="h3">Steps to Find the Dice Probability?</h3></div>
+                <div class="card-body">
+                    <p>Follow the below steps or guidelines to calculate the probability of dice easily and quickly.</p>
+                    <ul>
+                        <li>Firstly, you need to write the given values in the problem.</li>
+                        <li>Then apply the probability formula of a die.</li>
+                        <li>Substitute the values in it and simplify.</li>
+                        <li>Finally, you will get the desired answer.</li>
+                    </ul>
+                    </div>
+                    </div>
+
+              <div class="card">
+                <div class="card-header"><h3 class="h3">Dice Probability Example Questions</h3></div>
+                <div class="card-body">
+               <p><strong>Question 1:</strong> When a die is rolled. Find the probability of getting an even number?</p>
+            <p><strong>Solution:</strong></p>
+            <p>Formula, probability = No. of favorable outcomes / Total No. of possible outcomes</p>
+            <p>Favorable outcomes for getting an odd number when a dice is rolled is(2, 4, 6) 3</p>
+            <p>Total number of possible outcomes = 6</p>
+            <p>Substituting values we have the probability of getting an even number = 3/6 </p>
+            <p>Probability of getting an odd number = 1/2</p>
+            <p>Therefore, the probability of getting an even number when a dice is rolled is 1/2.</p>
+            <p><a href="http://probabilitycalculator.guru/">probabilitycalculator.guru</a> is the best website for various probability calculators with detailed information. Use them and clarify your queries.</p>
+           <img src="{% static 'images/Probability/Dice-Probability-Calculator.jpeg' %}" alt="Dice Probability Calculator">
+</div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+    <h3 class="h3">FAQs on Combinations Calculator</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. What is the formula to find the probability of a die?</strong></p>
+     	<p class="answer">The formula to calculate the probability is, probability = No. of favorable outcomes / Total No. of possible outcomes</p><hr>
+     	<p class="question"><strong>2. How to use the Dice Probability Calculator?</strong></p>
+     	<p class="answer"><ul>
+             <li>Enter the values in the input fields.</li>
+             <li>Then, click the calculate button.</li>
+             <li>And get the output straight away</li>
+         </ul></p><hr>
+        <p class="question"><strong>3. What is the probability of rolling a 7 with two dice?</strong></p>
+        <p class="answer"><p>Here, No. of Favorable outcomes is = 6 </p>
+        <p>The Total no. of outcomes when two dice are rolled is 36<p>probability = No. of favorable outcomes / Total No. of possible outcomes = 6/36 = 1/6.</p></p><hr>
+        
+    	</div>
+    </div>
+    </div>
+
+{% if  flag %}
+<script>
+        $(document).ready(function () {
+            $("#hassle").click();
+        });
+</script>
+   
+<button type="button" hidden id="hassle" onclick="location.href='#combinations'">ans1</button>
+{% endif %}
+<script>
+            
+            
+        
+    function myFunction() {
+      
+       
+        
+
+        document.getElementById("clear").innerHTML = "";
+
+    }
+
+</script>
+{%endblock%}

@@ -1,0 +1,963 @@
+<html>
+
+  <head>
+    {%load static%}
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- Favicons -->
+   <link href="static/assets/img/favicon.png" rel="icon">
+   <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+ 
+   <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+ 
+   <!-- Vendor CSS Files -->
+   <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+   <link href="static/assets/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+   <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+   <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+   <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+   <link href="static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+   <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+ 
+  
+   {%block css%}
+   <link rel="stylesheet" href="/static/assets/css/style.css" type="text/css" media="screen">
+   {%endblock%}
+   <!-- =======================================================
+   * Template Name: Bootslander - v4.7.1
+   * Template URL: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/
+   * Author: BootstrapMade.com
+   * License: https://bootstrapmade.com/license/
+   ======================================================== -->
+   <!-- META DATA STARTS -->
+    <title>{{portal_obj.meta_title}}</title>
+    <meta name="description" content="{{portal_obj.meta_description}}">
+    <link rel="canonical" href="{{request.build_absolute_uri}}" >
+<!-- META DATA ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+    <!--  FACEBOOK CONFIGURATION STARTS  -->
+    <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+    <meta property="og:title" content="{{portal_obj.meta_title}}"/>
+    <meta property="og:description" content="{{portal_obj.meta_description}}"/>
+    <meta content="" property="og:site_name" />
+    <meta  content="https://onlinecalculator.guru/static/images/base-Calculator.jpeg" property="og:image" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:height" content="435" />
+    <meta property="og:image:width" content="354" />
+    <!--  FACEBOOK CONFIGURATION ENDS  -->
+    <!-- TWITTER CARD CONFIGURATION STARTS  -->
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+    <meta name="twitter:title" content="{{portal_obj.meta_title}}"/>
+    <meta name="twitter:description" content="{{portal_obj.meta_description}}"/>
+    <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/base-Calculator.jpeg"/>
+    <meta property="twitter:image:height" content="435"/>
+    <meta property="twitter:image:width" content="354"/>
+    <!-- TWITTER CARD CONFIGURATION ENDS  -->
+    <!--  LINKEDIN CONFIGURATION STARTS-->
+    <meta property='og:title' content="{{portal_obj.meta_title}}"/>
+    <meta property='og:image' content="https://onlinecalculator.guru/static/images/base-Calculator.jpeg"/>
+    <meta property='og:description' content="{{portal_obj.meta_description}}"/>
+    <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+    <!-- end of linkedin CONFIGURATIONS ENDS -->
+    
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+
+<head>
+<body>
+
+
+
+
+{% autoescape off %}
+{{portal_obj.main_content | safe}}
+{% endautoescape %}
+</body>
+</html>
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Probability Calculator</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/assets/img/favicon.png" rel="icon">
+  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+ 
+  {%block css%}
+  <link rel="stylesheet" href="static/assets/css/style.css" type="text/css" media="screen">
+  {%endblock%}
+  <!-- =======================================================
+  * Template Name: Bootslander - v4.7.1
+  * Template URL: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="{% url 'home' %}">ProbabilityCalculator.Guru</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#features">Probability-Calculator</a></li>
+		  
+         <li><a class="nav-link scrollto" href="#PopularCalculators">Popular-Calculators</a></li>
+		 
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+		
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
+          <div data-aos="zoom-out">
+            <h1>Calculate your probability with <span>ProbabilityCalculator.Guru</span></h1>
+            <h2>We are team of talented designers making calculator</h2>
+            <div class="text-center text-lg-start">
+              <a href="#features" class="btn-get-started scrollto">Get Started</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
+          <img src="static/assets/img/hero-img.jpeg" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+    <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+      <defs>
+        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+      </defs>
+      <g class="wave1">
+        <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+      </g>
+      <g class="wave2">
+        <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+      </g>
+      <g class="wave3">
+        <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+      </g>
+    </svg>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch" data-aos="fade-right">
+            <a href="https://www.youtube.com/watch?v=HbEGVvqIXHs" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+          </div>
+
+          <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-left">
+            <p>Probability Calculator is a very effective approach for students or others to learn easily about all the concepts of probability theory. Basically, we have provided each and every topic-related online calculator tool that calculates basic to complex probability calculations effortlessly and quickly. Check out the detailed information about probability online calculators from the further modules and enhance your subject knowledge more.</p>
+
+            
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Probability Calculator</h2>
+          <p>List of Probability Calculator Tools</p>
+        </div>
+        <p>Here is the list of basic to advanced probability calculators that display the possible probability values for the given events. Some of the main concepts like Normal distribution, Conditional Probability, Binomial probability distribution, Poisson Probability, Risk, Independent & Dependent probability, Chi-square probability, Coin toss & flip probability, Odds, Permutations, Mean & variance probability distribution, etc. are included. All you need to do is hit on the available free online & handy probability calculators links and find the results within a fraction of seconds along with a detailed concept explanation.</p>
+
+        <div class="row" data-aos="fade-left">
+          <div class="col-lg-3 col-md-4">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="50">
+              <i class="ri-store-line" style="color: #ffbb2c;"></i>
+              <h3><a href="accuracy-calculator">Accuracy Calculator</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
+              <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
+              <h3><a href="bayes-theorem-calculator">Bayes' Theorem Calculator</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="150">
+              <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
+              <h3><a href="binomial-probability-calculator">Binomial Probability Calculator</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
+              <i class="ri-paint-brush-line" style="color: #e361ff;"></i>
+              <h3><a href="binomial-probability-distribution-calculator">Binomial Probability Distribution Calculator</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="250">
+              <i class="ri-database-2-line" style="color: #47aeff;"></i>
+              <h3><a href="probability-distribution-calculator">Probability Distribution Calculator</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
+              <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
+              <h3><a href="birthday-paradox-calculator">Birthday Paradox Calculator</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="350">
+              <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
+              <h3><a href="chebyshevs-theorem-calculator">Chebyshev's Theorem Calculator</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
+              <i class="ri-price-tag-2-line" style="color: #4233ff;"></i>
+              <h3><a href="coin-toss-probability-calculator">Coin Toss Probability Calculator</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="450">
+              <i class="ri-anchor-line" style="color: #b2904f;"></i>
+              <h3><a href="coin-flip-probability-calculator">Coin Flip Probability Calculator</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="500">
+              <i class="ri-disc-line" style="color: #b20969;"></i>
+              <h3><a href="combinations-calculator">Combination Calculator</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="600">
+              <i class="ri-fingerprint-line" style="color: #29cc61;"></i>
+              <h3><a href="deck-of-cards-probability-calculator">Deck of cards Probability Calculator</a></h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 mt-4">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="550">
+              <i class="ri-base-station-line" style="color: #ff5828;"></i>
+              <h3><a href="dice-probability-calculator">Dice Probability Calculator</a></h3>
+            </div>
+          </div>
+          
+          
+
+
+          
+            <div class="col-lg-3 col-md-4 mt-4">
+              <div class="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                <i class="ri-store-line" style="color: #ffbb2c;"></i>
+                <h3><a href="dice-roll-probability-calculator">Dice Roll Probability Calculator</a></h3>
+              </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-4 mt-4">
+              <div class="icon-box" data-aos="zoom-in" data-aos-delay="150">
+                <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
+                <h3><a href="empirical-probability-calculator">Empirical Probability Calculator</a></h3>
+              </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-4 mt-4">
+              <div class="icon-box" data-aos="zoom-in" data-aos-delay="250">
+                <i class="ri-database-2-line" style="color: #47aeff;"></i>
+                <h3><a href="experimental-probability-calculator">Experimental Probability Calculator</a></h3>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4">
+              <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
+                <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
+                <h3><a href="exponential-probability-calculator">Exponential Probability Calculator</a></h3>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4">
+              <div class="icon-box" data-aos="zoom-in" data-aos-delay="350">
+                <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
+                <h3><a href="geometric-probability-calculator">Geometric Probability Calculator</a></h3>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4">
+              <div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
+                <i class="ri-price-tag-2-line" style="color: #4233ff;"></i>
+                <h3><a href="independent-probability-calculator">Independent Probability Calculator</a></h3>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4">
+              <div class="icon-box" data-aos="zoom-in" data-aos-delay="450">
+                <i class="ri-anchor-line" style="color: #b2904f;"></i>
+                <h3><a href="lottery-probability-calculator">Lottery Probability Calculator</a></h3>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4">
+              <div class="icon-box" data-aos="zoom-in" data-aos-delay="500">
+                <i class="ri-disc-line" style="color: #b20969;"></i>
+                <h3><a href="mean-of-probability-distribution-calculator">Mean Distribution Calculator</a></h3>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4">
+              <div class="icon-box" data-aos="zoom-in" data-aos-delay="550">
+                <i class="ri-base-station-line" style="color: #ff5828;"></i>
+                <h3><a href="odds-calculator">Odds Probability Calculator</a></h3>
+              </div>
+            </div>
+            
+
+            
+              <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                  <i class="ri-store-line" style="color: #ffbb2c;"></i>
+                  <h3><a href="percentage-probability-calculator">Percentage Probability Calculator</a></h3>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
+                  <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
+                  <h3><a href="permutations">permutations Calculator</a></h3>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="150">
+                  <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
+                  <h3><a href="poisson-probability-calculator">Poisson Probability Calculator</a></h3>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
+                  <i class="ri-paint-brush-line" style="color: #e361ff;"></i>
+                  <h3><a href="probability-calculator">Probability Calculator</a></h3>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="250">
+                  <i class="ri-database-2-line" style="color: #47aeff;"></i>
+                  <h3><a href="probability-density-function-calculator">Probability Density Function Calculator</a></h3>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
+                  <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
+                  <h3><a href="probability-distribution-calculator">Probability Distribution Calculator</a></h3>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="350">
+                  <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
+                  <h3><a href="probability-of-3-events-calculator">Probability of 3 events Calculator</a></h3>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
+                  <i class="ri-price-tag-2-line" style="color: #4233ff;"></i>
+                  <h3><a href="random-number-generator">random Number Generator Calculator</a></h3>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="450">
+                  <i class="ri-anchor-line" style="color: #b2904f;"></i>
+                  <h3><a href="relative-risk-calculator">Relative Risk Calculator</a></h3>
+                </div>
+              </div>
+            
+
+              <div class="col-lg-3 col-md-4  mt-4">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="50">
+                  <i class="ri-store-line" style="color: #ffbb2c;"></i>
+                  <h3><a href="risk-calculator">Risk Calculator</a></h3>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
+                  <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
+                  <h3><a href="roulette-probability-calculator">Roulette Probability Calculator</a></h3>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="150">
+                  <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
+                  <h3><a href="sensitivity-and-specificity-calculator">Sensitivity and Specificity Calculator</a></h3>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
+                  <i class="ri-paint-brush-line" style="color: #e361ff;"></i>
+                  <h3><a href="standard-deviation-probability-calculator">standard-deviation-probability-calculator</a></h3>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="250">
+                  <i class="ri-database-2-line" style="color: #47aeff;"></i>
+                  <h3><a href="uniform-probability-distribution-calculator">uniform-probability-distribution-calculator</a></h3>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
+                  <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
+                  <h3><a href="variance-probability-calculator">variance-probability-calculator</a></h3>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="350">
+                  <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
+                  <h3><a href="yugioh-probability-calculator">yugioh-probability-calculator</a></h3>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
+                  <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
+                  <h3><a href="z-score-probability-calculator">z-score-probability-calculator</a></h3>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box" data-aos="zoom-in" data-aos-delay="350">
+                  <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
+                  <h3><a href="bag-of-marble-probability">Bag of Marble Probability</a></h3>
+                </div>
+              </div>
+
+
+
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+      <div class="container">
+
+        <div class="row" data-aos="fade-up">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="count-box">
+              <i class="bi bi-emoji-smile"></i>
+              <span data-purecounter-start="0" data-purecounter-end="10000" data-purecounter-duration="1" class="purecounter"></span>
+              <p>+ Happy Students</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+            <div class="count-box">
+              <i class="bi bi-journal-richtext"></i>
+              <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="purecounter"></span>
+              
+              <p>+Calculators</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="count-box">
+              <i class="bi bi-headset"></i>
+              <span data-purecounter-start="0" data-purecounter-end="100000" data-purecounter-duration="1" class="purecounter"></span>
+              <p>+ Hours of Learning</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+            <div class="count-box">
+              <i class="bi bi-people"></i>
+              <span data-purecounter-start="0" data-purecounter-end="20" data-purecounter-duration="1" class="purecounter"></span>
+              <p>+ Hard Workers</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+    <!-- ======= Details Section ======= -->
+    <section id="details" class="details">
+      <div class="container">
+
+        <div class="row content">
+          <div class="col-md-4" data-aos="fade-right">
+            <img src="static/assets/img/details-1.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-8 pt-4" data-aos="fade-up">
+            <h3>Important Probability Terms: Definition & Example</h3>
+            <p class="fst-italic">
+              Probability Calculator is a very effective approach for students or others to learn easily about all the concepts of probability theory. Basically, we have provided each and every topic-related online calculator tool that calculates basic to complex probability calculations effortlessly and quickly. Check out the detailed information about probability online calculators from the further modules and enhance your subject knowledge more.
+            </p>
+            <table class="table table-bordered">
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sample Space</td>
+<td>The set of all the possible outcomes to occur in any trial</td>
+<td>
+<ol>
+<li>Tossing a coin, Sample Space (S) = {H,T}</li>
+<li>Rolling a die, Sample Space (S) = {1,2,3,4,5,6}</li>
+</ol>
+</td>
+</tr>
+<tr>
+<td>Sample Point</td>
+<td>It is one of the possible results</td>
+<td>In a deck of Cards:
+<ul>
+<li>4 of hearts is a sample point.</li>
+<li>The queen of clubs is a sample point.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Experiment or Trial</td>
+<td>A series of actions where the outcomes are always uncertain.</td>
+<td>The tossing of a coin, Selecting a card from a deck of cards, throwing a dice.</td>
+</tr>
+<tr>
+<td>Event</td>
+<td>It is a single outcome of an experiment.</td>
+<td>Getting a Head while tossing a coin is an event.</td>
+</tr>
+<tr>
+<td>Outcome</td>
+<td>Possible result of a trial/experiment</td>
+<td>T (tail) is a possible outcome when a coin is tossed.</td>
+</tr>
+<tr>
+<td>Complimentary event</td>
+<td>The non-happening events. The complement of an event A is the event, not A (or A&rsquo;)</td>
+<td>Standard 52-card deck, A = Draw a heart, then A&rsquo; = Don&rsquo;t draw a heart</td>
+</tr>
+<tr>
+<td>Impossible Event</td>
+<td>The event cannot happen</td>
+<td>In tossing a coin, impossible to get both head and tail at the same time</td>
+</tr>
+</tbody>
+</table>
+          </div>
+        </div>
+
+        
+        <div class="row content">
+          <div class="col-md-4" data-aos="fade-right">
+            <img src="static/assets/img/details-3.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-8 pt-5" data-aos="fade-up">
+            <h3>Different Types of Probability Events</h3>
+            <p>
+              The list of various probabilities event types is available here for gaining more knowledge about the probability theory. They are as follows:
+            </p>
+            <ul>
+              <li><i class="bi bi-check"></i> Simple Event</li>
+              <li><i class="bi bi-check"></i> Compound Event</li>
+              <li><i class="bi bi-check"></i> Certain Event</li>
+			  <li><i class="bi bi-check"></i> Impossible Event</li>
+              <li><i class="bi bi-check"></i> Equally likely Events</li>
+              <li><i class="bi bi-check"></i>Complimentary Events</li>
+			  <li><i class="bi bi-check"></i> Mutually Exclusive Events</li>
+              <li><i class="bi bi-check"></i> Dependent Probability Events</li>
+              <li><i class="bi bi-check"></i> Independent Probability Events</li>
+            </ul>
+            
+            
+          </div>
+        </div>
+
+       
+
+      </div>
+    </section><!-- End Details Section -->
+
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Probability Formulas</h2>
+          <p>Check out Probability Formulas</p>
+        </div>
+
+        <div class="row g-0" data-aos="fade-left">
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+              <a href="static/assets/img/gallery/gallery-1.jpeg" class="gallery-lightbox">
+                <img src="static/assets/img/gallery/gallery-1.jpeg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="150">
+              <a href="static/assets/img/gallery/gallery-2.jpeg" class="gallery-lightbox">
+                <img src="static/assets/img/gallery/gallery-2.jpeg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+              <a href="static/assets/img/gallery/gallery-3.jpeg" class="gallery-lightbox">
+                <img src="static/assets/img/gallery/gallery-3.jpeg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="250">
+              <a href="static/assets/img/gallery/gallery-4.jpeg" class="gallery-lightbox">
+                <img src="static/assets/img/gallery/gallery-4.jpeg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+              <a href="static/assets/img/gallery/gallery-5.jpeg" class="gallery-lightbox">
+                <img src="static/assets/img/gallery/gallery-5.jpeg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="350">
+              <a href="static/assets/img/gallery/gallery-6.jpeg" class="gallery-lightbox">
+                <img src="static/assets/img/gallery/gallery-6.jpeg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+              <a href="static/assets/img/gallery/gallery-7.jpeg" class="gallery-lightbox">
+                <img src="static/assets/img/gallery/gallery-7.jpeg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="450">
+              <a href="static/assets/img/gallery/gallery-8.jpeg" class="gallery-lightbox">
+                <img src="static/assets/img/gallery/gallery-8.jpeg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Gallery Section -->
+
+    
+
+    
+	
+	<!-- ======= Popular Courses Section ======= -->
+  <section id="PopularCalculators" class="features">
+    <div class="container">
+
+      <div class="section-title" data-aos="fade-up">
+        <h2>Popular Calculator</h2>
+        <p>List of Popular-Calculators</p>
+      </div>
+      <p>Here is the list of Top 10 Popular Calculators as per our prefrences. This list is compiled as per the latest online trends and our detailed research.</p>
+
+      <div class="row" data-aos="fade-left">
+        <div class="col-lg-3 col-md-4">
+          <div class="icon-box" data-aos="zoom-in" data-aos-delay="50">
+            <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
+            <h3><a href="https://ProbabilityCalculator.Guru/math-calculator/">Maths Calculator</a></h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
+            <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
+            <h3><a href="https://lcmgcf.com/">LCM and GCF Calculator</a></h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
+          <div class="icon-box" data-aos="zoom-in" data-aos-delay="150">
+            <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
+            <h3><a href="https://physicscalc.com/">Physics Calculator</a></h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
+          <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
+            <i class="ri-paint-brush-line" style="color: #e361ff;"></i>
+            <h3><a href="https://chemistrycalc.com/">Chemistry Calculator</a></h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box" data-aos="zoom-in" data-aos-delay="250">
+            <i class="ri-database-2-line" style="color: #47aeff;"></i>
+            <h3><a href="https://multiplyfractions.com/">Fraction Calculator</a></h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
+            <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
+            <h3><a href="https://linearequationscalculator.com/">Linear Equations Calculator</a></h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box" data-aos="zoom-in" data-aos-delay="350">
+            <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
+            <h3><a href="https://percentagecalculator.guru/">percentage Calculator</a></h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
+            <i class="ri-price-tag-2-line" style="color: #4233ff;"></i>
+            <h3><a href="https://statisticscalculators.net/">statistics Calculator</a></h3>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box" data-aos="zoom-in" data-aos-delay="350">
+            <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
+            <h3><a href="https://arithmeticcalculator.com/">Arithmetic Calculator</a></h3>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mt-4">
+          <div class="icon-box" data-aos="zoom-in" data-aos-delay="350">
+            <i class="ri-paint-brush-line" style="color: #e361ff;"></i>
+            <h3><a href="https://factorpolynomials.com/">Polynomial Calculator</a></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+   
+
+           <!-- End Course Item-->
+
+          
+    </section><!-- End Popular Courses Section -->
+
+    
+
+    <!-- ======= F.A.Q Section ======= -->
+    <section id="faq" class="faq section-bg">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Probability F.A.Q</h2>
+          <p>Frequently Asked Questions on Probability</p>
+        </div>
+
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">What is probability and example? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                <p>
+                  The definition of probability in math is a measure of the likelihood of an event to happen. Probability can range from 0 to 1, where 0 implies the event to be impossible and 1 shows a certain event. For instance, if a coin is tossed in the air then the possible outcomes are head and tail.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">What is Probability Formula? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  The standard formula to calculate the probability of an event is as given by</p>
+				<p><strong>Probability = (Number of a Favourable outcome) / (Total number of outcomes) </strong></p>
+				<p><strong>P = n (E) / n (S)</strong></p>
+				<p>Where,</p>
+				<ul>
+				<li>P is the probability,</li>
+				<li>E is the event, and</li>
+				<li>S is the sample space.</li>
+				</ul>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">What are the 5 rules of probability? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p>Fundamental Rules of Probability: The list of five basic probability rules are furnished below;</p>
+			<ol>
+			<li>For any probability event <strong>A, 0 &le; P(A) &le; 1</strong></li>
+			<li>The sum of the probabilities of all possible outcomes is <strong>1</strong></li>
+			<li>The Complement Rule <strong>(P(not A) = 1 &ndash; P(A))</strong></li>
+			<li>Addition Rule for Disjoint Events<strong> (If A and B are disjoint events, then P(A or B) = P(A) + P(B))</strong></li>
+			<li>The General Addition Rule<strong> (P(A or B) = P(A) + P(B) &ndash; P(A and B))</strong></li>
+			</ol>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">What are the probability types? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                <p>Here is the list of different types of probability. They are:</p>
+				<ol>
+				<li>Theoretical Probability</li>
+				<li>Experimental Probability</li>
+				<li>Axiomatic Probability</li>
+				</ol>
+				</ol>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">From where should I find online calculator tools for all probability concepts free? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                <p>You can find the online calculator tools and detailed explanation of probability concepts in math free on this page ie., <a href="https://probabilitycalculator.guru/">probabilitycalculator.com</a> a reliable and trusted website.</p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+      </div></section>
+	  </section><!-- End F.A.Q Section -->
+	  
+    
+
+    <!-- ======= Contact Section ======= -->
+    <!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-info">
+              <h3>ProbabilityCalculator.Guru</h3>
+              <p>
+                
+                <strong>Email:</strong> probabilitycalculator@gmail.com<br><br>
+				<strong>Follow Us :</strong> <br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="https://twitter.com/onlinecalculat" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="https://www.youtube.com/channel/UCFkMv7w89Dqc0XukZUcWsFA/" class="instagram"><i class="bx bxl-youtube"></i></a>
+                
+                <a href="https://www.linkedin.com/in/onlinecalculator/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
+              
+              <li><i class="bx bx-chevron-right"></i> <a href="disclaimer">Disclaimer</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="privacy-policy">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Popular Calculators</h4>
+            <ul>
+              
+              <li><i class="bx bx-chevron-right"></i><a href="https://onlinecalculator.guru/math-calculator/" title="Maths Calculator">Maths Calculator</a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="https://physicscalc.com/" title="Physics Calculator">Physics Calculator</a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="https://chemistrycalc.com/" title="Chemistry Calculator">Chemistry Calculator</a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="https://lcmgcf.com/" title="LCM and GCF Calculator">LCM and GCF Calculator</a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="https://multiplyfractions.com/" title="Fractions Calculator">Fractions Calculator</a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="https://factorpolynomials.com/" title="Polynomials Calculator">Polynomials Calculator</a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="https://percentagecalculator.guru/" title="Percentage Calculator">Percentage Calculator</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>For Updates</h4>
+            <p>Subscribe to our Website</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>ProbabilityCalculator.Guru</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        
+        Designed by <a href="https://ProbabilityCalculator.Guru/">ProbabilityCalculator.Guru</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/purecounter/purecounter.js"></script>
+  <script src="static/assets/vendor/aos/aos.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html> {% endcomment %}

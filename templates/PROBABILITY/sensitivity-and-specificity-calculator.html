@@ -1,0 +1,262 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="https://onlinecalculator.guru/static/style2.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Sensitivity and Specificity Calculator | How do you Calculate Sensitivity and Specificity?</title>
+    <meta name="description" content="Utilize our Sensitivity and Specificity Calculator to compute all the data needed for your medical research and test evaluation in seconds."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Sensitivity and Specificity Calculator | How do you Calculate Sensitivity and Specificity?"/>
+        <meta property="og:description" content="Utilize our Sensitivity and Specificity Calculator to compute all the data needed for your medical research and test evaluation in seconds."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/sensitivity-and-specificity-calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Sensitivity and Specificity Calculator | How do you Calculate Sensitivity and Specificity?"/>
+        <meta name="twitter:description" content="Utilize our Sensitivity and Specificity Calculator to compute all the data needed for your medical research and test evaluation in seconds."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/sensitivity-and-specificity-calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Sensitivity and Specificity Calculator | How do you Calculate Sensitivity and Specificity?"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/sensitivity-and-specificity-calculator.jpeg"/>
+        <meta property='og:description' content="Utilize our Sensitivity and Specificity Calculator to compute all the data needed for your medical research and test evaluation in seconds."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        Are Sensitivity and Specificity Inversely Related?
+        ","acceptedAnswer": {"@type": "Answer","text":" Sensitivity and Specificity are inversely proportional i.e. if one increases the other decreases."}	}, {"@type": "Question","name":"2.
+        What is the formula for Sensitivity?
+        ","acceptedAnswer": {"@type": "Answer","text":" The formula for Sensitivity is Sensitivity = TP / (TP + FN)"}	}, {"@type": "Question","name":"3.
+        How do you calculate accuracy?
+        ","acceptedAnswer": {"@type": "Answer","text":" Accuracy rate of a test can be calculated using the formula Accuracy = (TP + TN) / (TP + TN + FP + FN)."}	}, {"@type": "Question","name":"4. 
+        Where do I get the sensitivity and specificity calculator for free?
+        ","acceptedAnswer": {"@type": "Answer","text":" You can get the sensitivity and specificity calculator for free on probabilitycalculator.guru a reliable portal."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Sensitivity and Specificity Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Taking help of the handy and easy to use Sensitivity and Specificity Calculator available here you can compute the necessary data needed for medical research and test evaluation. You can find PPV, NPV, the positive and negative likelihood ratio and the accuracy using this online tool. You just need to input the data as needed and click on the calculate button to avail the corresponding output.</p>
+                <ul class="messages">
+                    {% for message in messages %}
+                    <p {% if message.tags %} id="message_container" class="alert alert-danger text-center" {% endif %}
+                        style="color:red">{{ message }}</p>
+                    {% endfor %}
+                </ul>
+                <p><strong>Sensitivity and Specificity Calculator: </strong> Do you want any help in determining the sensitivity and specificity of medical tests? If so, you have arrived at the right destination that answers all your questions. Here we have come up the sensitivity and specificity calculator that makes your job simple. In this article, we have mentioned everything on sensitivity and specificity definitions, formulas, procedure on how to calculate negative predictive value using sensitivity and specificity, all that you need to know about NPV and PPV in statistics. </p>
+
+                <form action="" method="POST" id="my_form" >
+                    {% csrf_token %}
+                    <div class="form-row align-items-center">
+                    <div class="col-auto">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><strong>True Positive</strong></div>
+                            </div>
+                            <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                                placeholder="Enter true positive value" min="0.00001" step="any" class="form-control" name="tp"  value="{{tp}}" >
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><strong>True Negative</strong></div>
+                            </div>
+                            <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                                placeholder="Enter True Negative value" min="0.00001" step="any" class="form-control" name="tn"   value="{{tn}}"  >
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><strong>False Positive</strong></div>
+                            </div>
+                            <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                                placeholder="Enter False positive value" min="0.00001" step="any" class="form-control" name="fp"   value="{{fp}}"  >
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><strong>False Negative</strong></div>
+                            </div>
+                            <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                                placeholder="Enter True Negative value" min="0.00001" step="any" class="form-control" name="fn"   value="{{fn}}"  >
+                        </div>
+                        
+                        <div class=" center col mt-2 ">
+                            <center><button type="submit" class="btn btn-primary" name="f1">Calculate</button>
+                                <button type="button" onclick="this.form.reset()" style="margin-top:5px;"
+                                class="btn btn-danger">Reset</button>
+                            </center>
+                        </div>
+                    </div>
+                </form>
+            
+            </div>
+        </div>
+   
+</div>
+
+
+
+{% if id == 1 %}
+<div id="clear">
+  <div class="card" id="magnetic-force">
+      <div class="card-header">
+          <h2 class="h2">Steps to Calculate Sensitivity and Specificity</h2>
+      </div>
+      <div class="card-body">
+          <strong>Sensitivity Formula-</strong>
+          <br>
+          <p class="btn btn-outline-secondary active">Sensitivity = TP / (TP + FN) </p>
+          <br>
+          <strong>Specificity Formula-</strong>
+          <br>
+          <p class="btn btn-outline-secondary active">Specificity = TN / (FP + TN) </p>
+          <br>
+          <strong>where:</strong>
+                  <ul>
+                      <li>TP - Number of true positive cases</li>
+                      <li>FN - Number of false negative cases</li>
+                      <li>TN - Number of true negative cases</li>
+                      <li>FP - Number of false positive cases</li>
+                      
+                  </ul>
+          <strong>Input values are:-</strong>
+          <p>TP = {{tp}}  </p>
+          <p>FN = {{fn}} </p>
+          <p>TN = {{tn}}  </p>
+          <p>FP = {{fp}} </p>
+          
+          <br>
+          
+          <strong>Put values into formula of Sensitivity to find it</strong>
+          <p>  Sensitivity = TP / (TP + FN) </p>
+          <p>  Sensitivity = {{tp}} /( {{tp}}+{{fn}}) </p>
+          <p><b> Sensitivity= {{sensitivity}} </b></p>
+          <strong>Put values into formula of Specificity to find it</strong>
+          <p>  Specificity = TN / (FP + TN) </p>
+          <p>  Specificity = {{tn}} /( {{fp}}+{{tn}}) </p>
+          <p><b> Specificity= {{specificity}} </b></p>
+      </div>
+  </div>
+</div>
+{% endif %}
+
+<div class="card">
+    <div class="card-header">
+        <h2 class="h2">Sensitivity and Specificity - Definitions</h2>
+    </div>
+    <div class="card-body">
+        <p><strong>Sensitivity:</strong> It is the proportion of people who tested positive for the disease compared to the number of all people with disease irrespective of their test result. </p>
+        <p><strong>Specificity:</strong> It is the proportion of healthy people who tested negative compared to total number of people not having disease irrespective of their test result. </p>
+</div>
+</div>
+<div class="card">
+    <div class="card-header">
+        <h3 class="h3">How to Calculate Sensitivity and Specificity?</h3>
+    </div>
+    <div class="card-body">
+<p>In order to determine the sensitivity we use the formula <strong>Sensitivity = TP / (TP + FN)</strong></p>
+<p>To calculate the specificity we use the equation <strong>Specificity = TN / (FP + TN)</strong></p>
+ <p>TP + FN = Total number of people with the disease; and TN + FP = Total number of people without the disease. </p>   
+<p>Understand the difficult concepts too easily taking the help of the online tools available at <a href="https://probabilitycalculator.guru/">Probabilitycalculator.guru</a> and clarify your doubts during homework or assignments.</p>
+</div>
+</div>
+<div class="card">
+    <div class="card-header">
+        <h3 class="h3">How do you find Positive Predictive Value and Negative Predictive Value?</h3>
+    </div>
+    <div class="card-body">
+        <p>In the below sections we will explain how do you calculate the positive predictive value and negative predictive value from sensitivity and specificity.</p>
+    <ul><li>PPV = (Sensitivity * Prevalence)/[(Sensitivity * Prevalence) + ((1 - Specificity) * (1 - Prevalence))]</li>
+    <li>NPV =(Specificity * (1 - Prevalence))/[((1 - Sensitivity) * Prevalence) + (Specificity * (1 - Prevalence))]</li></ul>
+    </div>
+</div>
+<div class="card">
+    <div class="card-header">
+        <h3 class="h3">Likelihood Ratios</h3>
+    </div>
+    <div class="card-body">
+        <p>Positive and Negative Likelihood Ratios are used for determing the value of a test. Both of them denote the possibility of person having disease test positive and healthy person testing negative respectively.</p>
+        <ul><li>Positive likelihood ratio = Sensitivity / (1 - Specificity)</li>
+        <li>Negative likelihood ratio = (1 - Sensitivity) / Specificity</li></ul>
+    </div>
+</div>
+<div class="card">
+    <div class="card-header">
+        <h3 class="h3">Accuracy Test</h3>
+    </div>
+    <div class="card-body">
+        <p>Accuracy is the ratio of correct results to all results of a test. The formula to determine accuracy is given by the equation Accuracy = (TP + TN) / (TP + TN + FP + FN)</p>
+    </div>
+</div>
+    <div class="card">
+	    <div class="card-header">
+            <h3 class="h3">How to use the Sensitivity and Specificity Calculator?</h3>
+        </div>
+	    <div class="card-body">
+            <p>Follow the below mentioned guidelines and learn the functionality of sensitivity and specificity calculator. They are as follows</p>       
+        <ul><li>Firstly, provide the required inputs like TP, FP, TN, FN as the same four pieces of information is needed to compute sensitivity, specificity, PPV, and NPV.</li>
+            <li>Now click on the calculate button.</li>
+            <li>The result is displayed on a new window showing the entire calculation process.</li></ul>
+            <img src="{% static 'images/Discrete_Mathematics/sensitivity-and-specificity-calculator.jpeg' %}" alt="Sensitivity and Specificity Calculator">
+</div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+    <h3 class="h3">FAQs on Sensitivity and Specificity Calculator</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. Are Sensitivity and Specificity Inversely Related?</strong></p>
+     	<p class="answer">Sensitivity and Specificity are inversely proportional i.e. if one increases the other decreases.</p><hr>
+     	<p class="question"><strong>2. What is the formula for Sensitivity?</strong></p>
+     	<p class="answer">The formula for Sensitivity is Sensitivity = TP / (TP + FN).</p><hr>  
+        <p class="question"><strong>3. How do you calculate accuracy?</strong></p>
+        <p class="answer">Accuracy rate of a test can be calculated using the formula Accuracy = (TP + TN) / (TP + TN + FP + FN).</p><hr>
+        <p class="question"><strong>4. Where do I get the sensitivity and specificity calculator for free?</strong></p>
+     	<p class="answer">You can get the sensitivity and specificity calculator for free on <a href="https://probabilitycalculator.guru/">probabilitycalculator.guru</a> a reliable portal.</p>
+    	</div>
+    </div>
+    </div>
+    <script>
+        function myFunction() {
+          document.getElementById("input1").value="";
+          document.getElementById("detail").innerHTML="";
+          
+        }
+        </script>
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('ddd').click();
+            });
+        </script>
+{%endblock%}

@@ -1,0 +1,128 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+   <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Poker Probability Calculator | Find Probability of Winning Poker</title>
+    <meta name="description" content="Poker Probability Calculator gives the probability of winning a poker hand. It takes the selection of card details and provides their winning percentage."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Poker Probability Calculator | Find Probability of Winning Poker"/>
+        <meta property="og:description" content="Poker Probability Calculator gives the probability of winning a poker hand. It takes the selection of card details and provides their winning percentage."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Chemistry/Options-Probability-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Poker Probability Calculator | Find Probability of Winning Poker"/>
+        <meta name="twitter:description" content="Poker Probability Calculator gives the probability of winning a poker hand. It takes the selection of card details and provides their winning percentage."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Chemistry/Options-Probability-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Poker Probability Calculator | Find Probability of Winning Poker"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Chemistry/Options-Probability-Calculator.jpeg"/>
+        <meta property='og:description' content="Poker Probability Calculator gives the probability of winning a poker hand. It takes the selection of card details and provides their winning percentage."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        How to calculate the probability of winning a poker hand?
+        ","acceptedAnswer": {"@type": "Answer","text":" First of all, you need to count the number of different ways that a particular type of poker hand can occur. The probability of winning a poker hand is the ratio of the number of ways poker can occur to the total number of five-card hands."}	}, {"@type": "Question","name":"2.
+        What is poker?
+        ","acceptedAnswer": {"@type": "Answer","text":" Poker is a family of card games where players over hand according to the specific rules similar to their rankings. It is a game of Texas hold 'em which is the popular form. In standard poker, each player bets others as per the rank they believe their hand is worth as compared to others."}	}, {"@type": "Question","name":"3.
+        Is there any free calculator that computes poker winning probability quickly?
+        ","acceptedAnswer": {"@type": "Answer","text":" Yes, there is a reliable and best website named probabilitycalculator.guru that produces various online tools related to probability. So, you can easily find the poker probability calculator from the site and make your calculations easily & fastly."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+
+{% if n and k %}
+<script>
+    $(document).ready(function () {
+
+        $("#hassle").click();
+
+
+    });
+
+
+</script>
+
+<button type="button" hidden id="hassle" onclick="location.href='#Coin_Flip_Probability_answer'">ans1</button>
+{% endif %}
+<div class="container" style="height: auto !important;">
+  
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Proker Probability Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Poker is a card game, this Poker Probability Calculator is helpful to find the winning probability of the poker hand using the Texas Holdem gaming method. All you need to do is give the number of ways a poker hand can occur, the total number of poker hand details and tap on the calculate button to get the result quickly.</p>
+                <p><strong>Proker Win Probability Calculator: </strong>Do you need any help to know the winning probability in the poker game? If yes, then stay on this page. We have provided one of the best tools that make calculations and gives chances of winning a poker hand easily. Check the following sections to know how to use poker probability calculator, steps to calculate the poker game winning probability manually. </p>
+</div>
+</div>
+<div class="card">
+    <div class="card-header">
+        <h2 class="h2">Steps to Find Winning Probability Of Poker</h2>
+    </div>
+    <div class="card-body">
+        <p>Have a look at the detailed steps to calculate the poker winning probability of a game within no time.</p>
+<ul>
+    <li>Count the number of ways a poker can occur.</li>
+    <li>Get the total number of five-card hands.</li>
+    <li>Divide the number of poker by the total number of five-card hands.</li>
+    <li>It gives the probability of winning poker.</li>
+</ul>
+                </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="h3">What is the Poker Probability?</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Poker is a card game where players have to bet on others as per their rankings and game rules. Poker probability is nothing but the chances of winning a poker game. It can be calculated by dividing the number of poker hands can occur in  particular time divided by the total number of five-card hands.</p>
+<p>The formula to calculate Winning Poker Probability = Number of particular type of poker hand can occur/Total number of five card hands.</p>
+                    </div></div>
+                      
+        <div class="card">
+            <div class="card-header">
+                <h3 class="h3">FAQ's on Poker Probability Calculator</h3>
+            </div>
+            <div class="card-body">
+                <!-- Question & Answer Starts --->
+                <p class="question"><strong>    1. How to calculate the probability of winning a poker hand?</strong></p>
+                    <p class="answer">First of all, you need to count the number of different ways that a particular type of poker hand can occur. The probability of winning a poker hand is the ratio of the number of ways poker can occur to the total number of five-card hands.</p><hr>
+<p class="question"><strong>2. What is poker?</strong></p>
+    <p class="answer">Poker is a family of card games where players over hand according to the specific rules similar to their rankings. It is a game of Texas hold 'em which is the popular form. In standard poker, each player bets others as per the rank they believe their hand is worth as compared to others.</p><hr>
+<p class="question"><strong>3. Is there any free calculator that computes poker winning probability quickly?</strong></p>
+    <p class="answer">Yes, there is a reliable and best website named <a href="https://probabilitycalculator.guru/">probabilitycalculator.guru</a> that produces various online tools related to probability. So, you can easily find the poker probability calculator from the site and make your calculations easily & fastly.</p>
+            </div>
+         </div>
+      </div>
+    
+{%endblock%}

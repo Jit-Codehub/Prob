@@ -1,0 +1,65 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="shortcut icon" href="{% static 'images/logo/Online-Calculator-Guru-Fevicon.png' %}" type="icon">
+  {%block css%}
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- META DATA STARTS --->
+    <title>{{portal_obj.meta_title}}</title>
+    <meta name="description" content=" {{portal_obj.meta_description}}">
+    <link rel="canonical" href="{{request.build_absolute_uri}}" >
+    <!-- META DATA ENDS --->
+
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+    <!--  FACEBOOK CONFIGURATION STARTS  -->
+    <meta content="https://www.facebook.com/aplustopper/" property="og:url" />
+    <meta property="og:title" content=" {{portal_obj.meta_title}} "/>
+    <meta property="og:description" content=" {{portal_obj.meta_description}}"/>
+    <meta content="" property="og:site_name" />
+    <meta  content="https://onlinecalculator.guru/static/images/Sequences/Arithmetic-Sequence-Calculator.jpeg" property="og:image" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:height" content="435" />
+    <meta property="og:image:width" content="354" />
+    <!--  FACEBOOK CONFIGURATION ENDS  -->
+    <!-- TWITTER CARD CONFIGURATION STARTS  -->
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:site" content="https://twitter.com/TopperPlus/"/>
+    <meta name="twitter:title" content=" {{portal_obj.meta_title}} "/>
+    <meta name="twitter:description" content=" {{portal_obj.meta_description}}"/>
+    <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Sequences/Arithmetic-Sequence-Calculator.jpeg"/>
+    <meta property="twitter:image:height" content="435"/>
+    <meta property="twitter:image:width" content="354"/>
+    <!-- TWITTER CARD CONFIGURATION ENDS  -->
+    <!--  LINKEDIN CONFIGURATION STARTS-->
+    <meta property='og:title' content=" {{portal_obj.meta_title}} "/>
+    <meta property='og:image' content="https://onlinecalculator.guru/static/images/Sequences/Arithmetic-Sequence-Calculator.jpeg"/>
+    <meta property='og:description' content=" {{portal_obj.meta_description}}"/>
+    <meta property='og:url' content="https://www.linkedin.com/company/aplustopper/" />
+    <!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+
+{% endblock %} 
+{% block content %} 
+
+<div class="container">
+    <div class="card c1">
+        <div class="card-header">
+            <h1>{{portal_obj.title}}</h1>
+        </div>
+        <div class="card-body">
+            {{portal_obj.main_content | safe}}
+        </div>
+    </div>
+</div>
+
+{% endblock %} 

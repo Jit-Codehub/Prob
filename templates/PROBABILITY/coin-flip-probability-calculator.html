@@ -1,0 +1,298 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+   <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Coin Flip Probability  Calculator | Free Calculator to Find Probability Value</title>
+    <meta name="description" content="Coin Flip Probability Calculator makes it easy for you to determine the probability of flipping a coin and explained with steps."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-GCoin Flip Probability  Calculator | Free Calculator to Find Probability Valueuru-131572098650589/" property="og:url" />
+        <meta property="og:title" content=""/>
+        <meta property="og:description" content="Coin Flip Probability Calculator makes it easy for you to determine the probability of flipping a coin and explained with steps."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Probability/Coin-Flip-Probability-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Coin Flip Probability  Calculator | Free Calculator to Find Probability Value"/>
+        <meta name="twitter:description" content="Coin Flip Probability  Calculator makes it easy for you to determine the theoretical yield value of the chemical reaction in fraction of seconds with steps."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Probability/Coin-Flip-Probability-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Coin Flip Probability  Calculator | Free Calculator to Find Probability Value"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Probability/Coin-Flip-Probability-Calculator.jpeg"/>
+        <meta property='og:description' content="Coin Flip Probability  Calculator makes it easy for you to determine the theoretical yield value of the chemical reaction in fraction of seconds with steps."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1
+        What is the probability of obtaining a tail when we flip a coin?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        The possible outcomes when a coin is flipped are 2, i.e. head or tail. The probability of getting a tail when a coin is tossed is 1/2 or 50%."}	}, {"@type": "Question","name":"2
+        How to calculate the Probability?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        Probability can be calculated using the formula, probability = No.of favourable outcomes/ total no.of possible outcomes."}	}, {"@type": "Question","name":"3
+        What is the best website for coin flip probability?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        Probabilitycalculator.guru is the best website for coin flip probability calculator"}	}]}</script>
+    {%endblock%}
+    {%block content%}
+
+{% if n and k %}
+<script>
+    $(document).ready(function () {
+
+        $("#hassle").click();
+
+
+    });
+
+
+</script>
+
+<button type="button" hidden id="hassle" onclick="location.href='#Coin_Flip_Probability_answer'">ans1</button>
+{% endif %}
+<div class="container" style="height: auto !important;">
+  
+        <div class="card c1">
+            <div class="card-header">
+                <b class="h1">Coin Flip Probability  Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Our coin flip probability calculator is a free online tool that finds a probability of a coin. All you need to do is give the no. of heads and the  no. of flips as inputs and get the output by pressing the calculate button. </p>
+                
+<div class="d-flex justify-content-center">   
+    <form action="{% url 'coin_flip_probability' %}" method="POST" id='my_form'>{% csrf_token %}
+        <div class="input-group mb-3">
+                      
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Number of flips (n)</span>
+            </div>
+            <input type="number" style="margin-top: 5px;width:100%" id="n" name="n" value="{{n}}"   required="" oninput="validateNumber(this);" class="form-control" type="text" required width="48"  >
+               
+        
+      
+                                
+          </div>
+          <br>
+          <div class="input-group mb-3">
+                          
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">I want to have</span>
+            </div>
+             
+            <select id='Given' name='Given'  style="margin-top: 5px;width:100%" class="select form-control" id="inlineFormInputGroup" >
+              
+              {% if Given == 'exactly'%}
+              <option value='exactly' selected>exactly</option>  
+              {% else %}
+              <option value='exactly' >exactly</option>  
+              {% endif %}
+              {% if Given == 'at_most'%}
+              <option value='at_most' selected>at most</option>  
+              {% else %}
+              <option value='at_most' >at most</option>  
+              {% endif %}
+              {% if Given == 'at_least'%}
+              <option value='at_least' selected>at least</option>  
+              {% else %}
+              <option value='at_least' >at least</option>  
+              {% endif %}
+              
+            </select>   
+            <input type="number" style="margin-top: 5px;width:100%" id="k" name="k" value="{{k}}"  oninput="validateNumber(this);" required="" oninput="validateNumber(this);" class="form-control" type="text" required width="48"  >
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">heads(k)</span>
+            </div>              
+          </div>
+        
+              
+              
+                 
+               
+
+          <div class=" center col mt-2 ">
+            <center><button type="submit" class="btn btn-primary">Calculate</button>
+              
+              <button type="button" onclick="myFunction1()" style="margin-top:5px;" class="btn btn-danger">Reset</button>
+              
+              
+                
+            </center>
+          </div>
+
+      
+    </form>  
+</div>
+</div>
+</div>
+
+
+  
+ 
+{% if id %}
+  <div class="card" style="height: auto !important;" id="Coin_Flip_Probability_answer">
+	  <div class="card-header">
+		  <b class="h2">Solution
+	  </div>
+	  <div class="card-body">
+
+<div style="text-align: left;">  
+
+<p><b><sup>n</sup>C<sub>r = </sub><sup>n! *(n-r)!</sup>/<sub>r!</sub></b></p>
+<p>Given n={{n_calculated}}</p>
+<p>Given k={{k_calculated}}</p>
+<p>Probability=
+{% autoescape off %}
+{{string1}}
+		  {% endautoescape %}
+</p>
+   <p>After substitution</p>
+	  <p>={{result}}</p>
+	  <p>Chance of Succeses=Probablity*100%</p>
+	  <p>={{p}}</p>
+	</div>
+</div>
+</div>
+{% endif %}
+{% autoescape off %}
+            {% if messages %}
+                {% for message in messages %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="alert alert-danger">{{message}}</p>
+                            </div>
+                        </div>
+                {% endfor %}
+            {% endif %}
+        {%endautoescape%}
+    
+            
+        
+
+   
+    
+  
+  <div class="card">
+    <div class="card-header">
+  <h3 class="h3">Steps to Find the Probability of Coin Flip?</h3>
+  </div>
+  <div class="card-body">
+    <p>Go through the guidelines which are shown below to find the probability of flipping a coin:</p>
+  <ul>
+  <li>Firstly, write down all the values which are given in the problem.</li>
+  <li>Then you need to find the total possible outcomes and then find the no. of favorable outcomes.</li>
+  <li>After that, apply the probability formula.</li>
+  <li>Then, you will get the possible outcomes.</li>
+   </ul>
+   </div>
+   </div>
+ 
+  <div class="card">
+    <div class="card-header">
+  <h3 class="h3">Coin Flip Probability Example</h2>
+  </div>
+  <div class="card-body">
+  <p><strong>Example</strong></p>
+  <p><strong>Question: Find the probability of obtaining 4 heads when you flip a coin 10 times?</strong></p>
+  <p><b>Solution</b></p>
+  <p>Number of times you need to flip a coin (n) = 10</p>
+  <p>Total Possible outcomes = 2<sup>n</sup>= 2<sup>10</sup>=2x2x2x2x2x2x2x2x2x2 = 1024.</p>
+  <p>Total no.of favourable outcomes =  10C4 = 201</p>
+  <p>No.of heads = 4.</p>
+  <p>Let us use the probability formula,</p>
+  <p><b>Probability = no of favorable outcomes/ total number of possible outcomes</b></p>
+  <p> probability = 201/1024.</p>
+  <p><a href="http://probabilitycalculator.guru/">Probabilitycalculator.guru</a> is free that has many probability calculators which gives you instant outcomes without any errors.</p>
+  <img src="{% static 'images/Probability/Coin-Toss-Probability-Calculator.jpeg' %}" alt='Coin Toss Probability Calculator'>
+      </div>
+    </div>
+    
+    
+      <button type="button" hidden id="hassle"  onclick="location.href='#solve-Combination'">ans</button>
+    <div class="card">
+      <div class="card-header">
+    <h3 class="h3">FAQs on Coin Flip Probability Calculator</h2>
+    </div>
+    <div class="card-body">
+            <!-- Question & Answer Starts --->
+  <p class="question"><strong>1. What is the probability of obtaining a tail when we flip a coin?</strong></p>
+           <p class="answer">The possible outcomes when a coin is flipped are 2, i.e. head or tail. The probability of getting a tail when a coin is tossed  is 1/2 or 50%.</p><hr>
+           <p class="question"><strong>2. How to calculate the Probability?</strong></p>
+           <p class="answer">Probability can be calculated using the formula, probability = No. of favorable outcomes/ total no.of possible outcomes.</p>
+  <hr>  
+  <p class="question"><strong>3. What is the best website for coin flip probability?</strong></p>
+   <p class="answer"><a href="http://probabilitycalculator.guru/">Probabilitycalculator.guru</a> is the best website for coin flip probability calculator</p><hr>
+  
+        </div>
+     </div>
+     
+ 
+
+    <style>
+      div.scroll {
+          
+          align-content: center;
+          width: 1000px;
+          height: 500px;
+          overflow-x: hidden;
+          overflow-y: auto;
+          text-align:justify;
+      }
+  </style>
+        
+  <script>
+    function myFunction1() {
+      document.getElementsByName("n")[0].value="";
+		document.getElementsByName("k")[0].value="";
+		
+		
+                 
+      $("#Coin_Flip_Probability_answer").html("");
+      document.getElementsById("clear").innerHTML = "";
+    }
+    </script>
+    
+     
+        
+        
+        <script>
+          var validNumber = new RegExp(/^\d*\.?-?\d*$/);
+          var fist_input = document.getElementById("inlineFormInputGroup").value;
+          function validateNumber(elem) {
+          console.log(elem)
+            if (validNumber.test(elem.value)) {
+              fist_input = elem.value;
+            } else {
+              elem.value = fist_input;
+            }
+          }
+      </script>
+    
+{%endblock%}

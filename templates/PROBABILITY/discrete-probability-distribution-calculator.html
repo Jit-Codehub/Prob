@@ -1,0 +1,159 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+   <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Discrete Probability Distribution Calculator | Discrete Distribution Formulas</title>
+    <meta name="description" content="Discrete Probability Distribution Calculator computes the probability of a discrete random variable. Check the steps to calculate discrete probability distribution."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Discrete Probability Distribution Calculator | Discrete Distribution Formulas"/>
+        <meta property="og:description" content="Discrete Probability Distribution Calculator computes the probability of a discrete random variable. Check the steps to calculate discrete probability distribution."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Chemistry/Discrete-Probability-Distribution-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Discrete Probability Distribution Calculator | Discrete Distribution Formulas"/>
+        <meta name="twitter:description" content="Discrete Probability Distribution Calculator computes the probability of a discrete random variable. Check the steps to calculate discrete probability distribution."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Chemistry/Discrete-Probability-Distribution-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Discrete Probability Distribution Calculator | Discrete Distribution Formulas"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Chemistry/Discrete-Probability-Distribution-Calculator.jpeg"/>
+        <meta property='og:description' content="Discrete Probability Distribution Calculator computes the probability of a discrete random variable. Check the steps to calculate discrete probability distribution."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        How to find discrete probability distribution on a calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" First of all, select the distribution and give the input values. Later hit the calculate button to obtain the value of discrete probability distribution."}	}, {"@type": "Question","name":"2.
+        What is a discrete probability distribution example?
+        ","acceptedAnswer": {"@type": "Answer","text":" The discrete probability distribution finds the occurrences that have the countable number of outcomes. It is opposite to continuous distribution. Some of the examples of discrete distribution are Poisson, binomial and Bernoulli distributions."}	}, {"@type": "Question","name":"3.
+        What are the 2 requirements for a discrete probability distribution?
+        ","acceptedAnswer": {"@type": "Answer","text":" The two requirements for a discrete probability distribution are here. The first one says that the sum of probabilities should be equal to 1. The second one is each probability value must be between 0 and 1."}	}, {"@type": "Question","name":"4.
+        How to compute the mean of a discrete probability distribution?
+        ","acceptedAnswer": {"@type": "Answer","text":" The formula to find the mean of a probability distribution is μ = x . p(x). Place the values in the formula to get the probability distribution mean value."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+
+{% if n and k %}
+<script>
+    $(document).ready(function () {
+
+        $("#hassle").click();
+
+
+    });
+
+
+</script>
+
+<button type="button" hidden id="hassle" onclick="location.href='#Coin_Flip_Probability_answer'">ans1</button>
+{% endif %}
+<div class="container" style="height: auto !important;">
+  
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Discrete Probability Distribution Calculator</h1>
+            </div>
+            <div class="card-body">
+<p>With the help of the Discrete Probability Distribution Calculator, you can find the binomial distribution, Poisson distribution, geometric distribution any many more. Enter details and select type of distribution and click on the calculate button to get displayed with the answer with detailed explanation.</p>
+                <p><strong>Discrete Probability Distribution Calculator: </strong>Our tool is helpful to solve any type of difficult probability question in a short span of time. On reading the below sections, you can discover the steps to use Probability of Discrete Distribution Calculator, formulas to find various probability distributions, study the definition of a discrete probability distribution. Also, check the example questions to improve your knowledge of the probability distribution concept.</p>
+</div>
+</div>
+<div class="card">
+    <div class="card-header">
+        <h2 class="h2">What is Discrete Probability Distribution?</h2>
+    </div>
+    <div class="card-body">
+  <p>The probability distribution is the possibility of each outcome of a random experiment. The two types of the probability distribution that are used for different purposes are Normal or Cumulative Probability Distribution and Binomial or Discrete Probability Distribution.
+ </p><p>   A discrete probability distribution is a distribution, where the set of outcomes is should be in discrete nature. An example is when a dice is rolled, then all the possible outcomes are discrete. In binomial distribution, the possible number of outcomes must be 2.</p>
+                </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="h3">How to Use Discrete Probability Distribution Calculator?</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>The detailed step by step procedure to calculate the discrete probability distribution for an experiment are provided here:</p>
+                     <ul>
+                         <li>Select the distribution type.</li>
+                         <li>Provide the input details at the provided section.</li>
+                         <li>Press the calculate button.</li>
+                         <li>The output will be available easily & quickly.</li>
+                     </ul>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="h3">Discrete Probability Distribution Formulas</h3>
+                            </div>
+                            <div class="card-body"> 
+                            <p>    A discrete probability distribution takes the whole numbers from 0. The probability of a discrete random variable is the probability function, which is represented as f(x). Two important requirements for probability function are listed here:
+                             </p><ul><li>   f(x) > 0</li>
+                             <li> ∑f(x) = 1</li></ul>
+                             <p>  A discrete probability distribution can be represented in a couple of different ways. One is using a table and the second is using a graph. The third way is to use a formula for the probability function.
+                            </p><ul><li>  Discrete Uniform Probability Function is f(x) = 1/n. Where n is the number of values of x.</li></ul>
+                                <p>   Discrete random variables can be explained using the expected value and variance.
+                                </p><ul><li>  Expected Value formula is E(x) = ∑x . f(x)</li>
+                                    <li> Variance formula is Var(x) = ∑(x - μ)² . f(x)</li>
+                                        <li> Standard deviation is SD = √[∑(x - μ)² . f(x)]</li></ul>
+                                <p>  The binomial probability distribution is related to the binomial experiment. Every binomial experiment has a sequence of n trials with two possible outcomes in each trial. The outcomes are "success" and "failure" with probabilities of p and q = 1-p. The probability of x success in n trials is given by the binomial probability function.
+                                </p><ul><li>  Expected value E(x) = np</li>
+                                    <li>   Variance Var(x) = npq = np(1-p)</li>
+                                        <li>  Binomial Probability Function f(x) = <sup>n</sup>C<sub>x</sub> p<sup>x</sup> q<sup>n-x</sup></li></ul>
+                                <p>   The Poisson probability distribution is helpful when the random variable measures the number of occurrences over an interval of time or space. Probabilities for a Poisson probability distribution can be find using the Poisson probability function.
+                                </p><ul><li> Poisson Probability Function formula is f(x) = [μ<sup>x</sup> e<sup>-μ</sup>]/x!</li></ul>
+                                <p>  The hypergeometric probability distribution is similar to the binomial probability distribution. In a hypergeometric probability distribution, the number of success is r, N is the population.
+                                </p><ul><li>  Expected value formula is E(x) = n(r/N)</li>
+                                    <li>Variance formula is var(x) = n(N/r) (1 - r/N) (N-n/N-1)</li>
+                                    <li> Hypergeometric probabiity function is f(x) = [<sup>r</sup>C<sub>x</sub> <sup>N-r</sup>C<sub>n-x</sub>]/<sup>N</sup>C<sub>n</sub></li></ul>
+                                <p> <a href="https://probabilitycalculator.guru/">Probabilitycalculatorguru</a> is a best website for any statistics and probability calculators. Use them and clear all your queries as we have given the calculators with detailed explanation of the concepts.</p>
+                    </div>
+                </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="h3">FAQ's on Discrete Probability Distribution Calculator</h3>
+            </div>
+            <div class="card-body">
+                <!-- Question & Answer Starts --->
+                <p class="question"><strong>       1. How to find discrete probability distribution on a calculator?</strong></p>
+                    <p class="answer">First of all, select the distribution and give the input values. Later hit the calculate button to obtain the value of discrete probability distribution.</p><hr>
+<p class="question"><strong> 2. What is a discrete probability distribution example?</strong></p>
+    <p class="answer">The discrete probability distribution finds the occurrences that have the countable number of outcomes. It is opposite to continuous distribution. Some of the examples of discrete distribution are Poisson, binomial and Bernoulli distributions.</p><hr>
+<p class="question"><strong> 3. What are the 2 requirements for a discrete probability distribution?</strong></p>
+    <p class="answer">The two requirements for a discrete probability distribution are here. The first one says that the sum of probabilities should be equal to 1. The second one is each probability value must be between 0 and 1.</p><hr>
+<p class="question"><strong> 4. How to compute the mean of a discrete probability distribution?</strong></p>
+    <p class="answer">The formula to find the mean of a probability distribution is μ = x . p(x). Place the values in the formula to get the probability distribution mean value.</p>
+            </div>
+         </div>
+      </div>
+    
+{%endblock%}

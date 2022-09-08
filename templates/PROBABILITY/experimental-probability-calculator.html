@@ -1,0 +1,218 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Experimental Probability Calculator | Steps to Find Experimental Probability.</title>
+    <meta name="description" content="Make use of this free online Experimental probability calculator tool that displays the probability of any event that are experimentally conducted."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Experimental Probability Calculator | Steps to Find Experimental Probability."/>
+        <meta property="og:description" content="Make use of this free online Experimental probability calculator tool that displays the probability of any event that are experimentally conducted."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="http://probabilitycalculator.guru/static/images/Probability/Experimental-Probability-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Experimental Probability Calculator | Steps to Find Experimental Probability."/>
+        <meta name="twitter:description" content="Make use of this free online Experimental probability calculator tool that displays the probability of any event that are experimentally conducted."/>
+        <meta name="twitter:image:src" content="http://probabilitycalculator.guru/static/images/Probability/Experimental-Probability-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Experimental Probability Calculator | Steps to Find Experimental Probability."/>
+        <meta property='og:image' content="http://probabilitycalculator.guru/static/images/Probability/Experimental-Probability-Calculator.jpeg"/>
+        <meta property='og:description' content="Make use of this free online Experimental probability calculator tool that displays the probability of any event that are experimentally conducted."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Experimental Probability Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Take the help of this handy and user friendly experimental probability calculator tool to obtain the result in fraction of seconds. Just enter the values in the input fields then click on the calculate button and get the answers in seconds.</p>
+
+<!---------------      Error messages ---------->
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <p {% if message.tags %} id="message_container" class="alert alert-danger text-center" {% endif %}
+                       style="color:red">{{ message }}</p>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+<!---------------    Form ------->
+            <form action="" method="POST" id="my_form">
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <p class="input-group-text" id="basic-addon1">n (objects)</p>
+                    </div>
+                    <input style="margin-top: 5px;width:100%" id="n" name="n" value="{{n}}" required=""
+                           oninput="validateNumber(this);" class="form-control" type="number" min="0" required width="48">
+
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <p class="input-group-text" id="basic-addon1">r (sample) :</p>
+                    </div>
+                    <input style="margin-top: 5px;width:100%" id="r" name="r" value="{{r}}" required=""
+                           oninput="validateNumber(this);" class="form-control" type="number" min="0" required width="48">
+                </div>
+                <div>
+                    <div class=" center col mt-2 ">
+                        <center>
+                            <button type="submit" class="btn btn-primary">Calculate</button>
+                            <a href="" onclick="this.form.reset()" class="btn btn-warning" style="margin-top:5px;">Reset</a>
+                        </center>
+                    </div><br>
+                </div>
+            </form>
+
+                <p><strong>Experimental Probability Calculator: </strong> Calculate the probability of an event that are experimentally conducted by using our experimental probability calculator. By using calculator tool you need to give the number of times an event occurs and total number of trials as inputs in the below mentioned boxes. And we have also given detailed information about how to calculate the experimental probability and solved examples.</p>
+            </div>
+        </div>
+        {% if  id == 1 %}
+    <div id="clear">
+        <div class="card" id="Experimental-Probability-Calculator">
+            <div class="card-header">
+                <h2 class="h2">Steps to calcualate Experimental Probability</h2>
+            </div>
+            <div class="card-body">
+                <strong>Experimental Probability Formula-</strong>
+                <br>
+                <p class="btn btn-outline-secondary active"> Experimental Probability = Number of times event occurs(n) / Total number of times experiment performed(r) </p>
+                <br>
+                
+                <p > P(E) = {{n}}/{{r}}</p>
+                <p > P(E) = {{prob}}</p>
+                <br>
+    
+                
+            </div>
+        </div>
+    </div>
+    {% endif %}
+<!---------------    Details about calculator  -------->
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">Formula of Experimental Probability</h2>
+        </div>
+	    <div class="card-body">
+            <p>Experimental probability can be used to estimate the probability of an event. This experimental probability of an event can be found by comparing the no. of times that the event occurs to the total no. of trials. Another name for this experimental probability is empirical probability.</p>
+            <p>Formula used for this experimental probability is shown below:</p>
+            <p><b>P(E) = f/n</b></p>
+            <p> Where, f = No.of items that the event occurs (or) Frequency.</p>
+            <p>n = Total no. of trails.</p>
+        </div>
+    </div>
+    <div class="card">
+	    <div class="card-header">
+            <h3 class="h3">Steps to Calculate Experimental Probability</h3>
+        </div>
+	    <div class="card-body">
+            <p>Following are the guidelines which are showing below, so that you can easily compute the experimental probability.</p>
+            <ul>
+                <li>First and foremost thing you need to do is you need to find the total number of trails for the given data in the problem.</li>
+                <li>After that place the known values in the experimental probability formula.</li>
+                <li>That's it, by doing some required simplification you will see the solution.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card">
+	    <div class="card-header">
+            <h3 class="h3">How to Calculate the Experimental Probability?</h3>
+        </div>
+	    <div class="card-body">
+<p><strong>Example: A doctor has 200 male and female patients that range in ages from 8 years old to 60 years old and up as shown in the table. What is the experimental probability that the next patient will be female and in the age range 24–35 ?</strong></p>
+<table border="1">
+    <tbody>
+    <tr>
+    <td><strong>Gender</strong></td>   
+    <td><strong>Range:<br></br>8-23</strong></td>
+    <td><strong>Range:<br></br>24-35</strong></td>
+    <td><strong>Range:<br></br>36-59</strong></td>
+    <td><strong>Range:<br></br>60+</strong></td>
+    </tr>
+    <tr>
+    <td>Male</td>
+    <td>45</td>
+    <td>62</td>
+    <td>33</td>
+    <td>50</td>
+    </tr>
+    <tr>
+    <td>Female</td>
+    <td>30</td>
+    <td>54</td>
+    <td>47</td>
+    <td>77</td>
+    </tr>
+    </tbody>
+    </table>
+<p><strong>Solution:</strong></p>
+<p>Total number of patients = 45+62+33+50+30+54+47+77 = 398.</p>
+<p>No. of female patients in the age range 24-35  =  54</p>
+<p><b>Experimental probability = No. of times the event occurs / Total no. of trails.</b></p>
+<p>Substitute the values in the formula and the equation becomes</p>
+<p>P(E) = 54/398.</p>
+<p>Want to finish your work easily by using probability calculators and clearly understand the concept prevailing on <a href="http://probabilitycalculator.guru/">probabilitycalculator.guru</a></p>
+<img src="{% static 'images/probability/Experimental-Probability-Calculator.jpeg' %}" alt="Experimental Probability Calculator">
+</div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+    <h3 class="h3">FAQs on Experimental Probability Calculator</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. How do you find the experimental probability?</strong></p>
+     	<p class="answer">The experimental probability of an event is found on actual experiments is equal to the no. of times an event occurred divided by the total no. of trials.</p><hr>
+     	<p class="question"><strong>2. How to use the experimental probability calculator?</strong></p>
+     	<p class="answer">Simply, give the inputs in the below mentioned boxes then click on the calculate button and get the answers straight away.</p><hr>
+        <p class="question"><strong>3. What is the formula of experimental probability?</strong></p>
+     	<p class="answer">Experimental probability = No. of times the event occurs / Total no. of trails.</p>
+    	</div>
+    </div>
+    </div>
+    
+{% if  id == 1 %}
+<script>
+        $(document).ready(function () {
+            $("#hassle").click();
+        });
+</script>
+<button type="button" hidden id="hassle" onclick="location.href='#Experimental-Probability-Calculator'">ans1</button>
+{% endif %}
+{%endblock%}

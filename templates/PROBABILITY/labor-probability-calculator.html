@@ -1,0 +1,699 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+   <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Labor Probability Calculator | Labor Probability Formula</title>
+    <meta name="description" content="Try our Labour Probability Calculator to estimate the odds of spontaneous labor on a given day based on the information relative to your due date. Get the probability of spontaneous labor."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Labor Probability Calculator | Labor Probability Formula"/>
+        <meta property="og:description" content="Try our Labour Probability Calculator to estimate the odds of spontaneous labor on a given day based on the information relative to your due date. Get the probability of spontaneous labor."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Chemistry/Probability-Distribution-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Labor Probability Calculator | Labor Probability Formula"/>
+        <meta name="twitter:description" content="Try our Labour Probability Calculator to estimate the odds of spontaneous labor on a given day based on the information relative to your due date. Get the probability of spontaneous labor."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Chemistry/Probability-Distribution-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Labor Probability Calculator | Labor Probability Formula"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Chemistry/Probability-Distribution-Calculator.jpeg"/>
+        <meta property='og:description' content="Try our Labour Probability Calculator to estimate the odds of spontaneous labor on a given day based on the information relative to your due date. Get the probability of spontaneous labor."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        What are the odds of going into labor at 37 weeks?
+        ","acceptedAnswer": {"@type": "Answer","text":" The odds of going into labor between 37 to 38 weeks is 26%."}	}, {"@type": "Question","name":"2.
+        What are 3 signs that labor is approaching?
+        ","acceptedAnswer": {"@type": "Answer","text":" The different signs of labor is coming soon are bloody show, water breaks, regular contractions, baby drops, lower back pain and cramping."}	}, {"@type": "Question","name":"3.
+        How likely is it to go into labor at 39 weeks?
+        ","acceptedAnswer": {"@type": "Answer","text":" In general, 25% gave birth by 39 weeks and 5 days after the LMP."}	}, {"@type": "Question","name":"4.
+        Can you predict when you will go into labor?
+        ","acceptedAnswer": {"@type": "Answer","text":" The truth is there is no way to predict exactly when one will go into labor. No one knows for sure what triggers the big event, although hormones play a role. There are at least 6 clues that your baby is preparing to make entry into the world."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+
+{% if n and k %}
+<script>
+    $(document).ready(function () {
+
+        $("#hassle").click();
+
+
+    });
+
+
+</script>
+
+<button type="button" hidden id="hassle" onclick="location.href='#Coin_Flip_Probability_answer'">ans1</button>
+{% endif %}
+<div class="container" style="height: auto !important;">
+  
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Labor Probability Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>This Labor Probability Calculator predicts the odds of spontaneous labor on a given day depending on where you are relative to your due date. All you need to do is select due date, before, after, on and between dates to get the odds of spontaneous labor occuring.</p>
+                <p><strong>Labor Probability Calculator: </strong>Do you wanna to predict when you go into labor? If yes, then provide the needed details in the calculator input fields and click the calculate button. You can know what is the probability of going into labor before your due date or after your induction date, differences between labour probability chart and calculator. This tool predicts the odds of spontaneous labor without consideration of possible negative outcomes. Check the following sections of this page to learn about the probability density fuction of spontaneous labor with an expected due.</p>
+            </div>
+</div>
+<div class="card">
+    <div class="card-header">
+        <h2 class="h2">How to Use Labor Probability Calculator?</h2>
+    </div>
+    <div class="card-body">
+    <p>Check out the simple steps that helps to use labour date probability calculator and predict the date in a matter of seconds.</p>
+    <ul>
+        <li>Enter the due date, before, on, after, and between dates.</li>
+        <li> Press the calculate button.</li>
+        <li>  It will get displayed with the odds of spontaneous labor occurring today, in the next three days, by the weekend, by this time next week percentages.</li>
+        <li>  You can also see Probability Density Function (PDF) of Spontaneous Labor with an expected due date.</li>
+    </ul>
+                </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="h3">Daily Labor Probability Chart</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>The Labor Probability Chart was designed for people to know their chances of pregneancy progress. The Chart uses a left skewed normal distribution to modal the odds of spontaneous labor.</p>
+                        <table border="2">
+                        <thead>
+                            <tr>
+                              <th class="tg-0lax" rowspan="2">Pregnancy Progress</th>
+                              <th class="tg-0lax" colspan="3">Proabbility of Spontaneous Labour</th>
+                            </tr>
+                            <tr>
+                              <th class="tg-0lax">Before This Point</th>
+                              <th class="tg-0lax">On This Day</th>
+                              <th class="tg-0lax">After This Point</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="tg-0lax">31 weeks</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                              <td class="tg-0lax">&gt; 99.9%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">31 weeks, 1 day</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                              <td class="tg-0lax">&gt; 99.9%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">31 weeks, 2 days</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                              <td class="tg-0lax">&gt; 99.9%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">31 weeks, 3 days</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                              <td class="tg-0lax">&gt; 99.9%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">31 weeks, 4 days</td>
+                              <td class="tg-0lax">0.1%</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                              <td class="tg-0lax">99.9%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">31 weeks, 5 days</td>
+                              <td class="tg-0lax">0.1%</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                              <td class="tg-0lax">99.9%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">31 weeks, 6 days</td>
+                              <td class="tg-0lax">0.1%</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                              <td class="tg-0lax">99.9%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">32 weeks</td>
+                              <td class="tg-0lax">0.1%</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                              <td class="tg-0lax">99.9%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">32 weeks, 1 day</td>
+                              <td class="tg-0lax">0.1%</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                              <td class="tg-0lax">99.9%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">32 weeks, 2 days</td>
+                              <td class="tg-0lax">0.1%</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                              <td class="tg-0lax">99.9%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">32 weeks, 3 days</td>
+                              <td class="tg-0lax">0.1%</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                              <td class="tg-0lax">99.8%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">32 weeks, 4 days</td>
+                              <td class="tg-0lax">0.2%</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                              <td class="tg-0lax">99.8%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">32 weeks, 5 days</td>
+                              <td class="tg-0lax">0.2%</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                              <td class="tg-0lax">99.8%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">32 weeks, 6 days</td>
+                              <td class="tg-0lax">0.2%</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                              <td class="tg-0lax">99.7%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">33 weeks</td>
+                              <td class="tg-0lax">0.3%</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                              <td class="tg-0lax">99.7%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">33 weeks, 1 day</td>
+                              <td class="tg-0lax">0.3%</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                              <td class="tg-0lax">99.6%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">33 weeks, 2 days</td>
+                              <td class="tg-0lax">0.4%</td>
+                              <td class="tg-0lax">0.1%</td>
+                              <td class="tg-0lax">99.6%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">33 weeks, 3 days</td>
+                              <td class="tg-0lax">0.4%</td>
+                              <td class="tg-0lax">0.1%</td>
+                              <td class="tg-0lax">99.5%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">33 weeks, 4 days</td>
+                              <td class="tg-0lax">0.5%</td>
+                              <td class="tg-0lax">0.1%</td>
+                              <td class="tg-0lax">99.4%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">33 weeks, 5 days</td>
+                              <td class="tg-0lax">0.6%</td>
+                              <td class="tg-0lax">0.1%</td>
+                              <td class="tg-0lax">99.3%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">33 weeks, 6 days</td>
+                              <td class="tg-0lax">0.7%</td>
+                              <td class="tg-0lax">0.1%</td>
+                              <td class="tg-0lax">99.2%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">34 weeks</td>
+                              <td class="tg-0lax">0.8%</td>
+                              <td class="tg-0lax">0.1%</td>
+                              <td class="tg-0lax">99.1%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">34 weeks, 1 day</td>
+                              <td class="tg-0lax">0.9%</td>
+                              <td class="tg-0lax">0.1%</td>
+                              <td class="tg-0lax">99%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">34 weeks, 2 days</td>
+                              <td class="tg-0lax">1%</td>
+                              <td class="tg-0lax">0.1%</td>
+                              <td class="tg-0lax">98.9%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">34 weeks, 3 days</td>
+                              <td class="tg-0lax">1.2%</td>
+                              <td class="tg-0lax">0.1%</td>
+                              <td class="tg-0lax">98.7%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">34 weeks, 4 days</td>
+                              <td class="tg-0lax">1.3%</td>
+                              <td class="tg-0lax">0.2%</td>
+                              <td class="tg-0lax">98.5%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">34 weeks, 5 days</td>
+                              <td class="tg-0lax">1.5%</td>
+                              <td class="tg-0lax">0.2%</td>
+                              <td class="tg-0lax">98.3%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">34 weeks, 6 days</td>
+                              <td class="tg-0lax">1.7%</td>
+                              <td class="tg-0lax">0.2%</td>
+                              <td class="tg-0lax">98.1%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">35 weeks</td>
+                              <td class="tg-0lax">2%</td>
+                              <td class="tg-0lax">0.2%</td>
+                              <td class="tg-0lax">97.8%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">35 weeks, 1 day</td>
+                              <td class="tg-0lax">2.2%</td>
+                              <td class="tg-0lax">0.3%</td>
+                              <td class="tg-0lax">97.5%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">35 weeks, 2 days</td>
+                              <td class="tg-0lax">2.5%</td>
+                              <td class="tg-0lax">0.3%</td>
+                              <td class="tg-0lax">97.2%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">35 weeks, 3 days</td>
+                              <td class="tg-0lax">2.9%</td>
+                              <td class="tg-0lax">0.3%</td>
+                              <td class="tg-0lax">96.8%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">35 weeks, 4 days</td>
+                              <td class="tg-0lax">3.2%</td>
+                              <td class="tg-0lax">0.4%</td>
+                              <td class="tg-0lax">96.4%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">35 weeks, 5 days</td>
+                              <td class="tg-0lax">3.6%</td>
+                              <td class="tg-0lax">0.4%</td>
+                              <td class="tg-0lax">96%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">35 weeks, 6 days</td>
+                              <td class="tg-0lax">4.1%</td>
+                              <td class="tg-0lax">0.4%</td>
+                              <td class="tg-0lax">95.5%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">36 weeks</td>
+                              <td class="tg-0lax">4.6%</td>
+                              <td class="tg-0lax">0.5%</td>
+                              <td class="tg-0lax">95%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">36 weeks, 1 day</td>
+                              <td class="tg-0lax">5.1%</td>
+                              <td class="tg-0lax">0.5%</td>
+                              <td class="tg-0lax">94.4%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">36 weeks, 2 days</td>
+                              <td class="tg-0lax">5.7%</td>
+                              <td class="tg-0lax">0.6%</td>
+                              <td class="tg-0lax">93.7%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">36 weeks, 3 days</td>
+                              <td class="tg-0lax">6.3%</td>
+                              <td class="tg-0lax">0.6%</td>
+                              <td class="tg-0lax">93%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">36 weeks, 4 days</td>
+                              <td class="tg-0lax">7%</td>
+                              <td class="tg-0lax">0.7%</td>
+                              <td class="tg-0lax">92.2%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">36 weeks, 5 days</td>
+                              <td class="tg-0lax">7.8%</td>
+                              <td class="tg-0lax">0.8%</td>
+                              <td class="tg-0lax">91.4%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">36 weeks, 6 days</td>
+                              <td class="tg-0lax">8.7%</td>
+                              <td class="tg-0lax">0.8%</td>
+                              <td class="tg-0lax">90.5%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">37 weeks</td>
+                              <td class="tg-0lax">9.6%</td>
+                              <td class="tg-0lax">0.9%</td>
+                              <td class="tg-0lax">89.5%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">37 weeks, 1 day</td>
+                              <td class="tg-0lax">10.6%</td>
+                              <td class="tg-0lax">1%</td>
+                              <td class="tg-0lax">88.5%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">37 weeks, 2 days</td>
+                              <td class="tg-0lax">11.6%</td>
+                              <td class="tg-0lax">1.1%</td>
+                              <td class="tg-0lax">87.3%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">37 weeks, 3 days</td>
+                              <td class="tg-0lax">12.8%</td>
+                              <td class="tg-0lax">1.1%</td>
+                              <td class="tg-0lax">86.1%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">37 weeks, 4 days</td>
+                              <td class="tg-0lax">14%</td>
+                              <td class="tg-0lax">1.2%</td>
+                              <td class="tg-0lax">84.8%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">37 weeks, 5 days</td>
+                              <td class="tg-0lax">15.3%</td>
+                              <td class="tg-0lax">1.3%</td>
+                              <td class="tg-0lax">83.4%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">37 weeks, 6 days</td>
+                              <td class="tg-0lax">16.7%</td>
+                              <td class="tg-0lax">1.4%</td>
+                              <td class="tg-0lax">81.8%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">38 weeks</td>
+                              <td class="tg-0lax">18.3%</td>
+                              <td class="tg-0lax">1.5%</td>
+                              <td class="tg-0lax">80.2%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">38 weeks, 1 day</td>
+                              <td class="tg-0lax">19.9%</td>
+                              <td class="tg-0lax">1.6%</td>
+                              <td class="tg-0lax">78.5%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">38 weeks, 2 days</td>
+                              <td class="tg-0lax">21.6%</td>
+                              <td class="tg-0lax">1.7%</td>
+                              <td class="tg-0lax">76.7%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">38 weeks, 3 days</td>
+                              <td class="tg-0lax">23.4%</td>
+                              <td class="tg-0lax">1.8%</td>
+                              <td class="tg-0lax">74.8%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">38 weeks, 4 days</td>
+                              <td class="tg-0lax">25.3%</td>
+                              <td class="tg-0lax">1.9%</td>
+                              <td class="tg-0lax">72.8%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">38 weeks, 5 days</td>
+                              <td class="tg-0lax">27.4%</td>
+                              <td class="tg-0lax">2%</td>
+                              <td class="tg-0lax">70.6%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">38 weeks, 6 days</td>
+                              <td class="tg-0lax">29.5%</td>
+                              <td class="tg-0lax">2.1%</td>
+                              <td class="tg-0lax">68.4%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">39 weeks</td>
+                              <td class="tg-0lax">31.7%</td>
+                              <td class="tg-0lax">2.2%</td>
+                              <td class="tg-0lax">66%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">39 weeks, 1 day</td>
+                              <td class="tg-0lax">34.1%</td>
+                              <td class="tg-0lax">2.4%</td>
+                              <td class="tg-0lax">63.5%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">39 weeks, 2 days</td>
+                              <td class="tg-0lax">36.6%</td>
+                              <td class="tg-0lax">2.5%</td>
+                              <td class="tg-0lax">61%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">39 weeks, 3 days</td>
+                              <td class="tg-0lax">39.1%</td>
+                              <td class="tg-0lax">2.6%</td>
+                              <td class="tg-0lax">58.3%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">39 weeks, 4 days</td>
+                              <td class="tg-0lax">41.8%</td>
+                              <td class="tg-0lax">2.7%</td>
+                              <td class="tg-0lax">55.5%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">39 weeks, 5 days</td>
+                              <td class="tg-0lax">44.6%</td>
+                              <td class="tg-0lax">2.8%</td>
+                              <td class="tg-0lax">52.6%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">39 weeks, 6 days</td>
+                              <td class="tg-0lax">47.5%</td>
+                              <td class="tg-0lax">2.9%</td>
+                              <td class="tg-0lax">49.6%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">40 weeks</td>
+                              <td class="tg-0lax">50.5%</td>
+                              <td class="tg-0lax">3%</td>
+                              <td class="tg-0lax">46.5%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">40 weeks, 1 day</td>
+                              <td class="tg-0lax">53.6%</td>
+                              <td class="tg-0lax">3.1%</td>
+                              <td class="tg-0lax">43.4%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">40 weeks, 2 days</td>
+                              <td class="tg-0lax">56.7%</td>
+                              <td class="tg-0lax">3.2%</td>
+                              <td class="tg-0lax">40.1%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">40 weeks, 3 days</td>
+                              <td class="tg-0lax">59.9%</td>
+                              <td class="tg-0lax">3.2%</td>
+                              <td class="tg-0lax">36.8%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">40 weeks, 4 days</td>
+                              <td class="tg-0lax">63.2%</td>
+                              <td class="tg-0lax">3.3%</td>
+                              <td class="tg-0lax">33.5%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">40 weeks, 5 days</td>
+                              <td class="tg-0lax">66.5%</td>
+                              <td class="tg-0lax">3.3%</td>
+                              <td class="tg-0lax">30.2%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">40 weeks, 6 days</td>
+                              <td class="tg-0lax">69.8%</td>
+                              <td class="tg-0lax">3.3%</td>
+                              <td class="tg-0lax">26.9%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">41 weeks</td>
+                              <td class="tg-0lax">73.1%</td>
+                              <td class="tg-0lax">3.3%</td>
+                              <td class="tg-0lax">23.6%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">41 weeks, 1 day</td>
+                              <td class="tg-0lax">76.3%</td>
+                              <td class="tg-0lax">3.2%</td>
+                              <td class="tg-0lax">20.4%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">41 weeks, 2 days</td>
+                              <td class="tg-0lax">79.5%</td>
+                              <td class="tg-0lax">3.1%</td>
+                              <td class="tg-0lax">17.4%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">41 weeks, 3 days</td>
+                              <td class="tg-0lax">82.4%</td>
+                              <td class="tg-0lax">3%</td>
+                              <td class="tg-0lax">14.6%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">41 weeks, 4 days</td>
+                              <td class="tg-0lax">85.2%</td>
+                              <td class="tg-0lax">2.8%</td>
+                              <td class="tg-0lax">12%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">41 weeks, 5 days</td>
+                              <td class="tg-0lax">87.8%</td>
+                              <td class="tg-0lax">2.6%</td>
+                              <td class="tg-0lax">9.6%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">41 weeks, 6 days</td>
+                              <td class="tg-0lax">90.1%</td>
+                              <td class="tg-0lax">2.3%</td>
+                              <td class="tg-0lax">7.5%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">42 weeks</td>
+                              <td class="tg-0lax">92.2%</td>
+                              <td class="tg-0lax">2%</td>
+                              <td class="tg-0lax">5.8%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">42 weeks, 1 day</td>
+                              <td class="tg-0lax">93.9%</td>
+                              <td class="tg-0lax">1.8%</td>
+                              <td class="tg-0lax">4.3%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">42 weeks, 2 days</td>
+                              <td class="tg-0lax">95.4%</td>
+                              <td class="tg-0lax">1.5%</td>
+                              <td class="tg-0lax">3.1%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">42 weeks, 3 days</td>
+                              <td class="tg-0lax">96.6%</td>
+                              <td class="tg-0lax">1.2%</td>
+                              <td class="tg-0lax">2.2%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">42 weeks, 4 days</td>
+                              <td class="tg-0lax">97.6%</td>
+                              <td class="tg-0lax">0.9%</td>
+                              <td class="tg-0lax">1.5%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">42 weeks, 5 days</td>
+                              <td class="tg-0lax">98.3%</td>
+                              <td class="tg-0lax">0.7%</td>
+                              <td class="tg-0lax">1%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">42 weeks, 6 days</td>
+                              <td class="tg-0lax">98.8%</td>
+                              <td class="tg-0lax">0.5%</td>
+                              <td class="tg-0lax">0.6%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">43 weeks</td>
+                              <td class="tg-0lax">99.2%</td>
+                              <td class="tg-0lax">0.4%</td>
+                              <td class="tg-0lax">0.4%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">43 weeks, 1 day</td>
+                              <td class="tg-0lax">99.5%</td>
+                              <td class="tg-0lax">0.3%</td>
+                              <td class="tg-0lax">0.2%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">43 weeks, 2 days</td>
+                              <td class="tg-0lax">99.7%</td>
+                              <td class="tg-0lax">0.2%</td>
+                              <td class="tg-0lax">0.1%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">43 weeks, 3 days</td>
+                              <td class="tg-0lax">99.8%</td>
+                              <td class="tg-0lax">0.1%</td>
+                              <td class="tg-0lax">0.1%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">43 weeks, 4 days</td>
+                              <td class="tg-0lax">99.9%</td>
+                              <td class="tg-0lax">0.1%</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">43 weeks, 5 days</td>
+                              <td class="tg-0lax">99.9%</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">43 weeks, 6 days</td>
+                              <td class="tg-0lax">&gt; 99.9%</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">44 weeks</td>
+                              <td class="tg-0lax">&gt; 99.9%</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                              <td class="tg-0lax">&lt; 0.1%</td>
+                            </tr>
+                          </tbody>
+                          </table>
+                        <p>Bookmark our website <a href="https://probabilitycalculator.guru/">Probabilitycalculatorguru</a> to know more calculators related to the concept of probability.</p>
+                    </div>
+                </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="h3">Frequently Asked Question's on Labor Probability</h3>
+            </div>
+            <div class="card-body">
+                <!-- Question & Answer Starts --->
+                <p class="question"><strong>   1. What are the odds of going into labor at 37 weeks?</strong></p>
+                    <p class="answer">The odds of going into labor between 37 to 38 weeks is 26%.</p><hr>
+<p class="question"><strong> 2. What are 3 signs that labor is approaching?</strong></p>
+    <p class="answer">The different signs of labor is coming soon are bloody show, water breaks, regular contractions, baby drops, lower back pain and cramping.</p><hr>
+<p class="question"><strong> 3. How likely is it to go into labor at 39 weeks?</strong></p>
+    <p class="answer">In general, 25% gave birth by 39 weeks and 5 days after the LMP.</p><hr>
+<p class="question"><strong> 4. Can you predict when you will go into labor?</strong></p>
+    <p class="answer">The truth is there is no way to predict exactly when one will go into labor. No one knows for sure what triggers the big event, although hormones play a role. There are at least 6 clues that your baby is preparing to make entry into the world.</p>
+            </div>
+         </div>
+      </div>
+    
+{%endblock%}

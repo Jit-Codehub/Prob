@@ -1,0 +1,465 @@
+{%extends 'base/base.html'%}
+{%load static%}
+{%block meta%}
+<!-- HTML Defaults Broweser -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- Online Calculator Guru Site Fevicon -->
+<link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png"
+    type="icon">
+<!-- Online Calculator Guru Project Style Sheet -->
+{%block css%}
+<link rel="stylesheet" href="https://onlinecalculator.guru/static/style.css">
+{%endblock css%}
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- Meta Title, Description and Canonical URL Starts --->
+<title>Accuracy Calculator Online | How to Calculate Accuracy?</title>
+<meta name="description" content="Accuracy calculator is the best tool to calculate the accuracy with error free results. And we have also explained many things in detail about accuracy." />
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+<!-- Meta Title, Description and Canonical URL ENDS --->
+
+<!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+<!--  FACEBOOK CONFIGURATION STARTS  -->
+<meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+<meta property="og:title" content="Accuracy Calculator Online | How to Calculate Accuracy?" />
+<meta property="og:description" content="Accuracy calculator is the best tool to calculate the accuracy with error free results. And we have also explained many things in detail about accuracy." />
+<meta content="" property="og:site_name" />
+<meta content="https://onlinecalculator.guru/static/images/Statistics/accuracy-calculator.jpeg"
+    property="og:image" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:height" content="435" />
+<meta property="og:image:width" content="354" />
+<!--  FACEBOOK CONFIGURATION ENDS  -->
+<!-- TWITTER CARD CONFIGURATION STARTS  -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="https://twitter.com/onlinecalculator" />
+<meta name="twitter:title" content="Accuracy Calculator Online | How to Calculate Accuracy?" />
+<meta name="twitter:description"
+    content="Accuracy calculator is the best tool to calculate the accuracy with error free results. And we have also explained many things in detail about accuracy." />
+<meta name="twitter:image:src"
+    content="https://onlinecalculator.guru/static/images/Statistics/accuracy-calculator.jpeg" />
+<meta property="twitter:image:height" content="435" />
+<meta property="twitter:image:width" content="354" />
+<!-- TWITTER CARD CONFIGURATION ENDS  -->
+<!--  LINKEDIN CONFIGURATION STARTS-->
+<meta property='og:title' content="Accuracy Calculator Online | How to Calculate Accuracy?" />
+<meta property='og:image'content="https://onlinecalculator.guru/static/images/Statistics/accuracy-calculator.jpeg" />
+<meta property='og:description' content="Accuracy calculator is the best tool to calculate the accuracy with error free results. And we have also explained many things in detail about accuracy." />
+<meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+<!-- end of linkedin CONFIGURATIONS ENDS -->
+<!-- OPEN GRAPH CONFIGURATION ENDS -->
+<!-- FAQ SCHEMA STARTS -->
+<script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1
+    How to use online Accuracy Calculator?
+    ","acceptedAnswer": {"@type": "Answer","text":" 
+    Simply, give the values of the inputs like true negative, true positive and many. After entering the required inputs click on the calculate button then you will see the required answer without any errors."}	}, {"@type": "Question","name":"2
+    What are the methods we have to find the accuracy?
+    ","acceptedAnswer": {"@type": "Answer","text":" 
+    To calculate the accuracy we use three methods. They are: 1. Standard Accuracy 2. Prevalence Accuracy and 3. Percent Error or Percent Accuracy."}	}, {"@type": "Question","name":"3
+    What is the formula we use for percent error method?
+    ","acceptedAnswer": {"@type": "Answer","text":"
+    Percent error = (|(Vo - Vₐ)|/Vₐ) * 100"}	}, {"@type": "Question","name":"4
+    What is the best tool to find accuracy?
+    ","acceptedAnswer": {"@type": "Answer","text":"
+    Accuracy Calculator available in Statisticscalculators.net is the best tool to calculate Accuracy."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+<div class="container">
+    <div class="card c1">
+        <div class="card-header">
+            <h1 class="h1">Accuracy Calculator</h1>
+        </div>
+        <div class="card-body">
+            <p>Our accuracy calculator tool is a simple tool that allows you to calculate the accuracy by using different methods. Enter the given values for the method you are using and click the calculate button and get error free results instantly.</p>
+         <p><b>Accuracy Calculator:</b> Use this instant accuracy calculator tool to compute different methods like accuracy, prevalence, percent error method. This accuracy calculator is easy to use. And in this calculator tool we have explained in detail about accuracy and many different methods along with solved examples. Check it now!!</p>
+         <form action="" method="POST" id="my_form">
+            {% csrf_token %}
+             <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Choose Method</span>
+        </div>
+        <select id="Given" name="Given"  style="margin-top: 5px;width:100%" class="select form-control" id="inlineFormInputGroup" onchange="this.form.submit()">
+            {% if Given == 'form1' %}
+            <option value="form1" selected="selected">Standard method</option>
+            {% else %}
+            <option value="form1">Standard method</option>
+            {% endif %}
+
+            {% if Given == 'form2' %}
+            <option value="form2" selected="selected">Prevalence method</option>
+            {% else %}
+            <option value="form2">Prevalence method</option>
+            {% endif %}
+
+            {% if Given == 'form3' %}
+            <option value="form3" selected="selected">Percent error method</option>
+            {% else %}
+            <option value="form3">Percent error method</option>
+            {% endif %}
+        </select>
+   </div>
+   {% if Given == "form1" %}
+   
+   <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">True positive</span>
+        </div>
+        
+       <input style="margin-top: 5px;width:100%" id="tp" name="tp" value="{{tp}}" min="0" required="" oninput="validateNumber(this);" class="form-control" type="number" required width="48"> 
+   </div>
+   <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">False negative</span>
+        </div>
+        
+       <input style="margin-top: 5px;width:100%" id="fn" name="fn" value="{{fn}}" min="0" required="" oninput="validateNumber(this);" class="form-control" type="number" required width="48"> 
+   </div>
+   <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">False positive</span>
+        </div>
+        
+       <input style="margin-top: 5px;width:100%" id="fp" name="fp" value="{{fp}}" min="0" required="" oninput="validateNumber(this);" class="form-control" type="number" required width="48"> 
+   </div>
+   <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">True negative</span>
+        </div>
+        
+       <input style="margin-top: 5px;width:100%" id="tn" name="tn" value="{{tn}}" min="0" required="" oninput="validateNumber(this);" class="form-control" type="number" required width="48"> 
+   </div>
+   {% endif %}
+
+   {% if Given == "form2" %}
+   
+   <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Prevalence</span>
+        </div>
+        
+       <input style="margin-top: 5px;width:100%" id="p" name="p" value="{{p}}" min="0" required="" oninput="validateNumber(this);" class="form-control" type="number" required width="48">
+        <span class="input-group-text" id="basic-addon1">%</span> 
+   </div>
+   <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">True positive</span>
+        </div>
+        
+       <input style="margin-top: 5px;width:100%" id="tp" name="tp" value="{{tp}}" min="0" required="" oninput="validateNumber(this);" class="form-control" type="number" required width="48"> 
+   </div>
+   <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">False negative</span>
+        </div>
+        
+       <input style="margin-top: 5px;width:100%" id="fn" name="fn" value="{{fn}}" min="0" required="" oninput="validateNumber(this);" class="form-control" type="number" required width="48"> 
+   </div>
+   <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">False positive</span>
+        </div>
+        
+       <input style="margin-top: 5px;width:100%" id="fp" name="fp" value="{{fp}}" min="0" required="" oninput="validateNumber(this);" class="form-control" type="number" required width="48"> 
+   </div>
+   <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">True negative</span>
+        </div>
+        
+       <input style="margin-top: 5px;width:100%" id="tn" name="tn" value="{{tn}}" min="0" required="" oninput="validateNumber(this);" class="form-control" type="number" required width="48"> 
+   </div>
+   {% endif %}
+
+    {% if Given == "form3" %}
+   
+   <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Observed value</span>
+        </div>
+        
+       <input style="margin-top: 5px;width:100%" id="ov" name="ov" value="{{ov}}" min="0" required="" oninput="validateNumber(this);" class="form-control" type="number" required width="48"> 
+   </div>
+   <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Accepted value</span>
+        </div>
+        
+       <input style="margin-top: 5px;width:100%" id="av" name="av" value="{{av}}" min="0" required="" oninput="validateNumber(this);" class="form-control" type="number" required width="48">
+   </div>
+   
+   {% endif %}
+
+    <div class=" center col mt-2 ">
+        <center><button type="submit" class="btn btn-primary">Calculate</button>
+          <a href="{% url 'accuracy' %}" class="btn btn-warning" role="button" style="margin-top:5px;">Reset</a>      
+        </center>
+      </div>
+
+</form>
+</div>
+
+
+</div>
+
+
+
+
+
+{% if ot %}
+<script>
+    $(document).ready(function () {
+
+        $("#hassle").click();
+        });
+</script>
+
+<button type="button" hidden id="hassle" onclick="location.href='#accuracy'">ans1</button>
+{% endif %}
+
+
+{% if ot and Given == "form1" %}
+
+<div class="card" id="accuracy">
+        <div class="card-header">
+            <h2 class="h2">Accuracy Calculator:</h2>
+        </div>
+
+        <div class="card-body">
+            <strong>Standard method:-</strong>
+            <br>
+            <p class="btn btn-outline-secondary active text-justify">Accuracy = (TP + TN) / (TP + TN + FP + FN)</p>
+            <br>
+            <strong>where:</strong>
+                    <ul>
+                        <li>TP - true positive,</li>
+                        <li>TN - true negative,</li>
+                        <li>FP - false positive</li>
+                        <li>FN - false negative.</li>
+                                                
+                    </ul>
+            <strong>Input values:</strong>
+            <p>TP = {{tp}}</p>
+            <p>TN = {{tn}}</p>
+            <p>FP = {{fp}}</p>
+            <p>FN = {{fn}}</p>
+
+            <strong>Put values in formula:</strong>
+            <p>Accuracy = (({{tp}} + {{tn}}) / ({{tp}} + {{tn}} + {{fp}} + {{fn}})) * 100</p>
+            <b>Accuracy = {{result}} %</b>
+
+   </div>
+    </div>
+
+    {% endif %}                  
+
+{% if ot and Given == "form2" %}
+
+<div class="card" id="accuracy">
+        <div class="card-header">
+            <h2 class="h2">Accuracy Calculator:</h2>
+        </div>
+
+        <div class="card-body">
+            <strong>Prevalence method:-</strong>
+            <br>
+            <p class="btn btn-outline-secondary active text-justify">Accuracy = ((Sensitivity)* (Prevalence)) + ((Specificity)* (1 - Prevalence))</p>
+            <br>
+            <strong>where:</strong>
+                    <ul>
+                        <li>Sensitivity = TP / (TP + FN),</li>
+                        <li>Specificity = TN / (FP + TN),</li>
+                                                
+                    </ul>
+            <strong>Input values:</strong>
+            <p>TP = {{tp}}</p>
+            <p>TN = {{tn}}</p>
+            <p>FP = {{fp}}</p>
+            <p>FN = {{fn}}</p>
+            <p>Prevalence = {{p}}</p>
+            
+            <strong>Put values in formula:</strong>
+            <p>Accuracy = (({{se}}) * ({{p}})) + (({{sp}}) * (1 - {{p}}))</p>
+            <b>Accuracy = {{result}} %</b>
+
+   </div>
+   
+    </div>
+    
+
+    {% endif %}      
+
+    {% if ot and Given == "form3" %}
+
+<div class="card" id="accuracy">
+        <div class="card-header">
+            <h2 class="h2">Accuracy Calculator:</h2>
+        </div>
+
+        <div class="card-body">
+            <strong>Percent error method:-</strong>
+            <br>
+            <p class="btn btn-outline-secondary active text-justify">Percent error = (|(Vo - Vₐ)|/Vₐ) * 100</p>
+            <br>
+            <strong>where:</strong>
+                    <ul>
+                        <li>Vo - observed value,</li>
+                        <li>Va - value accepted as truth,</li>
+                        <li>|(Vo - Vₐ)| - is the absolute, non-negative value.</li>
+                                                
+                    </ul>
+            <strong>Input values:</strong>
+            <p>Vo = {{ov}}</p>
+            <p>Va = {{av}}</p>
+
+            <strong>Put values in formula:</strong>
+            <p>Percent error = ( |({{ov}} - {{av}})| /{{av}} ) * 100</p>
+            <b>Percent error = {{result}} %</b>
+
+   </div>
+    </div>
+
+    {% endif %}      
+
+
+
+
+
+
+
+
+    <div class="card">
+        <div class="card-header">
+          <h2 class="h2">What is Accuracy?</h2>
+        </div>
+       <div class="card-body">
+           <p>Accuracy is nothing but the measure of how many tests it take to achieve a correct result. And for this we use 3 different methods to calculate the Accuracy. They are:</p>
+           <ul><li>Method 1: Standard Accuracy.</li>
+            <li>Method 2: Accuracy based on Prevalence.</li>
+            <li>Method 3: Percentage Error.</li></ul>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3 class="h3">Accuracy Percentage Formulas</h3>
+        </div>
+        <div class="card-body">
+            <p>For Percentage Accuracy we have three different methods and formulas. Let us see what are they:</p>
+            <p><b>Method 1: Standard Accuracy</b></p>
+            <p><b>Accuracy = (TP+TN) / (TP+TN+FP+FN)</b></p>
+            <ul><li>Where,</p>
+                <li>TP is the true positive</li>
+                <li>TN is the true negative</li>
+                <li>FP is the false positive</li>
+            <li>FN is the False Negative</li></ul>
+                <p><b>Method 2: Prevalence</b></p>
+            <p><b>Accuracy = ((Sensitivity)* (Prevalence)+((Specificity) * (1-Prevalence))</b></p>
+            <ul><li>Where,
+                <li>Sensitivity = TP / (TP+FN) given in %</li>
+                <li>Specificity = TN / (FP + TN) given in %</li></ul>
+            <p>Prevalence is the amount of population that has a disease at a specific time. This is also given in %.</p>
+            <p><b>Method 3: Percent Accuracy/ Percent Error</b></p>
+            <p><b>Percent Accuracy = (|(Vo - Vₐ)|/Vₐ) * 100</b></p>
+            <ul><li>Where, Vo is the observed value.</li>
+                <li>Vₐ is the value accepted as truth.</li>
+                <li>|(Vo - Vₐ)| is the absolute non-negative.</li></ul>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+          <h3 class="h3">How to Calculate Accuracy?</h3>
+        </div>
+       <div class="card-body">
+         <p>Accuracy can be calculated by simple steps. By following those steps we can find the accuracy using 3 methods easily and accurately.</p>
+         <ul>
+             <li>Firstly, read the question carefully and see which method is suitable for it as we have 3 different methods.</li>
+             <li>Then, find the values needed for the formula.</li>
+             <li>And, apply the formula.</li>
+             <li>Finally, substitute the values and get the result.</li>
+         </ul>
+       </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+          <h3 class="h3">Solved Examples on Accuracy</h3>
+        </div>
+       <div class="card-body">
+           <p> As, we have three methods to calculate we will see an solved example for each method.</p>
+           <p><b>Question:1</b> Calculate the Accuracy using the below table.</p>
+           <table class="tg">
+            <thead>
+              <tr>
+                <th class="tg-0pky">n=125</th>
+                <th class="tg-0pky">Predicted:<br><center>No</center></br> </th>
+                <th class="tg-0pky">Predicted:<br><center>Yes</center></br></th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td class="tg-0pky">Actual:<br><center>No</center></br></td>
+                  <td class="tg-0pky"><center>44</center></td>
+                  <td class="tg-0pky"><center>28</center></td>
+
+                </tr>
+                <tr>
+                  <td class="tg-0pky">Actual:<br><center>Yes</center></br></td>
+                  <td class="tg-0pky"><center>20</center></td>
+                  <td class="tg-0pky"><center>80</center></td>
+                </tr>
+                </tbody>
+                </table>
+                <p><b>Solution</b></p>
+                <p>Given, table</p>
+                <p>Here, taking Values from the table.</p>
+                <p>TP= 44, FN = 28, FP=20, TN = 80</p>
+                <p>Apply the standard accuracy formula</p>
+                <p>Accuracy = (TP+TN) / (TP+TN+FP+FN)</p>
+                <p> = (44+80) / (44+28+20+80)</p>
+                <p> = 124 / 172 = 72.09 %</p>
+                <p>We use same question for Method 2</p>
+                <p>Apply the prevalence accuracy formula</p>
+                <p>Accuracy = ((Sensitivity)* (Prevalence)+((Specificity) * (1-Prevalence))</p>
+                <p>First find the values for sensitivity, prevalence and specificity.</p>
+                <p>Sensitivity = TP / (TP+FN) </p>
+                <p> = 44 / (44+28) = 44/72 = 61.1 %</p>
+                <p>Specificity = TN / (FP + TN) given in %</p>
+                <p> = 80 / (20+80)</p>
+                <p> = 80/ 100 = 80 %</p>
+                <p>Prevalence is 77%</p>
+                <p>Accuracy = ((Sensitivity)* (Prevalence)+((Specificity) * (1-Prevalence))</p>
+                <p> = (((61.1) * (77))+((80)*(1-77))) = 65.46 %</p>
+                <p><b>Question 2 :</b> Measure the temperature is equal to 92°F, and we know that our average temperature is equal to 95.6°F. Find the Percent Error?</p>
+                <p><b>Solution</b></p>
+                <p>Given values, observed value (Vo)= 92, Accepted value (Vₐ)= 95.6</p>
+                <p>Apply the formula</p>
+                <p>Percent Accuracy = (|(Vo - Vₐ)|/Vₐ) * 100</p>
+                <p> = (|(92 - 95.6)|/95.6) * 100</p>
+                <p> Percent Accuracy = 3.766 %</p>
+                <p>Get this amazing calculator at <a href="https:/statisticscalculators.net/">Statisticscalculators.net</a> and not only this, we have many other statistics calculators. Click on the link and use them to save your time.</p>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+          <h3 class="h3">FAQs on Accuracy Calculator</h3>
+        </div>
+       <div class="card-body">
+           <!-- Question & Answer Starts --->
+           <p class="question"><strong>1. How to use online Accuracy Calculator?</strong></p>
+           <p class="answer">Simply, give the values of the inputs like true negative, true positive and many. After entering the required inputs click on the calculate button then you will see the required answer without any errors.</p><hr>
+           <p class="question"><strong>2. What are the methods we have to find the accuracy?</strong></p>
+           <p class="answer">To calculate the accuracy we use three methods. They are: 1. Standard Accuracy 2. Prevalence Accuracy and 3. Percent Error or Percent Accuracy.</p><hr>
+           <p class="question"><strong>3. What is the formula we use for percent error method?</strong></p>
+           <p class="answer">Percent error = (|(Vo - Vₐ)|/Vₐ) * 100</p><hr>
+           <p class="question"><strong>4. What is the best tool to find accuracy?</strong></p>
+           <p class="answer">Accuracy Calculator available in <a href="https:/statisticscalculators.net/">Statisticscalculators.net</a> is the best tool to calculate Accuracy.</p>
+           </div>
+           </div>
+           </div>
+                
+{% endblock content %}

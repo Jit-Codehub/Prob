@@ -1,0 +1,177 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+   <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Yugioh Probability Calculator | Steps to Find Yu-Gi-Oh</title>
+    <meta name="description" content="Dependent Probability Calculator gives the probability of dependent variables using conditional probability formula. Learn the steps to calculate dependent probability."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Yugioh Probability Calculator | Steps to Find Yu-Gi-Oh"/>
+        <meta property="og:description" content="Dependent Probability Calculator gives the probability of dependent variables using conditional probability formula. Learn the steps to calculate dependent probability."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Chemistry/Yugioh-Probability-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Yugioh Probability Calculator | Steps to Find Yu-Gi-Oh"/>
+        <meta name="twitter:description" content="Calculate Dependent events probability with the help of the handy Dependent Probability Calculator. Giverovide all events probabilities to know the Dependent probability."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Chemistry/Yugioh-Probability-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Yugioh Probability Calculator | Steps to Find Yu-Gi-Oh"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Chemistry/Yugioh-Probability-Calculator.jpeg"/>
+        <meta property='og:description' content="Calculate Yugioh events probability with the help of the handy InYugioh Probability Calculator. Giverovide all events probabilities to know the inYugioh probability."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        What is the best tool to calculate Yugioh probability?
+        ","acceptedAnswer": {"@type": "Answer","text":" Yugioh Probability Calculator is the best tool to find the chance of opening your key combos."}	}, {"@type": "Question","name":"2.
+        Which website has Yugioh Probability Calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" Probabilitycalculator.guru is the best website that helps to calculate Yugioh probability."}	}, {"@type": "Question","name":"3.
+        What is the use of Calculator Yugioh Probability?
+        ","acceptedAnswer": {"@type": "Answer","text":" Yugioh probability tool is useful to find the chance of opening your key combos, letting you make better decisions during deck-building."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+
+{% if n and k %}
+<script>
+    $(document).ready(function () {
+
+        $("#hassle").click();
+
+
+    });
+
+
+</script>
+
+<button type="button" hidden id="hassle" onclick="location.href='#Coin_Flip_Probability_answer'">ans1</button>
+{% endif %}
+<div class="container" style="height: auto !important;">
+  
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Yugioh Probability Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Yugioh Probability Calculator helps you determine the probability of opening your key combos. Make your calculations related to probability quite simple and handy tool instantaneously.</p>
+                <p><strong>Yugioh Card Probability Calculator: </strong>Calculate the probability of opening your key combos, which helps you make better decisions during deck building by using our user-friendly tool. Continue reading to learn what is the use of Yu-Gi-Oh deck probability, examples. Get the step by step process to use Yugioh probability to solve various probability questions easily & quickly.</p>
+            </div>
+</div>
+<div class="card">
+    <div class="card-header">
+        <h2 class="h2">How to Use Yugioh Probability Calculator?</h2>
+    </div>
+    <div class="card-body">
+<p>Have a look at the simple process to calculate the Yugioh deck probability.</p>
+<ul>
+    <li>Enter deck size, hand size, card name, amount, minimum and maximum values in the input fields.</li>
+    <li>  Now click on the calculate button.</li>
+    <li>  Finally, the probability to open hand will get displayed at the output section.</li>
+</ul>
+                </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="h3">Define Yugioh Deck Probability?</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Yu-Gi-Oh deck probability defines the chance of opening a hand or key combos. These chances are helpful to take decisions during deck building. Here we are giving the examples of Yugioh probability in the following section.</p>
+                         <p>   To find the chance of opening one of your 5 copies of Dragon Ravine (Terraforming is basically a copy of Ravine) along with at least 1 Dragunity Dux or Dragunity Phalanx (both of which you run at 3) use:</p>
+                        <p><b>Examples:</b></p>
+                         <table border="2">
+                        <thead>
+                            <tr>
+                              <th class="tg-0lax">Name</th>
+                              <th class="tg-0lax">Amount</th>
+                              <th class="tg-0lax">Minimum</th>
+                              <th class="tg-0lax">Maximum</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="tg-0lax">Ravine</td>
+                              <td class="tg-0lax">5</td>
+                              <td class="tg-0lax">1</td>
+                              <td class="tg-0lax">5</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">Dux or Phalanx</td>
+                              <td class="tg-0lax">6</td>
+                              <td class="tg-0lax">1</td>
+                              <td class="tg-0lax">6</td>
+                            </tr>
+                          </tbody>
+                          </table>
+                          <p>You can use this data to open an only copy of Allure of Darkness along with at least 1 of 10 DARK monsters.</p>
+                          <table border="2">
+                          <thead>
+                            <tr>
+                              <th class="tg-0lax">Name</th>
+                              <th class="tg-0lax">Amount</th>
+                              <th class="tg-0lax">Minimum</th>
+                              <th class="tg-0lax">Maximum</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="tg-0lax">Allure</td>
+                              <td class="tg-0lax">1</td>
+                              <td class="tg-0lax">1</td>
+                              <td class="tg-0lax">1</td>
+                            </tr>
+                            <tr>
+                              <td class="tg-0lax">DARK</td>
+                              <td class="tg-0lax">10</td>
+                              <td class="tg-0lax">1</td>
+                              <td class="tg-0lax">4</td>
+                            </tr>
+                          </tbody>
+                          </table>
+                    </div>
+                    </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="h3">FAQ's on Yugioh Probability Calculator</h3>
+            </div>
+            <div class="card-body">
+                <!-- Question & Answer Starts --->
+                <p class="question"><strong>     1. What is the best tool to calculate Yugioh probability?</strong></p>
+                    <p class="answer">Yugioh Probability Calculator is the best tool to find the chance of opening your key combos.</p><hr>
+<p class="question"><strong>2. Which website has Yugioh Probability Calculator?</strong></p>
+    <p class="answer"><a href="http://probabilitycalculator.guru/">Probabilitycalculator.guru</a> is the best website that helps to calculate Yugioh probability.</p><hr>
+<p class="question"><strong>3. What is the use of Calculator Yugioh Probability?</strong></p>
+    <p class="answer">Yugioh probability tool is useful to find the chance of opening your key combos, letting you make better decisions during deck-building.</p>
+            </div>
+         </div>
+      </div>
+    
+{%endblock%}

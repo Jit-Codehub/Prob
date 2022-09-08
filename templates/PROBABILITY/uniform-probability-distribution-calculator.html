@@ -1,0 +1,240 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Uniform Probability Distribution Calculator | Probabilitycalculator.guru</title>
+    <meta name="description" content="Take advantage of this best uniform probability distribution tool that display the probability distribution of an event in less time."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Uniform Probability Distribution Calculator | Probabilitycalculator.guru"/>
+        <meta property="og:description" content="Take advantage of this best uniform probability distribution tool that display the probability distribution of an event in less time."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="http://probabilitycalculator.guru/static/images/Probability/Uniform-Probability-Distribution-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Uniform Probability Distribution Calculator | Probabilitycalculator.guru"/>
+        <meta name="twitter:description" content="Take advantage of this best uniform probability distribution tool that display the probability distribution of an event in less time."/>
+        <meta name="twitter:image:src" content="http://probabilitycalculator.guru/static/images/Probability/Uniform-Probability-Distribution-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Uniform Probability Distribution Calculator | Probabilitycalculator.guru"/>
+        <meta property='og:image' content="http://probabilitycalculator.guru/static/images/Probability/Uniform-Probability-Distribution-Calculator.jpeg"/>
+        <meta property='og:description' content="Take advantage of this best uniform probability distribution tool that display the probability distribution of an event in less time."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1 
+        How do you find the probability of a uniform distribution?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        Probability of uniform distribution can be found by F(x) = 1/(b-a), if (a <= x <= b), otherwise 0."}	}, {"@type": "Question","name":"2
+        How to use the uniform probability distribution calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        Give the a, b values in the input fields and click the calculate button, and get the answer instantly."}	}, {"@type": "Question","name":"3
+        What is uniform distribution in probability?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        Uniform distribution can be defined by a type of probability distribution where all the outcomes should be equal."}	}, {"@type": "Question","name":"4 
+        Find the best tool to calculate the probability of uniform distribution?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        The best tool to find uniform distribution probability is the Uniform Probability Distribution Calculator available at probabilitycalculator.guru."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Uniform Probability Distribution Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Don't have time to compute uniform probability distribution manually, then use our free handy calculator tool to generate the best results. For getting the result in seconds, you need to give the input values and click the calculate button.</p>
+<p><strong>Uniform Probability Distribution Calculator: </strong>Wondering how to calculate uniform probability distribution? Then this calculator article will help you a lot. Make use of this handy online tool to get the output instantly. We have also given information about uniform probability distribution with step-by-step-process.</p>
+<form action="" method="POST" id="my_form" ">
+    {% csrf_token %}
+    <div class="form-row align-items-center">
+    <div class="col-auto">
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><strong>Number of times event occurs</strong></div>
+            </div>
+            <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                placeholder="Enter f" min="0.00001" step="any" class="form-control" name="number_of_times_event_occurs"  value="{{min}}" >
+        </div>
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><strong>Number of times experiment performed</strong></div>
+            </div>
+            <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                placeholder="Enter n" min="0.00001" step="any" class="form-control" name="number_of_times_experiment_performed"   value="{{max}}"  >
+        </div>
+        <!-- <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><strong>Number of classes</strong></div>
+            </div>
+            <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                placeholder="Enter no of classes" min="1"  class="form-control" name="classes"    value="{{classes}}" >
+        </div> -->
+        <div class=" center col mt-2 ">
+            <center><button type="submit" class="btn btn-primary" name="f1">Calculate</button>
+                <button type="button" onclick="myFunction()" style="margin-top:5px;"
+                class="btn btn-danger">Reset</button>
+            </center>
+        </div>
+    </div>
+</form>
+            </div>
+        </div>
+    </div>
+        {% if id == 1 %}
+        <div id="clear">
+            <div class="card" id="magnetic-force">
+                <div class="card-header">
+                    <h2 class="h2">Steps to calcualate Empirical Probability</h2>
+                </div>
+                <div class="card-body">
+                    <strong>Empirical Probability Formula-</strong>
+                    <br>
+                    <p class="btn btn-outline-secondary active"> Empirical Probability = Number of times event occurs / Total number of times experiment performed </p>
+                    <br>
+                    
+                    <p class="btn btn-outline-secondary active"> P(E) = f/n</p>
+                    <br>
+        
+                    <strong>where:</strong>
+                            <ul>
+                                <li>Number of times event occurs - The number of times event occurs gives you the total number of times an event occurs</li>
+                                <li>Total number of times experiment performed - The total number of times an experiment performed gives you the total number of times an experiment is performed.</li>
+                                <!-- <li>n - Number of classes within the distribution</li> -->
+                            </ul>
+                    <strong>Input values are:-</strong>
+                    <p>Number of times event occurs = {{number_of_times_event_occurs}}</p>
+                    <p>Total number of times experiment performed = {{number_of_times_experiment_performed}}</p> 
+                    <br>
+                    
+                    <strong>Put values into formula</strong>
+                    <p>empirical probability =  Number of times event occurs / Total number of times experiment performed </p>
+                    <!-- <p>  class width = ({{max}} - {{min}}) / {{probability}}  </p> -->
+                    <p><b> empirical_probab  = {{empirical_probab}} </b></p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <script>
+            
+            
+        
+            function myFunction() {
+                document.getElementsByName("number_of_times_event_occurs")[0].value = "";
+                document.getElementsByName("number_of_times_experiment_performed")[0].value = "";
+               
+                
+        
+                document.getElementById("clear").innerHTML = "";
+        
+            }
+        
+        </script>  
+        
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">What is Uniform Probability Distribution?</h2>
+        </div>
+	    <div class="card-body">
+            <p>In mathematics, the uniform probability distribution is the type of  probability distribution where all the event outcomes are equal. In this, we have two types of probability distributions, they are discrete uniform distribution and continuous probability Distribution. For example, if you toss a coin it will be either head or tail, they both have the same chances.</p>
+            <p><b>F(x) = 1/(b-a), if (a <= x <= b)</b></p>
+            <p><b>F(x) = 0, if a > b.</b></p>
+            <p>Where,</p>
+            <p>a, b are integers.</p>
+        </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="h3">Steps to Calculate Uniform Probability Distribution</h3>
+            </div>
+            <div class="card-body">
+                <p>Let us see the step-by-step process to find the uniform probability distribution. Follow the guidelines to calculate.</p> 
+                <ul>
+                    <li>Consider the values which are given in the question.</li>
+                    <li>Then, check the condition whether a is less than b or not.</li>
+                    <li>After that, if the condition satisfies then apply the formula, 1/(b-a).</li>
+                    <li>Calculate and get the answer.</li>
+                    <li>If a is not less than b, the answer will be zero.</li>
+                </ul>
+                </div>
+                </div>
+        <div class="card">
+                    <div class="card-header">
+                        <h3 class="h3">How to Find Probability of Uniform Distribution?</h3>
+                    </div>
+                    <div class="card-body">
+                        <p><b>Example:</b></p>
+                        <p><b>Question 1: </b>Find the probability of uniform distribution of a= 10, b=13?</p>
+                        <p><b>Solution:</b></p>
+                        <p>Given a= 10, b=13.</p>
+                        <p>Here formula for a uniform probability distribution is</p>
+                        <p>F(x) = 1/(b-a), if (a <= x <= b) </p>
+            <p>F(x) = 0, if a > b.</p>
+            <p>In this problem, a is greater than b, so we calculate 1/(b-a).</p>
+            <p> = 1/(13-10) = 1/3 = 0.33</p>
+            <p>Therefore, the uniform probability distribution is 0.33</p>
+                     <p><b>Question 2: </b>Find the probability of uniform distribution of a= 133, b=123?</p>
+                        <p><b>Solution:</b></p>
+                        <p>Given a= 133, b=123.</p>
+                        <p>Here, b is less than a. If  F(x) = 0, if a > b.</p>
+                        <p> Thus, the probability of uniform distribution is 0.</p>
+<p><a href="http://probabilitycalculator.guru/">probabilitycalculator.guru</a> has many probability calculators. Have a look at them to know more information about the concept and use calculators to get accurate results.</p>
+<img src="{% static 'images/Probability/Uniform-Probability-Distribution-Calculator.jpeg' %}" alt="Uniform Probability Distribution Calculator">
+</div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+    <h3 class="h3">FAQs on Uniform Distribution Probability Calculator</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. How do you find the probability of a uniform distribution?</strong></p>
+     	<p class="answer">Probability of uniform distribution can be found by F(x) = 1/(b-a), if (a <= x <= b), otherwise 0.</p><hr>
+     	<p class="question"><strong>2. How to use the uniform probability distribution calculator?</strong></p>
+     	<p class="answer">Give the a, b values in the input fields and click the calculate button, and get the answer instantly.</p><hr>
+        <p class="question"><strong>3. What is uniform distribution in probability?</strong></p>
+        <p class="answer">Uniform distribution can be defined by a type of probability distribution where all the outcomes should be equal.</p><hr>
+        <p class="question"><strong>4. Find the best tool to calculate the probability of uniform distribution?</strong></p>
+        <p class="answer">The best tool to find uniform distribution probability is the Uniform Probability Distribution Calculator available at <a href="http://probabilitycalculator.guru/">probabilitycalculator.guru</a>.</p><hr>
+    	</div>
+    </div>
+    </div>
+
+{% if  flag %}
+<script>
+        $(document).ready(function () {
+            $("#hassle").click();
+        });
+</script>
+<button type="button" hidden id="hassle" onclick="location.href='#combinations'">ans1</button>
+{% endif %}
+{%endblock%}

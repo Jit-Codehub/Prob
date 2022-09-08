@@ -1,0 +1,393 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Online Exponential Probability Calculator - Probabilitycalculator.guru</title>
+    <meta name="description" content="Exponential probability Calculator is a free online tool that displays the probability distribution for the given data with detailed steps."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Online Exponential Probability Calculator - Probabilitycalculator.guru"/>
+        <meta property="og:description" content="Exponential probability Calculator is a free online tool that displays the probability distribution for the given data with detailed steps."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="http://probabilitycalculator.guru/static/images/Probability/Exponential-Distribution-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Online Exponential Probability Calculator - Probabilitycalculator.guru"/>
+        <meta name="twitter:description" content="Exponential probability Calculator is a free online tool that displays the probability distribution for the given data with detailed steps."/>
+        <meta name="twitter:image:src" content="http://probabilitycalculator.guru/static/images/Probability/Exponential-Distribution-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Online Exponential Probability Calculator - Probabilitycalculator.guru"/>
+        <meta property='og:image' content="http://probabilitycalculator.guru/static/images/Probability/Exponential-Distribution-Calculator.jpeg"/>
+        <meta property='og:description' content="Exponential probability Calculator is a free online tool that displays the probability distribution for the given data with detailed step."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1
+        What is Exponential Probability?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        The time between events happening according to the gamma distribution is called exponential probability."}	}, {"@type": "Question","name":"2
+        How to use the Exponential Probability Calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" 
+        Just type the inputs in the specified input fields and hit the calculate button to get the answer in fraction of seconds."}	}, {"@type": "Question","name":"3
+        How to find exponential probability?
+        ","acceptedAnswer": {"@type": "Answer","text":"
+        Exponential probability can be find by using the formula, i.e. P(X=x) = me−mx = (1/μ)e−(1/μ)x"}	}]}</script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Exponential Probability Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Avail of this amazing exponential probability calculator tool that computes the mean, variance, median, standard deviation and the probability distribution for the given data. To use this calculator give the inputs in the input fields and tap the calculate button and get the answer effortlessly.</p>
+
+<!---------------      Error messages ---------->
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <p {% if message.tags %} id="message_container" class="alert alert-danger text-center" {% endif %}
+                       style="color:red">{{ message }}</p>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+<!---------------    Form ------->
+<form action="" method="POST" id="my_form" >
+    {% csrf_token %}
+    <div class="col-auto">
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><strong>Choose a Calculation</strong></div>
+            </div>
+            <select name="given_data" id="inlineFormInputGroup" class="form-control"
+                onchange="this.form.submit();" autofocus="">
+
+                {% if given_data == 'form1' %}
+                <option value="form1" selected="selected"> Two Tailed | X  Less Than and X Greater Than    </option>
+                {% else %}
+                <option value="form1">Two Tailed |  X  Less Than and X Greater Than    </option>
+                {% endif %}
+
+                {% if given_data == 'form2' %}
+                <option value="form2" selected="selected"> Left Tailed | X  Less Than</option>
+                {% else %}
+                <option value="form2"> Left Tailed | X  Less Than</option>
+                {% endif %}
+
+
+                {% if given_data == 'form3' %}
+                <option value="form3" selected="selected"> Right Tailed | X  Greater  Than </option>
+                {% else %}
+                <option value="form3"> Right Tailed | X  Greater  Than </option>
+                {% endif %}
+
+            </select>
+        </div>
+    
+
+
+
+        {% if given_data != "form4" %}
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><strong>Population Mean(β)</strong></div>
+            </div>
+            <input type="number" min="0.001" step="0.001" oninput="validateNumber(this);" id="Ia" required=""
+                placeholder="Enter number"  class="form-control mt-1" name="pm" {% if pm %} value="{{pm}}" {% else %} value="7" {% endif %}>
+        </div>
+        {%endif%}
+
+        {% if given_data != "form2" %}
+        {% if given_data != "form3" %}
+
+
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><strong>Two-Tailed ( X≤ )</strong></div>
+            </div>
+            <input type="number" min="0.001" step="0.001" oninput="validateNumber(this);" id="Ia" required=""
+                placeholder="Enter number"  class="form-control mt-1" name="tt" {% if tt %} value="{{tt}}" {% else %} value="7" {% endif %}>
+
+        </div>
+        
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><strong>Two-Tailed (X≥)</strong></div>
+            </div>
+            <input type="number" min="0.001" step="0.001" oninput="validateNumber(this);" id="Ia" required=""
+                placeholder="Enter number"  class="form-control mt-1" name="tw" {% if tw %} value="{{tw}}" {% else %} value="7" {% endif %}>
+
+        </div>
+        {%endif%}
+        {%endif%}
+
+        {% if given_data != "form1" %}
+        {% if given_data != "form3" %}
+
+
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><strong>Left-Tailed (X≤)</strong></div>
+            </div>
+            <input type="number" min="0.001" step="0.001" oninput="validateNumber(this);" id="Ia" required=""
+                placeholder="Enter number"  class="form-control mt-1" name="lt" {% if lt %} value="{{lt}}" {% else %} value="7" {% endif %}>
+
+        </div>
+        {%endif%}
+        {%endif%}
+
+        {% if given_data != "form1" %}
+        {% if given_data != "form2" %}
+
+        
+        <div class="input-group mb-2">
+            <div class="input-group-prepend">
+                <div class="input-group-text"><strong>Right-Tailed (X≥)</strong></div>
+            </div>
+            <input type="number" min="0.001" step="0.001" oninput="validateNumber(this);" id="F" required=""
+               placeholder="Enter number"  class="form-control mt-1" name="rt" {% if rt %} value="{{rt}}" {% else %} value="7" {% endif %}>
+
+        </div>
+
+        {% endif %}
+        {%endif%}
+
+        <div class=" center col mt-2 ">
+            <center><button type="submit" class="btn btn-primary" name="f1">Calculate</button>
+                <button type="button" onclick="myFunction()" style="margin-top:5px;"
+                    class="btn btn-danger">Reset</button>
+            </center>
+        </div>
+
+</form>
+
+</div>
+        </div>
+    </div>
+
+
+
+        <div id="clear">
+
+            {% if given_data == "form1" %}
+            <div class="card" id="magnetic-Change in temperature">
+                <div class="card-header">
+                    <h2 class="h2">Steps to Calculate Two-Tailed Exponential Probability</h2>
+                </div>
+                
+        
+                <div class="card-body">
+                    <h3><strong>Solution</strong></h3>
+                   <p>We need to compute an exponential distribution probability. The following information are provided:</p>
+                   <table >
+                    <thead>
+                        <tr><th>Population Mean (μ)</th><br><th>Probability Event </th></tr>
+        
+                    </thead>
+                    <tbody>
+                        <tr><td> {{pm}} </td><td>  Pr ( {{tt}}  ≤  X  ≤  {{tw}} ) )</td></tr>
+        
+                    </tbody>
+                    
+                </table>   
+                   <p>We need to compute Pr ({{tt}} ≤ X ≤ {{tw}}) . Therefore, the following is obtained:</p>
+                   <p > Pr ({{tt}} ≤ X ≤ {{tw}})   =  Pr ( X ≤ {{tw}} ) − Pr ( X ≤ {{tt}})<br><br>
+                     =     e<sup> -{{tt}}/{{pm}}</sup> -  e <sup> -{{tw}}/{{pm}}</sup>  =  {{ans}}</p>
+                    <h5> <strong>Exponential Distribution of   Pr ( {{tt}}  ≤  X  ≤  {{tw}} ) ) is  {{ans}} . </strong> </h5> 
+              
+                </div>
+        
+            </div>
+            {% endif %}
+        
+            {% if given_data == "form2"  %}
+            <div class="card" id="magnetic-Change in temperature">
+                <div class="card-header">
+                    <h2 class="h2">Steps to Calculate Left-Tailed Exponential Probability</h2>
+                </div>
+        
+                <div class="card-body">
+                    <h3><strong>Solution</strong></h3>
+                    <p>We need to compute an exponential distribution probability. The following information are provided:</p>
+                    <table >
+                        <thead>
+                            <tr><th>Population Mean (μ)</th><br><th> Probability Event </th></tr>
+        
+                        </thead>
+                        <tbody>
+                            <tr><td> {{pm}} </td><td>  Pr  ( X  ≤  {{lt}}  )</td></tr>
+        
+                        </tbody>
+                        
+                    </table>    
+                    <p>We need to compute Pr ( X ≤  {{lt}} ) . Therefore, the following is obtained:</p>
+                    <p > Pr ( X ≤  {{lt}} )  =  1 − e <sup> - {{lt}}/{{pm}} </sup><br><br> =  {{ans}}</p>
+                       <h5> <strong>Exponential Distribution  of   Pr ( X ≤  {{lt}} ) is  {{ans}} . </strong> </h5> 
+                 
+                </div>
+        
+            </div>
+            {% endif %}
+            
+            {% if given_data == "form3" and rt and pm %}
+            <div class="card" id="magnetic-Change in temperature">
+                <div class="card-header">
+                    <h2 class="h2">Steps to Calculate Right-Tailed Exponential Probability </h2>
+                </div>
+        
+                <div class="card-body">
+                    <h3><strong>Solution</strong></h3>
+                    <p>We need to compute an exponential distribution probability. The following information are provided:</p>
+                    <table >
+                        <thead>
+                            <tr><th>Population Mean (μ)</th><br><th>Probability Event </th></tr>
+        
+                        </thead>
+                        <tbody>
+                            <tr><td> {{pm}} </td><td>  Pr  ( X ≥ {{rt}}  )</td></tr>
+        
+                        </tbody>
+                        
+                    </table>   
+                    <p>We need to compute Pr ( X     {{rt}} ) . Therefore, the following is obtained:</p>
+                    <p > Pr ( X ≥ {{rt}} )  =   e <sup> - {{rt}}/{{pm}} </sup><br><br> =  {{ans}}</p>
+                       <h5> <strong>Exponential Distribution  of   Pr ( X ≥ {{rt}} ) is  {{ans}} . </strong> </h5> 
+                 
+                    </div>
+          
+        
+        
+                </div>
+                {%endif%}
+            </div>
+          
+            <script>
+                
+            {% if id == 1 %}
+             
+            var scrollDiv = document.getElementById("clear").offsetTop;
+            console.log(scrollDiv)
+            window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
+            
+            {%endif%}
+            
+            </script>
+            
+            <script>
+                function myFunction() {
+                         document.getElementById("clear").innerHTML="";
+            
+                         {% if given_data == 'form1' %}
+                             
+                             document.getElementsByName("tt")[0].value="";
+                             document.getElementsByName("tw")[0].value="";
+                             
+                        {%endif%}
+            
+                         {% if given_data == 'form2' %}
+        
+                             document.getElementsByName("lt")[0].value="";
+                            
+                         {%endif%}
+            
+                         {% if given_data == 'form3' %}
+                         
+                             document.getElementsByName("rt")[0].value="";
+                             
+            
+                         {%endif%}
+            
+                         
+            
+                         {% if given_data != 'form4' %}
+                         
+                         document.getElementsByName("pw")[0].value="";
+                            
+            
+                         {%endif%}
+            
+            
+            
+                }
+            </script>
+        <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">What is Exponential Probability?</h2>
+        </div>
+	    <div class="card-body">
+            <p>In probability, the time between events happening according to the gamma distribution is called exponential probability. Some examples of this exponential distribution include the time between two trains coming to the station.</p>
+            <p>Let us see the formula for exponential probability.</p>
+            <img src="https://drive.google.com/file/d/13qoOIElY4QPJGTSOHe7qnA-wdf5Qll8B/view?usp=sharing" alt='exponential-probability-formula'>
+            <p>Where,</p>       
+            <p>λ>0 is rate of distribution.</p>
+            <img src="https://drive.google.com/file/d/1kkLXhB5MfdyEkzUFA2tVw1_-opyI0ew9/view?usp=sharing" alt='exponential-probability-graph'>
+            <p>The probability function of exponential probability is F(x) = 1 - e -&theta;x.</p>
+            <p>Let's do the examination for exponential probability and find the probability of time to connect the two events that are lower or higher than x, the target period between events:</p>
+            <p><b>P(x &gt; X) = exp(-ax)<br />P(x &le; X) = 1 - exp(-ax)</b></p>
+            <p>where,</p>
+            <p>a = rate parameter of the distribution.</p>
+            <p>P(x &gt; X) = probability of x is higher than the indicated value X;</p>
+            <p>P(x &le; X) = probability of x is lower than the indicated value X; and</p>
+            <p>exp represents the exponential function.</p>
+            <p>Along with the exponential probabilities, you will also find the mean &mu; = 1/a, variance &sigma;&sup2; = 1/a&sup2;, median m = ln(2)/a, and standard deviation of exponential distribution &sigma; = &radic;(1/a&sup2;)</p>
+            <p>And also we have many other calculators available at <a href="http://probabilitycalculator.guru/">Probabilitycalculator.guru</a> provided free online &amp; handy.</p>
+            </div>
+            </div> 
+            </div> 
+            
+
+    <div class="card">
+        <div class="card-header">
+    <h3 class="h3">FAQs on Exponential Probability Calculator</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. What is Exponential Probability?</strong></p>
+     	<p class="answer">The time between events happening according to the gamma distribution is called exponential probability.</p><hr>
+     	<p class="question"><strong>2. How to use the Exponential Probability Calculator?</strong></p>
+     	<p class="answer">Just type the inputs in the specified input fields and hit the calculate button to get the answer in a fraction of seconds.</p><hr>
+        <p class="question"><strong>3. How to find exponential probability?</strong></p>
+     	<p class="answer">Exponential probability can be found by using the formula, i.e. P(X=x) = me<sup>&minus;mx</sup> = (1/&mu;)e<sup>&minus;(1/&mu;)x</sup></p><hr>
+    	</div>
+    </div>
+    </div>
+
+{% if  flag %}
+<script>
+        $(document).ready(function () {
+            $("#hassle").click();
+        });
+</script>
+
+{% endif %}
+{%endblock%}

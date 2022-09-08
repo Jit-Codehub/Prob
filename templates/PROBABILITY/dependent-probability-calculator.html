@@ -1,0 +1,257 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+   <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="/static/style.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Dependent Probability Calculator | Conditional Probability Formula</title>
+    <meta name="description" content="Dependent Probability Calculator gives the probability of dependent variables using conditional probability formula. Learn the steps to calculate dependent probability."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Dependent Probability Calculator | Conditional Probability Formula"/>
+        <meta property="og:description" content="Dependent Probability Calculator gives the probability of dependent variables using conditional probability formula. Learn the steps to calculate dependent probability."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Chemistry/Dependent-Probability-Calculator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Dependent Probability Calculator | Conditional Probability Formula"/>
+        <meta name="twitter:description" content="Calculate Dependent events probability with the help of the handy Dependent Probability Calculator. Giverovide all events probabilities to know the Dependent probability."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Chemistry/Dependent-Probability-Calculator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Dependent Probability Calculator | Conditional Probability Formula"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Chemistry/Dependent-Probability-Calculator.jpeg"/>
+        <meta property='og:description' content="Calculate Dependent events probability with the help of the handy Independent Probability Calculator. Giverovide all events probabilities to know the independent probability."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1.
+        What are the dependent events?
+        ","acceptedAnswer": {"@type": "Answer","text":" Two events are called dependent events if the outcome of the first event affects the outcome of another event."}	}, {"@type": "Question","name":"2.
+        How to calculate conditional probability on a calculator?
+        ","acceptedAnswer": {"@type": "Answer","text":" You need to enter the probabilities of both events in the provided input sections and click the calculate button of the calculator. You will get the conditional probability of events as output."}	}, {"@type": "Question","name":"3.
+        What are the differences between independent events and dependent events?
+        ","acceptedAnswer": {"@type": "Answer","text":" If the occurrence of one event affects the probability of another event, then they are dependent events. The occurrence of one event does not affect other event probability, then those events are called independent events. The dependent events formula is P(A and B) = P(A) x P(B|A). The independent events formula is P(A and B) = P(A) x P(B)."}	}, {"@type": "Question","name":"4.
+        What is the formula to find the probability of dependent events?
+        ","acceptedAnswer": {"@type": "Answer","text":" The probability of two dependent events can be calculated using the conditional probability formula. If A, B are two events, then the conditional probability of A given B is P(A|B) = P(A∩B)/P(B), where P(B)>0. The conditional probability of B given A is P(B|A) = P(A∩B)/P(A), where P(A)>0."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+
+{% if n and k %}
+<script>
+    $(document).ready(function () {
+
+        $("#hassle").click();
+
+
+    });
+
+
+</script>
+
+<button type="button" hidden id="hassle" onclick="location.href='#Coin_Flip_Probability_answer'">ans1</button>
+{% endif %}
+<div class="container" style="height: auto !important;">
+  
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Dependent Probability Calculator</h1>
+            </div>
+            <div class="card-body">
+                <p>Take the help of the Dependent Probability Calculator to determine the probability of two dependent events easily. Provide probabilities of the two dependent events and press the calculate button to check their probability using conditional probability formula.</p>
+                <p><strong>Dependent Events Probability Calculator: </strong>The Probability of Dependent Events Calculator is a wonderful device that is useful to calculate the dependent probability. Also, it tells how to calculate two dependent events probability with conditional probability formula, as well as dependent events definition, examples.</p>
+<p>The conditional probability formula is helpful to find the probability of any dependent events. Check the solved example questions on dependent, conditional probability in the following sections.</p>
+<form action="" method="POST" id="my_form" ">
+    {% csrf_token %}
+    <div class="form-row align-items-center">
+        <div class="col-auto">
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><strong>Enter A </strong></div>
+                </div>
+                <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                    placeholder="Enter A value"  step="any" class="form-control" name="a1"   value="{{a1}}" >            
+                </div>
+                
+                    
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><strong>Enter B </strong></div>
+                            </div>
+                            <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" required=""
+                                placeholder="Enter B value"  step="any" class="form-control" name="a22"   value="{{a22}}" >            
+                            </div>
+                            <div class="form-row align-items-center">
+                                <div class="col-auto">
+                                    <div class="input-group mb-2">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text"><strong>Enter C</strong></div>
+                                        </div>
+                                        <input type="number"  oninput="validateNumber(this);" id="inlineFormInputGroup" 
+                                            placeholder="Enter C value(optional)"  step="any" class="form-control" name="c1"   value="{{c1}}" >            
+                                        </div>
+            <div class=" center col mt-2 ">
+            <center><button type="submit" class="btn btn-primary" name="f1">Calculate</button>
+                <button type="button" onclick="myFunction()" style="margin-top:5px;"
+                class="btn btn-danger">Reset</button>
+            </center>
+            <br>
+        </div>
+    </div>
+    </div>
+</form>
+         
+</div>
+</div>
+</div>
+</div>
+
+{% if id == 1 %}
+<div id="clear">
+    <div class="card" id="magnetic-force">
+        <div class="card-header">
+            <h2 class="h2">Probablity of 2 dependent event Calculator</h2>
+        </div>
+        <div class="card-body">
+            <p>When two events, A and B are dependent, the probability of occurrence of A and B is:</p>
+
+                <p><strong>P(A and B) = P(A) · P(B|A)</strong></P>
+            <p> The probability of A is :{{a1}}/{{c}}</p>
+            <p> The probability of B is :{{a22}}/{{c}}</p>
+            <p> The probability of C is :{{c1}}/{{c}}</p>
+            <p>The dependent probability of A with respect to B is : {{d}}</p>
+            <p>The dependent probability of B with respect to A is : {{e}}</p>
+            <p>The dependent probability of C with respect to A,B is : {{f}}</p>
+            </div>
+    </div>
+</div>
+
+{% endif %}
+
+<script>
+    
+    {% if id == 1 %}
+     
+    var scrollDiv = document.getElementById("clear").offsetTop;
+    window.scrollTo({ top: scrollDiv, behavior: 'smooth'});
+    
+    {%endif%}
+
+    function myFunction() {
+        
+        document.getElementsByName("a1")[0].value = "";
+        document.getElementsByName("a22")[0].value = "";
+        document.getElementsByName("c1")[0].value = "";
+        document.getElementById("clear").innerHTML = "";
+
+
+    }
+
+</script>  
+<div class="card">
+    <div class="card-header">
+        <h2 class="h2">What are Dependent Events?</h2>
+    </div>
+    <div class="card-body">
+        <p>If the outcome of one event depends on the outcome of another event, then those events are called dependent events. The example is Rio scored well in the physics exam because she studied for it. You can use the conditional probability formula to find the dependent probability.</p>
+                </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="h3">How to Calculate Dependent Probability?</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Go through the below steps to find the dependent probability of two events. You will find the detailed explanation provided here of extreme help to solve the probability of dependent events.</p>
+                    <ul>
+                        <li>Get the compound probability of an event and any one dependent probability.
+                        </li><li>  Divide the compound probability by the known event probability.</li>
+                        <li> The value is called the dependent probability.</li>
+                    </ul>
+                    </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="h3">Conditional Probability Formula</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Conditional probability is defined as the probability of one event that has occurred in connection with one or more events. If A and B are two events, then the conditional probability of events A, B is given as:
+                            </p>  <p><b>   P(A|B) = P(A∩B)/P(B), P(B)>0</b>
+                        </p>   <p><b> The conditional probability of B, A is P(B|A) = P(A∩B)/P(A), P(A)>0</b>
+                    </p><p>   Assume that A and B are two dependent events.
+                </p>   <p>If P(A) is the probability of event A, then the probability of event B is P(B after A) = P(B|A)
+            </p>  <p><b>  P (B and A) = P(A) x P(B after A)</b>
+        </p>  <p>  Similarly, P(B) is the probability of event B, the probability of A is<b> P(A after B) = P(A|B)</b>
+    </p>  <p><b>  P (A and B) = P(B) x P(A after B)</b>
+</p>    P(A|B) means the event B has already occurred and it is also called conditional probability of A given B.</p>
+</div>
+</div>
+<div class="card">
+    <div class="card-header">
+        <h3 class="h3">Solved Questions on Dependent Events Probability</h3>
+    </div>
+    <div class="card-body">             
+<p><b>Question 1: </b>A juggler has seven red, five green, and four blue balls. During his stunt, he accidentally drops a ball and doesn't pick it up. As he continues, another ball falls down. What is the probability that the first ball that was dropped is blue, and the second ball is green?</p>
+                <p>Solution:</p> 
+                <p>As we know that the first ball is not replaced by the juggler. So after dropping the first ball, he is left with 15 balls.  </p>
+                <p> The probability that the first ball is blue is P(blue ball) = 4/16</p>
+                <p> The probability that the second ball is green is P(green ball) = 5/15</p>
+                <p>  The probability that the first ball is blue and second ball is green is P(blue than green) = P(blue) x P(green)</p>
+                    <p>  = 4/16 x 5/15</p>
+                    <p> = 1/12</p>
+                    <p>  Therefore, the probability that the first ball is blue and second ball is green is 1/12.</p>
+                    <p><b>Question 2: </b>Joseph and David are playing a game of cards. Joseph drew a card at random without replacement. He asks David to help him determine the probability that the first card drawn was a queen and the second is a king.</p>
+                    <p>Solution:</p>
+                    <p>As we understand that this probability is having a dependent event condition.</p>
+                    <p>Probability of drawing queen in the first condition P(queen in first) = 4/52</p>
+                    <p>  Probability of drawing king in the second condition after a queen is P(king after queen) = 4/51</p>
+                    <p>   P(queen followed by king) = 4/52 x 4/51</p>
+                    <p>  = 4/663</p>
+                    <p>  Therefore, the probability of drwaing a queen followed by king is 4/663.</p>
+                  <p>Understand various concepts of Probability and its related formulas with ease by referring to multiple tools provided under one roof at <a href="https://probabilitycalculator.guru/">Probabilitycalculatorguru</a>.</p>
+                </div></div>
+                      
+        <div class="card">
+            <div class="card-header">
+                <h3 class="h3">FAQ's on Dependent Probability Calculator</h3>
+            </div>
+            <div class="card-body">
+                <!-- Question & Answer Starts --->
+                <p class="question"><strong>    1. What are the dependent events?</strong></p>
+                <p class="answer">Two events are called dependent events if the outcome of the first event affects the outcome of another event.</p><hr>
+<p class="question"><strong> 2. How to calculate conditional probability on a calculator?</strong></p>
+<p class="answer">You need to enter the probabilities of both events in the provided input sections and click the calculate button of the calculator. You will get the conditional probability of events as output.</p><hr>
+<p class="question"><strong> 3. What are the differences between independent events and dependent events?</strong></p>
+<p class="answer">If the occurrence of one event affects the probability of another event, then they are dependent events. The occurrence of one event does not affect other event probability, then those events are called independent events. The dependent events formula is P(A and B) = P(A) x P(B|A). The independent events formula is P(A and B) = P(A) x P(B).</p><hr>
+<p class="question"><strong> 4. What is the formula to find the probability of dependent events?</strong></p>
+<p class="answer">The probability of two dependent events can be calculated using the conditional probability formula. If A, B are two events, then the conditional probability of A given B is P(A|B) = P(A∩B)/P(B), where P(B)>0. The conditional probability of B given A is P(B|A) = P(A∩B)/P(A), where P(A)>0.</p>
+            </div>
+         </div>
+      </div>
+    
+{%endblock%}

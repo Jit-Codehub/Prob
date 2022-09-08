@@ -1,0 +1,209 @@
+{%extends 'base/base.html'%}
+{%load static%}
+  {%block meta%}
+    <!-- HTML Defaults Broweser -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Stylesheet and Jquery, Google APIS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Online Calculator Guru Site Fevicon -->
+    <link rel="shortcut icon" href="https://onlinecalculator.guru/static/images/logo/Online-Calculator-Guru-Fevicon.png" type="icon">
+    <!-- Online Calculator Guru Project Style Sheet -->
+    {%block css%}
+    <link rel="stylesheet" href="https://onlinecalculator.guru/static/style2.css">
+    {%endblock%}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Meta Title, Description and Canonical URL Starts --->
+    <title>Random Number Generator | How does a Random Number Generator Work?</title>
+    <meta name="description" content="Access the easy to use Random Number Generator over here to get random numbers list within a set range given maximum, minimum range, numbers needed."/>
+    <link rel="canonical" href="{{request.build_absolute_uri}}">
+    <!-- Meta Title, Description and Canonical URL ENDS --->
+ 
+    <!-- OPEN GRAPH CONFIGURATIONS STARTS -->
+	<!--  FACEBOOK CONFIGURATION STARTS  -->
+        <meta content="https://www.facebook.com/OnlineCalculator-Guru-131572098650589/" property="og:url" />
+        <meta property="og:title" content="Random Number Generator | How does a Random Number Generator Work?"/>
+        <meta property="og:description" content="Access the easy to use Random Number Generator over here to get random numbers list within a set range given maximum, minimum range, numbers needed."/>
+        <meta content="" property="og:site_name" />
+        <meta  content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/Random-Number-Generator.jpeg" property="og:image" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:height" content="435" />
+        <meta property="og:image:width" content="354" />
+        <!--  FACEBOOK CONFIGURATION ENDS  -->
+        <!-- TWITTER CARD CONFIGURATION STARTS  -->
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:site" content="https://twitter.com/onlinecalculator"/>
+        <meta name="twitter:title" content="Random Number Generator | How does a Random Number Generator Work?"/>
+        <meta name="twitter:description" content="Access the easy to use Random Number Generator over here to get random numbers list within a set range given maximum, minimum range, numbers needed."/>
+        <meta name="twitter:image:src" content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/Random-Number-Generator.jpeg"/>
+        <meta property="twitter:image:height" content="435"/>
+        <meta property="twitter:image:width" content="354"/>
+        <!-- TWITTER CARD CONFIGURATION ENDS  -->
+        <!--  LINKEDIN CONFIGURATION STARTS-->
+        <meta property='og:title' content="Random Number Generator | How does a Random Number Generator Work?"/>
+        <meta property='og:image' content="https://onlinecalculator.guru/static/images/Discrete_Mathematics/Random-Number-Generator.jpeg"/>
+        <meta property='og:description' content="Access the easy to use Random Number Generator over here to get random numbers list within a set range given maximum, minimum range, numbers needed."/>
+        <meta property='og:url' content="https://www.linkedin.com/in/onlinecalculator/" />
+        <!-- end of linkedin CONFIGURATIONS ENDS -->
+    <!-- OPEN GRAPH CONFIGURATION ENDS -->
+    <!-- FAQ SCHEMA STARTS -->
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "FAQPage","mainEntity": [{"@type": "Question","name":"1. 
+        What are the types of Random Number Generators?
+        ","acceptedAnswer": {"@type": "Answer","text":" There are two types of Random Number Generators and they are Pseudo Random Number Generators, True Random Number Generatos."}	}, {"@type": "Question","name":"2. 
+        What are the Minimum and Maximum Values in a Random Number Generator?
+        ","acceptedAnswer": {"@type": "Answer","text":" Maximum and Minimum Values in a Random Number Generator define the range of values that appear in the random numbers list generated."}	}, {"@type": "Question","name":"3. 
+        What is meant by Random Numbers?
+        ","acceptedAnswer": {"@type": "Answer","text":" Random Numbers are a set of digits arranged in random order. It is difficult to predict the other numbers seeing individual digits or earlier digits as they are randomly arranged."}	}, {"@type": "Question","name":"4. 
+        How do you generate a Random Number?
+        ","acceptedAnswer": {"@type": "Answer","text":" One can generate Random Numbers using a Random Number Generator available on <a href = https://probabilitycalculator.guru/>probabilitycalculator.guru</a> as it is a simple tool to use."}	}]}</script>
+    {%endblock%}
+    {%block content%}
+    <div class="container">
+        <div class="card c1">
+            <div class="card-header">
+                <h1 class="h1">Random Number Generator</h1>
+            </div>
+            <div class="card-body">
+                <p>Take help from our online Random Number Generator available here for free and generate one or more random numbers within the range you specify. You can generate random numbers with our without repetition in a fraction of seconds. Simply, give the lower and upper range in the input fields and then tap on the calculate button to avail results in no time.</p>
+                <p><strong>Random Number Generator: </strong> Trying to come up with some set of random numbers for yourself but failing to get one? Then, don't worry anymore as we have come up with a user friendly and easy to use tool Random Number Generator that can aid you in this. Usually, we human brains are created in a way that we follow a sequence or pattern subconciously.</p>
+                <p> This could have a negative impact on the math activities you have planned. So use Random Number Generator and create pseudo-random and true random numbers within a certain range of your choice. In this article, we will explain you everything on How to Generate Random Numbers, How to use the Random Number Generator, Applications of Random Number Picker, etc.  </p>
+            </div>
+            <form action="{% url 'random-number-generator' %}" method="POST" id="my_form">
+                {% csrf_token %}
+                 <div class="input-group mb-3">
+                      
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Lower Limit</span>
+            </div>
+            
+           <input style="margin-top: 5px;width:100%" id="ll" name="ll" value="{{ll}}"   required="" oninput="validateNumber(this);" class="form-control" type="number" required width="48"> 
+       </div>
+       
+       <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Upper Limit</span>
+            </div>
+            
+           <input style="margin-top: 5px;width:100%" id="ul" name="ul" value="{{ul}}" min={{ll}} required="" oninput="validateNumber(this);" class="form-control" type="number" required width="48"> 
+       </div>
+       
+        <div class=" center col mt-2 ">
+            <center><button type="submit" class="btn btn-primary">Calculate</button>
+              <a href="{% url 'random-number-generator' %}" class="btn btn-warning" role="button" style="margin-top:5px;">Reset</a>      
+            </center>
+          </div>
+</div>
+
+</form>
+        
+
+
+        
+    {% if ul and ll and ot %}
+    
+    <div class="card" id="random_number">
+            <div class="card-header">
+                <h2 class="h2">Random Number Generator:</h2>
+            </div>
+    
+            <div class="card-body">
+    
+                  <b>Random Number Generator</b> 
+                  <p>Lower Limit: {{ll}}</p>
+                  <p>Upper Limit: {{ul}}</p>
+                  <b>Random Number : {{result}}</b>
+       </div>
+        </div>
+    
+        {% endif %}  
+
+    <div class="card">
+	    <div class="card-header">
+            <h2 class="h2">What is Random Number?</h2>
+        </div>
+	    <div class="card-body">
+            <p>A Random Number is a Number that is chosen by chance from a set range. One interesting fact about random numbers is that we can't predict which number we get. </p>
+</div>
+</div>
+<div class="card">
+    <div class="card-header">
+        <h3 class="h3">About Random Number Generators</h3>
+    </div>
+    <div class="card-body">
+<p>Random Number Generators are mainly classified into two types namely pseudo random and true random.</p>
+<p><strong>Pseudo Random Number Generator:</strong> This type of Random Number Generator is programmed using a mathematical function and displays the random numbers within a set range. This kind of RNGs are called Pseudo Random Number Generators as the computer program or algorithm has unintended selection bias. In a way we can say that computer randomness can't necessarily be organic. </p>
+ <p><strong>True Random Number Generator:</strong> In this type of Random Number Generators the randomness is outside the computer program and its operating system. Few Examples include blips in atmospheric noise, or points at which a radioactive material decays, etc. True Random Generator takes information from unpredictable events and generates a truly random number. </p>   
+<p>Find similar probability concepts calculators all under one roof at <a href="https://probabilitycalculator.guru/">Probabilitycalculator.guru</a> and clarify your doubts during homework or assignments in no time.</p>
+</div>
+</div>
+    <div class="card">
+	    <div class="card-header">
+            <h3 class="h3">How to use Random Number Generator?</h3>
+        </div>
+	    <div class="card-body">
+           <p>Follow the guidelines listed below to use the Random Number Generator over here. They are as such</p>
+           <ul><li>Firstly, enter a number of your choice in the Minimum Range.</li>
+           <li>Now, move on to the Maximum Number Range and enter a number of your choice similar to above case. </li>
+        <li>Also, provide the numbers you wanted in the respective box.</li>
+    <li>After providing all the necessary inputs click on the calculate button.</li>
+<li>That's it the Random Number Generator will give you the random numbers within specified range.</li></ul>
+    <img src="{% static 'images/Discrete_Mathematics/Random-Number-Generator.jpeg' %}" alt="Random Number Generator">
+</div>
+    </div>
+    <div class="card">
+	    <div class="card-header">
+            <h3 class="h3">Applications of Random Number Generator</h3>
+        </div>
+	    <div class="card-body">
+            <p>Following are some of the ways in which you can use the Random Number Generator. They are as follows</p>
+           <ul><li>You can use it as Random Number List Generator by simply providing the list length.</li>
+        <li>It can also be used as Phone Number Generator by setting the maximum, minimum range, how many fields in the calculator.</li>
+    <li>RNGs can be used as Random Number Sequence Generators too and they work they same as Random Number List Generators.</li></ul>
+        </div>
+            </div>
+    <div class="card">
+        <div class="card-header">
+    <h3 class="h3">FAQs on Random Number Generator</h3>
+  	    </div>
+  	    <div class="card-body">
+      	<!-- Question & Answer Starts --->
+        <p class="question"><strong>1. What are the types of Random Number Generators?</strong></p>
+     	<p class="answer">There are two types of Random Number Generators and they are Pseudo Random Number Generators, True Random Number Generatos.</p><hr>
+     	<p class="question"><strong>2. What are the Minimum and Maximum Values in a Random Number Generator?</strong></p>
+     	<p class="answer">Maximum and Minimum Values in a Random Number Generator define the range of values that appear in the random numbers list generated.</p><hr>  
+        <p class="question"><strong>3. What is meant by Random Numbers?</strong></p>
+        <p class="answer">Random Numbers are a set of digits arranged in random order. It is difficult to predict the other numbers seeing individual digits or earlier digits as they are randomly arranged.</p><hr>
+        <p class="question"><strong>4. How do you generate a Random Number?</strong></p>
+     	<p class="answer">One can generate Random Numbers using a Random Number Generator available on <a href = https://probabilitycalculator.guru/>probabilitycalculator.guru</a> as it is a simple tool to use.</p>
+    	</div>
+    </div>
+    </div>
+    <script>
+        function myFunction() {
+          document.getElementById("input1").value="";
+          document.getElementById("detail").innerHTML="";
+          
+        }
+        </script>
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('ddd').click();
+            });
+        </script>
+    
+
+    {% if ul and ll and ot %}
+<script>
+        $(document).ready(function () {
+            $("#hassle").click();
+        });
+</script>
+<button type="button" hidden id="hassle" onclick="location.href='#random_number'">ans1</button>
+{% endif %}
+{%endblock%}
